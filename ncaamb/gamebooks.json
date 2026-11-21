@@ -1,6 +1,6 @@
 {
   "league": "NCAAMB",
-  "updated_at": "2026-11-21T23:53:18.858120+00:00",
+  "updated_at": "2026-11-21T23:57:27.185165+00:00",
   "games": [
     {
       "id": "401932055",
@@ -973,18 +973,6 @@
       "away_team": "Utah Utes"
     },
     {
-      "id": "401917538",
-      "date": "2026-11-21",
-      "label": "San Diego Toreros @ UC Irvine Anteaters",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401917538",
-      "home_team": "UC Irvine Anteaters",
-      "away_team": "San Diego Toreros",
-      "pdf_checked_at": "2026-11-21T23:49:33.605518+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
-    },
-    {
       "id": "401925709",
       "date": "2026-11-21",
       "label": "Winthrop Eagles @ Wofford Terriers",
@@ -1008,11 +996,13 @@
       "id": "401919849",
       "date": "2026-11-21",
       "label": "Northeastern Huskies @ Stonehill Skyhawks",
-      "status": "End of Period",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401919849",
       "home_team": "Stonehill Skyhawks",
-      "away_team": "Northeastern Huskies"
+      "away_team": "Northeastern Huskies",
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401911337",
@@ -1038,7 +1028,7 @@
       "id": "401925897",
       "date": "2026-11-21",
       "label": "UNC Wilmington Seahawks @ Norfolk State Spartans",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925897",
       "home_team": "Norfolk State Spartans",
@@ -1085,8 +1075,8 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921811",
       "home_team": "LSU Tigers",
       "away_team": "Queens University Royals",
-      "pdf_checked_at": "2026-11-21T23:49:33.605518+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401924884",
@@ -1097,8 +1087,8 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401924884",
       "home_team": "Bucknell Bison",
       "away_team": "Siena Saints",
-      "pdf_checked_at": "2026-11-21T23:49:33.605518+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401922284",
@@ -1109,8 +1099,8 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401922284",
       "home_team": "UNC Greensboro Spartans",
       "away_team": "South Carolina Upstate Spartans",
-      "pdf_checked_at": "2026-11-21T23:49:33.605518+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401923402",
@@ -1181,8 +1171,8 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401929452",
       "home_team": "James Madison Dukes",
       "away_team": "Virginia Lynchburg Dragons",
-      "pdf_checked_at": "2026-11-21T23:49:33.605518+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401928819",
@@ -1205,8 +1195,8 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401924882",
       "home_team": "Saint Peter's Peacocks",
       "away_team": "Stony Brook Seawolves",
-      "pdf_checked_at": "2026-11-21T23:49:33.605518+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401924722",
@@ -1337,8 +1327,8 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401920846",
       "home_team": "Milwaukee Panthers",
       "away_team": "St. Thomas Tommies",
-      "pdf_checked_at": "2026-11-21T23:49:33.605518+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401920569",
@@ -1361,8 +1351,8 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401917953",
       "home_team": "Austin Peay Governors",
       "away_team": "UT Rio Grande Valley Vaqueros",
-      "pdf_checked_at": "2026-11-21T23:49:33.605518+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401911278",
@@ -1409,8 +1399,8 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401923322",
       "home_team": "Canisius Golden Griffins",
       "away_team": "UAlbany Great Danes",
-      "pdf_checked_at": "2026-11-21T23:49:33.605518+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401922048",
@@ -1433,8 +1423,8 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921183",
       "home_team": "La Salle Explorers",
       "away_team": "Pennsylvania Quakers",
-      "pdf_checked_at": "2026-11-21T23:52:41.694218+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401918995",
@@ -1445,8 +1435,8 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918995",
       "home_team": "George Mason Patriots",
       "away_team": "South Florida Bulls",
-      "pdf_checked_at": "2026-11-21T23:49:33.605518+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401917918",
@@ -1459,6 +1449,18 @@
       "away_team": "Central Arkansas Bears",
       "pdf_checked_at": "2026-11-21T23:52:41.694218+00:00",
       "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401917538",
+      "date": "2026-11-21",
+      "label": "San Diego Toreros @ UC Irvine Anteaters",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401917538",
+      "home_team": "UC Irvine Anteaters",
+      "away_team": "San Diego Toreros",
+      "pdf_checked_at": "2026-11-21T23:57:27.508977+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     }
   ]
 }

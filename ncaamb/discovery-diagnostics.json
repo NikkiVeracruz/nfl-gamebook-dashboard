@@ -1,0 +1,103 @@
+{
+  "games": [
+    {
+      "id": "401919849",
+      "label": "Northeastern Huskies @ Stonehill Skyhawks",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401929452",
+      "label": "Virginia Lynchburg Dragons @ James Madison Dukes",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401917953",
+      "label": "UT Rio Grande Valley Vaqueros @ Austin Peay Governors",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401923322",
+      "label": "UAlbany Great Danes @ Canisius Golden Griffins",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401924882",
+      "label": "Stony Brook Seawolves @ Saint Peter's Peacocks",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401920846",
+      "label": "St. Thomas Tommies @ Milwaukee Panthers",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401918995",
+      "label": "South Florida Bulls @ George Mason Patriots",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401922284",
+      "label": "South Carolina Upstate Spartans @ UNC Greensboro Spartans",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401924884",
+      "label": "Siena Saints @ Bucknell Bison",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401917538",
+      "label": "San Diego Toreros @ UC Irvine Anteaters",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401921811",
+      "label": "Queens University Royals @ LSU Tigers",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401921183",
+      "label": "Pennsylvania Quakers @ La Salle Explorers",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    }
+  ],
+  "version": "diagnostics-athletics-v5",
+  "checked": 12,
+  "verified": 0
+}
