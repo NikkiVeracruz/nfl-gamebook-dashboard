@@ -1,6 +1,6 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T23:36:36.863581+00:00",
+  "updated_at": "2026-11-21T23:39:56.787795+00:00",
   "games": [
     {
       "id": "401858302",
@@ -248,7 +248,7 @@
       "id": "401856754",
       "date": "2026-11-21",
       "label": "LSU Tigers @ Tennessee Volunteers",
-      "status": "In Progress",
+      "status": "End of Period",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856754",
       "home_team": "Tennessee Volunteers",
@@ -429,8 +429,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858531",
       "home_team": "Nebraska Cornhuskers",
       "away_team": "Ohio State Buckeyes",
-      "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FBS"
     },
     {
       "id": "401858527",
@@ -496,8 +495,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858309",
       "home_team": "Boston College Eagles",
       "away_team": "Syracuse Orange",
-      "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FBS"
     },
     {
       "id": "401858530",
@@ -508,8 +506,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858530",
       "home_team": "Minnesota Golden Gophers",
       "away_team": "Northwestern Wildcats",
-      "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FBS"
     },
     {
       "id": "401858533",
@@ -542,7 +539,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401862834",
       "home_team": "Navy Midshipmen",
       "away_team": "Memphis Tigers",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401862835",
@@ -553,7 +551,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401862835",
       "home_team": "Tulane Green Wave",
       "away_team": "North Texas Mean Green",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401858305",
@@ -564,7 +563,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858305",
       "home_team": "Virginia Cavaliers",
       "away_team": "North Carolina Tar Heels",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401856750",
@@ -575,10 +575,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856750",
       "home_team": "Mississippi State Bulldogs",
       "away_team": "Tennessee Tech Golden Eagles",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00",
-      "pdf_url": "https://static.hailstate.com/custompages/stats/fb/2026/ms1121.PDF",
-      "pdf_source": "Verified PDF content: teams and game date"
+      "subdivision": "FCS"
     },
     {
       "id": "401871080",
@@ -611,7 +608,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871079",
       "home_team": "Jacksonville State Gamecocks",
       "away_team": "Missouri State Bears",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401871081",
@@ -622,7 +620,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871081",
       "home_team": "Sam Houston Bearkats",
       "away_team": "Middle Tennessee Blue Raiders",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401869929",
@@ -669,28 +668,6 @@
       "subdivision": "FBS"
     },
     {
-      "id": "401868059",
-      "date": "2026-11-21",
-      "label": "Eastern Kentucky Colonels @ Abilene Christian Wildcats",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868059",
-      "home_team": "Abilene Christian Wildcats",
-      "away_team": "Eastern Kentucky Colonels",
-      "subdivision": "FCS"
-    },
-    {
-      "id": "401868352",
-      "date": "2026-11-21",
-      "label": "East Tennessee State Buccaneers @ Mercer Bears",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868352",
-      "home_team": "Mercer Bears",
-      "away_team": "East Tennessee State Buccaneers",
-      "subdivision": "FCS"
-    },
-    {
       "id": "401868365",
       "date": "2026-11-21",
       "label": "Jackson State Tigers @ Alcorn State Braves",
@@ -699,17 +676,6 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868365",
       "home_team": "Alcorn State Braves",
       "away_team": "Jackson State Tigers",
-      "subdivision": "FCS"
-    },
-    {
-      "id": "401868941",
-      "date": "2026-11-21",
-      "label": "Arkansas-Pine Bluff Golden Lions @ Texas Southern Tigers",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868941",
-      "home_team": "Texas Southern Tigers",
-      "away_team": "Arkansas-Pine Bluff Golden Lions",
       "subdivision": "FCS"
     },
     {
@@ -864,7 +830,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866697",
       "home_team": "Campbell Fighting Camels",
       "away_team": "Monmouth Hawks",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401866700",
@@ -875,8 +842,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866700",
       "home_team": "Merrimack Warriors",
       "away_team": "Sacred Heart Pioneers",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FCS"
     },
     {
       "id": "401867825",
@@ -975,8 +941,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401872619",
       "home_team": "Princeton Tigers",
       "away_team": "Pennsylvania Quakers",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FCS"
     },
     {
       "id": "401872643",
@@ -987,7 +952,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401872643",
       "home_team": "Mercyhurst Lakers",
       "away_team": "New Haven Chargers",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401868032",
@@ -1020,7 +986,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866699",
       "home_team": "Maine Black Bears",
       "away_team": "New Hampshire Wildcats",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401867812",
@@ -1042,8 +1009,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867854",
       "home_team": "Illinois State Redbirds",
       "away_team": "South Dakota Coyotes",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FCS"
     },
     {
       "id": "401867998",
@@ -1087,7 +1053,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868218",
       "home_team": "Butler Bulldogs",
       "away_team": "Morehead State Eagles",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401868226",
@@ -1098,7 +1065,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868226",
       "home_team": "Davidson Wildcats",
       "away_team": "Marist Red Foxes",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401868253",
@@ -1142,8 +1110,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866696",
       "home_team": "Bryant Bulldogs",
       "away_team": "Rhode Island Rams",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FCS"
     },
     {
       "id": "401867959",
@@ -1165,8 +1132,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868193",
       "home_team": "Gardner-Webb Runnin' Bulldogs",
       "away_team": "Tennessee State Tigers",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FCS"
     },
     {
       "id": "401867873",
@@ -1177,8 +1143,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867873",
       "home_team": "Murray State Racers",
       "away_team": "Northern Iowa Panthers",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FCS"
     },
     {
       "id": "401867881",
@@ -1189,8 +1154,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867881",
       "home_team": "North Dakota Fighting Hawks",
       "away_team": "Southern Illinois Salukis",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FCS"
     },
     {
       "id": "401867971",
@@ -1201,6 +1165,18 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867971",
       "home_team": "North Carolina Central Eagles",
       "away_team": "Morgan State Bears",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
+    },
+    {
+      "id": "401868059",
+      "date": "2026-11-21",
+      "label": "Eastern Kentucky Colonels @ Abilene Christian Wildcats",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868059",
+      "home_team": "Abilene Christian Wildcats",
+      "away_team": "Eastern Kentucky Colonels",
       "subdivision": "FCS"
     },
     {
@@ -1212,7 +1188,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868117",
       "home_team": "Montana State Bobcats",
       "away_team": "Montana Grizzlies",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:39:57.173216+00:00"
     },
     {
       "id": "401868203",
@@ -1245,8 +1222,7 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868283",
       "home_team": "Valparaiso Beacons",
       "away_team": "St. Thomas Tommies",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "subdivision": "FCS"
     },
     {
       "id": "401867864",
@@ -1282,6 +1258,17 @@
       "subdivision": "FCS"
     },
     {
+      "id": "401868352",
+      "date": "2026-11-21",
+      "label": "East Tennessee State Buccaneers @ Mercer Bears",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868352",
+      "home_team": "Mercer Bears",
+      "away_team": "East Tennessee State Buccaneers",
+      "subdivision": "FCS"
+    },
+    {
       "id": "401868353",
       "date": "2026-11-21",
       "label": "Prairie View A&M Panthers @ Alabama State Hornets",
@@ -1290,6 +1277,17 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868353",
       "home_team": "Alabama State Hornets",
       "away_team": "Prairie View A&M Panthers",
+      "subdivision": "FCS"
+    },
+    {
+      "id": "401868941",
+      "date": "2026-11-21",
+      "label": "Arkansas-Pine Bluff Golden Lions @ Texas Southern Tigers",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868941",
+      "home_team": "Texas Southern Tigers",
+      "away_team": "Arkansas-Pine Bluff Golden Lions",
       "subdivision": "FCS"
     }
   ]
