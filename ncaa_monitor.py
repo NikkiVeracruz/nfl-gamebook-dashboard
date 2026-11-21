@@ -14,7 +14,7 @@ def main():
  for league,sport in SPORTS.items():
   folder=ROOT/league.lower();folder.mkdir(exist_ok=True)
   live=folder/"gamebooks.json";archive=folder/"archive.json"
-  old=read(archive,{"games":[]});stored={str(g["id"]):g for g in old.get("games",[]) if g.get("id")}
+  old=read(archive,{"games":[]});stored={str(g["id"]):g for g in old.get("games",[]) if g.get("id") and g.get("home_team","").strip().lower() not in {"","tbd","tba","unknown"} and g.get("away_team","").strip().lower() not in {"","tbd","tba","unknown"}}
   recent={}
   for offset in range(-2,3):
    day=TODAY+datetime.timedelta(days=offset)
@@ -33,6 +33,10 @@ def main():
      if not event_id:continue
      game_date=str(event.get("date") or "")[:10]
      if game_date<START.isoformat():continue
+     home_name=home.get("team",{}).get("displayName","").strip()
+     away_name=away.get("team",{}).get("displayName","").strip()
+     unknown={"","tbd","tba","to be determined","unknown"}
+     if home_name.lower() in unknown or away_name.lower() in unknown:continue
      status=event.get("status",{}).get("type",{})
      game={"id":event_id,"date":game_date,"label":f"{away.get('team',{}).get('displayName','Away')} @ {home.get('team',{}).get('displayName','Home')}","status":status.get("description","Unknown"),"state":status.get("state","unknown"),"game_url":f"https://www.espn.com/{'college-football' if league=='NCAAF' else 'mens-college-basketball' if league=='NCAAMB' else 'womens-college-basketball'}/game/_/gameId/{event_id}","home_team":home.get("team",{}).get("displayName",""),"away_team":away.get("team",{}).get("displayName","")}
      if league=="NCAAF":
