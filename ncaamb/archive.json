@@ -1,6 +1,6 @@
 {
   "league": "NCAAMB",
-  "updated_at": "2026-11-21T22:54:42.197180+00:00",
+  "updated_at": "2026-11-21T23:25:20.741158+00:00",
   "games": [
     {
       "id": "401929392",
@@ -976,7 +976,7 @@
       "id": "401925709",
       "date": "2026-11-21",
       "label": "Winthrop Eagles @ Wofford Terriers",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925709",
       "home_team": "Wofford Terriers",
@@ -1030,8 +1030,8 @@
       "id": "401925897",
       "date": "2026-11-21",
       "label": "UNC Wilmington Seahawks @ Norfolk State Spartans",
-      "status": "Scheduled",
-      "state": "pre",
+      "status": "In Progress",
+      "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925897",
       "home_team": "Norfolk State Spartans",
       "away_team": "UNC Wilmington Seahawks"
@@ -1072,7 +1072,7 @@
       "id": "401925065",
       "date": "2026-11-21",
       "label": "Southern Miss Golden Eagles @ Nicholls Colonels",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925065",
       "home_team": "Nicholls Colonels",
@@ -1092,11 +1092,12 @@
       "id": "401918995",
       "date": "2026-11-21",
       "label": "South Florida Bulls @ George Mason Patriots",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918995",
       "home_team": "George Mason Patriots",
-      "away_team": "South Florida Bulls"
+      "away_team": "South Florida Bulls",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401922284",
@@ -1145,11 +1146,12 @@
       "id": "401921183",
       "date": "2026-11-21",
       "label": "Pennsylvania Quakers @ La Salle Explorers",
-      "status": "End of Period",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921183",
       "home_team": "La Salle Explorers",
-      "away_team": "Pennsylvania Quakers"
+      "away_team": "Pennsylvania Quakers",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401920773",
@@ -1177,7 +1179,7 @@
       "id": "401919849",
       "date": "2026-11-21",
       "label": "Northeastern Huskies @ Stonehill Skyhawks",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401919849",
       "home_team": "Stonehill Skyhawks",
@@ -1231,8 +1233,8 @@
       "id": "401911023",
       "date": "2026-11-21",
       "label": "Maine Black Bears @ Massachusetts Minutemen",
-      "status": "Scheduled",
-      "state": "pre",
+      "status": "In Progress",
+      "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911023",
       "home_team": "Massachusetts Minutemen",
       "away_team": "Maine Black Bears"
@@ -1241,11 +1243,12 @@
       "id": "401922048",
       "date": "2026-11-21",
       "label": "Longwood Lancers @ East Tennessee State Buccaneers",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401922048",
       "home_team": "East Tennessee State Buccaneers",
-      "away_team": "Longwood Lancers"
+      "away_team": "Longwood Lancers",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401922222",
@@ -1284,11 +1287,12 @@
       "id": "401925890",
       "date": "2026-11-21",
       "label": "Justice Lions @ Northern Colorado Bears",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925890",
       "home_team": "Northern Colorado Bears",
-      "away_team": "Justice Lions"
+      "away_team": "Justice Lions",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401911199",
@@ -1349,8 +1353,8 @@
       "id": "401909517",
       "date": "2026-11-21",
       "label": "Coppin State Eagles @ Georgetown Hoyas",
-      "status": "Scheduled",
-      "state": "pre",
+      "status": "In Progress",
+      "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909517",
       "home_team": "Georgetown Hoyas",
       "away_team": "Coppin State Eagles"
@@ -1374,17 +1378,19 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401926113",
       "home_team": "Furman Paladins",
-      "away_team": "Clinton Golden Bears"
+      "away_team": "Clinton Golden Bears",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401917918",
       "date": "2026-11-21",
       "label": "Central Arkansas Bears @ Jacksonville Dolphins",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401917918",
       "home_team": "Jacksonville Dolphins",
-      "away_team": "Central Arkansas Bears"
+      "away_team": "Central Arkansas Bears",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401928819",
@@ -1394,7 +1400,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401928819",
       "home_team": "Purdue Fort Wayne Mastodons",
-      "away_team": "Calumet St. Joseph Crimson Wave"
+      "away_team": "Calumet St. Joseph Crimson Wave",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401911278",
@@ -1404,13 +1411,14 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911278",
       "home_team": "Binghamton Bearcats",
-      "away_team": "Army Black Knights"
+      "away_team": "Army Black Knights",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401911337",
       "date": "2026-11-21",
       "label": "Air Force Falcons @ UTSA Roadrunners",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911337",
       "home_team": "UTSA Roadrunners",

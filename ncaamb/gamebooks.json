@@ -1,6 +1,6 @@
 {
   "league": "NCAAMB",
-  "updated_at": "2026-11-21T22:54:42.197180+00:00",
+  "updated_at": "2026-11-21T23:25:20.741158+00:00",
   "games": [
     {
       "id": "401932055",
@@ -973,16 +973,6 @@
       "away_team": "Utah Utes"
     },
     {
-      "id": "401925890",
-      "date": "2026-11-21",
-      "label": "Justice Lions @ Northern Colorado Bears",
-      "status": "In Progress",
-      "state": "in",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925890",
-      "home_team": "Northern Colorado Bears",
-      "away_team": "Justice Lions"
-    },
-    {
       "id": "401923322",
       "date": "2026-11-21",
       "label": "UAlbany Great Danes @ Canisius Golden Griffins",
@@ -993,44 +983,15 @@
       "away_team": "UAlbany Great Danes"
     },
     {
-      "id": "401922048",
-      "date": "2026-11-21",
-      "label": "Longwood Lancers @ East Tennessee State Buccaneers",
-      "status": "In Progress",
-      "state": "in",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401922048",
-      "home_team": "East Tennessee State Buccaneers",
-      "away_team": "Longwood Lancers"
-    },
-    {
-      "id": "401921183",
-      "date": "2026-11-21",
-      "label": "Pennsylvania Quakers @ La Salle Explorers",
-      "status": "End of Period",
-      "state": "in",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921183",
-      "home_team": "La Salle Explorers",
-      "away_team": "Pennsylvania Quakers"
-    },
-    {
       "id": "401918995",
       "date": "2026-11-21",
       "label": "South Florida Bulls @ George Mason Patriots",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918995",
       "home_team": "George Mason Patriots",
-      "away_team": "South Florida Bulls"
-    },
-    {
-      "id": "401917918",
-      "date": "2026-11-21",
-      "label": "Central Arkansas Bears @ Jacksonville Dolphins",
-      "status": "In Progress",
-      "state": "in",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401917918",
-      "home_team": "Jacksonville Dolphins",
-      "away_team": "Central Arkansas Bears"
+      "away_team": "South Florida Bulls",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401917538",
@@ -1046,7 +1007,7 @@
       "id": "401925709",
       "date": "2026-11-21",
       "label": "Winthrop Eagles @ Wofford Terriers",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925709",
       "home_team": "Wofford Terriers",
@@ -1056,7 +1017,7 @@
       "id": "401925065",
       "date": "2026-11-21",
       "label": "Southern Miss Golden Eagles @ Nicholls Colonels",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925065",
       "home_team": "Nicholls Colonels",
@@ -1066,7 +1027,7 @@
       "id": "401919849",
       "date": "2026-11-21",
       "label": "Northeastern Huskies @ Stonehill Skyhawks",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401919849",
       "home_team": "Stonehill Skyhawks",
@@ -1076,7 +1037,7 @@
       "id": "401911337",
       "date": "2026-11-21",
       "label": "Air Force Falcons @ UTSA Roadrunners",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911337",
       "home_team": "UTSA Roadrunners",
@@ -1093,6 +1054,36 @@
       "away_team": "Southern Illinois Salukis"
     },
     {
+      "id": "401925897",
+      "date": "2026-11-21",
+      "label": "UNC Wilmington Seahawks @ Norfolk State Spartans",
+      "status": "In Progress",
+      "state": "in",
+      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925897",
+      "home_team": "Norfolk State Spartans",
+      "away_team": "UNC Wilmington Seahawks"
+    },
+    {
+      "id": "401911023",
+      "date": "2026-11-21",
+      "label": "Maine Black Bears @ Massachusetts Minutemen",
+      "status": "In Progress",
+      "state": "in",
+      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911023",
+      "home_team": "Massachusetts Minutemen",
+      "away_team": "Maine Black Bears"
+    },
+    {
+      "id": "401909517",
+      "date": "2026-11-21",
+      "label": "Coppin State Eagles @ Georgetown Hoyas",
+      "status": "In Progress",
+      "state": "in",
+      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909517",
+      "home_team": "Georgetown Hoyas",
+      "away_team": "Coppin State Eagles"
+    },
+    {
       "id": "401925756",
       "date": "2026-11-21",
       "label": "Detroit Mercy Titans @ Michigan State Spartans",
@@ -1100,8 +1091,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925756",
       "home_team": "Michigan State Spartans",
-      "away_team": "Detroit Mercy Titans",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Detroit Mercy Titans"
     },
     {
       "id": "401921811",
@@ -1111,8 +1101,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921811",
       "home_team": "LSU Tigers",
-      "away_team": "Queens University Royals",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Queens University Royals"
     },
     {
       "id": "401924884",
@@ -1122,8 +1111,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401924884",
       "home_team": "Bucknell Bison",
-      "away_team": "Siena Saints",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Siena Saints"
     },
     {
       "id": "401922284",
@@ -1133,8 +1121,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401922284",
       "home_team": "UNC Greensboro Spartans",
-      "away_team": "South Carolina Upstate Spartans",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "South Carolina Upstate Spartans"
     },
     {
       "id": "401923402",
@@ -1144,8 +1131,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401923402",
       "home_team": "Boston University Terriers",
-      "away_team": "Columbia Lions",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Columbia Lions"
     },
     {
       "id": "401923312",
@@ -1155,8 +1141,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401923312",
       "home_team": "New Haven Chargers",
-      "away_team": "New Hampshire Wildcats",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "New Hampshire Wildcats"
     },
     {
       "id": "401921169",
@@ -1166,8 +1151,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921169",
       "home_team": "Cleveland State Vikings",
-      "away_team": "Kent State Golden Flashes",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Kent State Golden Flashes"
     },
     {
       "id": "401920948",
@@ -1177,8 +1161,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401920948",
       "home_team": "Eastern Michigan Eagles",
-      "away_team": "Denver Pioneers",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Denver Pioneers"
     },
     {
       "id": "401919828",
@@ -1188,8 +1171,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401919828",
       "home_team": "Mercyhurst Lakers",
-      "away_team": "Western Illinois Leathernecks",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Western Illinois Leathernecks"
     },
     {
       "id": "401929452",
@@ -1199,8 +1181,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401929452",
       "home_team": "James Madison Dukes",
-      "away_team": "Virginia Lynchburg Dragons",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Virginia Lynchburg Dragons"
     },
     {
       "id": "401928819",
@@ -1210,7 +1191,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401928819",
       "home_team": "Purdue Fort Wayne Mastodons",
-      "away_team": "Calumet St. Joseph Crimson Wave"
+      "away_team": "Calumet St. Joseph Crimson Wave",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401924882",
@@ -1220,8 +1202,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401924882",
       "home_team": "Saint Peter's Peacocks",
-      "away_team": "Stony Brook Seawolves",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Stony Brook Seawolves"
     },
     {
       "id": "401924722",
@@ -1231,8 +1212,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401924722",
       "home_team": "Morgan State Bears",
-      "away_team": "Cornell Big Red",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Cornell Big Red"
     },
     {
       "id": "401922222",
@@ -1242,8 +1222,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401922222",
       "home_team": "North Florida Ospreys",
-      "away_team": "Little Rock Trojans",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Little Rock Trojans"
     },
     {
       "id": "401921222",
@@ -1253,8 +1232,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921222",
       "home_team": "Rider Broncs",
-      "away_team": "Navy Midshipmen",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Navy Midshipmen"
     },
     {
       "id": "401920773",
@@ -1264,8 +1242,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401920773",
       "home_team": "Colgate Raiders",
-      "away_team": "Penn State Behrend Lions",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Penn State Behrend Lions"
     },
     {
       "id": "401919031",
@@ -1275,8 +1252,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401919031",
       "home_team": "Wichita State Shockers",
-      "away_team": "New Mexico Lobos",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "New Mexico Lobos"
     },
     {
       "id": "401911199",
@@ -1286,8 +1262,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911199",
       "home_team": "Portland Pilots",
-      "away_team": "Fordham Rams",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Fordham Rams"
     },
     {
       "id": "401911022",
@@ -1297,8 +1272,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911022",
       "home_team": "Bowling Green Falcons",
-      "away_team": "Northern Illinois Huskies",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Northern Illinois Huskies"
     },
     {
       "id": "401909730",
@@ -1308,8 +1282,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909730",
       "home_team": "Wake Forest Demon Deacons",
-      "away_team": "Western Carolina Catamounts",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Western Carolina Catamounts"
     },
     {
       "id": "401909719",
@@ -1319,8 +1292,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909719",
       "home_team": "Syracuse Orange",
-      "away_team": "Lafayette Leopards",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Lafayette Leopards"
     },
     {
       "id": "401927365",
@@ -1330,8 +1302,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401927365",
       "home_team": "Missouri State Bears",
-      "away_team": "Drake Bulldogs",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Drake Bulldogs"
     },
     {
       "id": "401920846",
@@ -1341,8 +1312,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401920846",
       "home_team": "Milwaukee Panthers",
-      "away_team": "St. Thomas Tommies",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "St. Thomas Tommies"
     },
     {
       "id": "401920569",
@@ -1352,8 +1322,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401920569",
       "home_team": "Indiana State Sycamores",
-      "away_team": "Middle Tennessee Blue Raiders",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "Middle Tennessee Blue Raiders"
     },
     {
       "id": "401917953",
@@ -1363,8 +1332,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401917953",
       "home_team": "Austin Peay Governors",
-      "away_team": "UT Rio Grande Valley Vaqueros",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "away_team": "UT Rio Grande Valley Vaqueros"
     },
     {
       "id": "401911278",
@@ -1374,7 +1342,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911278",
       "home_team": "Binghamton Bearcats",
-      "away_team": "Army Black Knights"
+      "away_team": "Army Black Knights",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
       "id": "401926113",
@@ -1384,37 +1353,52 @@
       "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401926113",
       "home_team": "Furman Paladins",
-      "away_team": "Clinton Golden Bears"
+      "away_team": "Clinton Golden Bears",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
-      "id": "401925897",
+      "id": "401925890",
       "date": "2026-11-21",
-      "label": "UNC Wilmington Seahawks @ Norfolk State Spartans",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925897",
-      "home_team": "Norfolk State Spartans",
-      "away_team": "UNC Wilmington Seahawks"
+      "label": "Justice Lions @ Northern Colorado Bears",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925890",
+      "home_team": "Northern Colorado Bears",
+      "away_team": "Justice Lions",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
-      "id": "401911023",
+      "id": "401922048",
       "date": "2026-11-21",
-      "label": "Maine Black Bears @ Massachusetts Minutemen",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911023",
-      "home_team": "Massachusetts Minutemen",
-      "away_team": "Maine Black Bears"
+      "label": "Longwood Lancers @ East Tennessee State Buccaneers",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401922048",
+      "home_team": "East Tennessee State Buccaneers",
+      "away_team": "Longwood Lancers",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     },
     {
-      "id": "401909517",
+      "id": "401921183",
       "date": "2026-11-21",
-      "label": "Coppin State Eagles @ Georgetown Hoyas",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909517",
-      "home_team": "Georgetown Hoyas",
-      "away_team": "Coppin State Eagles"
+      "label": "Pennsylvania Quakers @ La Salle Explorers",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921183",
+      "home_team": "La Salle Explorers",
+      "away_team": "Pennsylvania Quakers",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
+    },
+    {
+      "id": "401917918",
+      "date": "2026-11-21",
+      "label": "Central Arkansas Bears @ Jacksonville Dolphins",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401917918",
+      "home_team": "Jacksonville Dolphins",
+      "away_team": "Central Arkansas Bears",
+      "pdf_checked_at": "2026-11-21T23:25:21.269646+00:00"
     }
   ]
 }
