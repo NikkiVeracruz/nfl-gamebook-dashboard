@@ -120,9 +120,10 @@ def main():
     except (FileNotFoundError,ValueError):pass
     for slug,game in games.items():
         old=previous.get(slug,{})
-        # Always recheck the actual game page; do not trust cached PDF links.
+        if old.get("pdf_url") and is_official(old["pdf_url"]) and verify_pdf(session,old["pdf_url"]):
+            game["pdf_url"]=old["pdf_url"];continue
         try:
-            html=get(session,game["game_url"])
+            html=get(session,game["game_url"]+"?tab=recap")
             text=BeautifulSoup(html,"html.parser").get_text(" ",strip=True)
             if not re.search(r"\\bFinal(?:/OT|/\\dOT)?\\b",text,re.I):continue
             pdf=gamebook_link(html,game["game_url"])
