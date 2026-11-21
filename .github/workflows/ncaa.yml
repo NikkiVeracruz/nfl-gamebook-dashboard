@@ -17,8 +17,10 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install requests
+      - run: pip install requests pypdf
       - run: python ncaa_monitor.py
+      - name: Search and verify official NCAA gamebooks
+        run: python ncaa_pdf_discovery.py
       - name: Publish NCAA feeds and archives
         run: |
           if [[ -n "$(git status --porcelain ncaaf/ ncaamb/ ncaawb/)" ]]; then
