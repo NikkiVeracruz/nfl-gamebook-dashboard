@@ -1,7 +1,22 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T23:39:56.787795+00:00",
+  "updated_at": "2026-11-21T23:44:16.953973+00:00",
   "games": [
+    {
+      "id": "401856746",
+      "date": "2026-11-21",
+      "label": "Chattanooga Mocs @ Alabama Crimson Tide",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401856746",
+      "home_team": "Alabama Crimson Tide",
+      "away_team": "Chattanooga Mocs",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2",
+      "pdf_url": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/rolltide.com/stats/football/2026/pdf/20261121040729-Alabama%2047%2C%20Chattanooga%200.pdf",
+      "pdf_source": "Verified PDF content: teams and game date"
+    },
     {
       "id": "401858302",
       "date": "2026-11-22",
@@ -204,12 +219,14 @@
       "id": "401867844",
       "date": "2026-11-21",
       "label": "Yale Bulldogs @ Harvard Crimson",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867844",
       "home_team": "Harvard Crimson",
       "away_team": "Yale Bulldogs",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401856749",
@@ -221,7 +238,8 @@
       "home_team": "Ole Miss Rebels",
       "away_team": "Wofford Terriers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401858533",
@@ -233,7 +251,8 @@
       "home_team": "Purdue Boilermakers",
       "away_team": "Wisconsin Badgers",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401868039",
@@ -245,7 +264,8 @@
       "home_team": "Richmond Spiders",
       "away_team": "William & Mary Tribe",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401871080",
@@ -257,7 +277,8 @@
       "home_team": "Liberty Flames",
       "away_team": "Western Kentucky Hilltoppers",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401868208",
@@ -269,7 +290,8 @@
       "home_team": "Lindenwood Lions",
       "away_team": "Western Illinois Leathernecks",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401868244",
@@ -281,7 +303,8 @@
       "home_team": "West Georgia Wolves",
       "away_team": "West Florida Argonauts",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401860920",
@@ -304,7 +327,8 @@
       "home_team": "Georgia Tech Yellow Jackets",
       "away_team": "Wake Forest Demon Deacons",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401867927",
@@ -316,7 +340,8 @@
       "home_team": "Stonehill Skyhawks",
       "away_team": "Wagner Seahawks",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401856748",
@@ -328,7 +353,8 @@
       "home_team": "Florida Gators",
       "away_team": "Vanderbilt Commodores",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401868167",
@@ -340,7 +366,8 @@
       "home_team": "Weber State Wildcats",
       "away_team": "Utah Tech Trailblazers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401868294",
@@ -885,7 +912,7 @@
       "id": "401856754",
       "date": "2026-11-21",
       "label": "LSU Tigers @ Tennessee Volunteers",
-      "status": "End of Period",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856754",
       "home_team": "Tennessee Volunteers",
@@ -1230,18 +1257,6 @@
       "subdivision": "FCS"
     },
     {
-      "id": "401856746",
-      "date": "2026-11-21",
-      "label": "Chattanooga Mocs @ Alabama Crimson Tide",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401856746",
-      "home_team": "Alabama Crimson Tide",
-      "away_team": "Chattanooga Mocs",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
-    },
-    {
       "id": "401862832",
       "date": "2026-11-21",
       "label": "Charlotte 49ers @ Tulsa Golden Hurricane",
@@ -1300,7 +1315,7 @@
       "id": "401868069",
       "date": "2026-11-21",
       "label": "Austin Peay Governors @ Central Arkansas Bears",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868069",
       "home_team": "Central Arkansas Bears",
