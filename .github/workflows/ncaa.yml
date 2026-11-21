@@ -11,7 +11,7 @@ concurrency:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -19,8 +19,12 @@ jobs:
           python-version: "3.12"
       - run: pip install requests pypdf
       - run: python ncaa_monitor.py
-      - name: Search and verify official NCAA gamebooks
-        run: python ncaa_pdf_discovery.py
+      - name: Search NCAA football gamebooks (up to 24)
+        run: python ncaa_pdf_discovery.py --league ncaaf
+      - name: Search NCAA mens basketball gamebooks (up to 24)
+        run: python ncaa_pdf_discovery.py --league ncaamb
+      - name: Search NCAA womens basketball gamebooks (up to 24)
+        run: python ncaa_pdf_discovery.py --league ncaawb
       - name: Publish NCAA feeds and archives
         run: |
           if [[ -n "$(git status --porcelain ncaaf/ ncaamb/ ncaawb/)" ]]; then
