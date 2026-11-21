@@ -1,12 +1,13 @@
 {
-  "window_label": "Nov 19, 2026 \u2013 Nov 25, 2026 (ET)",
+  "window_label": "Nov 19, 2026 – Nov 25, 2026 (ET)",
   "updated_at": "2026-11-21T04:24:13.869672+00:00",
   "games": [
     {
       "slug": "colts-at-texans-2026-reg-11",
       "date": "2026-11-19",
       "label": "Watch Replay, Colts 3, Texans 26, Thursday, November 19th",
-      "game_url": "https://www.nfl.com/games/colts-at-texans-2026-reg-11"
+      "game_url": "https://www.nfl.com/games/colts-at-texans-2026-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1795147937/gamecenter/ab997d97-4feb-11f1-abca-2c54536568a9.pdf"
     },
     {
       "slug": "buccaneers-at-lions-2026-reg-11",
