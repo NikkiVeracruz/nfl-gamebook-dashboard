@@ -1,6 +1,6 @@
 {
   "league": "NCAAWB",
-  "updated_at": "2026-11-21T23:47:19.626521+00:00",
+  "updated_at": "2026-11-21T23:49:33.704712+00:00",
   "games": [
     {
       "id": "401913020",
@@ -1031,8 +1031,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913019",
       "home_team": "Ohio Bobcats",
       "away_team": "Xavier Musketeers",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401909687",
@@ -1043,8 +1043,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401909687",
       "home_team": "Brown Bears",
       "away_team": "UMBC Retrievers",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401913710",
@@ -1055,8 +1055,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913710",
       "home_team": "Florida State Seminoles",
       "away_team": "UCF Knights",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401923341",
@@ -1067,8 +1067,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923341",
       "home_team": "UTEP Miners",
       "away_team": "Texas Southern Tigers",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401918435",
@@ -1079,8 +1079,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918435",
       "home_team": "Nicholls Colonels",
       "away_team": "Tarleton State Texans",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401915767",
@@ -1091,8 +1091,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915767",
       "home_team": "Duquesne Dukes",
       "away_team": "Stony Brook Seawolves",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401916166",
@@ -1103,8 +1103,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401916166",
       "home_team": "Mount St. Mary's Mountaineers",
       "away_team": "St. Mary's (MD) Seahawks",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401927097",
@@ -1115,8 +1115,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927097",
       "home_team": "Tennessee Tech Golden Eagles",
       "away_team": "South Carolina Upstate Spartans",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401913038",
@@ -1127,8 +1127,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913038",
       "home_team": "Providence Friars",
       "away_team": "South Carolina Gamecocks",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401918036",
@@ -1149,8 +1149,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919450",
       "home_team": "Long Island University Sharks",
       "away_team": "Saint Peter's Peacocks",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401919439",
@@ -1161,8 +1161,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919439",
       "home_team": "Detroit Mercy Titans",
       "away_team": "Sacred Heart Pioneers",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401918944",
@@ -1173,8 +1173,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918944",
       "home_team": "Texas Tech Lady Raiders",
       "away_team": "Purdue Boilermakers",
-      "pdf_checked_at": "2026-11-21T23:44:16.017831+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401927038",
