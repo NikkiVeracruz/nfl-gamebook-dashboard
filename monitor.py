@@ -33,7 +33,7 @@ def get(session,url):
     return r.text
 
 def parse_date(text,season):
-    m=re.search(r"\\b("+"|".join(MONTHS)+r")\\s+(\\d{1,2})(?:,?\\s+(20\\d{2}))?",text,re.I)
+    m=re.search(r"\b("+"|".join(MONTHS)+r")\s+(\d{1,2})(?:,?\s+(20\d{2}))?",text,re.I)
     if not m:return None
     month=next(i for i,x in enumerate(MONTHS,1) if x.lower()==m.group(1).lower())
     year=int(m.group(3)) if m.group(3) else season+(month<=2)
@@ -78,7 +78,7 @@ def gamebook_link(html,page):
             if is_official(href):return href
     # NFL sometimes embeds the URL in page data rather than in an anchor.
     raw=html.replace("\\u002F","/").replace("\\/","/")
-    candidates=re.findall(r'https?://(?:static\\.www\\.nfl\\.com|www\\.nfl\\.com)/[^"\\s<>]+?\\.pdf(?:\\?[^"\\s<>]*)?',raw,re.I)
+    candidates=re.findall(r'https?://(?:static\.www\.nfl\.com|www\.nfl\.com)/[^"\s<>]+?\.pdf(?:\?[^"\s<>]*)?',raw,re.I)
     for url in candidates:
         if is_official(url) and ("gamebook" in url.lower() or "gamecenter" in url.lower()):
             return url
@@ -102,7 +102,7 @@ def send_email(game):
     msg=EmailMessage()
     msg["Subject"]="NFL gamebook available: "+game["label"]
     msg["From"]=user;msg["To"]=recipient
-    msg.set_content("Official NFL gamebook published:\\n"+game["label"]+"\\n"+game["pdf_url"]+"\\n\\nDashboard: https://nikkiveracruz.github.io/nfl-gamebook-dashboard/")
+    msg.set_content("Official NFL gamebook published:\n"+game["label"]+"\n"+game["pdf_url"]+"\n\nDashboard: https://nikkiveracruz.github.io/nfl-gamebook-dashboard/")
     try:
         with smtplib.SMTP(host,int(os.getenv("SMTP_PORT","587")),timeout=30) as server:
             server.starttls();server.login(user,password);server.send_message(msg)
@@ -137,8 +137,8 @@ def main():
         except requests.RequestException as e:LOG.warning("Game page fetch failed %s: %s",slug,e)
     # Prevent state from growing indefinitely.
     state["notified"]={slug:ts for slug,ts in state["notified"].items() if slug in games}
-    STATE.write_text(json.dumps(state,indent=2,sort_keys=True)+"\\n")
-    OUT.write_text(json.dumps({"window_label":f"{start:%b %d, %Y} – {(end-timedelta(days=1)):%b %d, %Y} (ET)","updated_at":datetime.now(timezone.utc).isoformat(),"games":sorted(games.values(),key=lambda g:(g["date"],g["label"]))},indent=2)+"\\n")
+    STATE.write_text(json.dumps(state,indent=2,sort_keys=True)+"\n")
+    OUT.write_text(json.dumps({"window_label":f"{start:%b %d, %Y} – {(end-timedelta(days=1)):%b %d, %Y} (ET)","updated_at":datetime.now(timezone.utc).isoformat(),"games":sorted(games.values(),key=lambda g:(g["date"],g["label"]))},indent=2)+"\n")
     if not games:LOG.warning("No games discovered. Check NFL schedule markup before relying on this monitor.")
 
 if __name__=="__main__":main()
