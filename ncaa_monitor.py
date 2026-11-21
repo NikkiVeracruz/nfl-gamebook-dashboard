@@ -46,8 +46,9 @@ def main():
      if league=="NCAAF":
       groups=event.get("groups",{})
       game["subdivision"]="FBS" if group==80 else "FCS"
-     recent[event_id]=game
      stored[event_id]={**stored.get(event_id,{}),**game}
+     # Preserve previously verified reports in the live feed as well.
+     recent[event_id]=stored[event_id].copy()
    time.sleep(.3)
   stamp=datetime.datetime.now(datetime.timezone.utc).isoformat()
   live.write_text(json.dumps({"league":league,"updated_at":stamp,"games":sorted(recent.values(),key=lambda g:g["date"],reverse=True)},indent=2)+"\n")
