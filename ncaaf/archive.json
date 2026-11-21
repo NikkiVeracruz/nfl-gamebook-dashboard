@@ -1,6 +1,6 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T23:47:27.918818+00:00",
+  "updated_at": "2026-11-21T23:49:33.265197+00:00",
   "games": [
     {
       "id": "401858302",
@@ -210,8 +210,8 @@
       "home_team": "Harvard Crimson",
       "away_team": "Yale Bulldogs",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401856749",
@@ -223,8 +223,8 @@
       "home_team": "Ole Miss Rebels",
       "away_team": "Wofford Terriers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401858533",
@@ -236,8 +236,8 @@
       "home_team": "Purdue Boilermakers",
       "away_team": "Wisconsin Badgers",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401868039",
@@ -249,8 +249,8 @@
       "home_team": "Richmond Spiders",
       "away_team": "William & Mary Tribe",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401871080",
@@ -262,8 +262,8 @@
       "home_team": "Liberty Flames",
       "away_team": "Western Kentucky Hilltoppers",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401868208",
@@ -275,8 +275,8 @@
       "home_team": "Lindenwood Lions",
       "away_team": "Western Illinois Leathernecks",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401868244",
@@ -288,8 +288,8 @@
       "home_team": "West Georgia Wolves",
       "away_team": "West Florida Argonauts",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401860920",
@@ -312,8 +312,8 @@
       "home_team": "Georgia Tech Yellow Jackets",
       "away_team": "Wake Forest Demon Deacons",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401867927",
@@ -325,8 +325,8 @@
       "home_team": "Stonehill Skyhawks",
       "away_team": "Wagner Seahawks",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401856748",
@@ -338,8 +338,8 @@
       "home_team": "Florida Gators",
       "away_team": "Vanderbilt Commodores",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401868167",
@@ -351,8 +351,8 @@
       "home_team": "Weber State Wildcats",
       "away_team": "Utah Tech Trailblazers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401868294",
@@ -375,8 +375,8 @@
       "home_team": "Southeast Missouri State Redhawks",
       "away_team": "UT Martin Skyhawks",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2"
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401869929",
