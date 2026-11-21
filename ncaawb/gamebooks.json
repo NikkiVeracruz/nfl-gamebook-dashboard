@@ -1,6 +1,6 @@
 {
   "league": "NCAAWB",
-  "updated_at": "2026-11-21T22:49:07.991199+00:00",
+  "updated_at": "2026-11-21T23:25:17.779247+00:00",
   "games": [
     {
       "id": "401929102",
@@ -1033,51 +1033,10 @@
       "away_team": "Alabama Crimson Tide"
     },
     {
-      "id": "401929020",
-      "date": "2026-11-21",
-      "label": "Kent State Golden Flashes @ Cleveland State Vikings",
-      "status": "In Progress",
-      "state": "in",
-      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401929020",
-      "home_team": "Cleveland State Vikings",
-      "away_team": "Kent State Golden Flashes"
-    },
-    {
-      "id": "401923486",
-      "date": "2026-11-21",
-      "label": "Incarnate Word Cardinals @ Texas A&M Aggies",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923486",
-      "home_team": "Texas A&M Aggies",
-      "away_team": "Incarnate Word Cardinals"
-    },
-    {
-      "id": "401923341",
-      "date": "2026-11-21",
-      "label": "Texas Southern Tigers @ UTEP Miners",
-      "status": "In Progress",
-      "state": "in",
-      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923341",
-      "home_team": "UTEP Miners",
-      "away_team": "Texas Southern Tigers"
-    },
-    {
-      "id": "401916155",
-      "date": "2026-11-21",
-      "label": "Northern Colorado Bears @ BYU Cougars",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401916155",
-      "home_team": "BYU Cougars",
-      "away_team": "Northern Colorado Bears",
-      "pdf_checked_at": "2026-11-21T22:54:44.110924+00:00"
-    },
-    {
       "id": "401918036",
       "date": "2026-11-21",
       "label": "Siena Saints @ Mercyhurst Lakers",
-      "status": "Halftime",
+      "status": "End of Period",
       "state": "in",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918036",
       "home_team": "Mercyhurst Lakers",
@@ -1087,7 +1046,7 @@
       "id": "401916189",
       "date": "2026-11-21",
       "label": "Cincinnati Bearcats @ UNLV Lady Rebels",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401916189",
       "home_team": "UNLV Lady Rebels",
@@ -1097,11 +1056,21 @@
       "id": "401915669",
       "date": "2026-11-21",
       "label": "Iona Gaels @ Bucknell Bison",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915669",
       "home_team": "Bucknell Bison",
       "away_team": "Iona Gaels"
+    },
+    {
+      "id": "401915965",
+      "date": "2026-11-21",
+      "label": "Grand Canyon Lopes @ SMU Mustangs",
+      "status": "In Progress",
+      "state": "in",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915965",
+      "home_team": "SMU Mustangs",
+      "away_team": "Grand Canyon Lopes"
     },
     {
       "id": "401913038",
@@ -1111,8 +1080,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913038",
       "home_team": "Providence Friars",
-      "away_team": "South Carolina Gamecocks",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "South Carolina Gamecocks"
     },
     {
       "id": "401918918",
@@ -1122,8 +1090,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918918",
       "home_team": "Maryland Terrapins",
-      "away_team": "Morgan State Lady Bears",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Morgan State Lady Bears"
     },
     {
       "id": "401918678",
@@ -1133,7 +1100,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918678",
       "home_team": "George Mason Patriots",
-      "away_team": "James Madison Dukes"
+      "away_team": "James Madison Dukes",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
     },
     {
       "id": "401913710",
@@ -1143,8 +1111,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913710",
       "home_team": "Florida State Seminoles",
-      "away_team": "UCF Knights",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "UCF Knights"
     },
     {
       "id": "401925994",
@@ -1154,7 +1121,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401925994",
       "home_team": "Binghamton Bearcats",
-      "away_team": "Daemen Wildcats"
+      "away_team": "Daemen Wildcats",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
     },
     {
       "id": "401919450",
@@ -1164,8 +1132,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919450",
       "home_team": "Long Island University Sharks",
-      "away_team": "Saint Peter's Peacocks",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Saint Peter's Peacocks"
     },
     {
       "id": "401919439",
@@ -1175,8 +1142,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919439",
       "home_team": "Detroit Mercy Titans",
-      "away_team": "Sacred Heart Pioneers",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Sacred Heart Pioneers"
     },
     {
       "id": "401918798",
@@ -1186,8 +1152,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918798",
       "home_team": "UTSA Roadrunners",
-      "away_team": "North Dakota State Bison",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "North Dakota State Bison"
     },
     {
       "id": "401916197",
@@ -1197,8 +1162,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401916197",
       "home_team": "Niagara Purple Eagles",
-      "away_team": "Le Moyne Dolphins",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Le Moyne Dolphins"
     },
     {
       "id": "401916166",
@@ -1208,8 +1172,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401916166",
       "home_team": "Mount St. Mary's Mountaineers",
-      "away_team": "St. Mary's (MD) Seahawks",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "St. Mary's (MD) Seahawks"
     },
     {
       "id": "401915767",
@@ -1219,8 +1182,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915767",
       "home_team": "Duquesne Dukes",
-      "away_team": "Stony Brook Seawolves",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Stony Brook Seawolves"
     },
     {
       "id": "401913758",
@@ -1240,8 +1202,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913019",
       "home_team": "Ohio Bobcats",
-      "away_team": "Xavier Musketeers",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Xavier Musketeers"
     },
     {
       "id": "401909687",
@@ -1251,8 +1212,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401909687",
       "home_team": "Brown Bears",
-      "away_team": "UMBC Retrievers",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "UMBC Retrievers"
     },
     {
       "id": "401927997",
@@ -1262,8 +1222,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927997",
       "home_team": "East Tennessee State Buccaneers",
-      "away_team": "Kennesaw State Owls",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Kennesaw State Owls"
     },
     {
       "id": "401929143",
@@ -1283,8 +1242,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927840",
       "home_team": "San Jos\u00e9 State Spartans",
-      "away_team": "Long Beach State Beach",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Long Beach State Beach"
     },
     {
       "id": "401927097",
@@ -1294,8 +1252,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927097",
       "home_team": "Tennessee Tech Golden Eagles",
-      "away_team": "South Carolina Upstate Spartans",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "South Carolina Upstate Spartans"
     },
     {
       "id": "401927038",
@@ -1305,8 +1262,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927038",
       "home_team": "Wofford Terriers",
-      "away_team": "Presbyterian Blue Hose",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Presbyterian Blue Hose"
     },
     {
       "id": "401923003",
@@ -1316,7 +1272,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923003",
       "home_team": "Houston Cougars",
-      "away_team": "Houston Christian Huskies"
+      "away_team": "Houston Christian Huskies",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
     },
     {
       "id": "401919969",
@@ -1326,8 +1283,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919969",
       "home_team": "Northwestern Wildcats",
-      "away_team": "Northern Illinois Huskies",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Northern Illinois Huskies"
     },
     {
       "id": "401919683",
@@ -1337,8 +1293,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919683",
       "home_team": "Evansville Purple Aces",
-      "away_team": "Lindenwood Lions",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Lindenwood Lions"
     },
     {
       "id": "401919627",
@@ -1348,8 +1303,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919627",
       "home_team": "Monmouth Hawks",
-      "away_team": "Maryland Eastern Shore Hawks",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Maryland Eastern Shore Hawks"
     },
     {
       "id": "401919467",
@@ -1359,8 +1313,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919467",
       "home_team": "American University Eagles",
-      "away_team": "La Salle Explorers",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "La Salle Explorers"
     },
     {
       "id": "401918435",
@@ -1370,8 +1323,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918435",
       "home_team": "Nicholls Colonels",
-      "away_team": "Tarleton State Texans",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Tarleton State Texans"
     },
     {
       "id": "401913887",
@@ -1381,7 +1333,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913887",
       "home_team": "Queens University Royals",
-      "away_team": "Coker Cobras"
+      "away_team": "Coker Cobras",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
     },
     {
       "id": "401913802",
@@ -1391,7 +1344,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913802",
       "home_team": "UAlbany Great Danes",
-      "away_team": "Cornell Big Red"
+      "away_team": "Cornell Big Red",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
     },
     {
       "id": "401913749",
@@ -1401,7 +1355,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913749",
       "home_team": "Pittsburgh Panthers",
-      "away_team": "Canisius Golden Griffins"
+      "away_team": "Canisius Golden Griffins",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
     },
     {
       "id": "401913009",
@@ -1411,7 +1366,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913009",
       "home_team": "Rutgers Scarlet Knights",
-      "away_team": "Delaware State Hornets"
+      "away_team": "Delaware State Hornets",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
     },
     {
       "id": "401911758",
@@ -1421,8 +1377,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401911758",
       "home_team": "Western Illinois Leathernecks",
-      "away_team": "Loyola Chicago Ramblers",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Loyola Chicago Ramblers"
     },
     {
       "id": "401918944",
@@ -1432,8 +1387,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918944",
       "home_team": "Texas Tech Lady Raiders",
-      "away_team": "Purdue Boilermakers",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "Purdue Boilermakers"
     },
     {
       "id": "401920277",
@@ -1443,8 +1397,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401920277",
       "home_team": "New Mexico Lobos",
-      "away_team": "New Mexico State Aggies",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "New Mexico State Aggies"
     },
     {
       "id": "401919413",
@@ -1454,7 +1407,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919413",
       "home_team": "Oregon State Beavers",
-      "away_team": "Fairfield Stags"
+      "away_team": "Fairfield Stags",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
     },
     {
       "id": "401913790",
@@ -1464,8 +1418,7 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913790",
       "home_team": "Marquette Golden Eagles",
-      "away_team": "NJIT Highlanders",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "away_team": "NJIT Highlanders"
     },
     {
       "id": "401913049",
@@ -1475,7 +1428,19 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913049",
       "home_team": "DePaul Blue Demons",
-      "away_team": "IU Indianapolis Jaguars"
+      "away_team": "IU Indianapolis Jaguars",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
+    },
+    {
+      "id": "401929020",
+      "date": "2026-11-21",
+      "label": "Kent State Golden Flashes @ Cleveland State Vikings",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401929020",
+      "home_team": "Cleveland State Vikings",
+      "away_team": "Kent State Golden Flashes",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
     },
     {
       "id": "401923486",
@@ -1485,17 +1450,29 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923486",
       "home_team": "Texas A&M Aggies",
-      "away_team": "Incarnate Word Cardinals"
+      "away_team": "Incarnate Word Cardinals",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
     },
     {
-      "id": "401915965",
+      "id": "401923341",
       "date": "2026-11-21",
-      "label": "Grand Canyon Lopes @ SMU Mustangs",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915965",
-      "home_team": "SMU Mustangs",
-      "away_team": "Grand Canyon Lopes"
+      "label": "Texas Southern Tigers @ UTEP Miners",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923341",
+      "home_team": "UTEP Miners",
+      "away_team": "Texas Southern Tigers",
+      "pdf_checked_at": "2026-11-21T23:25:18.113327+00:00"
+    },
+    {
+      "id": "401916155",
+      "date": "2026-11-21",
+      "label": "Northern Colorado Bears @ BYU Cougars",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401916155",
+      "home_team": "BYU Cougars",
+      "away_team": "Northern Colorado Bears"
     }
   ]
 }
