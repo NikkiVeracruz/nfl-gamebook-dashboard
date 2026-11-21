@@ -17,7 +17,7 @@ def main():
         return
     session=requests.Session();session.headers.update(HEADERS)
     for season in {start.year,start.year-1}:
-        for slug,g in discover(session,season,start,end).items():
+        for slug,g in discover(session,season,start.isoformat(),end.isoformat()).items():
             old=records.get(slug,{})
             item={**old,**g}
             if not item.get("pdf_url") and g["date"]<=date.today().isoformat():
