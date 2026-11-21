@@ -51,7 +51,7 @@ FOOTBALL_SOURCES={
 }
 # Bump when adding a new source pattern; previously checked games get one
 # immediate retry, then normal cooldown applies again.
-DISCOVERY_VERSION="official-schedule-boxscore-v3"
+DISCOVERY_VERSION="automatic-athletics-sites-v4"
 PRIORITY_GAME_IDS=set()
 PAGE_CACHE={}
 def official_page_candidates(page,game):
@@ -108,42 +108,70 @@ def game_boxscore_candidates(game,league):
   except requests.RequestException:continue
  return urls[:8]
 
+# Automatically resolve additional schools through search results, then follow
+# only their athletics schedule/box-score pages. No inferred school domains.
+SCHOOL_PAGES={}
+MAX_SCHOOL_LOOKUPS=10
+school_lookups=0
+def athletics_sources(team,league):
+ global school_lookups
+ if team in SCHOOL_PAGES:return SCHOOL_PAGES[team]
+ sources=[FOOTBALL_SOURCES[team]] if league=="ncaaf" and team in FOOTBALL_SOURCES else []
+ if school_lookups>=MAX_SCHOOL_LOOKUPS:
+  return sources
+ school_lookups+=1
+ sport="football" if league=="ncaaf" else "basketball"
+ query=f'"{team}" official athletics {sport} schedule 2026'
+ try:
+  response=session.get("https://www.bing.com/search",params={"q":query,"format":"rss"},timeout=8)
+  response.raise_for_status()
+  root=ET.fromstring(response.content)
+  for item in root.findall(".//item"):
+   url=item.findtext("link","").strip()
+   parsed=urllib.parse.urlparse(url)
+   host=(parsed.hostname or "").lower()
+   path=parsed.path.lower()
+   if parsed.scheme!="https" or any(host==x or host.endswith("."+x) for x in BAD_HOSTS):continue
+   if not any(x in path for x in ("/sports/football/","/sports/football","/sports/mens-basketball/","/sports/womens-basketball/")):continue
+   if not any(x in path for x in ("schedule","stats","boxscore","media-center")):continue
+   if url not in sources:sources.append(url)
+   if len(sources)>=3:break
+ except (requests.RequestException,ET.ParseError):pass
+ SCHOOL_PAGES[team]=sources
+ return sources
+
 def schedule_boxscore_candidates(game,league):
- """Follow official athletics schedule entries into game-specific stats pages."""
+ """Find official school schedules and follow matching game box-score links."""
  if league!="ncaaf":return []
- urls=[]
+ pages=[]
  teams=(game.get("home_team",""),game.get("away_team",""))
- date=game.get("date","")
  for team in teams:
-  source=FOOTBALL_SOURCES.get(team)
-  if not source:continue
-  try:
-   resp=session.get(source,timeout=9)
-   resp.raise_for_status()
-   soup=BeautifulSoup(resp.text[:1200000],"html.parser")
-   # Prefer links in a game row containing the opponent and date.
-   opponent=teams[1] if team==teams[0] else teams[0]
-   opponent_terms=words(opponent)
-   for a in soup.select('a[href*="/sports/football/stats/"],a[href*="/boxscore/"]'):
-    href=urllib.parse.urljoin(resp.url,a["href"])
-    context=a.parent.parent.get_text(" ",strip=True).lower()[:500] if a.parent and a.parent.parent else ""
-    slug=urllib.parse.urlparse(href).path.lower()
-    if not (opponent_terms & words(context+" "+slug)):continue
-    if "/boxscore/" in slug and href not in urls:urls.append(href)
-  except requests.RequestException:continue
+  opponent=teams[1] if team==teams[0] else teams[0]
+  for source in athletics_sources(team,league):
+   if time.monotonic()-started>MAX_SECONDS-20:break
+   try:
+    resp=session.get(source,timeout=8)
+    resp.raise_for_status()
+    soup=BeautifulSoup(resp.text[:1200000],"html.parser")
+    for a in soup.select('a[href*="/sports/football/stats/"],a[href*="/boxscore/"]'):
+     href=urllib.parse.urljoin(resp.url,a["href"])
+     path=urllib.parse.urlparse(href).path.lower()
+     context=a.parent.parent.get_text(" ",strip=True)[:500] if a.parent and a.parent.parent else ""
+     if "/boxscore/" in path and words(opponent)&words(context+" "+path) and href not in pages:pages.append(href)
+   except requests.RequestException:continue
  results=[]
- for page in urls[:4]:
+ for page in pages[:3]:
+  if time.monotonic()-started>MAX_SECONDS-15:break
   try:
-   resp=session.get(page,timeout=10)
+   resp=session.get(page,timeout=9)
    resp.raise_for_status()
    soup=BeautifulSoup(resp.text[:1400000],"html.parser")
    for a in soup.select("a[href]"):
     href=urllib.parse.urljoin(resp.url,a["href"])
     label=a.get_text(" ",strip=True).lower()
-    path=urllib.parse.urlparse(href).path.lower()
-    if (".pdf" in path or "view pdf" in label) and href.startswith("https://") and href not in results:results.append(href)
+    if (".pdf" in urllib.parse.urlparse(href).path.lower() or "view pdf" in label) and href.startswith("https://") and href not in results:results.append(href)
   except requests.RequestException:continue
- return results[:12]
+ return results[:10]
 
 def candidates(game,league):
  """Search for postgame books and follow links on official athletics pages."""
@@ -243,7 +271,7 @@ def main():
   a=read(archive);c=read(live)
   current={str(g.get("id")):g for g in c.get("games",[])}
   games=a.get("games",[])
-  games.sort(key=lambda g:(str(g.get("id")) in PRIORITY_GAME_IDS and g.get("pdf_discovery_version")!=DISCOVERY_VERSION,g.get("date","")),reverse=True)
+  games.sort(key=lambda g:(bool(str(g.get("id")) in PRIORITY_GAME_IDS),g.get("pdf_checked_at") or "",g.get("date","")))
   for game in games:
    if checked>=MAX_GAMES or time.monotonic()-started>MAX_SECONDS:break
    if game.get("pdf_url") or game.get("state") not in ("post","final") and "final" not in str(game.get("status","")).lower():continue
