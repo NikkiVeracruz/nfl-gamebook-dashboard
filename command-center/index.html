@@ -41,7 +41,7 @@ const historyFeeds={};
 function historySeason(g,l){const year=Number(String(g.date||"").slice(0,4)),month=Number(String(g.date||"").slice(5,7));if(!year)return "Unknown";return ["NFL","NBA","NHL"].includes(l)?(month>=7?year:year-1)+"–"+String((month>=7?year+1:year)%100).padStart(2,"0"):String(year)}
 function historyRender(){
  const league=$("history-league").value,query=$("history-search").value.trim().toLowerCase(),season=$("history-season").value,status=$("history-status").value;
- const holder=$("history-results");holder.replaceChildren();let found=[];
+ const holder=$("history-results");holder.replaceChildren();if(!query){$("history-count").textContent="Enter a team or matchup to search the archive.";return}let found=[];
  for(const cfg of config){if(league!=="all"&&league!==cfg.id)continue;for(const g of historyFeeds[cfg.id]||[]){const links=reportLinks(g,cfg.id);if(query&&!String(g.label||"").toLowerCase().includes(query))continue;if(season!=="all"&&historySeason(g,cfg.id)!==season)continue;if(status==="available"&&!links.length||status==="missing"&&links.length)continue;found.push({g,league:cfg.id,links})}}
  found.sort((a,b)=>String(b.g.date).localeCompare(String(a.g.date)));
  $("history-count").textContent=found.length+" archived games"+(found.length>200?" · newest 200 shown":"");
