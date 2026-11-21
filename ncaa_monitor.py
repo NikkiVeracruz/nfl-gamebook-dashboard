@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Forward-only NCAA scoreboard monitor. Do not label ESPN summaries as official gamebooks."""
-import json,datetime,requests,time
+import argparse,json,datetime,requests,time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 SPORTS={"NCAAF":"football/college-football","NCAAMB":"basketball/mens-college-basketball","NCAAWB":"basketball/womens-college-basketball"}
@@ -11,7 +11,11 @@ def read(path,default):
  try:return json.loads(path.read_text())
  except (FileNotFoundError,ValueError):return default
 def main():
+ parser=argparse.ArgumentParser()
+ parser.add_argument("--league",choices=tuple(SPORTS),required=True)
+ selected=parser.parse_args().league
  for league,sport in SPORTS.items():
+  if league!=selected:continue
   folder=ROOT/league.lower();folder.mkdir(exist_ok=True)
   live=folder/"gamebooks.json";archive=folder/"archive.json"
   old=read(archive,{"games":[]});stored={str(g["id"]):g for g in old.get("games",[]) if g.get("id") and g.get("home_team","").strip().lower() not in {"","tbd","tba","unknown"} and g.get("away_team","").strip().lower() not in {"","tbd","tba","unknown"}}
