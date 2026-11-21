@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install requests pypdf
+      - run: pip install requests pypdf beautifulsoup4
       - name: Refresh schedule
         run: python ncaa_monitor.py --league "${{ inputs.sport }}"
       - name: Search official gamebook PDFs (up to 24)
