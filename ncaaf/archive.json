@@ -1,6 +1,6 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T23:30:38.866472+00:00",
+  "updated_at": "2026-11-21T23:36:36.863581+00:00",
   "games": [
     {
       "id": "401858302",
@@ -444,7 +444,9 @@
       "home_team": "Mississippi State Bulldogs",
       "away_team": "Tennessee Tech Golden Eagles",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00",
+      "pdf_url": "https://static.hailstate.com/custompages/stats/fb/2026/ms1121.PDF",
+      "pdf_source": "Verified PDF content: teams and game date"
     },
     {
       "id": "401868193",
@@ -456,7 +458,7 @@
       "home_team": "Gardner-Webb Runnin' Bulldogs",
       "away_team": "Tennessee State Tigers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401868234",
@@ -479,7 +481,7 @@
       "home_team": "Boston College Eagles",
       "away_team": "Syracuse Orange",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401868283",
@@ -491,7 +493,7 @@
       "home_team": "Valparaiso Beacons",
       "away_team": "St. Thomas Tommies",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401867881",
@@ -503,7 +505,7 @@
       "home_team": "North Dakota Fighting Hawks",
       "away_team": "Southern Illinois Salukis",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401862833",
@@ -526,7 +528,7 @@
       "home_team": "Illinois State Redbirds",
       "away_team": "South Dakota Coyotes",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401871101",
@@ -560,7 +562,7 @@
       "home_team": "Merrimack Warriors",
       "away_team": "Sacred Heart Pioneers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401858532",
@@ -583,7 +585,7 @@
       "home_team": "Bryant Bulldogs",
       "away_team": "Rhode Island Rams",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401868353",
@@ -618,7 +620,7 @@
       "home_team": "Princeton Tigers",
       "away_team": "Pennsylvania Quakers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401861968",
@@ -641,7 +643,7 @@
       "home_team": "Nebraska Cornhuskers",
       "away_team": "Ohio State Buckeyes",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401858530",
@@ -653,7 +655,7 @@
       "home_team": "Minnesota Golden Gophers",
       "away_team": "Northwestern Wildcats",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401867873",
@@ -665,7 +667,7 @@
       "home_team": "Murray State Racers",
       "away_team": "Northern Iowa Panthers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
     },
     {
       "id": "401864543",
@@ -682,7 +684,7 @@
       "id": "401868128",
       "date": "2026-11-21",
       "label": "Northern Colorado Bears @ Northern Arizona Lumberjacks",
-      "status": "End of Period",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868128",
       "home_team": "Northern Arizona Lumberjacks",
@@ -1090,8 +1092,8 @@
       "id": "401868059",
       "date": "2026-11-21",
       "label": "Eastern Kentucky Colonels @ Abilene Christian Wildcats",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868059",
       "home_team": "Abilene Christian Wildcats",
       "away_team": "Eastern Kentucky Colonels",
