@@ -1,6 +1,6 @@
 {
   "league": "NCAAMB",
-  "updated_at": "2026-11-21T23:30:40.425522+00:00",
+  "updated_at": "2026-11-21T23:36:43.111410+00:00",
   "games": [
     {
       "id": "401929392",
@@ -1195,7 +1195,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401919031",
       "home_team": "Wichita State Shockers",
       "away_team": "New Mexico Lobos",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401923312",
@@ -1206,7 +1206,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401923312",
       "home_team": "New Haven Chargers",
       "away_team": "New Hampshire Wildcats",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401921222",
@@ -1217,7 +1217,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921222",
       "home_team": "Rider Broncs",
       "away_team": "Navy Midshipmen",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401920569",
@@ -1228,7 +1228,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401920569",
       "home_team": "Indiana State Sycamores",
       "away_team": "Middle Tennessee Blue Raiders",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401911023",
@@ -1260,7 +1260,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401922222",
       "home_team": "North Florida Ospreys",
       "away_team": "Little Rock Trojans",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401909719",
@@ -1271,7 +1271,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909719",
       "home_team": "Syracuse Orange",
       "away_team": "Lafayette Leopards",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401921169",
@@ -1282,7 +1282,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921169",
       "home_team": "Cleveland State Vikings",
       "away_team": "Kent State Golden Flashes",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401925890",
@@ -1304,7 +1304,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911199",
       "home_team": "Portland Pilots",
       "away_team": "Fordham Rams",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401927365",
@@ -1315,7 +1315,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401927365",
       "home_team": "Missouri State Bears",
       "away_team": "Drake Bulldogs",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401925756",
@@ -1326,7 +1326,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925756",
       "home_team": "Michigan State Spartans",
       "away_team": "Detroit Mercy Titans",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401920948",
@@ -1337,7 +1337,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401920948",
       "home_team": "Eastern Michigan Eagles",
       "away_team": "Denver Pioneers",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401924722",
@@ -1348,7 +1348,7 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401924722",
       "home_team": "Morgan State Bears",
       "away_team": "Cornell Big Red",
-      "pdf_checked_at": "2026-11-21T22:54:42.505767+00:00"
+      "pdf_checked_at": "2026-11-21T23:36:43.590459+00:00"
     },
     {
       "id": "401909517",
