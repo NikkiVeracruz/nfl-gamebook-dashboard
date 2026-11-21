@@ -2,6 +2,7 @@
 """Bounded, conservative discovery of NCAA official gamebook PDFs.
 Search engine results are candidates only; PDF text must verify both teams and date.
 """
+import argparse
 import datetime as dt
 import io
 import json
@@ -18,7 +19,7 @@ LEAGUES=("ncaaf","ncaamb","ncaawb")
 HEADERS={"User-Agent":"Mozilla/5.0 (compatible; NCAA-official-gamebook-check/1.0)"}
 TODAY=dt.datetime.now(dt.timezone.utc)
 MAX_GAMES=24
-MAX_SECONDS=420
+MAX_SECONDS=195
 started=time.monotonic()
 session=requests.Session()
 session.headers.update(HEADERS)
@@ -87,8 +88,11 @@ def verify(url,game):
   return None
 
 def main():
+ parser=argparse.ArgumentParser()
+ parser.add_argument("--league",choices=LEAGUES,required=True)
+ league=parser.parse_args().league
  checked=0;found=0
- for league in LEAGUES:
+ for league in (league,):
   folder=ROOT/league
   archive=folder/"archive.json";live=folder/"gamebooks.json"
   a=read(archive);c=read(live)
