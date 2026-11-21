@@ -1,6 +1,6 @@
 {
   "league": "NCAAMB",
-  "updated_at": "2026-11-21T22:17:29.139075+00:00",
+  "updated_at": "2026-11-21T22:42:50.102261+00:00",
   "games": [
     {
       "id": "401932055",
@@ -153,16 +153,6 @@
       "away_team": "Wisconsin Stout Blue Devils"
     },
     {
-      "id": "401921208",
-      "date": "2026-11-24",
-      "label": "TBD @ TBD",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921208",
-      "home_team": "TBD",
-      "away_team": "TBD"
-    },
-    {
       "id": "401913102",
       "date": "2026-11-24",
       "label": "Monmouth Hawks @ North Carolina Tar Heels",
@@ -213,16 +203,6 @@
       "away_team": "UNC Greensboro Spartans"
     },
     {
-      "id": "401921663",
-      "date": "2026-11-24",
-      "label": "TBD @ TBD",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921663",
-      "home_team": "TBD",
-      "away_team": "TBD"
-    },
-    {
       "id": "401920721",
       "date": "2026-11-24",
       "label": "Eastern Washington Eagles @ UNLV Rebels",
@@ -251,16 +231,6 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909743",
       "home_team": "Arizona Wildcats",
       "away_team": "Colorado State Rams"
-    },
-    {
-      "id": "401921664",
-      "date": "2026-11-24",
-      "label": "TBD @ TBD",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921664",
-      "home_team": "TBD",
-      "away_team": "TBD"
     },
     {
       "id": "401920905",
@@ -373,16 +343,6 @@
       "away_team": "Northern Iowa Panthers"
     },
     {
-      "id": "401921209",
-      "date": "2026-11-23",
-      "label": "TBD @ TBD",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921209",
-      "home_team": "TBD",
-      "away_team": "TBD"
-    },
-    {
       "id": "401926069",
       "date": "2026-11-23",
       "label": "IU South Bend Titans @ Eastern Illinois Panthers",
@@ -443,16 +403,6 @@
       "away_team": "Ole Miss Rebels"
     },
     {
-      "id": "401921207",
-      "date": "2026-11-23",
-      "label": "TBD @ TBD",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921207",
-      "home_team": "TBD",
-      "away_team": "TBD"
-    },
-    {
       "id": "401929445",
       "date": "2026-11-23",
       "label": "Arkansas State Red Wolves @ Southern Utah Thunderbirds",
@@ -511,16 +461,6 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921708",
       "home_team": "BYU Cougars",
       "away_team": "Washington Huskies"
-    },
-    {
-      "id": "401921210",
-      "date": "2026-11-23",
-      "label": "TBD @ TBD",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921210",
-      "home_team": "TBD",
-      "away_team": "TBD"
     },
     {
       "id": "401920752",
@@ -1036,28 +976,18 @@
       "id": "401917953",
       "date": "2026-11-21",
       "label": "UT Rio Grande Valley Vaqueros @ Austin Peay Governors",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401917953",
       "home_team": "Austin Peay Governors",
       "away_team": "UT Rio Grande Valley Vaqueros"
     },
     {
-      "id": "401911278",
-      "date": "2026-11-21",
-      "label": "Army Black Knights @ Binghamton Bearcats",
-      "status": "In Progress",
-      "state": "in",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911278",
-      "home_team": "Binghamton Bearcats",
-      "away_team": "Army Black Knights"
-    },
-    {
       "id": "401926113",
       "date": "2026-11-21",
       "label": "Clinton Golden Bears @ Furman Paladins",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401926113",
       "home_team": "Furman Paladins",
       "away_team": "Clinton Golden Bears"
@@ -1076,7 +1006,7 @@
       "id": "401923322",
       "date": "2026-11-21",
       "label": "UAlbany Great Danes @ Canisius Golden Griffins",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401923322",
       "home_team": "Canisius Golden Griffins",
@@ -1156,7 +1086,7 @@
       "id": "401919849",
       "date": "2026-11-21",
       "label": "Northeastern Huskies @ Stonehill Skyhawks",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401919849",
       "home_team": "Stonehill Skyhawks",
@@ -1171,6 +1101,16 @@
       "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911337",
       "home_team": "UTSA Roadrunners",
       "away_team": "Air Force Falcons"
+    },
+    {
+      "id": "401920570",
+      "date": "2026-11-21",
+      "label": "Southern Illinois Salukis @ East Carolina Pirates",
+      "status": "In Progress",
+      "state": "in",
+      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401920570",
+      "home_team": "East Carolina Pirates",
+      "away_team": "Southern Illinois Salukis"
     },
     {
       "id": "401925756",
@@ -1413,14 +1353,14 @@
       "away_team": "Middle Tennessee Blue Raiders"
     },
     {
-      "id": "401920570",
+      "id": "401911278",
       "date": "2026-11-21",
-      "label": "Southern Illinois Salukis @ East Carolina Pirates",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401920570",
-      "home_team": "East Carolina Pirates",
-      "away_team": "Southern Illinois Salukis"
+      "label": "Army Black Knights @ Binghamton Bearcats",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401911278",
+      "home_team": "Binghamton Bearcats",
+      "away_team": "Army Black Knights"
     },
     {
       "id": "401925897",

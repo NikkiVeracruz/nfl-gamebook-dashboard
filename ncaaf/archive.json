@@ -1,6 +1,6 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T22:17:28.075883+00:00",
+  "updated_at": "2026-11-21T22:42:49.025313+00:00",
   "games": [
     {
       "id": "401858302",
@@ -204,7 +204,7 @@
       "id": "401867844",
       "date": "2026-11-21",
       "label": "Yale Bulldogs @ Harvard Crimson",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867844",
       "home_team": "Harvard Crimson",
@@ -220,7 +220,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856749",
       "home_team": "Ole Miss Rebels",
       "away_team": "Wofford Terriers",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401858533",
@@ -231,7 +232,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858533",
       "home_team": "Purdue Boilermakers",
       "away_team": "Wisconsin Badgers",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401868039",
@@ -242,7 +244,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868039",
       "home_team": "Richmond Spiders",
       "away_team": "William & Mary Tribe",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401871080",
@@ -253,7 +256,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871080",
       "home_team": "Liberty Flames",
       "away_team": "Western Kentucky Hilltoppers",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401868208",
@@ -275,7 +279,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868244",
       "home_team": "West Georgia Wolves",
       "away_team": "West Florida Argonauts",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401860920",
@@ -297,7 +302,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858310",
       "home_team": "Georgia Tech Yellow Jackets",
       "away_team": "Wake Forest Demon Deacons",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401867927",
@@ -308,7 +314,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867927",
       "home_team": "Stonehill Skyhawks",
       "away_team": "Wagner Seahawks",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401856748",
@@ -319,7 +326,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856748",
       "home_team": "Florida Gators",
       "away_team": "Vanderbilt Commodores",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401868167",
@@ -347,29 +355,31 @@
       "id": "401868203",
       "date": "2026-11-21",
       "label": "UT Martin Skyhawks @ Southeast Missouri State Redhawks",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868203",
       "home_team": "Southeast Missouri State Redhawks",
       "away_team": "UT Martin Skyhawks",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401869929",
       "date": "2026-11-21",
       "label": "UL Monroe Warhawks @ App State Mountaineers",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401869929",
       "home_team": "App State Mountaineers",
       "away_team": "UL Monroe Warhawks",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401858528",
       "date": "2026-11-21",
       "label": "UCLA Bruins @ Michigan Wolverines",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858528",
       "home_team": "Michigan Wolverines",
@@ -385,7 +395,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866694",
       "home_team": "North Carolina A&T Aggies",
       "away_team": "UAlbany Great Danes",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401868396",
@@ -396,13 +407,14 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868396",
       "home_team": "Western Carolina Catamounts",
       "away_team": "The Citadel Bulldogs",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401856871",
       "date": "2026-11-21",
       "label": "Texas Tech Red Raiders @ Baylor Bears",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856871",
       "home_team": "Baylor Bears",
@@ -413,7 +425,7 @@
       "id": "401856752",
       "date": "2026-11-21",
       "label": "Texas A&M Aggies @ Oklahoma Sooners",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856752",
       "home_team": "Oklahoma Sooners",
@@ -429,7 +441,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856750",
       "home_team": "Mississippi State Bulldogs",
       "away_team": "Tennessee Tech Golden Eagles",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401868193",
@@ -440,13 +453,14 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868193",
       "home_team": "Gardner-Webb Runnin' Bulldogs",
       "away_team": "Tennessee State Tigers",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401868234",
       "date": "2026-11-21",
       "label": "Tarleton State Texans @ North Alabama Lions",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868234",
       "home_team": "North Alabama Lions",
@@ -462,18 +476,20 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858309",
       "home_team": "Boston College Eagles",
       "away_team": "Syracuse Orange",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401868283",
       "date": "2026-11-21",
       "label": "St. Thomas Tommies @ Valparaiso Beacons",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868283",
       "home_team": "Valparaiso Beacons",
       "away_team": "St. Thomas Tommies",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401867881",
@@ -484,7 +500,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867881",
       "home_team": "North Dakota Fighting Hawks",
       "away_team": "Southern Illinois Salukis",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401862833",
@@ -506,13 +523,14 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867854",
       "home_team": "Illinois State Redbirds",
       "away_team": "South Dakota Coyotes",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401871101",
       "date": "2026-11-21",
       "label": "South Alabama Jaguars @ Southern Miss Golden Eagles",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871101",
       "home_team": "Southern Miss Golden Eagles",
@@ -539,13 +557,14 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866700",
       "home_team": "Merrimack Warriors",
       "away_team": "Sacred Heart Pioneers",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401858532",
       "date": "2026-11-21",
       "label": "Rutgers Scarlet Knights @ Penn State Nittany Lions",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858532",
       "home_team": "Penn State Nittany Lions",
@@ -561,7 +580,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866696",
       "home_team": "Bryant Bulldogs",
       "away_team": "Rhode Island Rams",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401868353",
@@ -578,7 +598,7 @@
       "id": "401868092",
       "date": "2026-11-21",
       "label": "Portland State Vikings @ Eastern Washington Eagles",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868092",
       "home_team": "Eastern Washington Eagles",
@@ -594,13 +614,14 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401872619",
       "home_team": "Princeton Tigers",
       "away_team": "Pennsylvania Quakers",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401861968",
       "date": "2026-11-21",
       "label": "Old Dominion Monarchs @ UConn Huskies",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401861968",
       "home_team": "UConn Huskies",
@@ -616,7 +637,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858531",
       "home_team": "Nebraska Cornhuskers",
       "away_team": "Ohio State Buckeyes",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401858530",
@@ -627,18 +649,20 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858530",
       "home_team": "Minnesota Golden Gophers",
       "away_team": "Northwestern Wildcats",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401867873",
       "date": "2026-11-21",
       "label": "Northern Iowa Panthers @ Murray State Racers",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867873",
       "home_team": "Murray State Racers",
       "away_team": "Northern Iowa Panthers",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
     },
     {
       "id": "401864543",
@@ -655,7 +679,7 @@
       "id": "401868128",
       "date": "2026-11-21",
       "label": "Northern Colorado Bears @ Northern Arizona Lumberjacks",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868128",
       "home_team": "Northern Arizona Lumberjacks",
@@ -710,7 +734,7 @@
       "id": "401858304",
       "date": "2026-11-21",
       "label": "NC State Wolfpack @ Florida State Seminoles",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858304",
       "home_team": "Florida State Seminoles",
@@ -721,8 +745,8 @@
       "id": "401867971",
       "date": "2026-11-21",
       "label": "Morgan State Bears @ North Carolina Central Eagles",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867971",
       "home_team": "North Carolina Central Eagles",
       "away_team": "Morgan State Bears",
@@ -776,8 +800,8 @@
       "id": "401871081",
       "date": "2026-11-21",
       "label": "Middle Tennessee Blue Raiders @ Sam Houston Bearkats",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871081",
       "home_team": "Sam Houston Bearkats",
       "away_team": "Middle Tennessee Blue Raiders",
@@ -842,7 +866,7 @@
       "id": "401856754",
       "date": "2026-11-21",
       "label": "LSU Tigers @ Tennessee Volunteers",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856754",
       "home_team": "Tennessee Volunteers",
@@ -886,7 +910,7 @@
       "id": "401858535",
       "date": "2026-11-21",
       "label": "Indiana Hoosiers @ Washington Huskies",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858535",
       "home_team": "Washington Huskies",
@@ -897,7 +921,7 @@
       "id": "401869149",
       "date": "2026-11-21",
       "label": "Incarnate Word Cardinals @ East Texas A&M Lions",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401869149",
       "home_team": "East Texas A&M Lions",
@@ -963,7 +987,7 @@
       "id": "401869953",
       "date": "2026-11-21",
       "label": "Georgia Southern Eagles @ Troy Trojans",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401869953",
       "home_team": "Troy Trojans",
@@ -1018,7 +1042,7 @@
       "id": "401868947",
       "date": "2026-11-21",
       "label": "Florida A&M Rattlers @ Bethune-Cookman Wildcats",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868947",
       "home_team": "Bethune-Cookman Wildcats",
@@ -1183,8 +1207,8 @@
       "id": "401862832",
       "date": "2026-11-21",
       "label": "Charlotte 49ers @ Tulsa Golden Hurricane",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401862832",
       "home_team": "Tulsa Golden Hurricane",
       "away_team": "Charlotte 49ers",
@@ -1260,7 +1284,7 @@
       "id": "401856755",
       "date": "2026-11-21",
       "label": "Arkansas Razorbacks @ Texas Longhorns",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856755",
       "home_team": "Texas Longhorns",

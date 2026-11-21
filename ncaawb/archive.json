@@ -1,6 +1,6 @@
 {
   "league": "NCAAWB",
-  "updated_at": "2026-11-21T22:17:30.259280+00:00",
+  "updated_at": "2026-11-21T22:42:51.218671+00:00",
   "games": [
     {
       "id": "401913020",
@@ -251,16 +251,6 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401926088",
       "home_team": "Navy Midshipmen",
       "away_team": "Toledo Rockets"
-    },
-    {
-      "id": "401929636",
-      "date": "2026-11-23",
-      "label": "TBD @ TBD",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401929636",
-      "home_team": "TBD",
-      "away_team": "TBD"
     },
     {
       "id": "401928193",
@@ -531,16 +521,6 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913867",
       "home_team": "South Florida Bulls",
       "away_team": "Texas Tech Lady Raiders"
-    },
-    {
-      "id": "401929635",
-      "date": "2026-11-22",
-      "label": "TBD @ TBD",
-      "status": "Scheduled",
-      "state": "pre",
-      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401929635",
-      "home_team": "TBD",
-      "away_team": "TBD"
     },
     {
       "id": "401923737",
@@ -1336,7 +1316,7 @@
       "id": "401915669",
       "date": "2026-11-21",
       "label": "Iona Gaels @ Bucknell Bison",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915669",
       "home_team": "Bucknell Bison",
@@ -1346,7 +1326,7 @@
       "id": "401923486",
       "date": "2026-11-21",
       "label": "Incarnate Word Cardinals @ Texas A&M Aggies",
-      "status": "End of Period",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923486",
       "home_team": "Texas A&M Aggies",
