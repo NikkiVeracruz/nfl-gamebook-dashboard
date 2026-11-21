@@ -107,6 +107,15 @@ def send_email(game):
 
 def main():
     logging.basicConfig(level=logging.INFO,format="%(levelname)s %(message)s")
+    # Seasonal guard: keep the website live but avoid report scraping in the offseason.
+    # Broad calendar boundaries allow preseason and late postseason games; the
+    # schedule source itself determines which games actually appear.
+    if datetime.now(ET).month not in [7,8,9,10,11,12,1,2,3]:
+        now = datetime.now(timezone.utc).isoformat()
+        OUT.write_text(json.dumps({"window_label": "Offseason", "updated_at": now, "offseason": True, "games": []}, indent=2) + "\n")
+        LOG.info("Offseason: skipping gamebook checks")
+        return
+
     session=requests.Session();session.headers.update(HEADERS)
     start,end=window();state=load_state()
     # Week resets every Thursday (Eastern Time), retaining no old dashboard entries.
