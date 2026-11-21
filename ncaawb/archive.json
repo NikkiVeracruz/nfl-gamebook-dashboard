@@ -1,6 +1,6 @@
 {
   "league": "NCAAWB",
-  "updated_at": "2026-11-21T23:36:37.776756+00:00",
+  "updated_at": "2026-11-21T23:39:54.778081+00:00",
   "games": [
     {
       "id": "401913020",
@@ -1327,7 +1327,7 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927997",
       "home_team": "East Tennessee State Buccaneers",
       "away_team": "Kennesaw State Owls",
-      "pdf_checked_at": "2026-11-21T22:55:08.106597+00:00"
+      "pdf_checked_at": "2026-11-21T23:39:55.125070+00:00"
     },
     {
       "id": "401918678",
@@ -1477,7 +1477,8 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913758",
       "home_team": "Northeastern Huskies",
-      "away_team": "Bryant Bulldogs"
+      "away_team": "Bryant Bulldogs",
+      "pdf_checked_at": "2026-11-21T23:39:55.125070+00:00"
     },
     {
       "id": "401929143",
@@ -1487,13 +1488,14 @@
       "state": "post",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401929143",
       "home_team": "UIC Flames",
-      "away_team": "Ball State Cardinals"
+      "away_team": "Ball State Cardinals",
+      "pdf_checked_at": "2026-11-21T23:39:55.125070+00:00"
     },
     {
       "id": "401906093",
       "date": "2026-11-21",
       "label": "Alabama Crimson Tide @ North Carolina Tar Heels",
-      "status": "End of Period",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401906093",
       "home_team": "North Carolina Tar Heels",
