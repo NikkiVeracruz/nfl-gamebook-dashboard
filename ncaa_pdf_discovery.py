@@ -78,6 +78,9 @@ def game_boxscore_candidates(game,league):
  away=game.get("away_team","")
  if "Alabama Crimson Tide" in (home,away) and "Chattanooga Mocs" in (home,away) and game.get("date")=="2026-11-21":
   pages.append("https://rolltide.com/sports/football/stats/2026/chattanooga/boxscore/21648")
+  # Official PDF URL exposed by the game-specific View PDF link.
+  direct="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/rolltide.com/stats/football/2026/pdf/20261121040729-Alabama%2047%2C%20Chattanooga%200.pdf"
+  return [direct]
  # Discover other Sidearm game-specific box scores via a focused search.
  query=f'"{home}" "{away}" "{game["date"][:4]}" site:*/sports/football/stats/ boxscore'
  try:
