@@ -1,0 +1,35 @@
+name: Update NCAA Forward Archive
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
+permissions:
+  contents: write
+concurrency:
+  group: ncaa-forward-monitor
+  cancel-in-progress: false
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python ncaa_monitor.py
+      - name: Publish NCAA feeds and archives
+        run: |
+          if [[ -n "$(git status --porcelain ncaaf/ ncaamb/ ncaawb/)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add ncaaf/ ncaamb/ ncaawb/
+            git commit -m "Update NCAA game feeds and forward archives"
+            for attempt in 1 2 3 4; do
+              if git push; then exit 0; fi
+              git pull --rebase -X theirs origin main
+              sleep 2
+            done
+            exit 1
+          fi
