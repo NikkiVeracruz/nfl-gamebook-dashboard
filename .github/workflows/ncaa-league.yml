@@ -1,0 +1,48 @@
+name: NCAA league monitor
+on:
+  workflow_call:
+    inputs:
+      league:
+        required: true
+        type: string
+      sport:
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: ncaa-${{ inputs.league }}
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install requests pypdf
+      - name: Refresh schedule
+        run: python ncaa_monitor.py --league "${{ inputs.sport }}"
+      - name: Search official gamebook PDFs (up to 24)
+        run: python ncaa_pdf_discovery.py --league "${{ inputs.league }}"
+      - name: Publish league feed and archive
+        env:
+          LEAGUE: ${{ inputs.league }}
+        run: |
+          if [[ -n "$(git status --porcelain "$LEAGUE/")" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add "$LEAGUE/"
+            git commit -m "Update $LEAGUE gamebook feeds"
+            for attempt in 1 2 3 4 5; do
+              if git push origin HEAD:main; then exit 0; fi
+              git fetch origin main
+              git rebase -X theirs origin/main
+              sleep 3
+            done
+            exit 1
+          fi
