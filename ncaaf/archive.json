@@ -1,22 +1,7 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T23:44:16.953973+00:00",
+  "updated_at": "2026-11-21T23:47:27.918818+00:00",
   "games": [
-    {
-      "id": "401856746",
-      "date": "2026-11-21",
-      "label": "Chattanooga Mocs @ Alabama Crimson Tide",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401856746",
-      "home_team": "Alabama Crimson Tide",
-      "away_team": "Chattanooga Mocs",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
-      "pdf_discovery_version": "sidearm-boxscore-v2",
-      "pdf_url": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/rolltide.com/stats/football/2026/pdf/20261121040729-Alabama%2047%2C%20Chattanooga%200.pdf",
-      "pdf_source": "Verified PDF content: teams and game date"
-    },
     {
       "id": "401858302",
       "date": "2026-11-22",
@@ -390,7 +375,8 @@
       "home_team": "Southeast Missouri State Redhawks",
       "away_team": "UT Martin Skyhawks",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401869929",
@@ -402,7 +388,8 @@
       "home_team": "App State Mountaineers",
       "away_team": "UL Monroe Warhawks",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401858528",
@@ -425,7 +412,8 @@
       "home_team": "North Carolina A&T Aggies",
       "away_team": "UAlbany Great Danes",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401868396",
@@ -437,7 +425,8 @@
       "home_team": "Western Carolina Catamounts",
       "away_team": "The Citadel Bulldogs",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401856871",
@@ -485,7 +474,8 @@
       "home_team": "Gardner-Webb Runnin' Bulldogs",
       "away_team": "Tennessee State Tigers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401868234",
@@ -508,7 +498,8 @@
       "home_team": "Boston College Eagles",
       "away_team": "Syracuse Orange",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401868283",
@@ -520,7 +511,8 @@
       "home_team": "Valparaiso Beacons",
       "away_team": "St. Thomas Tommies",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401867881",
@@ -532,7 +524,8 @@
       "home_team": "North Dakota Fighting Hawks",
       "away_team": "Southern Illinois Salukis",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401862833",
@@ -555,7 +548,8 @@
       "home_team": "Illinois State Redbirds",
       "away_team": "South Dakota Coyotes",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401871101",
@@ -589,7 +583,8 @@
       "home_team": "Merrimack Warriors",
       "away_team": "Sacred Heart Pioneers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401858532",
@@ -612,7 +607,8 @@
       "home_team": "Bryant Bulldogs",
       "away_team": "Rhode Island Rams",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401868353",
@@ -624,7 +620,8 @@
       "home_team": "Alabama State Hornets",
       "away_team": "Prairie View A&M Panthers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:47:28.469173+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2"
     },
     {
       "id": "401868092",
@@ -1255,6 +1252,21 @@
       "home_team": "Southern Utah Thunderbirds",
       "away_team": "Chicago State Cougars",
       "subdivision": "FCS"
+    },
+    {
+      "id": "401856746",
+      "date": "2026-11-21",
+      "label": "Chattanooga Mocs @ Alabama Crimson Tide",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401856746",
+      "home_team": "Alabama Crimson Tide",
+      "away_team": "Chattanooga Mocs",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:44:17.529686+00:00",
+      "pdf_discovery_version": "sidearm-boxscore-v2",
+      "pdf_url": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/rolltide.com/stats/football/2026/pdf/20261121040729-Alabama%2047%2C%20Chattanooga%200.pdf",
+      "pdf_source": "Verified PDF content: teams and game date"
     },
     {
       "id": "401862832",
