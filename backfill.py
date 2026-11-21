@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Backfill NFL previous/current seasons one schedule week per run."""
+"""Backfill NFL previous/current seasons up to four schedule weeks per run."""
 import json,requests
 from datetime import date,datetime,timedelta,timezone
 from pathlib import Path
@@ -11,7 +11,7 @@ def main():
     records={g.get("slug",g.get("date","")+"|"+g.get("label","")):g for g in existing.get("games",[])}
     p=json.loads(PROGRESS.read_text()) if PROGRESS.exists() else {}
     start=date.fromisoformat(p.get("next_date","2025-08-01"))
-    end=min(start+timedelta(days=7),date.today()+timedelta(days=1))
+    end=min(start+timedelta(days=28),date.today()+timedelta(days=1))
     if start>=end:
         print("NFL archive backfill caught up")
         return
