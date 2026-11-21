@@ -76,12 +76,7 @@ def gamebook_link(html,page):
         href=urljoin(page,a["href"])
         if ("gamebook" in label or "game book" in label) and ".pdf" in href.lower():
             if is_official(href):return href
-    # NFL sometimes embeds the URL in page data rather than in an anchor.
-    raw=html.replace("\\u002F","/").replace("\\/","/")
-    candidates=re.findall(r'https?://(?:static\.www\.nfl\.com|www\.nfl\.com)/[^"\s<>]+?\.pdf(?:\?[^"\s<>]*)?',raw,re.I)
-    for url in candidates:
-        if is_official(url) and ("gamebook" in url.lower() or "gamecenter" in url.lower()):
-            return url
+    # Do not use generic page-data PDFs: NFL embeds unrelated gamebook URLs.
     return None
 
 def is_official(url):
@@ -125,10 +120,11 @@ def main():
     except (FileNotFoundError,ValueError):pass
     for slug,game in games.items():
         old=previous.get(slug,{})
-        if old.get("pdf_url"):
-            game["pdf_url"]=old["pdf_url"];continue
+        # Always recheck the actual game page; do not trust cached PDF links.
         try:
             html=get(session,game["game_url"])
+            text=BeautifulSoup(html,"html.parser").get_text(" ",strip=True)
+            if not re.search(r"\\bFinal(?:/OT|/\\dOT)?\\b",text,re.I):continue
             pdf=gamebook_link(html,game["game_url"])
             if pdf and verify_pdf(session,pdf):
                 game["pdf_url"]=pdf
