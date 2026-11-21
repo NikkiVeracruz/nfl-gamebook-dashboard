@@ -1,6 +1,6 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T23:52:42.550046+00:00",
+  "updated_at": "2026-11-21T23:53:25.923195+00:00",
   "games": [
     {
       "id": "401858302",
@@ -452,7 +452,8 @@
       "home_team": "Illinois Fighting Illini",
       "away_team": "Iowa Hawkeyes",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401856868",
@@ -464,7 +465,8 @@
       "home_team": "West Virginia Mountaineers",
       "away_team": "Houston Cougars",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401856748",
@@ -552,7 +554,8 @@
       "home_team": "Army Black Knights",
       "away_team": "East Carolina Pirates",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401862834",
@@ -862,7 +865,8 @@
       "home_team": "Stony Brook Seawolves",
       "away_team": "Hampton Pirates",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401866697",
@@ -911,7 +915,8 @@
       "home_team": "Central Connecticut Blue Devils",
       "away_team": "Duquesne Dukes",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401867915",
@@ -949,7 +954,8 @@
       "home_team": "Norfolk State Spartans",
       "away_team": "Howard Bison",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401868015",
@@ -961,7 +967,8 @@
       "home_team": "Holy Cross Crusaders",
       "away_team": "Fordham Rams",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401868039",
@@ -986,7 +993,8 @@
       "home_team": "VMI Keydets",
       "away_team": "Furman Paladins",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401872619",
@@ -1035,7 +1043,8 @@
       "home_team": "Towson Tigers",
       "away_team": "Elon Phoenix",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401866699",
@@ -1097,7 +1106,8 @@
       "home_team": "Villanova Wildcats",
       "away_team": "Georgetown Hoyas",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401868178",
@@ -1197,7 +1207,8 @@
       "home_team": "South Carolina State Bulldogs",
       "away_team": "Delaware State Hornets",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401868193",
@@ -1323,7 +1334,8 @@
       "home_team": "South Dakota State Jackrabbits",
       "away_team": "Indiana State Sycamores",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401868167",
