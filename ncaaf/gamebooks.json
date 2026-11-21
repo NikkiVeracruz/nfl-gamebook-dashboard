@@ -1,6 +1,6 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T23:49:33.265197+00:00",
+  "updated_at": "2026-11-21T23:52:42.550046+00:00",
   "games": [
     {
       "id": "401858302",
@@ -226,12 +226,14 @@
       "id": "401856755",
       "date": "2026-11-21",
       "label": "Arkansas Razorbacks @ Texas Longhorns",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856755",
       "home_team": "Texas Longhorns",
       "away_team": "Arkansas Razorbacks",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401858535",
@@ -411,7 +413,9 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856866",
       "home_team": "Kansas Jayhawks",
       "away_team": "BYU Cougars",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401858310",
@@ -622,7 +626,9 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401862832",
       "home_team": "Tulsa Golden Hurricane",
       "away_team": "Charlotte 49ers",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401871079",
@@ -682,7 +688,9 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871077",
       "home_team": "New Mexico State Aggies",
       "away_team": "Delaware Blue Hens",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401871078",
@@ -693,7 +701,9 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871078",
       "home_team": "Kennesaw State Owls",
       "away_team": "Florida International Panthers",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401868365",
@@ -705,6 +715,19 @@
       "home_team": "Alcorn State Braves",
       "away_team": "Jackson State Tigers",
       "subdivision": "FCS"
+    },
+    {
+      "id": "401867844",
+      "date": "2026-11-21",
+      "label": "Yale Bulldogs @ Harvard Crimson",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401867844",
+      "home_team": "Harvard Crimson",
+      "away_team": "Yale Bulldogs",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
+      "pdf_discovery_version": "official-schedule-boxscore-v3"
     },
     {
       "id": "401868947",
@@ -787,7 +810,7 @@
       "id": "401868294",
       "date": "2026-11-21",
       "label": "UT Rio Grande Valley Vaqueros @ Houston Christian Huskies",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868294",
       "home_team": "Houston Christian Huskies",
@@ -798,7 +821,7 @@
       "id": "401891330",
       "date": "2026-11-21",
       "label": "Chicago State Cougars @ Southern Utah Thunderbirds",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401891330",
       "home_team": "Southern Utah Thunderbirds",
@@ -900,7 +923,8 @@
       "home_team": "Robert Morris Colonials",
       "away_team": "Long Island University Sharks",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401867927",
@@ -998,7 +1022,8 @@
       "home_team": "Lafayette Leopards",
       "away_team": "Lehigh Mountain Hawks",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:54:46.110872+00:00"
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401866698",
@@ -1033,7 +1058,9 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867812",
       "home_team": "Dartmouth Big Green",
       "away_team": "Brown Bears",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401867854",
@@ -1081,7 +1108,9 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868178",
       "home_team": "Eastern Illinois Panthers",
       "away_team": "Charleston Southern Buccaneers",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401868218",
@@ -1128,7 +1157,9 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868304",
       "home_team": "Mississippi Valley State Delta Devils",
       "away_team": "Alabama A&M Bulldogs",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401868396",
@@ -1227,7 +1258,9 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868059",
       "home_team": "Abilene Christian Wildcats",
       "away_team": "Eastern Kentucky Colonels",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
       "id": "401868117",
@@ -1352,20 +1385,9 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868941",
       "home_team": "Texas Southern Tigers",
       "away_team": "Arkansas-Pine Bluff Golden Lions",
-      "subdivision": "FCS"
-    },
-    {
-      "id": "401867844",
-      "date": "2026-11-21",
-      "label": "Yale Bulldogs @ Harvard Crimson",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401867844",
-      "home_team": "Harvard Crimson",
-      "away_team": "Yale Bulldogs",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:49:33.580496+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
     }
   ]
 }
