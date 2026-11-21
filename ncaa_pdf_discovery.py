@@ -51,9 +51,13 @@ FOOTBALL_SOURCES={
 }
 # Bump when adding a new source pattern; previously checked games get one
 # immediate retry, then normal cooldown applies again.
-DISCOVERY_VERSION="automatic-athletics-sites-v4"
+DISCOVERY_VERSION="diagnostics-athletics-v5"
 PRIORITY_GAME_IDS=set()
 PAGE_CACHE={}
+DIAGNOSTICS={"games":[]}
+ACTIVE=None
+def reject(reason):
+ if ACTIVE is not None:ACTIVE["rejections"][reason]=ACTIVE["rejections"].get(reason,0)+1
 def official_page_candidates(page,game):
  if page not in PAGE_CACHE:
   try:
@@ -67,7 +71,7 @@ def official_page_candidates(page,game):
     path=urllib.parse.urlparse(href).path.lower()
     label=" ".join(a.stripped_strings).lower()
     if not (".pdf" in path or "/documents/" in path or "download" in path):continue
-    if not any(x in label+" "+path for x in ("gamebook","game book","final book","final stats","final statistics","box score","boxscore")):continue
+    if not any(x in label+" "+path for x in ("gamebook","game book","final book","final stats","final statistics","box score","boxscore","statistics","download")):continue
     if any(x in label+" "+path for x in ("pregame","game notes","preview","media guide","program")):continue
     links.append(href)
    PAGE_CACHE[page]=list(dict.fromkeys(links))
@@ -104,7 +108,7 @@ def game_boxscore_candidates(game,league):
    for a in soup.select("a[href]"):
     href=urllib.parse.urljoin(resp.url,a["href"])
     label=" ".join(a.stripped_strings).lower()
-    if (".pdf" in urllib.parse.urlparse(href).path.lower() or "pdf" in label or "view pdf" in label) and href.startswith("https://") and href not in urls:urls.append(href)
+    if (".pdf" in urllib.parse.urlparse(href).path.lower() or "pdf" in label or "view pdf" in label or "statistics" in label or "download" in label) and href.startswith("https://") and href not in urls:urls.append(href)
   except requests.RequestException:continue
  return urls[:8]
 
@@ -113,10 +117,13 @@ def game_boxscore_candidates(game,league):
 SCHOOL_PAGES={}
 MAX_SCHOOL_LOOKUPS=10
 school_lookups=0
-def athletics_sources(team,league):
+def athletics_sources(team,league,espn_url=None):
  global school_lookups
  if team in SCHOOL_PAGES:return SCHOOL_PAGES[team]
  sources=[FOOTBALL_SOURCES[team]] if league=="ncaaf" and team in FOOTBALL_SOURCES else []
+ if espn_url:
+  p=urllib.parse.urlparse(espn_url)
+  if p.scheme=="https" and p.hostname and not any(p.hostname==x or p.hostname.endswith("."+x) for x in BAD_HOSTS):sources.insert(0,espn_url)
  if school_lookups>=MAX_SCHOOL_LOOKUPS:
   return sources
  school_lookups+=1
@@ -147,7 +154,8 @@ def schedule_boxscore_candidates(game,league):
  teams=(game.get("home_team",""),game.get("away_team",""))
  for team in teams:
   opponent=teams[1] if team==teams[0] else teams[0]
-  for source in athletics_sources(team,league):
+  for source in athletics_sources(team,league,game.get("home_athletics_url") if team==teams[0] else game.get("away_athletics_url")):
+   if ACTIVE is not None:ACTIVE["sites"].append(source)
    if time.monotonic()-started>MAX_SECONDS-20:break
    try:
     resp=session.get(source,timeout=8)
@@ -169,7 +177,7 @@ def schedule_boxscore_candidates(game,league):
    for a in soup.select("a[href]"):
     href=urllib.parse.urljoin(resp.url,a["href"])
     label=a.get_text(" ",strip=True).lower()
-    if (".pdf" in urllib.parse.urlparse(href).path.lower() or "view pdf" in label) and href.startswith("https://") and href not in results:results.append(href)
+    if (".pdf" in urllib.parse.urlparse(href).path.lower() or "view pdf" in label or "statistics" in label or "download" in label) and href.startswith("https://") and href not in results:results.append(href)
   except requests.RequestException:continue
  return results[:10]
 
@@ -224,7 +232,7 @@ def candidates(game,league):
     path=urllib.parse.urlparse(href).path.lower()
     label=" ".join(a.stripped_strings).lower()
     if not (".pdf" in path or "/documents/" in path or "/documents/download/" in path):continue
-    positive=any(x in label+" "+path for x in ("gamebook","game book","final book","final stats","final statistics","box score","boxscore","stats pdf"))
+    positive=any(x in label+" "+path for x in ("gamebook","game book","final book","final stats","final statistics","box score","boxscore","stats pdf","statistics","download"))
     negative=any(x in label+" "+path for x in ("game notes","pregame","preview","media guide","program","weekly notes"))
     if positive and not negative:add(href)
   except requests.RequestException:pass
@@ -245,25 +253,31 @@ def verify(url,game):
    buf.write(chunk)
    if buf.tell()>5_000_000:return None
   data=buf.getvalue()
-  if not data.startswith(b"%PDF"):return None
+  if not data.startswith(b"%PDF"):
+   reject("not_pdf");return None
   reader=PdfReader(io.BytesIO(data))
   text=" ".join((p.extract_text() or "") for p in reader.pages[:5])
-  if not names_match(text,game["home_team"],game["away_team"]):return None
+  if not names_match(text,game["home_team"],game["away_team"]):
+   reject("team_mismatch");return None
   # A pregame notes packet can mention both teams and the game date.
   # Require recognizable postgame statistics content.
-  if not any(marker in text.lower() for marker in ("scoring summary","team statistics","individual statistics","play-by-play","final statistics","team stats","team stat comparison","scoring plays")):return None
+  if not any(marker in text.lower() for marker in ("scoring summary","team statistics","individual statistics","play-by-play","final statistics","team stats","team stat comparison","scoring plays")):
+   reject("missing_postgame_stats");return None
   date=dt.date.fromisoformat(game["date"])
   forms=[date.strftime("%B %d, %Y"),date.strftime("%b %d, %Y"),date.strftime("%m/%d/%Y"),date.strftime("%m/%d/%y"),date.strftime("%Y-%m-%d"),date.strftime("%B %-d, %Y"),date.strftime("%b %-d, %Y")]
   normalized=" ".join(text.lower().split())
-  if not any(f.lower() in normalized for f in forms):return None
+  if not any(f.lower() in normalized for f in forms):
+   reject("date_mismatch");return None
   return final
- except (requests.RequestException,ValueError,Exception):
+ except Exception as exc:
+  reject("request_error" if isinstance(exc,requests.RequestException) else "parse_error")
   return None
 
 def main():
  parser=argparse.ArgumentParser()
  parser.add_argument("--league",choices=LEAGUES,required=True)
  league=parser.parse_args().league
+ global ACTIVE
  checked=0;found=0
  for league in (league,):
   folder=ROOT/league
@@ -286,8 +300,13 @@ def main():
      if game.get("pdf_discovery_version")==DISCOVERY_VERSION and elapsed<(1800 if (TODAY.date()-game_date).days<=2 else 86400):continue
     except ValueError:pass
    checked+=1
+   ACTIVE={"id":str(game.get("id")),"label":game.get("label"),"sites":[],"candidates":0,"rejections":{},"verified":False}
+   DIAGNOSTICS["games"].append(ACTIVE)
    result=None
-   for url in candidates(game,league):
+   urls=candidates(game,league)
+   ACTIVE["sites"]=list(dict.fromkeys(ACTIVE["sites"]))[:25]
+   ACTIVE["candidates"]=len(urls)
+   for url in urls:
     if time.monotonic()-started>MAX_SECONDS:break
     result=verify(url,game)
     if result:break
@@ -297,11 +316,24 @@ def main():
     game["pdf_url"]=result
     game["pdf_source"]="Verified PDF content: teams and game date"
     found+=1
+    ACTIVE["verified"]=True
+   ACTIVE=None
    if str(game.get("id")) in current:
     current[str(game["id"])].update({k:game[k] for k in ("pdf_checked_at","pdf_discovery_version","pdf_url","pdf_source") if k in game})
-  # Restore already-verified archive PDFs to matching live games, even when\n  # the discovery loop skipped them due to cooldown or existing verification.\n  for game in games:\n   live_game=current.get(str(game.get("id")))\n   if live_game and game.get("pdf_url"):\n    for key in ("pdf_url","pdf_source","pdf_checked_at","pdf_discovery_version"):\n     if key in game:live_game[key]=game[key]\n  a["games"]=games;c["games"]=list(current.values())
+  # Restore already-verified archive PDFs to matching live games, even when
+  # the discovery loop skipped them due to cooldown or existing verification.
+  for game in games:
+   live_game=current.get(str(game.get("id")))
+   if live_game and game.get("pdf_url"):
+    for key in ("pdf_url","pdf_source","pdf_checked_at","pdf_discovery_version"):
+     if key in game:live_game[key]=game[key]
+  a["games"]=games;c["games"]=list(current.values())
   archive.write_text(json.dumps(a,indent=2)+"\n")
   live.write_text(json.dumps(c,indent=2)+"\n")
+  DIAGNOSTICS["version"]=DISCOVERY_VERSION
+  DIAGNOSTICS["checked"]=checked
+  DIAGNOSTICS["verified"]=found
+  (folder/"discovery-diagnostics.json").write_text(json.dumps(DIAGNOSTICS,indent=2)+"\n")
   print(league,"checked",checked,"verified",found)
  print("TOTAL",checked,"checked",found,"verified")
 if __name__=="__main__":main()
