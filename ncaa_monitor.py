@@ -20,25 +20,26 @@ def main():
    day=TODAY+datetime.timedelta(days=offset)
    if day<START:continue
    url=f"https://site.api.espn.com/apis/site/v2/sports/{sport}/scoreboard"
-   response=requests.get(url,params={"dates":day.strftime("%Y%m%d"),"limit":500,"groups":50 if league=="NCAAF" else 50},headers=HEADERS,timeout=30)
-   response.raise_for_status()
-   for event in response.json().get("events",[]):
-    comp=(event.get("competitions") or [{}])[0]
-    sides=comp.get("competitors") or []
-    home=next((x for x in sides if x.get("homeAway")=="home"),{})
-    away=next((x for x in sides if x.get("homeAway")=="away"),{})
-    if not home or not away:continue
-    event_id=str(event.get("id") or "")
-    if not event_id:continue
-    game_date=str(event.get("date") or "")[:10]
-    if game_date<START.isoformat():continue
-    status=event.get("status",{}).get("type",{})
-    game={"id":event_id,"date":game_date,"label":f"{away.get('team',{}).get('displayName','Away')} @ {home.get('team',{}).get('displayName','Home')}","status":status.get("description","Unknown"),"state":status.get("state","unknown"),"game_url":f"https://www.espn.com/{'college-football' if league=='NCAAF' else 'mens-college-basketball' if league=='NCAAMB' else 'womens-college-basketball'}/game/_/gameId/{event_id}","home_team":home.get("team",{}).get("displayName",""),"away_team":away.get("team",{}).get("displayName","")}
-    if league=="NCAAF":
-     groups=event.get("groups",{})
-     game["subdivision"]="FBS/FCS (unverified)"
-    recent[event_id]=game
-    stored[event_id]={**stored.get(event_id,{}),**game}
+   for group in ([80,81] if league=="NCAAF" else [50]):
+    response=requests.get(url,params={"dates":day.strftime("%Y%m%d"),"limit":500,"groups":group},headers=HEADERS,timeout=30)
+    response.raise_for_status()
+    for event in response.json().get("events",[]):
+     comp=(event.get("competitions") or [{}])[0]
+     sides=comp.get("competitors") or []
+     home=next((x for x in sides if x.get("homeAway")=="home"),{})
+     away=next((x for x in sides if x.get("homeAway")=="away"),{})
+     if not home or not away:continue
+     event_id=str(event.get("id") or "")
+     if not event_id:continue
+     game_date=str(event.get("date") or "")[:10]
+     if game_date<START.isoformat():continue
+     status=event.get("status",{}).get("type",{})
+     game={"id":event_id,"date":game_date,"label":f"{away.get('team',{}).get('displayName','Away')} @ {home.get('team',{}).get('displayName','Home')}","status":status.get("description","Unknown"),"state":status.get("state","unknown"),"game_url":f"https://www.espn.com/{'college-football' if league=='NCAAF' else 'mens-college-basketball' if league=='NCAAMB' else 'womens-college-basketball'}/game/_/gameId/{event_id}","home_team":home.get("team",{}).get("displayName",""),"away_team":away.get("team",{}).get("displayName","")}
+     if league=="NCAAF":
+      groups=event.get("groups",{})
+      game["subdivision"]="FBS" if group==80 else "FCS"
+     recent[event_id]=game
+     stored[event_id]={**stored.get(event_id,{}),**game}
    time.sleep(.3)
   stamp=datetime.datetime.now(datetime.timezone.utc).isoformat()
   live.write_text(json.dumps({"league":league,"updated_at":stamp,"games":sorted(recent.values(),key=lambda g:g["date"],reverse=True)},indent=2)+"\n")
