@@ -1,0 +1,109 @@
+{
+  "games": [
+    {
+      "id": "401861968",
+      "label": "Old Dominion Monarchs @ UConn Huskies",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401868947",
+      "label": "Florida A&M Rattlers @ Bethune-Cookman Wildcats",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401868352",
+      "label": "East Tennessee State Buccaneers @ Mercer Bears",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401868253",
+      "label": "Dayton Flyers @ Presbyterian Blue Hose",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401867825",
+      "label": "Cornell Big Red @ Columbia Lions",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401856867",
+      "label": "Colorado Buffaloes @ Cincinnati Bearcats",
+      "sites": [
+        "https://gobearcats.com/2026-football-media-center"
+      ],
+      "candidates": 13,
+      "rejections": {
+        "not_pdf": 13
+      },
+      "verified": false
+    },
+    {
+      "id": "401867998",
+      "label": "Colgate Raiders @ Bucknell Bison",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401869946",
+      "label": "Coastal Carolina Chanticleers @ Louisiana Ragin' Cajuns",
+      "sites": [],
+      "candidates": 1,
+      "rejections": {
+        "team_mismatch": 1
+      },
+      "verified": false
+    },
+    {
+      "id": "401872619",
+      "label": "Pennsylvania Quakers @ Princeton Tigers",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401858531",
+      "label": "Ohio State Buckeyes @ Nebraska Cornhuskers",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401858530",
+      "label": "Northwestern Wildcats @ Minnesota Golden Gophers",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    },
+    {
+      "id": "401867873",
+      "label": "Northern Iowa Panthers @ Murray State Racers",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false
+    }
+  ],
+  "version": "diagnostics-athletics-v5",
+  "checked": 12,
+  "verified": 0
+}

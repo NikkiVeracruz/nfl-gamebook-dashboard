@@ -1,6 +1,6 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T23:53:25.923195+00:00",
+  "updated_at": "2026-11-21T23:57:28.015768+00:00",
   "games": [
     {
       "id": "401860920",
@@ -127,12 +127,14 @@
       "id": "401861968",
       "date": "2026-11-21",
       "label": "Old Dominion Monarchs @ UConn Huskies",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401861968",
       "home_team": "UConn Huskies",
       "away_team": "Old Dominion Monarchs",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401864543",
@@ -259,12 +261,14 @@
       "id": "401868947",
       "date": "2026-11-21",
       "label": "Florida A&M Rattlers @ Bethune-Cookman Wildcats",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868947",
       "home_team": "Bethune-Cookman Wildcats",
       "away_team": "Florida A&M Rattlers",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401891330",
@@ -498,162 +502,6 @@
       "subdivision": "FBS"
     },
     {
-      "id": "401867965",
-      "date": "2026-11-21",
-      "label": "Howard Bison @ Norfolk State Spartans",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401867965",
-      "home_team": "Norfolk State Spartans",
-      "away_team": "Howard Bison",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401856868",
-      "date": "2026-11-21",
-      "label": "Houston Cougars @ West Virginia Mountaineers",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401856868",
-      "home_team": "West Virginia Mountaineers",
-      "away_team": "Houston Cougars",
-      "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401866695",
-      "date": "2026-11-21",
-      "label": "Hampton Pirates @ Stony Brook Seawolves",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401866695",
-      "home_team": "Stony Brook Seawolves",
-      "away_team": "Hampton Pirates",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401868021",
-      "date": "2026-11-21",
-      "label": "Georgetown Hoyas @ Villanova Wildcats",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868021",
-      "home_team": "Villanova Wildcats",
-      "away_team": "Georgetown Hoyas",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401868380",
-      "date": "2026-11-21",
-      "label": "Furman Paladins @ VMI Keydets",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868380",
-      "home_team": "VMI Keydets",
-      "away_team": "Furman Paladins",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401868015",
-      "date": "2026-11-21",
-      "label": "Fordham Rams @ Holy Cross Crusaders",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868015",
-      "home_team": "Holy Cross Crusaders",
-      "away_team": "Fordham Rams",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401866698",
-      "date": "2026-11-21",
-      "label": "Elon Phoenix @ Towson Tigers",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401866698",
-      "home_team": "Towson Tigers",
-      "away_team": "Elon Phoenix",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401862831",
-      "date": "2026-11-21",
-      "label": "East Carolina Pirates @ Army Black Knights",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401862831",
-      "home_team": "Army Black Knights",
-      "away_team": "East Carolina Pirates",
-      "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401867906",
-      "date": "2026-11-21",
-      "label": "Duquesne Dukes @ Central Connecticut Blue Devils",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401867906",
-      "home_team": "Central Connecticut Blue Devils",
-      "away_team": "Duquesne Dukes",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401867959",
-      "date": "2026-11-21",
-      "label": "Delaware State Hornets @ South Carolina State Bulldogs",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401867959",
-      "home_team": "South Carolina State Bulldogs",
-      "away_team": "Delaware State Hornets",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401858527",
-      "date": "2026-11-21",
-      "label": "Iowa Hawkeyes @ Illinois Fighting Illini",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401858527",
-      "home_team": "Illinois Fighting Illini",
-      "away_team": "Iowa Hawkeyes",
-      "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
-      "id": "401867864",
-      "date": "2026-11-21",
-      "label": "Indiana State Sycamores @ South Dakota State Jackrabbits",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/college-football/game/_/gameId/401867864",
-      "home_team": "South Dakota State Jackrabbits",
-      "away_team": "Indiana State Sycamores",
-      "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
-    },
-    {
       "id": "401868352",
       "date": "2026-11-21",
       "label": "East Tennessee State Buccaneers @ Mercer Bears",
@@ -663,7 +511,8 @@
       "home_team": "Mercer Bears",
       "away_team": "East Tennessee State Buccaneers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401868253",
@@ -675,7 +524,8 @@
       "home_team": "Presbyterian Blue Hose",
       "away_team": "Dayton Flyers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401867825",
@@ -687,7 +537,8 @@
       "home_team": "Columbia Lions",
       "away_team": "Cornell Big Red",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401856867",
@@ -699,7 +550,8 @@
       "home_team": "Cincinnati Bearcats",
       "away_team": "Colorado Buffaloes",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401867998",
@@ -711,7 +563,8 @@
       "home_team": "Bucknell Bison",
       "away_team": "Colgate Raiders",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401869946",
@@ -723,7 +576,8 @@
       "home_team": "Louisiana Ragin' Cajuns",
       "away_team": "Coastal Carolina Chanticleers",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:25:18.430992+00:00"
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401856750",
@@ -749,7 +603,8 @@
       "home_team": "Princeton Tigers",
       "away_team": "Pennsylvania Quakers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401858531",
@@ -761,7 +616,8 @@
       "home_team": "Nebraska Cornhuskers",
       "away_team": "Ohio State Buckeyes",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401858530",
@@ -773,7 +629,8 @@
       "home_team": "Minnesota Golden Gophers",
       "away_team": "Northwestern Wildcats",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401867873",
@@ -785,7 +642,8 @@
       "home_team": "Murray State Racers",
       "away_team": "Northern Iowa Panthers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T23:36:37.181819+00:00"
+      "pdf_checked_at": "2026-11-21T23:57:28.301869+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
     },
     {
       "id": "401862835",
@@ -1399,6 +1257,162 @@
       "away_team": "Alabama A&M Bulldogs",
       "subdivision": "FCS",
       "pdf_checked_at": "2026-11-21T23:52:43.397274+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401858527",
+      "date": "2026-11-21",
+      "label": "Iowa Hawkeyes @ Illinois Fighting Illini",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401858527",
+      "home_team": "Illinois Fighting Illini",
+      "away_team": "Iowa Hawkeyes",
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401867864",
+      "date": "2026-11-21",
+      "label": "Indiana State Sycamores @ South Dakota State Jackrabbits",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401867864",
+      "home_team": "South Dakota State Jackrabbits",
+      "away_team": "Indiana State Sycamores",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401867965",
+      "date": "2026-11-21",
+      "label": "Howard Bison @ Norfolk State Spartans",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401867965",
+      "home_team": "Norfolk State Spartans",
+      "away_team": "Howard Bison",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401856868",
+      "date": "2026-11-21",
+      "label": "Houston Cougars @ West Virginia Mountaineers",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401856868",
+      "home_team": "West Virginia Mountaineers",
+      "away_team": "Houston Cougars",
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401866695",
+      "date": "2026-11-21",
+      "label": "Hampton Pirates @ Stony Brook Seawolves",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401866695",
+      "home_team": "Stony Brook Seawolves",
+      "away_team": "Hampton Pirates",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401868021",
+      "date": "2026-11-21",
+      "label": "Georgetown Hoyas @ Villanova Wildcats",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868021",
+      "home_team": "Villanova Wildcats",
+      "away_team": "Georgetown Hoyas",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401868380",
+      "date": "2026-11-21",
+      "label": "Furman Paladins @ VMI Keydets",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868380",
+      "home_team": "VMI Keydets",
+      "away_team": "Furman Paladins",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401868015",
+      "date": "2026-11-21",
+      "label": "Fordham Rams @ Holy Cross Crusaders",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401868015",
+      "home_team": "Holy Cross Crusaders",
+      "away_team": "Fordham Rams",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401866698",
+      "date": "2026-11-21",
+      "label": "Elon Phoenix @ Towson Tigers",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401866698",
+      "home_team": "Towson Tigers",
+      "away_team": "Elon Phoenix",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401862831",
+      "date": "2026-11-21",
+      "label": "East Carolina Pirates @ Army Black Knights",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401862831",
+      "home_team": "Army Black Knights",
+      "away_team": "East Carolina Pirates",
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401867906",
+      "date": "2026-11-21",
+      "label": "Duquesne Dukes @ Central Connecticut Blue Devils",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401867906",
+      "home_team": "Central Connecticut Blue Devils",
+      "away_team": "Duquesne Dukes",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
+      "pdf_discovery_version": "automatic-athletics-sites-v4"
+    },
+    {
+      "id": "401867959",
+      "date": "2026-11-21",
+      "label": "Delaware State Hornets @ South Carolina State Bulldogs",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/college-football/game/_/gameId/401867959",
+      "home_team": "South Carolina State Bulldogs",
+      "away_team": "Delaware State Hornets",
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T23:53:26.350750+00:00",
       "pdf_discovery_version": "automatic-athletics-sites-v4"
     }
   ]
