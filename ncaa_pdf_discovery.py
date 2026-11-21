@@ -232,7 +232,7 @@ def main():
     found+=1
    if str(game.get("id")) in current:
     current[str(game["id"])].update({k:game[k] for k in ("pdf_checked_at","pdf_discovery_version","pdf_url","pdf_source") if k in game})
-  a["games"]=games;c["games"]=list(current.values())
+  # Restore already-verified archive PDFs to matching live games, even when\n  # the discovery loop skipped them due to cooldown or existing verification.\n  for game in games:\n   live_game=current.get(str(game.get("id")))\n   if live_game and game.get("pdf_url"):\n    for key in ("pdf_url","pdf_source","pdf_checked_at","pdf_discovery_version"):\n     if key in game:live_game[key]=game[key]\n  a["games"]=games;c["games"]=list(current.values())
   archive.write_text(json.dumps(a,indent=2)+"\n")
   live.write_text(json.dumps(c,indent=2)+"\n")
   print(league,"checked",checked,"verified",found)
