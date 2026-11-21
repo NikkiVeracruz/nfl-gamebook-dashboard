@@ -1,6 +1,6 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T22:42:49.025313+00:00",
+  "updated_at": "2026-11-21T22:49:05.281321+00:00",
   "games": [
     {
       "id": "401858302",
@@ -204,7 +204,7 @@
       "id": "401867844",
       "date": "2026-11-21",
       "label": "Yale Bulldogs @ Harvard Crimson",
-      "status": "In Progress",
+      "status": "End of Period",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867844",
       "home_team": "Harvard Crimson",
@@ -425,7 +425,7 @@
       "id": "401856752",
       "date": "2026-11-21",
       "label": "Texas A&M Aggies @ Oklahoma Sooners",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856752",
       "home_team": "Oklahoma Sooners",
@@ -598,7 +598,7 @@
       "id": "401868092",
       "date": "2026-11-21",
       "label": "Portland State Vikings @ Eastern Washington Eagles",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868092",
       "home_team": "Eastern Washington Eagles",
@@ -679,7 +679,7 @@
       "id": "401868128",
       "date": "2026-11-21",
       "label": "Northern Colorado Bears @ Northern Arizona Lumberjacks",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868128",
       "home_team": "Northern Arizona Lumberjacks",
@@ -695,7 +695,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401862835",
       "home_team": "Tulane Green Wave",
       "away_team": "North Texas Mean Green",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401858305",
@@ -706,7 +707,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858305",
       "home_team": "Virginia Cavaliers",
       "away_team": "North Carolina Tar Heels",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401872643",
@@ -717,7 +719,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401872643",
       "home_team": "Mercyhurst Lakers",
       "away_team": "New Haven Chargers",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401866699",
@@ -728,7 +731,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866699",
       "home_team": "Maine Black Bears",
       "away_team": "New Hampshire Wildcats",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401858304",
@@ -750,7 +754,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867971",
       "home_team": "North Carolina Central Eagles",
       "away_team": "Morgan State Bears",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401868218",
@@ -761,7 +766,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868218",
       "home_team": "Butler Bulldogs",
       "away_team": "Morehead State Eagles",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401868117",
@@ -772,7 +778,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868117",
       "home_team": "Montana State Bobcats",
       "away_team": "Montana Grizzlies",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401866697",
@@ -783,7 +790,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866697",
       "home_team": "Campbell Fighting Camels",
       "away_team": "Monmouth Hawks",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401871079",
@@ -794,7 +802,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871079",
       "home_team": "Jacksonville State Gamecocks",
       "away_team": "Missouri State Bears",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401871081",
@@ -805,7 +814,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871081",
       "home_team": "Sam Houston Bearkats",
       "away_team": "Middle Tennessee Blue Raiders",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401862834",
@@ -816,7 +826,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401862834",
       "home_team": "Navy Midshipmen",
       "away_team": "Memphis Tigers",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401858534",
@@ -838,7 +849,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868226",
       "home_team": "Davidson Wildcats",
       "away_team": "Marist Red Foxes",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401867915",
@@ -849,7 +861,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867915",
       "home_team": "Robert Morris Colonials",
       "away_team": "Long Island University Sharks",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401868032",
@@ -860,7 +873,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868032",
       "home_team": "Lafayette Leopards",
       "away_team": "Lehigh Mountain Hawks",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401856754",
@@ -948,7 +962,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867965",
       "home_team": "Norfolk State Spartans",
       "away_team": "Howard Bison",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401856868",
@@ -959,7 +974,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401856868",
       "home_team": "West Virginia Mountaineers",
       "away_team": "Houston Cougars",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401866695",
@@ -970,7 +986,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866695",
       "home_team": "Stony Brook Seawolves",
       "away_team": "Hampton Pirates",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401869958",
@@ -987,7 +1004,7 @@
       "id": "401869953",
       "date": "2026-11-21",
       "label": "Georgia Southern Eagles @ Troy Trojans",
-      "status": "Halftime",
+      "status": "In Progress",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401869953",
       "home_team": "Troy Trojans",
@@ -1003,7 +1020,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868021",
       "home_team": "Villanova Wildcats",
       "away_team": "Georgetown Hoyas",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401868380",
@@ -1014,7 +1032,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868380",
       "home_team": "VMI Keydets",
       "away_team": "Furman Paladins",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401868015",
@@ -1025,7 +1044,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868015",
       "home_team": "Holy Cross Crusaders",
       "away_team": "Fordham Rams",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401871078",
@@ -1058,7 +1078,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401866698",
       "home_team": "Towson Tigers",
       "away_team": "Elon Phoenix",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401868059",
@@ -1091,7 +1112,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401862831",
       "home_team": "Army Black Knights",
       "away_team": "East Carolina Pirates",
-      "subdivision": "FBS"
+      "subdivision": "FBS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401867906",
@@ -1102,7 +1124,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867906",
       "home_team": "Central Connecticut Blue Devils",
       "away_team": "Duquesne Dukes",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401867959",
@@ -1113,7 +1136,8 @@
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401867959",
       "home_team": "South Carolina State Bulldogs",
       "away_team": "Delaware State Hornets",
-      "subdivision": "FCS"
+      "subdivision": "FCS",
+      "pdf_checked_at": "2026-11-21T22:49:08.240942+00:00"
     },
     {
       "id": "401871077",
