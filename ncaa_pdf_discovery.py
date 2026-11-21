@@ -49,6 +49,10 @@ FOOTBALL_SOURCES={
  "Arizona State Sun Devils":"https://thesundevils.com/sports/football/schedule/season/2026",
  "North Carolina Central Eagles":"https://nccueaglepride.com/sports/2026/3/31/football-2026-media-center.aspx",
 }
+# Bump when adding a new source pattern; previously checked games get one
+# immediate retry, then normal cooldown applies again.
+DISCOVERY_VERSION="sidearm-boxscore-v2"
+PRIORITY_GAME_IDS={"401856746"}
 PAGE_CACHE={}
 def official_page_candidates(page,game):
  if page not in PAGE_CACHE:
@@ -200,7 +204,7 @@ def main():
   a=read(archive);c=read(live)
   current={str(g.get("id")):g for g in c.get("games",[])}
   games=a.get("games",[])
-  games.sort(key=lambda g:g.get("date",""),reverse=True)
+  games.sort(key=lambda g:(str(g.get("id")) in PRIORITY_GAME_IDS and g.get("pdf_discovery_version")!=DISCOVERY_VERSION,g.get("date","")),reverse=True)
   for game in games:
    if checked>=MAX_GAMES or time.monotonic()-started>MAX_SECONDS:break
    if game.get("pdf_url") or game.get("state") not in ("post","final") and "final" not in str(game.get("status","")).lower():continue
@@ -212,7 +216,7 @@ def main():
    if previous:
     try:
      elapsed=(TODAY-dt.datetime.fromisoformat(previous)).total_seconds()
-     if elapsed<(1800 if (TODAY.date()-game_date).days<=2 else 86400):continue
+     if game.get("pdf_discovery_version")==DISCOVERY_VERSION and elapsed<(1800 if (TODAY.date()-game_date).days<=2 else 86400):continue
     except ValueError:pass
    checked+=1
    result=None
@@ -221,12 +225,13 @@ def main():
     result=verify(url,game)
     if result:break
    game["pdf_checked_at"]=TODAY.isoformat()
+   game["pdf_discovery_version"]=DISCOVERY_VERSION
    if result:
     game["pdf_url"]=result
     game["pdf_source"]="Verified PDF content: teams and game date"
     found+=1
    if str(game.get("id")) in current:
-    current[str(game["id"])].update({k:game[k] for k in ("pdf_checked_at","pdf_url","pdf_source") if k in game})
+    current[str(game["id"])].update({k:game[k] for k in ("pdf_checked_at","pdf_discovery_version","pdf_url","pdf_source") if k in game})
   a["games"]=games;c["games"]=list(current.values())
   archive.write_text(json.dumps(a,indent=2)+"\n")
   live.write_text(json.dumps(c,indent=2)+"\n")
