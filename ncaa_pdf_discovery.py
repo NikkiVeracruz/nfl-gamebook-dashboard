@@ -9,6 +9,7 @@ import json
 import re
 import time
 import urllib.parse
+from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 from pathlib import Path
 import requests
@@ -18,8 +19,8 @@ ROOT=Path(__file__).resolve().parent
 LEAGUES=("ncaaf","ncaamb","ncaawb")
 HEADERS={"User-Agent":"Mozilla/5.0 (compatible; NCAA-official-gamebook-check/1.0)"}
 TODAY=dt.datetime.now(dt.timezone.utc)
-MAX_GAMES=24
-MAX_SECONDS=195
+MAX_GAMES=12
+MAX_SECONDS=240
 started=time.monotonic()
 session=requests.Session()
 session.headers.update(HEADERS)
@@ -39,26 +40,52 @@ def names_match(text,home,away):
  return bool(a and b and len(a&tokens)>=min(2,len(a)) and len(b&tokens)>=min(2,len(b)))
 
 def candidates(game,league):
+ """Search for postgame books and follow links on official athletics pages."""
  date=game["date"]
  home=game["home_team"];away=game["away_team"]
  sport="football" if league=="ncaaf" else "basketball"
  queries=[
-  f'"{home}" "{away}" "{date[:4]}" {sport} "game notes" pdf',
-  f'"{home}" "{away}" {sport} "box score" pdf',
+  f'"{home}" "{away}" "{date[:4]}" {sport} "game book" pdf',
+  f'"{home}" "{away}" "{date[:4]}" {sport} "final book"',
+  f'"{home}" "{away}" "{date[:4]}" {sport} "final stats" pdf',
+  f'"{home}" "{away}" "{date[:4]}" {sport} "box score" pdf',
  ]
- urls=[]
+ urls=[];pages=[]
+ def add(url):
+  if url and url not in urls:urls.append(url)
  for query in queries:
   try:
-   r=session.get("https://www.bing.com/search",params={"q":query,"format":"rss"},timeout=12)
+   r=session.get("https://www.bing.com/search",params={"q":query,"format":"rss"},timeout=10)
    r.raise_for_status()
    root=ET.fromstring(r.content)
    for item in root.findall(".//item"):
     link=item.findtext("link","").strip()
-    if link and link not in urls:urls.append(link)
-  except (requests.RequestException,ET.ParseError):
-   pass
-  if len(urls)>=12:break
- return urls[:12]
+    if not link:continue
+    if ".pdf" in urllib.parse.urlparse(link).path.lower():add(link)
+    elif link not in pages:pages.append(link)
+  except (requests.RequestException,ET.ParseError):pass
+  if len(urls)>=10:break
+ # Search engines frequently index a schedule/media-center HTML page, not the PDF.
+ # Crawl a small number of these pages and prioritize postgame report links.
+ for page in pages[:6]:
+  if time.monotonic()-started>MAX_SECONDS-12:break
+  try:
+   parsed=urllib.parse.urlparse(page)
+   if parsed.scheme!="https" or any((parsed.hostname or "").endswith(x) for x in BAD_HOSTS):continue
+   r=session.get(page,timeout=9)
+   r.raise_for_status()
+   if "html" not in r.headers.get("Content-Type","").lower():continue
+   soup=BeautifulSoup(r.text[:700000],"html.parser")
+   for a in soup.select("a[href]"):
+    href=urllib.parse.urljoin(r.url,a.get("href",""))
+    path=urllib.parse.urlparse(href).path.lower()
+    label=" ".join(a.stripped_strings).lower()
+    if not (".pdf" in path or "/documents/" in path or "/documents/download/" in path):continue
+    positive=any(x in label+" "+path for x in ("gamebook","game book","final book","final stats","final statistics","box score","boxscore","stats pdf"))
+    negative=any(x in label+" "+path for x in ("game notes","pregame","preview","media guide","program","weekly notes"))
+    if positive and not negative:add(href)
+  except requests.RequestException:pass
+ return urls[:24]
 
 def verify(url,game):
  try:
@@ -79,6 +106,9 @@ def verify(url,game):
   reader=PdfReader(io.BytesIO(data))
   text=" ".join((p.extract_text() or "") for p in reader.pages[:5])
   if not names_match(text,game["home_team"],game["away_team"]):return None
+  # A pregame notes packet can mention both teams and the game date.
+  # Require recognizable postgame statistics content.
+  if not any(marker in text.lower() for marker in ("scoring summary","team statistics","individual statistics","play-by-play","final statistics","team stats")):return None
   date=dt.date.fromisoformat(game["date"])
   forms=[date.strftime("%B %d, %Y"),date.strftime("%b %d, %Y"),date.strftime("%m/%d/%Y"),date.strftime("%m/%d/%y"),date.strftime("%Y-%m-%d"),date.strftime("%B %-d, %Y"),date.strftime("%b %-d, %Y")]
   normalized=" ".join(text.lower().split())
