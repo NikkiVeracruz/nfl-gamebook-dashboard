@@ -51,8 +51,8 @@ FOOTBALL_SOURCES={
 }
 # Bump when adding a new source pattern; previously checked games get one
 # immediate retry, then normal cooldown applies again.
-DISCOVERY_VERSION="sidearm-boxscore-v2"
-PRIORITY_GAME_IDS={"401856746"}
+DISCOVERY_VERSION="official-schedule-boxscore-v3"
+PRIORITY_GAME_IDS=set()
 PAGE_CACHE={}
 def official_page_candidates(page,game):
  if page not in PAGE_CACHE:
@@ -108,6 +108,43 @@ def game_boxscore_candidates(game,league):
   except requests.RequestException:continue
  return urls[:8]
 
+def schedule_boxscore_candidates(game,league):
+ """Follow official athletics schedule entries into game-specific stats pages."""
+ if league!="ncaaf":return []
+ urls=[]
+ teams=(game.get("home_team",""),game.get("away_team",""))
+ date=game.get("date","")
+ for team in teams:
+  source=FOOTBALL_SOURCES.get(team)
+  if not source:continue
+  try:
+   resp=session.get(source,timeout=9)
+   resp.raise_for_status()
+   soup=BeautifulSoup(resp.text[:1200000],"html.parser")
+   # Prefer links in a game row containing the opponent and date.
+   opponent=teams[1] if team==teams[0] else teams[0]
+   opponent_terms=words(opponent)
+   for a in soup.select('a[href*="/sports/football/stats/"],a[href*="/boxscore/"]'):
+    href=urllib.parse.urljoin(resp.url,a["href"])
+    context=a.parent.parent.get_text(" ",strip=True).lower()[:500] if a.parent and a.parent.parent else ""
+    slug=urllib.parse.urlparse(href).path.lower()
+    if not (opponent_terms & words(context+" "+slug)):continue
+    if "/boxscore/" in slug and href not in urls:urls.append(href)
+  except requests.RequestException:continue
+ results=[]
+ for page in urls[:4]:
+  try:
+   resp=session.get(page,timeout=10)
+   resp.raise_for_status()
+   soup=BeautifulSoup(resp.text[:1400000],"html.parser")
+   for a in soup.select("a[href]"):
+    href=urllib.parse.urljoin(resp.url,a["href"])
+    label=a.get_text(" ",strip=True).lower()
+    path=urllib.parse.urlparse(href).path.lower()
+    if (".pdf" in path or "view pdf" in label) and href.startswith("https://") and href not in results:results.append(href)
+  except requests.RequestException:continue
+ return results[:12]
+
 def candidates(game,league):
  """Search for postgame books and follow links on official athletics pages."""
  date=game["date"]
@@ -120,6 +157,8 @@ def candidates(game,league):
   f'"{home}" "{away}" "{date[:4]}" {sport} "box score" pdf',
  ]
  urls=game_boxscore_candidates(game,league);pages=[]
+ for url in schedule_boxscore_candidates(game,league):
+  if url not in urls:urls.append(url)
  if league=="ncaaf":
   for team in (home,away):
    page=FOOTBALL_SOURCES.get(team)
