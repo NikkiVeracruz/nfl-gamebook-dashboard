@@ -1,6 +1,6 @@
 {
   "league": "NCAAF",
-  "updated_at": "2026-11-21T23:25:18.069948+00:00",
+  "updated_at": "2026-11-21T23:30:38.866472+00:00",
   "games": [
     {
       "id": "401858302",
@@ -221,7 +221,7 @@
       "home_team": "Ole Miss Rebels",
       "away_team": "Wofford Terriers",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401858533",
@@ -233,7 +233,7 @@
       "home_team": "Purdue Boilermakers",
       "away_team": "Wisconsin Badgers",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401868039",
@@ -245,7 +245,7 @@
       "home_team": "Richmond Spiders",
       "away_team": "William & Mary Tribe",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401871080",
@@ -257,7 +257,7 @@
       "home_team": "Liberty Flames",
       "away_team": "Western Kentucky Hilltoppers",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401868208",
@@ -281,7 +281,7 @@
       "home_team": "West Georgia Wolves",
       "away_team": "West Florida Argonauts",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401860920",
@@ -304,7 +304,7 @@
       "home_team": "Georgia Tech Yellow Jackets",
       "away_team": "Wake Forest Demon Deacons",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401867927",
@@ -316,7 +316,7 @@
       "home_team": "Stonehill Skyhawks",
       "away_team": "Wagner Seahawks",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401856748",
@@ -328,7 +328,7 @@
       "home_team": "Florida Gators",
       "away_team": "Vanderbilt Commodores",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401868167",
@@ -346,7 +346,7 @@
       "id": "401868294",
       "date": "2026-11-21",
       "label": "UT Rio Grande Valley Vaqueros @ Houston Christian Huskies",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868294",
       "home_team": "Houston Christian Huskies",
@@ -363,7 +363,7 @@
       "home_team": "Southeast Missouri State Redhawks",
       "away_team": "UT Martin Skyhawks",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401869929",
@@ -375,7 +375,7 @@
       "home_team": "App State Mountaineers",
       "away_team": "UL Monroe Warhawks",
       "subdivision": "FBS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401858528",
@@ -398,7 +398,7 @@
       "home_team": "North Carolina A&T Aggies",
       "away_team": "UAlbany Great Danes",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401868396",
@@ -410,7 +410,7 @@
       "home_team": "Western Carolina Catamounts",
       "away_team": "The Citadel Bulldogs",
       "subdivision": "FCS",
-      "pdf_checked_at": "2026-11-21T22:42:51.683368+00:00"
+      "pdf_checked_at": "2026-11-21T23:30:39.343900+00:00"
     },
     {
       "id": "401856871",
@@ -682,7 +682,7 @@
       "id": "401868128",
       "date": "2026-11-21",
       "label": "Northern Colorado Bears @ Northern Arizona Lumberjacks",
-      "status": "In Progress",
+      "status": "End of Period",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868128",
       "home_team": "Northern Arizona Lumberjacks",
@@ -836,8 +836,8 @@
       "id": "401858534",
       "date": "2026-11-21",
       "label": "Maryland Terrapins @ USC Trojans",
-      "status": "Scheduled",
-      "state": "pre",
+      "status": "In Progress",
+      "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401858534",
       "home_team": "USC Trojans",
       "away_team": "Maryland Terrapins",
@@ -1056,8 +1056,8 @@
       "id": "401871078",
       "date": "2026-11-21",
       "label": "Florida International Panthers @ Kennesaw State Owls",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871078",
       "home_team": "Kennesaw State Owls",
       "away_team": "Florida International Panthers",
@@ -1149,8 +1149,8 @@
       "id": "401871077",
       "date": "2026-11-21",
       "label": "Delaware Blue Hens @ New Mexico State Aggies",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401871077",
       "home_team": "New Mexico State Aggies",
       "away_team": "Delaware Blue Hens",
@@ -1220,7 +1220,7 @@
       "id": "401891330",
       "date": "2026-11-21",
       "label": "Chicago State Cougars @ Southern Utah Thunderbirds",
-      "status": "In Progress",
+      "status": "Halftime",
       "state": "in",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401891330",
       "home_team": "Southern Utah Thunderbirds",
@@ -1309,8 +1309,8 @@
       "id": "401868941",
       "date": "2026-11-21",
       "label": "Arkansas-Pine Bluff Golden Lions @ Texas Southern Tigers",
-      "status": "In Progress",
-      "state": "in",
+      "status": "Final",
+      "state": "post",
       "game_url": "https://www.espn.com/college-football/game/_/gameId/401868941",
       "home_team": "Texas Southern Tigers",
       "away_team": "Arkansas-Pine Bluff Golden Lions",
