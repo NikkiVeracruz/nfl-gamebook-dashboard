@@ -39,6 +39,37 @@ def names_match(text,home,away):
  a=words(home);b=words(away)
  return bool(a and b and len(a&tokens)>=min(2,len(a)) and len(b&tokens)>=min(2,len(b)))
 
+# Official university athletics media centers and schedules, not third-party PDFs.
+# These pages expose game-specific Final Book / Game Book links.
+FOOTBALL_SOURCES={
+ "Tennessee Volunteers":"https://utsports.com/sports/2026/7/24/football-2026-media-center",
+ "Mississippi State Bulldogs":"https://hailstate.com/sports/2026/6/26/2026-football-media-center",
+ "Penn State Nittany Lions":"https://gopsusports.com/sports/football/schedule",
+ "Cincinnati Bearcats":"https://gobearcats.com/2026-football-media-center",
+ "Arizona State Sun Devils":"https://thesundevils.com/sports/football/schedule/season/2026",
+ "North Carolina Central Eagles":"https://nccueaglepride.com/sports/2026/3/31/football-2026-media-center.aspx",
+}
+PAGE_CACHE={}
+def official_page_candidates(page,game):
+ if page not in PAGE_CACHE:
+  try:
+   r=session.get(page,timeout=9)
+   r.raise_for_status()
+   if "html" not in r.headers.get("Content-Type","").lower():return []
+   soup=BeautifulSoup(r.text[:900000],"html.parser")
+   links=[]
+   for a in soup.select("a[href]"):
+    href=urllib.parse.urljoin(r.url,a["href"])
+    path=urllib.parse.urlparse(href).path.lower()
+    label=" ".join(a.stripped_strings).lower()
+    if not (".pdf" in path or "/documents/" in path or "download" in path):continue
+    if not any(x in label+" "+path for x in ("gamebook","game book","final book","final stats","final statistics","box score","boxscore")):continue
+    if any(x in label+" "+path for x in ("pregame","game notes","preview","media guide","program")):continue
+    links.append(href)
+   PAGE_CACHE[page]=list(dict.fromkeys(links))
+  except requests.RequestException:return []
+ return PAGE_CACHE[page]
+
 def candidates(game,league):
  """Search for postgame books and follow links on official athletics pages."""
  date=game["date"]
@@ -51,9 +82,16 @@ def candidates(game,league):
   f'"{home}" "{away}" "{date[:4]}" {sport} "box score" pdf',
  ]
  urls=[];pages=[]
+ if league=="ncaaf":
+  for team in (home,away):
+   page=FOOTBALL_SOURCES.get(team)
+   if page:
+    for link in official_page_candidates(page,game):
+     if link not in urls:urls.append(link)
  def add(url):
   if url and url not in urls:urls.append(url)
  for query in queries:
+  if time.monotonic()-started>MAX_SECONDS-25:break
   try:
    r=session.get("https://www.bing.com/search",params={"q":query,"format":"rss"},timeout=10)
    r.raise_for_status()
@@ -67,7 +105,7 @@ def candidates(game,league):
   if len(urls)>=10:break
  # Search engines frequently index a schedule/media-center HTML page, not the PDF.
  # Crawl a small number of these pages and prioritize postgame report links.
- for page in pages[:6]:
+ for page in pages[:3]:
   if time.monotonic()-started>MAX_SECONDS-12:break
   try:
    parsed=urllib.parse.urlparse(page)
@@ -85,7 +123,7 @@ def candidates(game,league):
     negative=any(x in label+" "+path for x in ("game notes","pregame","preview","media guide","program","weekly notes"))
     if positive and not negative:add(href)
   except requests.RequestException:pass
- return urls[:24]
+ return urls[:35]
 
 def verify(url,game):
  try:
@@ -140,7 +178,7 @@ def main():
    if previous:
     try:
      elapsed=(TODAY-dt.datetime.fromisoformat(previous)).total_seconds()
-     if elapsed<(3600 if (TODAY.date()-game_date).days<=2 else 86400):continue
+     if elapsed<(1800 if (TODAY.date()-game_date).days<=2 else 86400):continue
     except ValueError:pass
    checked+=1
    result=None
