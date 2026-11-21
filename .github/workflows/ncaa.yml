@@ -2,40 +2,22 @@ name: Update NCAA Forward Archive
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "7,22,37,52 * * * *"
 permissions:
   contents: write
-concurrency:
-  group: ncaa-forward-monitor
-  cancel-in-progress: false
 jobs:
-  monitor:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-      - run: pip install requests pypdf
-      - run: python ncaa_monitor.py
-      - name: Search NCAA football gamebooks (up to 24)
-        run: python ncaa_pdf_discovery.py --league ncaaf
-      - name: Search NCAA mens basketball gamebooks (up to 24)
-        run: python ncaa_pdf_discovery.py --league ncaamb
-      - name: Search NCAA womens basketball gamebooks (up to 24)
-        run: python ncaa_pdf_discovery.py --league ncaawb
-      - name: Publish NCAA feeds and archives
-        run: |
-          if [[ -n "$(git status --porcelain ncaaf/ ncaamb/ ncaawb/)" ]]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add ncaaf/ ncaamb/ ncaawb/
-            git commit -m "Update NCAA game feeds and forward archives"
-            for attempt in 1 2 3 4; do
-              if git push; then exit 0; fi
-              git pull --rebase -X theirs origin main
-              sleep 2
-            done
-            exit 1
-          fi
+  football:
+    uses: ./.github/workflows/ncaa-league.yml
+    with:
+      league: ncaaf
+      sport: NCAAF
+  mens_basketball:
+    uses: ./.github/workflows/ncaa-league.yml
+    with:
+      league: ncaamb
+      sport: NCAAMB
+  womens_basketball:
+    uses: ./.github/workflows/ncaa-league.yml
+    with:
+      league: ncaawb
+      sport: NCAAWB
