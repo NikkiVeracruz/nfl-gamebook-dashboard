@@ -43,6 +43,17 @@ def main():
      if home_name.lower() in unknown or away_name.lower() in unknown:continue
      status=event.get("status",{}).get("type",{})
      game={"id":event_id,"date":game_date,"label":f"{away.get('team',{}).get('displayName','Away')} @ {home.get('team',{}).get('displayName','Home')}","status":status.get("description","Unknown"),"state":status.get("state","unknown"),"game_url":f"https://www.espn.com/{'college-football' if league=='NCAAF' else 'mens-college-basketball' if league=='NCAAMB' else 'womens-college-basketball'}/game/_/gameId/{event_id}","home_team":home.get("team",{}).get("displayName",""),"away_team":away.get("team",{}).get("displayName","")}
+     # ESPN sometimes supplies an athletics-site link on team records.
+     # Store only explicit HTTPS links; never guess a school's domain.
+     for side,prefix in ((home,"home"),(away,"away")):
+      team_data=side.get("team",{})
+      links=team_data.get("links") or []
+      for link in links:
+       href=link.get("href","")
+       labels=" ".join(str(x) for x in link.get("rel",[])).lower()+" "+str(link.get("text","")).lower()
+       if href.startswith("https://") and any(x in labels for x in ("official","athletics","website")) and "espn.com" not in href:
+        game[prefix+"_athletics_url"]=href
+        break
      if league=="NCAAF":
       groups=event.get("groups",{})
       game["subdivision"]="FBS" if group==80 else "FCS"
