@@ -1,109 +1,129 @@
 {
   "games": [
     {
-      "id": "401861968",
-      "label": "Old Dominion Monarchs @ UConn Huskies",
+      "id": "401856871",
+      "label": "Texas Tech Red Raiders @ Baylor Bears",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401868947",
-      "label": "Florida A&M Rattlers @ Bethune-Cookman Wildcats",
-      "sites": [],
-      "candidates": 0,
-      "rejections": {},
-      "verified": false
-    },
-    {
-      "id": "401868352",
-      "label": "East Tennessee State Buccaneers @ Mercer Bears",
-      "sites": [],
-      "candidates": 0,
-      "rejections": {},
-      "verified": false
-    },
-    {
-      "id": "401868253",
-      "label": "Dayton Flyers @ Presbyterian Blue Hose",
-      "sites": [],
-      "candidates": 0,
-      "rejections": {},
-      "verified": false
-    },
-    {
-      "id": "401867825",
-      "label": "Cornell Big Red @ Columbia Lions",
-      "sites": [],
-      "candidates": 0,
-      "rejections": {},
-      "verified": false
-    },
-    {
-      "id": "401856867",
-      "label": "Colorado Buffaloes @ Cincinnati Bearcats",
+      "id": "401856747",
+      "label": "Samford Bulldogs @ Auburn Tigers",
       "sites": [
-        "https://gobearcats.com/2026-football-media-center"
+        "https://auburntigers.com/sports/mens-basketball",
+        "https://samfordsports.com/sports/football"
       ],
-      "candidates": 13,
+      "candidates": 0,
+      "rejections": {},
+      "verified": false,
+      "sample_candidates": []
+    },
+    {
+      "id": "401858304",
+      "label": "NC State Wolfpack @ Florida State Seminoles",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false,
+      "sample_candidates": []
+    },
+    {
+      "id": "401862835",
+      "label": "North Texas Mean Green @ Tulane Green Wave",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false,
+      "sample_candidates": []
+    },
+    {
+      "id": "401858305",
+      "label": "North Carolina Tar Heels @ Virginia Cavaliers",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false,
+      "sample_candidates": []
+    },
+    {
+      "id": "401872643",
+      "label": "New Haven Chargers @ Mercyhurst Lakers",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false,
+      "sample_candidates": []
+    },
+    {
+      "id": "401866699",
+      "label": "New Hampshire Wildcats @ Maine Black Bears",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false,
+      "sample_candidates": []
+    },
+    {
+      "id": "401867971",
+      "label": "Morgan State Bears @ North Carolina Central Eagles",
+      "sites": [
+        "https://nccueaglepride.com/sports/2026/3/31/football-2026-media-center.aspx"
+      ],
+      "candidates": 15,
       "rejections": {
-        "not_pdf": 13
+        "html_landing_page": 14,
+        "request_error": 1
       },
-      "verified": false
+      "verified": false,
+      "sample_candidates": [
+        "https://nccueaglepride.com/documents/2026/7/23/NC_Central_Tailgating_Policy_2026.pdf",
+        "https://nccueaglepride.com/sports/football/stats/2026",
+        "https://nccueaglepride.com/football/2026/boxscore/vs-morgan-state/8396/pdf",
+        "https://nccueaglepride.com/documents/2026/8/29/NCCU082926.PDF",
+        "https://nccueaglepride.com/documents/2026/9/26/NCCU090526.PDF"
+      ]
     },
     {
-      "id": "401867998",
-      "label": "Colgate Raiders @ Bucknell Bison",
+      "id": "401868218",
+      "label": "Morehead State Eagles @ Butler Bulldogs",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401869946",
-      "label": "Coastal Carolina Chanticleers @ Louisiana Ragin' Cajuns",
-      "sites": [],
-      "candidates": 1,
-      "rejections": {
-        "team_mismatch": 1
-      },
-      "verified": false
-    },
-    {
-      "id": "401872619",
-      "label": "Pennsylvania Quakers @ Princeton Tigers",
+      "id": "401868117",
+      "label": "Montana Grizzlies @ Montana State Bobcats",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401858531",
-      "label": "Ohio State Buckeyes @ Nebraska Cornhuskers",
+      "id": "401866697",
+      "label": "Monmouth Hawks @ Campbell Fighting Camels",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401858530",
-      "label": "Northwestern Wildcats @ Minnesota Golden Gophers",
+      "id": "401871079",
+      "label": "Missouri State Bears @ Jacksonville State Gamecocks",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
-    },
-    {
-      "id": "401867873",
-      "label": "Northern Iowa Panthers @ Murray State Racers",
-      "sites": [],
-      "candidates": 0,
-      "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     }
   ],
-  "version": "diagnostics-athletics-v5",
+  "version": "school-site-download-v6",
   "checked": 12,
   "verified": 0
 }
