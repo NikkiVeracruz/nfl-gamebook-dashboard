@@ -1,11 +1,23 @@
 {
-  "updated_at": "2026-11-22T20:31:54.062889+00:00",
+  "updated_at": "2026-11-22T21:00:53.372804+00:00",
   "games": [
+    {
+      "slug": "packers-at-rams-2026-reg-12",
+      "date": "2026-11-25",
+      "label": "Packers at Rams, Wednesday, November 25th, 8:00 PM, NETFLIX",
+      "game_url": "https://www.nfl.com/games/packers-at-rams-2026-reg-12"
+    },
     {
       "slug": "bengals-at-commanders-2026-reg-11",
       "date": "2026-11-23",
       "label": "Bengals at Commanders, Monday, November 23rd, 8:15 PM, ESPN",
       "game_url": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11"
+    },
+    {
+      "slug": "cardinals-at-chiefs-2026-reg-11",
+      "date": "2026-11-22",
+      "label": "Watch Replay, Cardinals 7, Chiefs 34, Sunday, November 22nd",
+      "game_url": "https://www.nfl.com/games/cardinals-at-chiefs-2026-reg-11"
     },
     {
       "slug": "vikings-at-49ers-2026-reg-11",
@@ -16,25 +28,25 @@
     {
       "slug": "titans-at-cowboys-2026-reg-11",
       "date": "2026-11-22",
-      "label": "Titans 0, Cowboys 0, Q1, FOX",
+      "label": "Titans 23, Cowboys 51, Q4, FOX",
       "game_url": "https://www.nfl.com/games/titans-at-cowboys-2026-reg-11"
     },
     {
       "slug": "steelers-at-eagles-2026-reg-11",
       "date": "2026-11-22",
-      "label": "Steelers 0, Eagles 0, Q1, CBS",
+      "label": "Steelers 9, Eagles 19, Q4, CBS",
       "game_url": "https://www.nfl.com/games/steelers-at-eagles-2026-reg-11"
     },
     {
       "slug": "saints-at-bears-2026-reg-11",
       "date": "2026-11-22",
-      "label": "Saints 0, Bears 0, Q1, FOX",
+      "label": "Saints 10, Bears 21, Q4, FOX",
       "game_url": "https://www.nfl.com/games/saints-at-bears-2026-reg-11"
     },
     {
       "slug": "ravens-at-panthers-2026-reg-11",
       "date": "2026-11-22",
-      "label": "Ravens 0, Panthers 0, Q1, FOX",
+      "label": "Ravens 33, Panthers 32, Q4, FOX",
       "game_url": "https://www.nfl.com/games/ravens-at-panthers-2026-reg-11"
     },
     {
@@ -58,19 +70,13 @@
     {
       "slug": "dolphins-at-bills-2026-reg-11",
       "date": "2026-11-22",
-      "label": "Dolphins 0, Bills 0, Q1, CBS",
+      "label": "Dolphins 9, Bills 26, Q4, CBS",
       "game_url": "https://www.nfl.com/games/dolphins-at-bills-2026-reg-11"
-    },
-    {
-      "slug": "cardinals-at-chiefs-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Cardinals 0, Chiefs 0, Q1, CBS",
-      "game_url": "https://www.nfl.com/games/cardinals-at-chiefs-2026-reg-11"
     },
     {
       "slug": "buccaneers-at-lions-2026-reg-11",
       "date": "2026-11-22",
-      "label": "Buccaneers at Lions, Sunday, November 22nd, 1:00 PM, FOX",
+      "label": "Buccaneers 14, Lions 24, Q4, FOX",
       "game_url": "https://www.nfl.com/games/buccaneers-at-lions-2026-reg-11"
     },
     {
