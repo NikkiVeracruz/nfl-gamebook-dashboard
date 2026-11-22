@@ -168,7 +168,7 @@ def main():
         try:
             html=get(session,game["game_url"]+"?tab=recap")
             text=BeautifulSoup(html,"html.parser").get_text(" ",strip=True)
-            if not re.search(r"\\bFinal(?:/OT|/\\dOT)?\\b",text,re.I):continue
+            # A verified official PDF is sufficient; NFL pages may say Watch Replay instead of Final.
             pdf=gamebook_link(html,game["game_url"])
             if pdf and verify_pdf(session,pdf):
                 game["pdf_url"]=pdf
