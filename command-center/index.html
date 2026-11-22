@@ -55,7 +55,7 @@ function refreshHistoryFilters(){
  const league=$("history-league").value,teamSelect=$("history-team"),yearSelect=$("history-year");
  const selectedTeam=teamSelect.value,selectedYear=yearSelect.value;
  const leagues=league==="all"?config.map(c=>c.id):[league];
- const names=[...new Set(leagues.flatMap(l=>ARCHIVE_TEAMS[l]||[]).concat(leagues.filter(l=>l.startsWith("NCAA")||l==="WNBA").flatMap(l=>(historyFeeds[l]||[]).flatMap(g=>[g.home_team,g.away_team]).filter(Boolean))))].sort();
+ const names=[...new Set(leagues.flatMap(l=>ARCHIVE_TEAMS[l]||[]).concat(leagues.filter(l=>l==="WNBA").flatMap(l=>(historyFeeds[l]||[]).flatMap(g=>[g.home_team,g.away_team]).filter(Boolean))))].sort();
  teamSelect.replaceChildren(new Option("All teams","all"));
  for(const name of names)teamSelect.add(new Option(name,name));
  if(names.includes(selectedTeam))teamSelect.value=selectedTeam;
