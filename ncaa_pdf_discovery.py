@@ -51,7 +51,7 @@ FOOTBALL_SOURCES={
 }
 # Bump when adding a new source pattern; previously checked games get one
 # immediate retry, then normal cooldown applies again.
-DISCOVERY_VERSION="diagnostics-athletics-v5"
+DISCOVERY_VERSION="school-site-download-v6"
 PRIORITY_GAME_IDS=set()
 PAGE_CACHE={}
 DIAGNOSTICS={"games":[]}
@@ -124,26 +124,26 @@ def athletics_sources(team,league,espn_url=None):
  if espn_url:
   p=urllib.parse.urlparse(espn_url)
   if p.scheme=="https" and p.hostname and not any(p.hostname==x or p.hostname.endswith("."+x) for x in BAD_HOSTS):sources.insert(0,espn_url)
- if school_lookups>=MAX_SCHOOL_LOOKUPS:
-  return sources
+ if school_lookups>=MAX_SCHOOL_LOOKUPS:return sources
  school_lookups+=1
  sport="football" if league=="ncaaf" else "basketball"
- query=f'"{team}" official athletics {sport} schedule 2026'
- try:
-  response=session.get("https://www.bing.com/search",params={"q":query,"format":"rss"},timeout=8)
-  response.raise_for_status()
-  root=ET.fromstring(response.content)
-  for item in root.findall(".//item"):
-   url=item.findtext("link","").strip()
-   parsed=urllib.parse.urlparse(url)
-   host=(parsed.hostname or "").lower()
-   path=parsed.path.lower()
-   if parsed.scheme!="https" or any(host==x or host.endswith("."+x) for x in BAD_HOSTS):continue
-   if not any(x in path for x in ("/sports/football/","/sports/football","/sports/mens-basketball/","/sports/womens-basketball/")):continue
-   if not any(x in path for x in ("schedule","stats","boxscore","media-center")):continue
-   if url not in sources:sources.append(url)
-   if len(sources)>=3:break
- except (requests.RequestException,ET.ParseError):pass
+ # Do not require a search result to have a specific Sidearm URL structure.
+ for query in (f'"{team}" official athletics {sport} schedule 2026',f'"{team}" {sport} final stats 2026'):
+  if time.monotonic()-started>MAX_SECONDS-35:break
+  try:
+   response=session.get("https://www.bing.com/search",params={"q":query,"format":"rss"},timeout=8)
+   response.raise_for_status()
+   root=ET.fromstring(response.content)
+   for item in root.findall(".//item"):
+    url=item.findtext("link","").strip()
+    parsed=urllib.parse.urlparse(url)
+    host=(parsed.hostname or "").lower()
+    if parsed.scheme!="https" or not host or any(host==x or host.endswith("."+x) for x in BAD_HOSTS):continue
+    if not any(x in parsed.path.lower() for x in ("football","basketball","athletics","schedule","stats","boxscore")):continue
+    if url not in sources:sources.append(url)
+    if len(sources)>=5:break
+  except (requests.RequestException,ET.ParseError):pass
+  if len(sources)>=5:break
  SCHOOL_PAGES[team]=sources
  return sources
 
@@ -165,7 +165,7 @@ def schedule_boxscore_candidates(game,league):
      href=urllib.parse.urljoin(resp.url,a["href"])
      path=urllib.parse.urlparse(href).path.lower()
      context=a.parent.parent.get_text(" ",strip=True)[:500] if a.parent and a.parent.parent else ""
-     if "/boxscore/" in path and words(opponent)&words(context+" "+path) and href not in pages:pages.append(href)
+     if ("/boxscore/" in path or "/stats/" in path) and words(opponent)&words(context+" "+path) and href not in pages:pages.append(href)
    except requests.RequestException:continue
  results=[]
  for page in pages[:3]:
@@ -254,7 +254,24 @@ def verify(url,game):
    if buf.tell()>5_000_000:return None
   data=buf.getvalue()
   if not data.startswith(b"%PDF"):
-   reject("not_pdf");return None
+   # Some download endpoints serve HTML with a separate PDF link.
+   if "html" in r.headers.get("Content-Type","").lower() or data[:200].lstrip().lower().startswith((b"<!doctype html",b"<html")):
+    reject("html_landing_page")
+    soup=BeautifulSoup(data[:500000],"html.parser")
+    links=[]
+    for anchor in soup.select("a[href]"):
+     href=urllib.parse.urljoin(final,anchor["href"])
+     target=urllib.parse.urlparse(href)
+     if target.scheme=="https" and target.hostname==finalhost and href!=final and (".pdf" in target.path.lower() or "/documents/" in target.path.lower()) and href not in links:links.append(href)
+    for link in links[:2]:
+     # Fetch and validate the linked PDF without accepting the HTML page.
+     try:
+      response=session.get(link,timeout=12)
+      if response.ok and response.content.startswith(b"%PDF"):
+       return verify(link,game)
+     except requests.RequestException:pass
+   else:reject("not_pdf")
+   return None
   reader=PdfReader(io.BytesIO(data))
   text=" ".join((p.extract_text() or "") for p in reader.pages[:5])
   if not names_match(text,game["home_team"],game["away_team"]):
@@ -306,6 +323,7 @@ def main():
    urls=candidates(game,league)
    ACTIVE["sites"]=list(dict.fromkeys(ACTIVE["sites"]))[:25]
    ACTIVE["candidates"]=len(urls)
+   ACTIVE["sample_candidates"]=urls[:5]
    for url in urls:
     if time.monotonic()-started>MAX_SECONDS:break
     result=verify(url,game)
