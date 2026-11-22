@@ -32,6 +32,11 @@ def main():
     check("gamebooks.json" in html, "Dashboard is not referencing current feed")
     check("archive.json" in html, "Dashboard is not referencing archive")
     print("PASS dashboard feed references")
+    master = Path("command-center/index.html").read_text(encoding="utf-8")
+    for league in ("NFL", "NBA", "WNBA", "NHL", "MLB"):
+        check('id:"' + league + '"' in master, "Master Board missing " + league)
+    check("gamebooks.json" in master and "archive.json" in master, "Master Board missing feed reference")
+    print("PASS Master Board five-league configuration")
     print("PASS all read-only checks")
 
 if __name__ == "__main__":
