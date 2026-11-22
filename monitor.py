@@ -157,7 +157,11 @@ def main():
         prior=json.loads(OUT.read_text())
         previous={g["slug"]:g for g in prior.get("games",[]) if g.get("slug")}
     except (FileNotFoundError,ValueError):pass
-    # A temporary schedule scrape failure must not erase known games.\n    for slug,old in previous.items():\n        if start.isoformat()<=old.get("date","")<end.isoformat() and slug not in games:\n            games[slug]=old.copy()\n    for slug,game in games.items():
+    # A temporary schedule scrape failure must not erase known games.
+    for slug,old in previous.items():
+        if start.isoformat()<=old.get("date","")<end.isoformat() and slug not in games:
+            games[slug]=old.copy()
+    for slug,game in games.items():
         old=previous.get(slug,{})
         if old.get("pdf_url") and is_official(old["pdf_url"]) and verify_pdf(session,old["pdf_url"]):
             game["pdf_url"]=old["pdf_url"];continue
