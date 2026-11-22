@@ -158,7 +158,10 @@ def main():
         previous={g["slug"]:g for g in prior.get("games",[]) if g.get("slug")}
     except (FileNotFoundError,ValueError):pass
     # A temporary schedule scrape failure must not erase known games.
-    missing_from_source = [slug for slug,old in previous.items() if start.isoformat() <= old.get("date","") < end.isoformat() and slug not in games]\n    if missing_from_source:\n        LOG.warning("SCHEDULE COMPLETENESS ALERT: %d previously known NFL games absent from discovery: %s", len(missing_from_source), ", ".join(missing_from_source))\n    for slug,old in previous.items():
+    missing_from_source = [slug for slug,old in previous.items() if start.isoformat() <= old.get("date","") < end.isoformat() and slug not in games]
+    if missing_from_source:
+        LOG.warning("SCHEDULE COMPLETENESS ALERT: %d previously known NFL games absent from discovery: %s", len(missing_from_source), ", ".join(missing_from_source))
+    for slug,old in previous.items():
         if start.isoformat()<=old.get("date","")<end.isoformat() and slug not in games:
             games[slug]=old.copy()
     for slug,game in games.items():
