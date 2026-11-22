@@ -1,6 +1,6 @@
 {
   "window_label": "Nov 19, 2026 \u2013 Nov 25, 2026 (ET)",
-  "updated_at": "2026-11-22T18:04:58.820856+00:00",
+  "updated_at": "2026-11-22T18:52:17.633634+00:00",
   "games": [
     {
       "slug": "colts-at-texans-2026-reg-11",
@@ -8,24 +8,6 @@
       "label": "Watch Replay, Colts 3, Texans 26, Thursday, November 19th",
       "game_url": "https://www.nfl.com/games/colts-at-texans-2026-reg-11",
       "pdf_url": "https://static.www.nfl.com/image/upload/v1795147937/gamecenter/ab997d97-4feb-11f1-abca-2c54536568a9.pdf"
-    },
-    {
-      "slug": "buccaneers-at-lions-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Buccaneers at Lions, Sunday, November 22nd, 1:00 PM, FOX",
-      "game_url": "https://www.nfl.com/games/buccaneers-at-lions-2026-reg-11"
-    },
-    {
-      "slug": "cardinals-at-chiefs-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Cardinals 0, Chiefs 0, Q1, CBS",
-      "game_url": "https://www.nfl.com/games/cardinals-at-chiefs-2026-reg-11"
-    },
-    {
-      "slug": "dolphins-at-bills-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Dolphins 0, Bills 0, Q1, CBS",
-      "game_url": "https://www.nfl.com/games/dolphins-at-bills-2026-reg-11"
     },
     {
       "slug": "jaguars-at-giants-2026-reg-11",
@@ -44,30 +26,6 @@
       "date": "2026-11-22",
       "label": "Raiders at Broncos, Sunday, November 22nd, 4:25 PM, CBS",
       "game_url": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11"
-    },
-    {
-      "slug": "ravens-at-panthers-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Ravens 0, Panthers 0, Q1, FOX",
-      "game_url": "https://www.nfl.com/games/ravens-at-panthers-2026-reg-11"
-    },
-    {
-      "slug": "saints-at-bears-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Saints 0, Bears 0, Q1, FOX",
-      "game_url": "https://www.nfl.com/games/saints-at-bears-2026-reg-11"
-    },
-    {
-      "slug": "steelers-at-eagles-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Steelers 0, Eagles 0, Q1, CBS",
-      "game_url": "https://www.nfl.com/games/steelers-at-eagles-2026-reg-11"
-    },
-    {
-      "slug": "titans-at-cowboys-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Titans 0, Cowboys 0, Q1, FOX",
-      "game_url": "https://www.nfl.com/games/titans-at-cowboys-2026-reg-11"
     },
     {
       "slug": "vikings-at-49ers-2026-reg-11",
