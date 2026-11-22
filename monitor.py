@@ -42,6 +42,7 @@ def parse_date(text,season):
 
 def discover(session,season,start,end):
     games={}
+    start_date=datetime.fromisoformat(start).date()
     phases=[f"PRE{i}" for i in range(1,4)]+[f"REG{i}" for i in range(1,19)]+[f"POST{i}" for i in range(1,5)]
     # Scan the full season to avoid relying on an assumed NFL week number.
     for phase in phases:
@@ -58,6 +59,35 @@ def discover(session,season,start,end):
             texts=[a.get_text(" ",strip=True)]
             node=a
             for _ in range(5):
+                node=node.parent
+                if node is None:break
+                txt=node.get_text(" ",strip=True)
+                if txt and len(txt)<1200:texts.append(txt)
+            date=next((d for t in texts if (d:=parse_date(t,season))),None)
+            if not date or not (start<=date<end):continue
+            label=a.get("aria-label") or a.get_text(" ",strip=True)
+            if not label or len(label)>100:label=slug.replace("-"," ").title()
+            games[slug]={"slug":slug,"date":date,"label":label[:140],"game_url":link}
+    # NFL's by-week schedule uses a different page structure from REG pages.
+    # Scan adjacent weeks too: the Thursday-to-Thursday window can cross weeks.
+    kickoff=datetime(season,9,4).date()
+    kickoff+=timedelta(days=(3-kickoff.weekday())%7)
+    current_week=max(1,min(18,((start_date-kickoff).days//7)+1))
+    for week in range(max(1,current_week-1),min(18,current_week+2)+1):
+        url=f"{BASE}/schedules/{season}/by-week/week-{week}"
+        try:html=get(session,url)
+        except requests.RequestException as e:
+            LOG.warning("By-week schedule fetch failed %s: %s",url,e)
+            continue
+        soup=BeautifulSoup(html,"html.parser")
+        for a in soup.select('a[href*="/games/"]'):
+            link=urljoin(BASE,a.get("href","").split("?")[0])
+            if urlparse(link).hostname not in ("www.nfl.com","nfl.com"):continue
+            slug=urlparse(link).path.rstrip("/").split("/")[-1]
+            if not slug:continue
+            texts=[a.get_text(" ",strip=True)]
+            node=a
+            for _ in range(6):
                 node=node.parent
                 if node is None:break
                 txt=node.get_text(" ",strip=True)
@@ -127,7 +157,7 @@ def main():
         prior=json.loads(OUT.read_text())
         previous={g["slug"]:g for g in prior.get("games",[]) if g.get("slug")}
     except (FileNotFoundError,ValueError):pass
-    for slug,game in games.items():
+    # A temporary schedule scrape failure must not erase known games.\n    for slug,old in previous.items():\n        if start.isoformat()<=old.get("date","")<end.isoformat() and slug not in games:\n            games[slug]=old.copy()\n    for slug,game in games.items():
         old=previous.get(slug,{})
         if old.get("pdf_url") and is_official(old["pdf_url"]) and verify_pdf(session,old["pdf_url"]):
             game["pdf_url"]=old["pdf_url"];continue
