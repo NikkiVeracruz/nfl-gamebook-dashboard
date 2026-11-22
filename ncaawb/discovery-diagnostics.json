@@ -1,105 +1,115 @@
 {
   "games": [
     {
-      "id": "401916189",
-      "label": "Cincinnati Bearcats @ UNLV Lady Rebels",
+      "id": "401918036",
+      "label": "Siena Saints @ Mercyhurst Lakers",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401911758",
-      "label": "Loyola Chicago Ramblers @ Western Illinois Leathernecks",
+      "id": "401906093",
+      "label": "Alabama Crimson Tide @ North Carolina Tar Heels",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401927840",
-      "label": "Long Beach State Beach @ San Jos\u00e9 State Spartans",
+      "id": "401927097",
+      "label": "South Carolina Upstate Spartans @ Tennessee Tech Golden Eagles",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401919683",
-      "label": "Lindenwood Lions @ Evansville Purple Aces",
+      "id": "401913038",
+      "label": "South Carolina Gamecocks @ Providence Friars",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401916197",
-      "label": "Le Moyne Dolphins @ Niagara Purple Eagles",
+      "id": "401919450",
+      "label": "Saint Peter's Peacocks @ Long Island University Sharks",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401913019",
-      "label": "Xavier Musketeers @ Ohio Bobcats",
+      "id": "401919439",
+      "label": "Sacred Heart Pioneers @ Detroit Mercy Titans",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401909687",
-      "label": "UMBC Retrievers @ Brown Bears",
+      "id": "401918944",
+      "label": "Purdue Boilermakers @ Texas Tech Lady Raiders",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401913710",
-      "label": "UCF Knights @ Florida State Seminoles",
+      "id": "401929020",
+      "label": "Kent State Golden Flashes @ Cleveland State Vikings",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401923341",
-      "label": "Texas Southern Tigers @ UTEP Miners",
+      "id": "401918678",
+      "label": "James Madison Dukes @ George Mason Patriots",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401918435",
-      "label": "Tarleton State Texans @ Nicholls Colonels",
-      "sites": [],
-      "candidates": 2,
-      "rejections": {
-        "team_mismatch": 2
-      },
-      "verified": false
-    },
-    {
-      "id": "401915767",
-      "label": "Stony Brook Seawolves @ Duquesne Dukes",
+      "id": "401915669",
+      "label": "Iona Gaels @ Bucknell Bison",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
     },
     {
-      "id": "401916166",
-      "label": "St. Mary's (MD) Seahawks @ Mount St. Mary's Mountaineers",
+      "id": "401923486",
+      "label": "Incarnate Word Cardinals @ Texas A&M Aggies",
       "sites": [],
       "candidates": 0,
       "rejections": {},
-      "verified": false
+      "verified": false,
+      "sample_candidates": []
+    },
+    {
+      "id": "401913049",
+      "label": "IU Indianapolis Jaguars @ DePaul Blue Demons",
+      "sites": [],
+      "candidates": 0,
+      "rejections": {},
+      "verified": false,
+      "sample_candidates": []
     }
   ],
-  "version": "diagnostics-athletics-v5",
+  "version": "school-site-download-v6",
   "checked": 12,
   "verified": 0
 }

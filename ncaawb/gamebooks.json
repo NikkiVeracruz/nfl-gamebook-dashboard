@@ -1,7 +1,267 @@
 {
   "league": "NCAAWB",
-  "updated_at": "2026-11-21T23:57:34.780333+00:00",
+  "updated_at": "2026-11-22T00:04:23.600497+00:00",
   "games": [
+    {
+      "id": "401918919",
+      "date": "2026-11-25",
+      "label": "Monmouth Hawks @ Maryland Terrapins",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918919",
+      "home_team": "Maryland Terrapins",
+      "away_team": "Monmouth Hawks"
+    },
+    {
+      "id": "401906094",
+      "date": "2026-11-25",
+      "label": "Gardner-Webb Runnin' Bulldogs @ North Carolina Tar Heels",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401906094",
+      "home_team": "North Carolina Tar Heels",
+      "away_team": "Gardner-Webb Runnin' Bulldogs"
+    },
+    {
+      "id": "401919970",
+      "date": "2026-11-25",
+      "label": "Roosevelt Lakers @ Northern Illinois Huskies",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919970",
+      "home_team": "Northern Illinois Huskies",
+      "away_team": "Roosevelt Lakers"
+    },
+    {
+      "id": "401919878",
+      "date": "2026-11-25",
+      "label": "Western Illinois Leathernecks @ Chicago State Cougars",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919878",
+      "home_team": "Chicago State Cougars",
+      "away_team": "Western Illinois Leathernecks"
+    },
+    {
+      "id": "401919684",
+      "date": "2026-11-25",
+      "label": "Southeast Missouri State Redhawks @ Evansville Purple Aces",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919684",
+      "home_team": "Evansville Purple Aces",
+      "away_team": "Southeast Missouri State Redhawks"
+    },
+    {
+      "id": "401918706",
+      "date": "2026-11-25",
+      "label": "Stephen F. Austin Ladyjacks @ Arkansas State Red Wolves",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918706",
+      "home_team": "Arkansas State Red Wolves",
+      "away_team": "Stephen F. Austin Ladyjacks"
+    },
+    {
+      "id": "401913039",
+      "date": "2026-11-25",
+      "label": "New Hampshire Wildcats @ Providence Friars",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913039",
+      "home_team": "Providence Friars",
+      "away_team": "New Hampshire Wildcats"
+    },
+    {
+      "id": "401912995",
+      "date": "2026-11-25",
+      "label": "UL Monroe Warhawks @ Alabama Crimson Tide",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401912995",
+      "home_team": "Alabama Crimson Tide",
+      "away_team": "UL Monroe Warhawks"
+    },
+    {
+      "id": "401926051",
+      "date": "2026-11-25",
+      "label": "Dallas Crusaders @ North Texas Mean Green",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401926051",
+      "home_team": "North Texas Mean Green",
+      "away_team": "Dallas Crusaders"
+    },
+    {
+      "id": "401920212",
+      "date": "2026-11-25",
+      "label": "West Alabama Tigers @ LSU New Orleans Privateers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401920212",
+      "home_team": "LSU New Orleans Privateers",
+      "away_team": "West Alabama Tigers"
+    },
+    {
+      "id": "401920007",
+      "date": "2026-11-25",
+      "label": "Southern Illinois Salukis @ Western Kentucky Lady Toppers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401920007",
+      "home_team": "Western Kentucky Lady Toppers",
+      "away_team": "Southern Illinois Salukis"
+    },
+    {
+      "id": "401918612",
+      "date": "2026-11-25",
+      "label": "Alabama State Lady Hornets @ Northwestern State Lady Demons",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918612",
+      "home_team": "Northwestern State Lady Demons",
+      "away_team": "Alabama State Lady Hornets"
+    },
+    {
+      "id": "401911740",
+      "date": "2026-11-25",
+      "label": "South Carolina Gamecocks @ UConn Huskies",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401911740",
+      "home_team": "UConn Huskies",
+      "away_team": "South Carolina Gamecocks"
+    },
+    {
+      "id": "401921437",
+      "date": "2026-11-25",
+      "label": "Kansas City Roos @ Nebraska Cornhuskers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401921437",
+      "home_team": "Nebraska Cornhuskers",
+      "away_team": "Kansas City Roos"
+    },
+    {
+      "id": "401923329",
+      "date": "2026-11-25",
+      "label": "Northern Colorado Bears @ Denver Pioneers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923329",
+      "home_team": "Denver Pioneers",
+      "away_team": "Northern Colorado Bears"
+    },
+    {
+      "id": "401923132",
+      "date": "2026-11-25",
+      "label": "BYU Cougars @ Utah Valley Wolverines",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923132",
+      "home_team": "Utah Valley Wolverines",
+      "away_team": "BYU Cougars"
+    },
+    {
+      "id": "401920442",
+      "date": "2026-11-25",
+      "label": "St. Mary's (TX) Rattlers @ Texas A&M-Corpus Christi Islanders",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401920442",
+      "home_team": "Texas A&M-Corpus Christi Islanders",
+      "away_team": "St. Mary's (TX) Rattlers"
+    },
+    {
+      "id": "401911759",
+      "date": "2026-11-25",
+      "label": "DePaul Blue Demons @ Loyola Chicago Ramblers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401911759",
+      "home_team": "Loyola Chicago Ramblers",
+      "away_team": "DePaul Blue Demons"
+    },
+    {
+      "id": "401927009",
+      "date": "2026-11-25",
+      "label": "Nelson American Indian Warriors @ Southern Utah Thunderbirds",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927009",
+      "home_team": "Southern Utah Thunderbirds",
+      "away_team": "Nelson American Indian Warriors"
+    },
+    {
+      "id": "401916086",
+      "date": "2026-11-25",
+      "label": "San Jos\u00e9 State Spartans @ Arizona State Sun Devils",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401916086",
+      "home_team": "Arizona State Sun Devils",
+      "away_team": "San Jos\u00e9 State Spartans"
+    },
+    {
+      "id": "401927847",
+      "date": "2026-11-25",
+      "label": "Whittier Poets @ UC San Diego Tritons",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927847",
+      "home_team": "UC San Diego Tritons",
+      "away_team": "Whittier Poets"
+    },
+    {
+      "id": "401926989",
+      "date": "2026-11-25",
+      "label": "Carroll (MT) Fighting Saints @ Montana Lady Griz",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401926989",
+      "home_team": "Montana Lady Griz",
+      "away_team": "Carroll (MT) Fighting Saints"
+    },
+    {
+      "id": "401926954",
+      "date": "2026-11-25",
+      "label": "Whitworth Pirates @ Eastern Washington Eagles",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401926954",
+      "home_team": "Eastern Washington Eagles",
+      "away_team": "Whitworth Pirates"
+    },
+    {
+      "id": "401923674",
+      "date": "2026-11-25",
+      "label": "Virginia Cavaliers @ UAB Blazers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923674",
+      "home_team": "UAB Blazers",
+      "away_team": "Virginia Cavaliers"
+    },
+    {
+      "id": "401918512",
+      "date": "2026-11-25",
+      "label": "Eastern Kentucky Colonels @ New Mexico Lobos",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918512",
+      "home_team": "New Mexico Lobos",
+      "away_team": "Eastern Kentucky Colonels"
+    },
+    {
+      "id": "401921523",
+      "date": "2026-11-25",
+      "label": "Cal State Fullerton Titans @ Portland State Vikings",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401921523",
+      "home_team": "Portland State Vikings",
+      "away_team": "Cal State Fullerton Titans"
+    },
     {
       "id": "401929102",
       "date": "2026-11-24",
@@ -191,6 +451,356 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927108",
       "home_team": "USC Trojans",
       "away_team": "Northern Arizona Lumberjacks"
+    },
+    {
+      "id": "401919535",
+      "date": "2026-11-24",
+      "label": "Bucknell Bison @ Le Moyne Dolphins",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919535",
+      "home_team": "Le Moyne Dolphins",
+      "away_team": "Bucknell Bison"
+    },
+    {
+      "id": "401919425",
+      "date": "2026-11-24",
+      "label": "William & Mary Tribe @ Coppin State Eagles",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919425",
+      "home_team": "Coppin State Eagles",
+      "away_team": "William & Mary Tribe"
+    },
+    {
+      "id": "401917187",
+      "date": "2026-11-24",
+      "label": "American University Eagles @ Yale Bulldogs",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401917187",
+      "home_team": "Yale Bulldogs",
+      "away_team": "American University Eagles"
+    },
+    {
+      "id": "401921151",
+      "date": "2026-11-24",
+      "label": "La Salle Explorers @ Villanova Wildcats",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401921151",
+      "home_team": "Villanova Wildcats",
+      "away_team": "La Salle Explorers"
+    },
+    {
+      "id": "401929239",
+      "date": "2026-11-24",
+      "label": "St. Bonaventure Bonnies @ Georgia State Panthers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401929239",
+      "home_team": "Georgia State Panthers",
+      "away_team": "St. Bonaventure Bonnies"
+    },
+    {
+      "id": "401918727",
+      "date": "2026-11-24",
+      "label": "Central Michigan Chippewas @ St. Thomas Tommies",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918727",
+      "home_team": "St. Thomas Tommies",
+      "away_team": "Central Michigan Chippewas"
+    },
+    {
+      "id": "401921022",
+      "date": "2026-11-24",
+      "label": "Davidson Wildcats @ Notre Dame Fighting Irish",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401921022",
+      "home_team": "Notre Dame Fighting Irish",
+      "away_team": "Davidson Wildcats"
+    },
+    {
+      "id": "401918586",
+      "date": "2026-11-24",
+      "label": "Wright State Raiders @ Bethune-Cookman Wildcats",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918586",
+      "home_team": "Bethune-Cookman Wildcats",
+      "away_team": "Wright State Raiders"
+    },
+    {
+      "id": "401927023",
+      "date": "2026-11-24",
+      "label": "Fresno State Bulldogs @ Florida Gulf Coast Eagles",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927023",
+      "home_team": "Florida Gulf Coast Eagles",
+      "away_team": "Fresno State Bulldogs"
+    },
+    {
+      "id": "401921080",
+      "date": "2026-11-24",
+      "label": "George Mason Patriots @ Longwood Lancers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401921080",
+      "home_team": "Longwood Lancers",
+      "away_team": "George Mason Patriots"
+    },
+    {
+      "id": "401919440",
+      "date": "2026-11-24",
+      "label": "Sacred Heart Pioneers @ New Haven Chargers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919440",
+      "home_team": "New Haven Chargers",
+      "away_team": "Sacred Heart Pioneers"
+    },
+    {
+      "id": "401918427",
+      "date": "2026-11-24",
+      "label": "Agnes Scott AGNES SCOTT @ West Georgia Wolves",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918427",
+      "home_team": "West Georgia Wolves",
+      "away_team": "Agnes Scott AGNES SCOTT"
+    },
+    {
+      "id": "401918037",
+      "date": "2026-11-24",
+      "label": "Siena Saints @ Colgate Raiders",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918037",
+      "home_team": "Colgate Raiders",
+      "away_team": "Siena Saints"
+    },
+    {
+      "id": "401927950",
+      "date": "2026-11-24",
+      "label": "Western Michigan Broncos @ Lindenwood Lions",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927950",
+      "home_team": "Lindenwood Lions",
+      "away_team": "Western Michigan Broncos"
+    },
+    {
+      "id": "401923190",
+      "date": "2026-11-24",
+      "label": "Pepperdine Waves @ Sam Houston Bearkats",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923190",
+      "home_team": "Sam Houston Bearkats",
+      "away_team": "Pepperdine Waves"
+    },
+    {
+      "id": "401928216",
+      "date": "2026-11-24",
+      "label": "Florida Gators @ West Virginia Mountaineers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401928216",
+      "home_team": "West Virginia Mountaineers",
+      "away_team": "Florida Gators"
+    },
+    {
+      "id": "401923670",
+      "date": "2026-11-24",
+      "label": "Oklahoma Sooners @ Montana State Bobcats",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923670",
+      "home_team": "Montana State Bobcats",
+      "away_team": "Oklahoma Sooners"
+    },
+    {
+      "id": "401915902",
+      "date": "2026-11-24",
+      "label": "James Madison Dukes @ Winthrop Eagles",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915902",
+      "home_team": "Winthrop Eagles",
+      "away_team": "James Madison Dukes"
+    },
+    {
+      "id": "401921306",
+      "date": "2026-11-24",
+      "label": "UCLA Bruins @ St. John's Red Storm",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401921306",
+      "home_team": "St. John's Red Storm",
+      "away_team": "UCLA Bruins"
+    },
+    {
+      "id": "401929628",
+      "date": "2026-11-24",
+      "label": "Hofstra Pride @ Pennsylvania Quakers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401929628",
+      "home_team": "Pennsylvania Quakers",
+      "away_team": "Hofstra Pride"
+    },
+    {
+      "id": "401918688",
+      "date": "2026-11-24",
+      "label": "Georgia Southern Eagles @ Cleveland State Vikings",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918688",
+      "home_team": "Cleveland State Vikings",
+      "away_team": "Georgia Southern Eagles"
+    },
+    {
+      "id": "401918670",
+      "date": "2026-11-24",
+      "label": "Nicholls Colonels @ Louisiana Ragin' Cajuns",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918670",
+      "home_team": "Louisiana Ragin' Cajuns",
+      "away_team": "Nicholls Colonels"
+    },
+    {
+      "id": "401918661",
+      "date": "2026-11-24",
+      "label": "Davis & Elkins Senators @ Marshall Thundering Herd",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918661",
+      "home_team": "Marshall Thundering Herd",
+      "away_team": "Davis & Elkins Senators"
+    },
+    {
+      "id": "401915768",
+      "date": "2026-11-24",
+      "label": "Niagara Purple Eagles @ Duquesne Dukes",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915768",
+      "home_team": "Duquesne Dukes",
+      "away_team": "Niagara Purple Eagles"
+    },
+    {
+      "id": "401914493",
+      "date": "2026-11-24",
+      "label": "Wagner Seahawks @ Cornell Big Red",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401914493",
+      "home_team": "Cornell Big Red",
+      "away_team": "Wagner Seahawks"
+    },
+    {
+      "id": "401913759",
+      "date": "2026-11-24",
+      "label": "Stonehill Skyhawks @ Bryant Bulldogs",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913759",
+      "home_team": "Bryant Bulldogs",
+      "away_team": "Stonehill Skyhawks"
+    },
+    {
+      "id": "401906037",
+      "date": "2026-11-24",
+      "label": "Northeastern Huskies @ Boston College Eagles",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401906037",
+      "home_team": "Boston College Eagles",
+      "away_team": "Northeastern Huskies"
+    },
+    {
+      "id": "401929233",
+      "date": "2026-11-24",
+      "label": "East Texas A&M Lions @ Arkansas-Pine Bluff Golden Lions",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401929233",
+      "home_team": "Arkansas-Pine Bluff Golden Lions",
+      "away_team": "East Texas A&M Lions"
+    },
+    {
+      "id": "401929139",
+      "date": "2026-11-24",
+      "label": "Akron Zips @ Youngstown State Penguins",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401929139",
+      "home_team": "Youngstown State Penguins",
+      "away_team": "Akron Zips"
+    },
+    {
+      "id": "401928016",
+      "date": "2026-11-24",
+      "label": "SIU Edwardsville Cougars @ Missouri Tigers",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401928016",
+      "home_team": "Missouri Tigers",
+      "away_team": "SIU Edwardsville Cougars"
+    },
+    {
+      "id": "401927056",
+      "date": "2026-11-24",
+      "label": "East Tennessee State Buccaneers @ UNC Asheville Bulldogs",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927056",
+      "home_team": "UNC Asheville Bulldogs",
+      "away_team": "East Tennessee State Buccaneers"
+    },
+    {
+      "id": "401926055",
+      "date": "2026-11-24",
+      "label": "Ball State Cardinals @ Temple Owls",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401926055",
+      "home_team": "Temple Owls",
+      "away_team": "Ball State Cardinals"
+    },
+    {
+      "id": "401925788",
+      "date": "2026-11-24",
+      "label": "Lehigh Mountain Hawks @ Stony Brook Seawolves",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401925788",
+      "home_team": "Stony Brook Seawolves",
+      "away_team": "Lehigh Mountain Hawks"
+    },
+    {
+      "id": "401919061",
+      "date": "2026-11-24",
+      "label": "Jacksonville Dolphins @ UCF Knights",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919061",
+      "home_team": "UCF Knights",
+      "away_team": "Jacksonville Dolphins"
+    },
+    {
+      "id": "401915903",
+      "date": "2026-11-24",
+      "label": "High Point Panthers @ Arkansas Razorbacks",
+      "status": "Scheduled",
+      "state": "pre",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915903",
+      "home_team": "Arkansas Razorbacks",
+      "away_team": "High Point Panthers"
     },
     {
       "id": "401906985",
@@ -406,8 +1016,8 @@
       "id": "401915910",
       "date": "2026-11-22",
       "label": "Duke Blue Devils @ Columbia Lions",
-      "status": "Scheduled",
-      "state": "pre",
+      "status": "In Progress",
+      "state": "in",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915910",
       "home_team": "Columbia Lions",
       "away_team": "Duke Blue Devils"
@@ -426,8 +1036,8 @@
       "id": "401921236",
       "date": "2026-11-22",
       "label": "Southeast Missouri State Redhawks @ Saint Louis Billikens",
-      "status": "Scheduled",
-      "state": "pre",
+      "status": "In Progress",
+      "state": "in",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401921236",
       "home_team": "Saint Louis Billikens",
       "away_team": "Southeast Missouri State Redhawks"
@@ -436,8 +1046,8 @@
       "id": "401921021",
       "date": "2026-11-22",
       "label": "Charlotte 49ers @ Davidson Wildcats",
-      "status": "Scheduled",
-      "state": "pre",
+      "status": "In Progress",
+      "state": "in",
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401921021",
       "home_team": "Davidson Wildcats",
       "away_team": "Charlotte 49ers"
@@ -1023,38 +1633,6 @@
       "away_team": "UCLA Bruins"
     },
     {
-      "id": "401906093",
-      "date": "2026-11-21",
-      "label": "Alabama Crimson Tide @ North Carolina Tar Heels",
-      "status": "In Progress",
-      "state": "in",
-      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401906093",
-      "home_team": "North Carolina Tar Heels",
-      "away_team": "Alabama Crimson Tide"
-    },
-    {
-      "id": "401918036",
-      "date": "2026-11-21",
-      "label": "Siena Saints @ Mercyhurst Lakers",
-      "status": "In Progress",
-      "state": "in",
-      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918036",
-      "home_team": "Mercyhurst Lakers",
-      "away_team": "Siena Saints"
-    },
-    {
-      "id": "401916189",
-      "date": "2026-11-21",
-      "label": "Cincinnati Bearcats @ UNLV Lady Rebels",
-      "status": "Final",
-      "state": "post",
-      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401916189",
-      "home_team": "UNLV Lady Rebels",
-      "away_team": "Cincinnati Bearcats",
-      "pdf_checked_at": "2026-11-21T23:57:35.297735+00:00",
-      "pdf_discovery_version": "diagnostics-athletics-v5"
-    },
-    {
       "id": "401915965",
       "date": "2026-11-21",
       "label": "Grand Canyon Lopes @ SMU Mustangs",
@@ -1073,8 +1651,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913038",
       "home_team": "Providence Friars",
       "away_team": "South Carolina Gamecocks",
-      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
     },
     {
       "id": "401918918",
@@ -1089,6 +1667,18 @@
       "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
+      "id": "401906093",
+      "date": "2026-11-21",
+      "label": "Alabama Crimson Tide @ North Carolina Tar Heels",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401906093",
+      "home_team": "North Carolina Tar Heels",
+      "away_team": "Alabama Crimson Tide",
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
+    },
+    {
       "id": "401918678",
       "date": "2026-11-21",
       "label": "James Madison Dukes @ George Mason Patriots",
@@ -1097,8 +1687,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918678",
       "home_team": "George Mason Patriots",
       "away_team": "James Madison Dukes",
-      "pdf_checked_at": "2026-11-21T23:52:42.466776+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
     },
     {
       "id": "401913710",
@@ -1133,8 +1723,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919450",
       "home_team": "Long Island University Sharks",
       "away_team": "Saint Peter's Peacocks",
-      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
     },
     {
       "id": "401919439",
@@ -1145,8 +1735,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401919439",
       "home_team": "Detroit Mercy Titans",
       "away_team": "Sacred Heart Pioneers",
-      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
     },
     {
       "id": "401918798",
@@ -1277,8 +1867,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401927097",
       "home_team": "Tennessee Tech Golden Eagles",
       "away_team": "South Carolina Upstate Spartans",
-      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
     },
     {
       "id": "401927038",
@@ -1433,8 +2023,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918944",
       "home_team": "Texas Tech Lady Raiders",
       "away_team": "Purdue Boilermakers",
-      "pdf_checked_at": "2026-11-21T23:49:34.092709+00:00",
-      "pdf_discovery_version": "official-schedule-boxscore-v3"
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
     },
     {
       "id": "401920277",
@@ -1481,8 +2071,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913049",
       "home_team": "DePaul Blue Demons",
       "away_team": "IU Indianapolis Jaguars",
-      "pdf_checked_at": "2026-11-21T23:52:42.466776+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
     },
     {
       "id": "401929020",
@@ -1493,8 +2083,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401929020",
       "home_team": "Cleveland State Vikings",
       "away_team": "Kent State Golden Flashes",
-      "pdf_checked_at": "2026-11-21T23:52:42.466776+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
     },
     {
       "id": "401923486",
@@ -1505,8 +2095,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401923486",
       "home_team": "Texas A&M Aggies",
       "away_team": "Incarnate Word Cardinals",
-      "pdf_checked_at": "2026-11-21T23:52:42.466776+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
     },
     {
       "id": "401923341",
@@ -1533,6 +2123,30 @@
       "pdf_discovery_version": "automatic-athletics-sites-v4"
     },
     {
+      "id": "401918036",
+      "date": "2026-11-21",
+      "label": "Siena Saints @ Mercyhurst Lakers",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918036",
+      "home_team": "Mercyhurst Lakers",
+      "away_team": "Siena Saints",
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
+    },
+    {
+      "id": "401916189",
+      "date": "2026-11-21",
+      "label": "Cincinnati Bearcats @ UNLV Lady Rebels",
+      "status": "Final",
+      "state": "post",
+      "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401916189",
+      "home_team": "UNLV Lady Rebels",
+      "away_team": "Cincinnati Bearcats",
+      "pdf_checked_at": "2026-11-21T23:57:35.297735+00:00",
+      "pdf_discovery_version": "diagnostics-athletics-v5"
+    },
+    {
       "id": "401915669",
       "date": "2026-11-21",
       "label": "Iona Gaels @ Bucknell Bison",
@@ -1541,8 +2155,8 @@
       "game_url": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915669",
       "home_team": "Bucknell Bison",
       "away_team": "Iona Gaels",
-      "pdf_checked_at": "2026-11-21T23:52:42.466776+00:00",
-      "pdf_discovery_version": "automatic-athletics-sites-v4"
+      "pdf_checked_at": "2026-11-22T00:04:24.128503+00:00",
+      "pdf_discovery_version": "school-site-download-v6"
     }
   ]
 }
