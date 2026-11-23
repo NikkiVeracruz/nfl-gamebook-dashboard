@@ -42,6 +42,57 @@ jobs:
         run: timeout 510s python backfill.py
       - name: Check against latest untouched production archive
         run: python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
+      - name: Summarize proposed historical recovery before any publication
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          before = json.loads(subprocess.check_output(
+              ["git", "show", "FETCH_HEAD:archive.json"], text=True
+          ))
+          after = json.loads(Path("archive.json").read_text())
+          def key(g):
+              return str(g.get("id") or g.get("slug") or
+                         (str(g.get("date", "")) + "|" + str(g.get("label", ""))))
+          prior = {key(g): g for g in before["games"]}
+          proposed = {key(g): g for g in after["games"]}
+          new = [g for key_, g in proposed.items() if key_ not in prior]
+          in_window = [
+              g for g in new if "2025-11-02" <= g.get("date", "") < "2025-11-30"
+          ]
+          linked = [g for g in in_window if g.get("pdf_url")]
+          missing = [g for g in in_window if not g.get("pdf_url")]
+          report = [
+              "## NFL November 2025 read-only recovery preview",
+              "",
+              f"- Production baseline: {len(prior)} games",
+              f"- Proposed archive: {len(proposed)} games",
+              f"- New game records: {len(new)}",
+              f"- New games in Nov 2–29, 2025: {len(in_window)}",
+              f"- New games with verified official PDFs: {len(linked)}",
+              f"- New games awaiting PDFs: {len(missing)}",
+              "",
+              "### Sample proposed games",
+              "| Date | Matchup | PDF |",
+              "|---|---|---|",
+          ]
+          report += [
+              f"| {g.get('date', '')} | {str(g.get('label', '')).replace('|','/')} | "
+              + ("Yes" if g.get("pdf_url") else "No") + " |"
+              for g in sorted(in_window, key=lambda x: x.get("date", ""))[:20]
+          ]
+          text = "\\n".join(report) + "\\n"
+          print(text)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as summary:
+              summary.write(text)
+          if not in_window:
+              raise SystemExit("FAIL: no missing November 2025 games recovered")
+          if len(new) != len(in_window):
+              raise SystemExit("FAIL: candidate includes unexpected games outside selected window")
+          PY
       - name: Confirm audit ran on staging and published nothing
         run: |
           test "$(git branch --show-current)" = "staging-archive-safety-2026-11-22"
