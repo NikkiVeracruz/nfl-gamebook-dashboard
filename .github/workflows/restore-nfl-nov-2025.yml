@@ -8,6 +8,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   restore:
+    if: ${{ vars.ENABLE_HISTORICAL_BACKFILL == 'true' }}
     # On the staging branch, this job is safely skipped. Promote ONLY after
     # regression tests and the read-only recovery preview have passed.
     if: github.ref == 'refs/heads/main'
