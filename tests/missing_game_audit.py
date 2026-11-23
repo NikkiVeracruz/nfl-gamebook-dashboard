@@ -31,6 +31,10 @@ def fetch_json(url):
         return json.load(response)
 
 def independent_games(league, day):
+    if league == "NFL":
+        from datetime import date
+        from archive_2026_schedule_audit import espn_day
+        return espn_day("NFL", date.fromisoformat(day))
     if league == "MLB":
         # The dashboard stores MLB StatsAPI gamePk identifiers, not ESPN IDs.
         # Match the gameTypes filter used by the production MLB monitor.
@@ -78,14 +82,25 @@ def audit(league, data):
             issues.append(f"{day}: independent schedule unavailable ({exc}); inconclusive")
             continue
         if league == "NFL":
-            # NFL dashboard keys are NFL.com slugs, not ESPN event IDs.
-            # Do not compare incompatible identifiers or claim ID coverage.
-            observed = len(day_games)
-            expected = len(expected_ids)
-            if observed != expected:
-                issues.append(f"{day}: NFL count mismatch: published {observed}, independent {expected}; ID comparison unavailable (different identifier systems)")
-            else:
-                print(f"PASS NFL {day}: {observed}/{expected} games (COUNT ONLY; identifiers incompatible)")
+            # Compare actual date/away/home matchups. NFL.com uses slugs and
+            # ESPN uses IDs; matching only counts could hide the wrong game.
+            from archive_2026_schedule_audit import nfl_archive_key, AuditError
+            try:
+                observed_ids = [nfl_archive_key(g) for g in day_games]
+            except (AuditError, KeyError, TypeError, ValueError) as exc:
+                issues.append(f"{day}: malformed NFL matchup: {exc}")
+                continue
+            observed = set(observed_ids)
+            if len(observed) != len(observed_ids):
+                issues.append(f"{day}: duplicate NFL matchups")
+            absent = expected_ids - observed
+            extra = observed - expected_ids
+            if absent:
+                issues.append(f"{day}: possible missing NFL matchups: {sorted(absent)}")
+            if extra:
+                issues.append(f"{day}: unmatched NFL matchups: {sorted(extra)}")
+            if not absent and not extra and len(observed) == len(day_games):
+                print(f"PASS NFL {day}: all {len(observed)} exact matchups match independent schedule")
             continue
         observed_ids = [str(g.get("id")) for g in day_games if g.get("id")]
         observed_set = set(observed_ids)
@@ -121,7 +136,7 @@ def main():
         print(f"Audit finished with {len(warnings)} findings. Manual review required; no data changed.")
         sys.exit(1)
     else:
-        print("Audit finished without detected discrepancies. NFL remains count-only; offseason leagues were not checked.")
+        print("Audit finished without detected discrepancies in current feeds; historical coverage audited separately.")
 
 if __name__ == "__main__":
     main()
