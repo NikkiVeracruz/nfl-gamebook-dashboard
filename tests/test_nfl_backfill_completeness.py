@@ -10,6 +10,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import backfill
+import monitor
 from archive import ArchiveIntegrityError
 
 
@@ -101,6 +102,41 @@ class NflBackfillCompletenessTests(unittest.TestCase):
                     backfill.main()
             self.assertEqual(archive.read_bytes(), prior_archive)
             self.assertEqual(progress.read_bytes(), prior_progress)
+
+
+    def test_discovery_covers_final_weeks_in_long_historical_window(self):
+        # A four-week backfill starting Nov 2 includes games on Nov 23.
+        # The previous fixed two-week lookahead did not fetch week 12.
+        queried = []
+
+        def fake_get(_session, url):
+            queried.append(url)
+            if url.endswith("/by-week/week-12"):
+                return (
+                    '<a href="/games/cowboys-at-giants-2025-reg-12">'
+                    'Sunday, November 23</a>'
+                )
+            return ""
+
+        with patch.object(monitor, "get", side_effect=fake_get):
+            found = monitor.discover(
+                None, 2025, "2025-11-02", "2025-11-30"
+            )
+        self.assertIn("cowboys-at-giants-2025-reg-12", found)
+        self.assertEqual(found["cowboys-at-giants-2025-reg-12"]["date"],
+                         "2025-11-23")
+        self.assertTrue(any(url.endswith("/by-week/week-12") for url in queried))
+
+    def test_discovery_does_not_need_future_weeks_for_short_live_window(self):
+        queried = []
+
+        def fake_get(_session, url):
+            queried.append(url)
+            return ""
+
+        with patch.object(monitor, "get", side_effect=fake_get):
+            monitor.discover(None, 2025, "2025-11-02", "2025-11-09")
+        self.assertFalse(any(url.endswith("/by-week/week-14") for url in queried))
 
 
 if __name__ == "__main__":
