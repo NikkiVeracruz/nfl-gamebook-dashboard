@@ -1,6 +1,6 @@
 {
   "window_label": "Nov 19, 2026 \u2013 Nov 25, 2026 (ET)",
-  "updated_at": "2026-11-22T23:47:20.457728+00:00",
+  "updated_at": "2026-11-23T00:32:47.091174+00:00",
   "games": [
     {
       "slug": "colts-at-texans-2026-reg-11",
@@ -12,19 +12,13 @@
     {
       "slug": "jaguars-at-giants-2026-reg-11",
       "date": "2026-11-22",
-      "label": "Jaguars at Giants, Sunday, November 22nd, 4:25 PM, CBS",
+      "label": "Jaguars 15, Giants 23, Q4, CBS",
       "game_url": "https://www.nfl.com/games/jaguars-at-giants-2026-reg-11"
-    },
-    {
-      "slug": "jets-at-chargers-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Jets at Chargers, Sunday, November 22nd, 4:05 PM, FOX",
-      "game_url": "https://www.nfl.com/games/jets-at-chargers-2026-reg-11"
     },
     {
       "slug": "raiders-at-broncos-2026-reg-11",
       "date": "2026-11-22",
-      "label": "Raiders at Broncos, Sunday, November 22nd, 4:25 PM, CBS",
+      "label": "Raiders 24, Broncos 31, Q4, CBS",
       "game_url": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11"
     },
     {
@@ -53,6 +47,13 @@
       "label": "Watch Replay, Dolphins 9, Bills 26, Sunday, November 22nd",
       "game_url": "https://www.nfl.com/games/dolphins-at-bills-2026-reg-11",
       "pdf_url": "https://static.www.nfl.com/image/upload/v1795381954/gamecenter/ab998769-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "slug": "jets-at-chargers-2026-reg-11",
+      "date": "2026-11-22",
+      "label": "Watch Replay, Jets 27, Chargers 24, Sunday, November 22nd",
+      "game_url": "https://www.nfl.com/games/jets-at-chargers-2026-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1795391497/gamecenter/ab999e6f-4feb-11f1-abca-2c54536568a9.pdf"
     },
     {
       "slug": "ravens-at-panthers-2026-reg-11",
