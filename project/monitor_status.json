@@ -1,12 +1,12 @@
 {
   "scope": "live implementation drift; no user decisions modified",
-  "checked_at": "2026-11-23T12:09:01.566693+00:00",
+  "checked_at": "2026-11-23T20:55:28.946281+00:00",
   "status": "pass",
   "checks": [
     {
       "check": "Canonical user decisions",
       "status": "pass",
-      "detail": "46 tracked decisions/requirements"
+      "detail": "47 tracked decisions/requirements"
     },
     {
       "check": "Readable register matches JSON",
@@ -56,7 +56,7 @@
     {
       "check": "Implementation evidence files still present",
       "status": "pass",
-      "detail": "49 cited files checked"
+      "detail": "52 cited files checked"
     }
   ],
   "failure_count": 0,
