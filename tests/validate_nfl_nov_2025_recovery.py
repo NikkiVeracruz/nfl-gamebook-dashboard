@@ -13,8 +13,9 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from archive import ArchiveIntegrityError, validate_games
-from tests.archive_integrity_gate import verify_change
+from archive_integrity_gate import verify_change
 
 START = "2025-11-02"
 END = "2025-11-30"  # exclusive
@@ -79,8 +80,8 @@ def main(ref="FETCH_HEAD"):
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary:
         with open(summary, "a", encoding="utf-8") as stream:
-            stream.write("### One-time November 2025 publication gate\\n\\n"
-                         + message + "\\n")
+            stream.write("### One-time November 2025 publication gate\n\n"
+                         + message + "\n")
 
 
 if __name__ == "__main__":
