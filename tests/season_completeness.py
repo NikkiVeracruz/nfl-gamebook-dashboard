@@ -83,7 +83,8 @@ def official_events(league,day,session=None):
             if not key:raise ValueError(f"{league}: missing official event identity on {day}")
             status=(e.get("status") or {}).get("type") or {}
             rows.append({"key":key,"date":day.isoformat(),
-                         "completed":bool(status.get("completed"))})
+                         "completed":bool(status.get("completed")),
+                         "status":status.get("description") or status.get("name") or ""})
         return rows
     if league=="NHL":
         r=session.get(f"https://api-web.nhle.com/v1/score/{day.isoformat()}",timeout=28)
