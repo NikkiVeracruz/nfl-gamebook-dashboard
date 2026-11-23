@@ -8,9 +8,9 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from archive import ArchiveIntegrityError, atomic_write_json, validate_games
 from nfl_2026_coverage import END
-sys.path.insert(0, str(Path(__file__).resolve().parent))
 from archive_integrity_gate import verify_change
 
 ARCHIVE = Path("archive.json")
