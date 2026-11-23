@@ -1,0 +1,64 @@
+{
+  "scope": "live implementation drift; no user decisions modified",
+  "checked_at": "2026-11-23T08:29:56.853482+00:00",
+  "status": "pass",
+  "checks": [
+    {
+      "check": "Canonical user decisions",
+      "status": "pass",
+      "detail": "46 tracked decisions/requirements"
+    },
+    {
+      "check": "Readable register matches JSON",
+      "status": "pass",
+      "detail": "Generated Markdown matches"
+    },
+    {
+      "check": "Exactly five supported leagues",
+      "status": "pass",
+      "detail": "NFL NBA WNBA NHL MLB"
+    },
+    {
+      "check": "NFL forward-only archive, current feed and backup",
+      "status": "pass",
+      "detail": "12 complete retained games; live feed valid; backfill gated; backup present"
+    },
+    {
+      "check": "NBA forward-only archive, current feed and backup",
+      "status": "pass",
+      "detail": "7 complete retained games; live feed valid; backfill gated; backup present"
+    },
+    {
+      "check": "WNBA forward-only archive, current feed and backup",
+      "status": "pass",
+      "detail": "0 complete retained games; live feed valid; backfill gated; backup present"
+    },
+    {
+      "check": "NHL forward-only archive, current feed and backup",
+      "status": "pass",
+      "detail": "5 complete retained games; live feed valid; backfill gated; backup present"
+    },
+    {
+      "check": "MLB forward-only archive, current feed and backup",
+      "status": "pass",
+      "detail": "0 complete retained games; live feed valid; backfill gated; backup present"
+    },
+    {
+      "check": "Central Mega Board basic functionality",
+      "status": "pass",
+      "detail": "Five league filters, archive/current separation and help are present; NCAA absent"
+    },
+    {
+      "check": "Approvals and auditing workflow modes",
+      "status": "pass",
+      "detail": "Historical restoration disabled, current-game completeness and document checks present"
+    },
+    {
+      "check": "Implementation evidence files still present",
+      "status": "pass",
+      "detail": "49 cited files checked"
+    }
+  ],
+  "failure_count": 0,
+  "failures": []
+}
