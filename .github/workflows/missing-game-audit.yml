@@ -19,3 +19,6 @@ jobs:
           python-version: "3.12"
       - name: Compare published game IDs and counts with league schedules
         run: python tests/missing_game_audit.py
+      - name: Flag completed NFL games still missing their official gamebook
+        if: always()
+        run: python tests/nfl_final_gamebooks.py
