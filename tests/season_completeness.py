@@ -208,6 +208,10 @@ def classify_missing_report(league,game,event,today,verified_mlb_links=None):
         verified = (game.get("link_verification")=="verified_api" or
                     (verified_mlb_links or {}).get(str(game.get("id")))=="verified_api")
         return None if verified else "link_needs_independent_verification"
+    if league=="NBA" and game.get("competition")=="nba_all_star":
+        return "all_star_official_report_needs_review"
+    if league=="WNBA" and game.get("competition") in ("wnba_exhibition","wnba_all_star"):
+        return "special_event_official_report_needs_review"
     if league=="WNBA" and "JAPAN" in str(game.get("label","")).upper():
         return "exhibition_needs_review"
     if league=="NHL" and str(game.get("id",""))[4:6] in ("01","04"):
