@@ -8,10 +8,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   restore:
-    if: ${{ vars.ENABLE_HISTORICAL_BACKFILL == 'true' }}
-    # On the staging branch, this job is safely skipped. Promote ONLY after
-    # regression tests and the read-only recovery preview have passed.
-    if: github.ref == 'refs/heads/main'
+    # Historical restoration is dormant by default, retained for a future
+    # explicit opt-in on main only. A single condition avoids invalid YAML.
+    if: ${{ vars.ENABLE_HISTORICAL_BACKFILL == 'true' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
