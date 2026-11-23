@@ -16,7 +16,7 @@ One fast, accurate place for customer service agents to find game/team/player re
 
 ## Status overview
 
-**49 tracked items:** 30 implemented · 4 paused · 3 removed · 7 proposed · 1 deferred · 1 not started · 3 open
+**49 tracked items:** 30 implemented · 4 paused · 3 removed · 0 proposed · 0 deferred · 9 not started · 3 open
 
 | State | Meaning |
 |---|---|
@@ -38,7 +38,7 @@ Implemented requirements or work accepted by the user.
 
 Centralize accurate, detailed official game, player and team reference material for quick customer-service agent lookup; distinguish linked source reports from the summarized cards.
 
-*Notes:* A dedicated searchable player-stat database is not yet implemented (IDEA-001).
+*Notes:* The user explicitly said on 2026-11-23 that dedicated player-statistics features are not needed; exclude player-statistics search, tables, databases and analytics from future Mega Board recommendations. Existing league-provided gamebooks, reports and approved board behavior remain unchanged. IDEA-001 declined.
 
 *Implementation evidence:* [command-center/index.html](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/index.html)
 
@@ -353,6 +353,70 @@ The user explicitly stopped extra 2025 restoration even before the broader forwa
 
 *Implementation evidence:* [.github/workflows/restore-nfl-nov-2025.yml](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/.github/workflows/restore-nfl-nov-2025.yml)
 
+### IDEA-001 — Dedicated player-level statistics search
+
+**Decision:** declined · **Status:** not started · **Area:** suggestion
+
+Search player names and game-by-game statistics directly rather than relying only on PDF/report reading.
+
+*Notes:* High-value strategic opportunity, not implemented; availability/rights/API accuracy must be evaluated before committing. User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review. Dedicated player-statistics search, indexing, dashboards, tables and analysis are not a project need and must be excluded from future feature ideation; existing official report contents are unaffected.
+
+### IDEA-003 — One-click comprehensive game reference
+
+**Decision:** declined · **Status:** not started · **Area:** suggestion
+
+Open one consolidated game view linking official reports, game context, and team/player data.
+
+*Notes:* User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review. Its illustrative design included player stats; no game-reference detail view or associated player-statistics functionality should be proposed without explicit user request.
+
+### IDEA-004 — Permanent deep links to games
+
+**Decision:** declined · **Status:** not started · **Area:** suggestion
+
+Share direct, stable links to a particular archived or current game.
+
+*Notes:* User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review.
+
+### IDEA-005 — Favorites and recently viewed games
+
+**Decision:** declined · **Status:** not started · **Area:** suggestion
+
+Provide quick access to frequently used teams or previously opened games.
+
+*Notes:* User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review.
+
+### IDEA-006 — Navigation by document type
+
+**Decision:** declined · **Status:** not started · **Area:** suggestion
+
+Filter or jump directly to PDF, NHL GS/ES, MLB box score or play-by-play by report type.
+
+*Notes:* User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review.
+
+### IDEA-007 — Pagination or result navigation past 200
+
+**Decision:** declined · **Status:** not started · **Area:** suggestion
+
+Permit exploring more than the latest 200 matching archived games when historical archiving is reactivated.
+
+*Notes:* Reduced priority in forward-only mode; current 200 cap is accepted. User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review.
+
+### IDEA-009 — Temporary pending-reports retry queue
+
+**Decision:** declined · **Status:** not started · **Area:** suggestion
+
+Allow report URLs delayed beyond the current window to be recovered later using a bounded private queue, without archiving an incomplete or unverified game.
+
+*Notes:* Mitigates RISK-001; not approved or implemented. User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review.
+
+### IDEA-011 — Large-scale refactor / additional watchdogs
+
+**Decision:** declined · **Status:** not started · **Area:** suggestion
+
+Additional watchers and a broad architectural rewrite were explicitly deferred in review rather than made a new project priority.
+
+*Notes:* Deferred is not a user rejection; reconsider only with a demonstrated need. User explicitly declined this suggested change on 2026-11-23. It was previously deferred and is now declined. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review.
+
 
 ## Paused infrastructure
 
@@ -381,54 +445,6 @@ Full-season read-only schedule audit was built and passed before forward-only cl
 
 These are NOT automatically approved development tasks.
 
-### IDEA-001 — Dedicated player-level statistics search
-
-**Decision:** not decided · **Status:** proposed · **Area:** suggestion
-
-Search player names and game-by-game statistics directly rather than relying only on PDF/report reading.
-
-*Notes:* High-value strategic opportunity, not implemented; availability/rights/API accuracy must be evaluated before committing.
-
-### IDEA-003 — One-click comprehensive game reference
-
-**Decision:** not decided · **Status:** proposed · **Area:** suggestion
-
-Open one consolidated game view linking official reports, game context, and team/player data.
-
-### IDEA-004 — Permanent deep links to games
-
-**Decision:** not decided · **Status:** proposed · **Area:** suggestion
-
-Share direct, stable links to a particular archived or current game.
-
-### IDEA-005 — Favorites and recently viewed games
-
-**Decision:** not decided · **Status:** proposed · **Area:** suggestion
-
-Provide quick access to frequently used teams or previously opened games.
-
-### IDEA-006 — Navigation by document type
-
-**Decision:** not decided · **Status:** proposed · **Area:** suggestion
-
-Filter or jump directly to PDF, NHL GS/ES, MLB box score or play-by-play by report type.
-
-### IDEA-007 — Pagination or result navigation past 200
-
-**Decision:** not decided · **Status:** proposed · **Area:** suggestion
-
-Permit exploring more than the latest 200 matching archived games when historical archiving is reactivated.
-
-*Notes:* Reduced priority in forward-only mode; current 200 cap is accepted.
-
-### IDEA-009 — Temporary pending-reports retry queue
-
-**Decision:** not decided · **Status:** proposed · **Area:** suggestion
-
-Allow report URLs delayed beyond the current window to be recovered later using a bounded private queue, without archiving an incomplete or unverified game.
-
-*Notes:* Mitigates RISK-001; not approved or implemented.
-
 ### REQ-001 — Remove name from public Mega Board URL
 
 **Decision:** not decided · **Status:** not started · **Area:** request
@@ -442,13 +458,7 @@ User asked about changing the GitHub Pages URL to remove their name; no deployme
 
 Deliberately postponed without claiming that the user rejected them.
 
-### IDEA-011 — Large-scale refactor / additional watchdogs
-
-**Decision:** deferred · **Status:** deferred · **Area:** suggestion
-
-Additional watchers and a broad architectural rewrite were explicitly deferred in review rather than made a new project priority.
-
-*Notes:* Deferred is not a user rejection; reconsider only with a demonstrated need.
+No entries.
 
 
 ## Known risks and gaps
