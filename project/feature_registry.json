@@ -92,7 +92,9 @@
       "readable_register": "PROJECT_REGISTER.md",
       "generation_workflow": ".github/workflows/project-register.yml",
       "monitoring_limit": "Outside edits or changes while no chat is active may require the scheduled checks/reviews to discover and reconcile; do not claim automatic instantaneous awareness.",
-      "authority": "Only the user may approve, decline or re-prioritize suggested features."
+      "authority": "Only the user may approve, decline or re-prioritize suggested features.",
+      "premerge_delivery": "For changes within the assistant's control, use a feature branch and pull request with successful pre-merge safety checks, then confirm production deployment and existing monitors. No skipping production checks or lowering alert frequency.",
+      "delivery_process_file": "DEVELOPMENT_WORKFLOW.md"
     }
   },
   "features": [
@@ -985,6 +987,37 @@
         }
       ],
       "notes": "Approved and implemented alongside IDEA-002 on 2026-11-23. Selecting an offseason team may legitimately show no current games or archive records; the option stays available. Latest CI: https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/actions/runs/45266196881 ."
+    },
+    {
+      "id": "GOV-003",
+      "title": "Branch-first development, pre-merge tests and production verification",
+      "area": "governance",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "For every future Mega Board code/configuration change, develop on a task-specific branch, run tests before opening the pull request where possible, obtain a green read-only pre-merge safety check in every affected repository, review the PR, merge to main only after validation, then verify production deployment and existing monitoring. Do not weaken report discovery, tests, or GitHub error notifications.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "DEVELOPMENT_WORKFLOW.md"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/pre-merge-safety.yml"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": ".github/workflows/pre-merge-safety.yml"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": ".github/workflows/pre-merge-safety.yml"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": ".github/workflows/pre-merge-safety.yml"
+        }
+      ],
+      "notes": "Explicit user approval November 23, 2026. CI workflows are read-only pull_request checks. Branch protection/rulesets cannot be assumed enabled; this is a mandatory documented working practice, not yet repository-enforced merge blocking. Staging checks complement, not replace, post-merge monitoring."
     }
   ]
 }
