@@ -166,6 +166,7 @@ def nhl_week(day):
         block_day = block.get("date")
         if not isinstance(block_day, str):
             raise AuditError(f"NHL {day}: missing schedule date")
+        result.setdefault(block_day, set())
         for game in block["games"]:
             if not isinstance(game, dict) or game.get("id") is None:
                 raise AuditError(f"NHL {block_day}: missing official game ID")
