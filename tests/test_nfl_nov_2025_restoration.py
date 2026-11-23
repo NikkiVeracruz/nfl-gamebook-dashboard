@@ -77,5 +77,23 @@ class RestorationGateTests(unittest.TestCase):
             inspect_batch(old, proposed)
 
 
+    def test_manual_publication_is_2025_only_and_protects_progress(self):
+        workflow = (Path(__file__).resolve().parents[1] /
+                    ".github/workflows/restore-nfl-nov-2025.yml").read_text()
+        self.assertIn("workflow_dispatch:", workflow)
+        self.assertNotIn("  schedule:", workflow)
+        self.assertIn("if: github.ref == 'refs/heads/main'", workflow)
+        self.assertIn("group: update-gamebooks", workflow)
+        self.assertIn("git show HEAD:archive-progress.json > archive-progress.json",
+                      workflow)
+        self.assertIn("python tests/validate_nfl_nov_2025_recovery.py HEAD",
+                      workflow)
+        self.assertIn("python tests/validate_nfl_nov_2025_recovery.py FETCH_HEAD",
+                      workflow)
+        self.assertIn("git add archive.json", workflow)
+        self.assertNotIn("git add archive-progress.json", workflow)
+
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
