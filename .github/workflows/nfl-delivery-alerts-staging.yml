@@ -1,0 +1,32 @@
+name: NFL delivery alerts (staging, read-only)
+on:
+  push:
+    branches:
+      - staging-reliability
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Simulate stale NFL data, final games and unavailable reports
+        run: python -m unittest discover -s tests -p 'test_nfl_report_alerts.py' -v
+  live-read-only-probes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Check live NFL data is no more than 60 minutes old
+        run: PYTHONPATH=tests python -c 'import production_health as h; h.check_feed("NFL", h.FEEDS["NFL"])'
+      - name: Check final NFL games with overdue missing gamebooks
+        if: always()
+        run: python tests/nfl_final_gamebooks.py
