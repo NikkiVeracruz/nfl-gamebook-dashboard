@@ -35,7 +35,48 @@
       ]
     },
     "backup_branch": "backup/pre-forward-only-2026-11-23",
-    "documentation": "PROJECT_REGISTER.md"
+    "documentation": "PROJECT_REGISTER.md",
+    "operating_policy": {
+      "mode": "forward_only",
+      "archive_start_date_by_league": {
+        "NFL": "2026-11-19",
+        "NBA": "2026-11-22",
+        "WNBA": "2026-11-22",
+        "NHL": "2026-11-22",
+        "MLB": "2026-11-22"
+      },
+      "archive_report_requirements": {
+        "NFL": [
+          "pdf_url"
+        ],
+        "NBA": [
+          "pdf_url"
+        ],
+        "WNBA": [
+          "pdf_url"
+        ],
+        "NHL": [
+          "gs_url",
+          "es_url"
+        ],
+        "MLB": [
+          "box_url",
+          "plays_url",
+          "link_verification=verified_api"
+        ]
+      },
+      "preserve_scheduled_and_live_current_feeds": true,
+      "allow_historical_backfill": false,
+      "historical_backfill_opt_in_variable": "ENABLE_HISTORICAL_BACKFILL",
+      "retention_policy_file": "FORWARD_ONLY_MODE.md",
+      "current_game_windows": {
+        "NFL": "weekly",
+        "NBA": "three_day_eastern_3am",
+        "WNBA": "three_day_eastern_3am",
+        "NHL": "three_day_eastern_3am",
+        "MLB": "three_day_eastern_3am"
+      }
+    }
   },
   "features": [
     {
