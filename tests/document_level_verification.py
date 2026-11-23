@@ -34,8 +34,7 @@ CUTOFF_DAYS = 3
 REFRESH_DAYS = 30
 PDF_HOSTS = {"NFL": {"static.www.nfl.com", "www.nfl.com", "nfl.com"},
              "NBA": {"statsdmz.nba.com"}, "WNBA": {"statsdmz.nba.com"}}
-GOOD = {"verified_match", "readable_identity_unconfirmed", "verified_report",
-        "verified_official_stats"}
+GOOD = {"verified_match", "verified_report", "verified_official_stats"}
 
 
 def now_utc():
