@@ -11,6 +11,7 @@ from datetime import datetime, timezone
 from urllib.parse import urlparse
 
 MAX_AGE_MINUTES = 180
+NFL_MAX_AGE_MINUTES = 60  # Catch missed 15-minute NFL runs much sooner.
 FEEDS = {
     "NFL": "https://nikkiveracruz.github.io/nfl-gamebook-dashboard/gamebooks.json",
     "NBA": "https://nikkiveracruz.github.io/nba-gamebook-dashboard/gamebooks.json",
@@ -18,6 +19,25 @@ FEEDS = {
     "NHL": "https://nikkiveracruz.github.io/nhl-gamebook-dashboard/gamebooks.json",
     "MLB": "https://nikkiveracruz.github.io/mlb-gamebook-dashboard/gamebooks.json",
 }
+
+def validate_freshness(league, timestamp, now=None):
+    """Validate a UTC-aware update timestamp; use a tighter limit for NFL only."""
+    if not isinstance(timestamp, str):
+        raise ValueError("Missing updated_at timestamp")
+    try:
+        updated = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise ValueError("Invalid updated_at timestamp") from exc
+    if updated.tzinfo is None:
+        raise ValueError("Timestamp lacks timezone")
+    current = now if now is not None else datetime.now(timezone.utc)
+    if current.tzinfo is None:
+        raise ValueError("Reference time lacks timezone")
+    age = (current - updated).total_seconds() / 60
+    limit = NFL_MAX_AGE_MINUTES if league == "NFL" else MAX_AGE_MINUTES
+    if age > limit or age < -10:
+        raise ValueError(f"Stale or future-dated {league} feed: {age:.0f} minutes old (limit {limit})")
+    return age, limit
 
 def check_feed(league, url):
     req = urllib.request.Request(url, headers={"User-Agent": "GamebookHealthCheck/1.0", "Cache-Control": "no-cache"})
@@ -28,15 +48,7 @@ def check_feed(league, url):
     data = json.loads(payload)
     if not isinstance(data, dict) or not isinstance(data.get("games"), list):
         raise ValueError("Missing games array")
-    stamp = data.get("updated_at")
-    if not isinstance(stamp, str):
-        raise ValueError("Missing updated_at timestamp")
-    updated = datetime.fromisoformat(stamp.replace("Z", "+00:00"))
-    if updated.tzinfo is None:
-        raise ValueError("Timestamp lacks timezone")
-    age = (datetime.now(timezone.utc) - updated).total_seconds() / 60
-    if age > MAX_AGE_MINUTES or age < -10:
-        raise ValueError(f"Stale or future-dated feed: {age:.0f} minutes old (limit {MAX_AGE_MINUTES})")
+    age, limit = validate_freshness(league, data.get("updated_at"))
     games = data["games"]
     for i, game in enumerate(games):
         if not isinstance(game, dict) or not isinstance(game.get("date"), str):
