@@ -27,7 +27,7 @@ def complete(game, league):
     if league == "NFL":
         # NFL.com official gamebooks appear after a game completes;
         # the URL was checked for actual PDF bytes by monitor.py.
-        return bool(game.get("pdf_url"))
+        return bool(game.get("pdf_url")) and (not status or "final" in status or status == "completed")
     if league in ("NBA", "WNBA"):
         return "final" in status and bool(game.get("pdf_url"))
     if league == "NHL":
