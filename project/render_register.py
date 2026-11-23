@@ -98,7 +98,8 @@ def render(data):
         "| Implemented | Evidenced in code or configuration, not an uptime guarantee. |",
         "| Paused | Preserved but intentionally inactive/restricted. |",
         "| Removed | Deliberately removed; do not reinstate without approval. |",
-        "| Proposed / not started | An idea or request, not approval to implement. |",
+        "| Proposed | An idea not yet approved to implement. |",
+        "| Not started | Work not deployed; decision may be accepted, declined, or undecided. |",
         "| Deferred | Delayed, not necessarily rejected. |",
         "| Open | Known risk or incomplete follow-up. |", "",
     ]
@@ -112,6 +113,10 @@ def render(data):
             [e for e in entries if e["state"] == "paused"
              and e["decision"] != "declined"],
             "Preserved for future reactivation only if requested.")
+    section(lines, "Approved work awaiting implementation",
+            [e for e in entries if e["decision"] in ("accepted", "required")
+             and e["state"] in ("not_started", "proposed")],
+            "Explicitly authorized but not implemented or deployed; status and evidence remain pending.")
     section(lines, "Suggested features / undecided requests",
             [e for e in entries if e["decision"] == "not_decided"],
             "These are NOT automatically approved development tasks.")
