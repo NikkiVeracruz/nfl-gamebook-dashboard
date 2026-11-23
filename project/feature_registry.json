@@ -1072,7 +1072,7 @@
       "title": "Isolated NCAA contest-ID reliability investigation",
       "area": "research",
       "decision": "accepted",
-      "state": "not_started",
+      "state": "open",
       "summary": "Approved November 23, 2026: proceed in order with measuring per-sport contest-ID availability and delays, evaluating faster permitted ID sources, and independently validating game discovery and destination identity before building a standalone NCAA board.",
       "evidence": [
         {
@@ -1082,9 +1082,17 @@
         {
           "repo": "NikkiVeracruz/ncaa-stats-link-dashboard",
           "path": "README.md"
+        },
+        {
+          "repo": "NikkiVeracruz/ncaa-stats-link-dashboard",
+          "path": "reliability_probe.py"
+        },
+        {
+          "repo": "NikkiVeracruz/ncaa-stats-link-dashboard",
+          "path": "tests/test_reliability.py"
         }
       ],
-      "notes": "NCAA research PR #2 opened: https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/pull/2 . Proposed changes on research branch include bounded multi-day snapshots with release fingerprints, rejected-event diagnostics and regression tests; not yet merged or validated. Repeated observations, alternative-source research, independent schedule completeness and manual destination checks remain outstanding. Production board implementation is gated on reliability evidence; no historical backfill, NCAA gamebook scraping, player-statistics database or change to existing five-league feeds, UI, archive or monitoring."
+      "notes": "NCAA PR #2 merged after 14 offline tests and 12-day live-source baseline passed: https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/actions/runs/45287965739 . Snapshot November 23: zero matched IDs for 743 discovered games November 18–23; November 12–17 had high coverage. Diagnostic implementation complete; reliability investigation remains open. User approved actively resolving the gap before production. Upstream raw schedule datasets identified as candidates; freshness, access/reuse and exact identity remain unverified. No NCAA deployment, historical backfill or five-league production changes."
     }
   ]
 }
