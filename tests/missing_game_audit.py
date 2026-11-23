@@ -10,6 +10,7 @@ import sys
 import urllib.request
 from collections import Counter
 from datetime import datetime, timezone
+from archive_2026_schedule_audit import AuditError
 
 FEEDS = {
     "NFL": "https://nikkiveracruz.github.io/nfl-gamebook-dashboard/gamebooks.json",
@@ -78,7 +79,7 @@ def audit(league, data):
         day_games = [g for g in games if isinstance(g, dict) and g.get("date") == day]
         try:
             expected_ids = independent_games(league, day)
-        except (OSError, ValueError, KeyError, TypeError) as exc:
+        except (OSError, ValueError, KeyError, TypeError, AuditError) as exc:
             issues.append(f"{day}: independent schedule unavailable ({exc}); inconclusive")
             continue
         if league == "NFL":
@@ -124,7 +125,7 @@ def main():
         try:
             data = fetch_json(url)
             issues = audit(league, data)
-        except (OSError, ValueError, TypeError) as exc:
+        except (OSError, ValueError, TypeError, AuditError) as exc:
             issues = [f"published feed unavailable ({exc})"]
         if issues:
             warnings.extend(f"{league}: {issue}" for issue in issues)
