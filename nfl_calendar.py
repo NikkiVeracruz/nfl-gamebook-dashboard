@@ -144,17 +144,15 @@ def refresh(today=None, session=None):
     days = include_saved_dates(days, today, archive, feed)
     pending = missing_pdf_games(archive, today)
     full, early = schedule_windows(today, days, pending)
-    old = WORKFLOW.read_text(encoding="utf-8")
-    replacement = update_workflow_text(old, full, early)
     calendar = {"game_days": sorted(d.isoformat() for d in days)}
-    if replacement != old:
-        WORKFLOW.write_text(replacement, encoding="utf-8")
-    if not CALENDAR.exists() or read_json(CALENDAR) != calendar:
+    changed = not CALENDAR.exists() or read_json(CALENDAR) != calendar
+    if changed:
         CALENDAR.write_text(json.dumps(calendar, indent=2) + "\n", encoding="utf-8")
     print(
-        f"NFL date refresh: {len(days)} game days, {len(pending)} missing PDFs, "
-        f"{len(full)} full polling days, {len(early)} overnight-only days; "
-        f"workflow {'changed' if replacement != old else 'unchanged'}"
+        f"NFL calendar: {len(days)} game days, {len(pending)} missing PDFs; "
+        f"next windows cover {len(full)} full days and {len(early)} overnights; "
+        f"calendar {'updated' if changed else 'unchanged'}. "
+        "The coordinator toggles GitHub Actions through the Actions API."
     )
 
 
