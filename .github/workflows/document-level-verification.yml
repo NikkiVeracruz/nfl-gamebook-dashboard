@@ -37,9 +37,9 @@ jobs:
       - name: Inspect official documents without modifying any source archive
         run: |
           if [[ "$GITHUB_EVENT_NAME" == "push" ]]; then
-            limit=60
+            limit=300
           else
-            limit=450
+            limit=800
           fi
           python -u tests/document_level_verification.py --limit "$limit" --workers 6
       - name: Review only the verification file for publication
