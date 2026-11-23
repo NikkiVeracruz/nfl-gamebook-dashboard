@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from urllib.parse import urlparse
 
 MAX_AGE_MINUTES = 180
-NFL_MAX_AGE_MINUTES = 60  # Catch missed 15-minute NFL runs much sooner.
+NFL_MAX_AGE_MINUTES = 90  # Successful NFL poll heartbeat is throttled to 40 minutes.
 FEEDS = {
     "NFL": "https://nikkiveracruz.github.io/nfl-gamebook-dashboard/gamebooks.json",
     "NBA": "https://nikkiveracruz.github.io/nba-gamebook-dashboard/gamebooks.json",
@@ -20,7 +20,7 @@ FEEDS = {
     "MLB": "https://nikkiveracruz.github.io/mlb-gamebook-dashboard/gamebooks.json",
 }
 
-def validate_freshness(league, timestamp, now=None):
+def validate_freshness(league, timestamp, now=None, skip_age=False):
     """Validate a UTC-aware update timestamp; use a tighter limit for NFL only."""
     if not isinstance(timestamp, str):
         raise ValueError("Missing updated_at timestamp")
@@ -35,7 +35,7 @@ def validate_freshness(league, timestamp, now=None):
         raise ValueError("Reference time lacks timezone")
     age = (current - updated).total_seconds() / 60
     limit = NFL_MAX_AGE_MINUTES if league == "NFL" else MAX_AGE_MINUTES
-    if age > limit or age < -10:
+    if (not skip_age and age > limit) or age < -10:
         raise ValueError(f"Stale or future-dated {league} feed: {age:.0f} minutes old (limit {limit})")
     return age, limit
 
@@ -48,14 +48,31 @@ def check_feed(league, url):
     data = json.loads(payload)
     if not isinstance(data, dict) or not isinstance(data.get("games"), list):
         raise ValueError("Missing games array")
-    age, limit = validate_freshness(league, data.get("updated_at"))
+    if league == "NFL":
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+        from nfl_calendar import read_json, should_poll
+        calendar = read_json(Path("nfl-calendar.json"))
+        archive = read_json(Path("archive.json"))
+        active = should_poll(datetime.now(timezone.utc), calendar, archive)
+        if active:
+            state = read_json(Path("monitor-state.json"))
+            stamp = state.get("last_checked_at") or data.get("updated_at")
+            age, limit = validate_freshness(league, stamp)
+        else:
+            age, limit = validate_freshness(
+                league, data.get("updated_at"), skip_age=True
+            )
+    else:
+        active = True
+        age, limit = validate_freshness(league, data.get("updated_at"))
     games = data["games"]
     for i, game in enumerate(games):
         if not isinstance(game, dict) or not isinstance(game.get("date"), str):
             raise ValueError(f"Invalid game at index {i}")
     if not data.get("offseason") and not games:
         raise ValueError("Active feed has zero games")
-    print(f"PASS {league}: {len(games)} games; {age:.0f} min old; offseason={bool(data.get('offseason'))}")
+    print(f"PASS {league}: {len(games)} games; {age:.0f} min since last change/check; calendar_active={active}; offseason={bool(data.get('offseason'))}")
 
 def main():
     failures = []

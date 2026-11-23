@@ -55,25 +55,26 @@ jobs:
           done
           echo "Unable to publish NFL date cache" >&2
           exit 1
-      - name: Enable only if an NFL game or overdue gamebook needs checking
+      - name: Enable or disable NFL monitor and backup watchdog together
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          state=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/update.yml" --jq '.state')
           if python nfl_calendar.py should-poll; then
-            if [ "$state" != "active" ]; then
-              gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/update.yml/enable"
-              echo "Enabled five-minute NFL gamebook checks"
-            else
-              echo "NFL polling already enabled"
-            fi
+            desired="active"
           else
             code=$?
             if [ "$code" -ne 3 ]; then exit "$code"; fi
-            if [ "$state" = "active" ]; then
-              gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/update.yml/disable"
-              echo "Disabled five-minute NFL checks on idle day"
-            else
-              echo "NFL polling already disabled"
-            fi
+            desired="disabled"
           fi
+          for workflow in update.yml nfl-backup-watchdog.yml; do
+            state=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow" --jq '.state')
+            if [ "$desired" = "active" ] && [ "$state" != "active" ]; then
+              gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/enable"
+              echo "Enabled $workflow for active NFL monitoring"
+            elif [ "$desired" = "disabled" ] && [ "$state" = "active" ]; then
+              gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/disable"
+              echo "Disabled $workflow for idle NFL calendar"
+            else
+              echo "$workflow already in desired state: $state"
+            fi
+          done

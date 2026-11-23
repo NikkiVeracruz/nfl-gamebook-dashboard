@@ -11,7 +11,7 @@ import sys
 import urllib.request
 from datetime import datetime, timezone
 
-MAX_AGE_MINUTES = 60
+MAX_AGE_MINUTES = 90  # Based on the throttled successful-poll heartbeat
 FEED_URL = "https://raw.githubusercontent.com/NikkiVeracruz/nfl-gamebook-dashboard/main/gamebooks.json"
 
 
@@ -26,13 +26,13 @@ def read_feed(url=FEED_URL):
     return json.loads(content)
 
 
-def decide(feed, now=None):
+def decide(feed, now=None, last_checked_at=None):
     """Return (dispatch_needed, reason); never dispatch on invalid inputs."""
     if not isinstance(feed, dict) or not isinstance(feed.get("games"), list):
         raise ValueError("Invalid NFL feed; refusing automatic dispatch")
     if feed.get("offseason") is True:
         return False, "Offseason feed; no backup run needed"
-    stamp = feed.get("updated_at")
+    stamp = last_checked_at or feed.get("updated_at")
     if not isinstance(stamp, str):
         raise ValueError("Missing updated_at; refusing automatic dispatch")
     try:
@@ -54,7 +54,20 @@ def decide(feed, now=None):
 
 def main():
     try:
-        trigger, reason = decide(read_feed())
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+        from nfl_calendar import should_poll
+        current = datetime.now(timezone.utc)
+        calendar = json.loads(Path("nfl-calendar.json").read_text())
+        archive = json.loads(Path("archive.json").read_text())
+        if not should_poll(current, calendar, archive):
+            trigger, reason = False, "NFL idle: no scheduled game or overdue PDF"
+        else:
+            state = json.loads(Path("monitor-state.json").read_text())
+            trigger, reason = decide(
+                read_feed(), now=current,
+                last_checked_at=state.get("last_checked_at"),
+            )
     except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
         print(f"WATCHDOG ERROR: {exc}", file=sys.stderr)
         return 1
