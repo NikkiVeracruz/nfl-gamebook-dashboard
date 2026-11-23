@@ -68,7 +68,7 @@
     const verified = docs.filter(doc => doc.verified).length;
     const category = !available ? "waiting"
       : verified === total && total > 0 ? "verified"
-      : verified > 0 && verified < total ? "partial"
+      : verified > 0 && available < total ? "partial"
       : "pending";
     let label;
     if (category === "verified") label = "All required reports verified — " + verified + " of " + total;
