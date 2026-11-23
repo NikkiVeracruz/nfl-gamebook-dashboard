@@ -23,7 +23,11 @@ class ProjectRegisterTests(unittest.TestCase):
         for row in self.data["features"]:
             with self.subTest(id=row["id"]):
                 if row["decision"] == "declined":
-                    self.assertIn(row["state"], ("removed", "paused"))
+                    # A declined feature can have been removed, paused, or never
+                    # started. Never allow it to be presented as implemented.
+                    self.assertIn(row["state"], ("removed", "paused", "not_started"))
+                    if row["state"] == "not_started":
+                        self.assertEqual(row["evidence"], [])
                 if row["decision"] == "not_decided":
                     self.assertIn(row["state"], ("proposed", "not_started"))
                 if row["decision"] == "deferred":
@@ -37,7 +41,12 @@ class ProjectRegisterTests(unittest.TestCase):
         by_id = {r["id"]: r for r in self.data["features"]}
         for ident in ("DEC-001", "DEC-002", "DEC-003", "DEC-004", "DEC-005"):
             self.assertEqual(by_id[ident]["decision"], "declined")
-        self.assertEqual(by_id["IDEA-001"]["state"], "proposed")
+        for ident in ("IDEA-001", "IDEA-003", "IDEA-004", "IDEA-005",
+                      "IDEA-006", "IDEA-007", "IDEA-009", "IDEA-011"):
+            self.assertEqual(by_id[ident]["decision"], "declined")
+            self.assertEqual(by_id[ident]["state"], "not_started")
+            self.assertIn("Do not implement or proactively suggest", by_id[ident]["notes"])
+        self.assertIn("exclude player-statistics", by_id["PRJ-001"]["notes"])
         self.assertEqual(by_id["PRJ-017"]["state"], "implemented")
 
     def test_renderer_includes_key_user_decisions_and_evidence(self):
