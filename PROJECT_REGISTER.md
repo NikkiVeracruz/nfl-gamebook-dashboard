@@ -16,7 +16,7 @@ One fast, accurate place for customer service agents to find game/team/player re
 
 ## Status overview
 
-**47 tracked items:** 26 implemented · 4 paused · 3 removed · 9 proposed · 1 deferred · 1 not started · 3 open
+**48 tracked items:** 28 implemented · 4 paused · 3 removed · 8 proposed · 1 deferred · 1 not started · 3 open
 
 | State | Meaning |
 |---|---|
@@ -232,6 +232,16 @@ Keep report recovery scripts, calendars, monitors, archive storage and tests so 
 
 *Implementation evidence:* [recover_reports.py](https://github.com/NikkiVeracruz/nhl-gamebook-dashboard/blob/main/recover_reports.py), [recover_reports.py](https://github.com/NikkiVeracruz/nba-gamebook-dashboard/blob/main/recover_reports.py), [recover_reports.py](https://github.com/NikkiVeracruz/mlb-gamebook-dashboard/blob/main/recover_reports.py)
 
+### IDEA-002 — More forgiving team/date/abbreviation search
+
+**Decision:** accepted · **Status:** implemented · **Area:** suggestion
+
+Search across all five leagues by full team name, franchise nickname, city/market (including shared markets), common city abbreviations, official team abbreviations, minor spelling variations, and two-team matchup; applies to both current tracking and the forward-only archive.
+
+*Notes:* User explicitly approved smarter search on 2026-11-23 and added city and common city-abbreviation coverage. Implemented together with missing MLB/WNBA dropdown fix. Nine search unit tests and page integration test passed: https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/actions/runs/45266196881 .
+
+*Implementation evidence:* [command-center/search.js](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/search.js), [command-center/index.html](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/index.html), [tests/test_mega_search.cjs](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/tests/test_mega_search.cjs), [.github/workflows/mega-search-safety.yml](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/.github/workflows/mega-search-safety.yml)
+
 ### IDEA-010 — More independent, standardized end-to-end tests
 
 **Decision:** accepted · **Status:** implemented · **Area:** suggestion
@@ -259,6 +269,16 @@ The user explicitly requires the canonical GitHub project registry to be updated
 *Notes:* Decision confirmed 2026-11-23. Monitoring and the scheduled weekly review help detect out-of-chat edits, but cannot ensure instantaneous awareness or authorize changes in the user's name.
 
 *Implementation evidence:* [project/feature_registry.json](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/project/feature_registry.json), [project/render_register.py](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/project/render_register.py), [.github/workflows/project-register.yml](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/.github/workflows/project-register.yml), [project/STATUS.md](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/project/STATUS.md)
+
+### PRJ-026 — Show complete team lists in active and archive selectors even without games
+
+**Decision:** accepted · **Status:** implemented · **Area:** user experience
+
+All five leagues' current 2026 franchise lists are available in both the active-tracking team filter and the archive team filter, independent of live fixture results or stored archive records. This corrects missing MLB/WNBA options during their offseason; MLB lists 30 teams and WNBA lists 15, including the 2026 expansion franchises Portland Fire and Toronto Tempo.
+
+*Notes:* Approved and implemented alongside IDEA-002 on 2026-11-23. Selecting an offseason team may legitimately show no current games or archive records; the option stays available. Latest CI: https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/actions/runs/45266196881 .
+
+*Implementation evidence:* [command-center/search.js](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/search.js), [command-center/index.html](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/index.html), [tests/test_mega_search.cjs](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/tests/test_mega_search.cjs)
 
 
 ## Explicitly declined, removed, or superseded
@@ -348,14 +368,6 @@ These are NOT automatically approved development tasks.
 Search player names and game-by-game statistics directly rather than relying only on PDF/report reading.
 
 *Notes:* High-value strategic opportunity, not implemented; availability/rights/API accuracy must be evaluated before committing.
-
-### IDEA-002 — More forgiving team/date/abbreviation search
-
-**Decision:** not decided · **Status:** proposed · **Area:** suggestion
-
-Normalize alternate team abbreviations, aliases and varied date formats across league search.
-
-*Notes:* Basic team/matchup and year filtering is already implemented.
 
 ### IDEA-003 — One-click comprehensive game reference
 
