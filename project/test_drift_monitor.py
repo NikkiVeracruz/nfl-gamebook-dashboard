@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "project"))
 from drift_monitor import (
     REPO, LEGACY_WORKFLOWS, audit_archive, audit_backfill,
-    audit_registry, inspect, markdown, valid_archived_game,
+    audit_registry, audit_workflow_job_conditions, inspect, markdown, valid_archived_game,
 )
 from render_register import SOURCE
 
@@ -57,6 +57,16 @@ class DriftMonitorTests(unittest.TestCase):
                            "ENABLE_HISTORICAL_BACKFILL")
         with self.assertRaises(ValueError):
             audit_backfill("on:\n  workflow_dispatch:\n", "ENABLE_HISTORICAL_BACKFILL")
+
+    def test_duplicate_job_if_is_rejected_before_repeated_error_emails(self):
+        bad = ("name: dormant restoration\\njobs:\\n  restore:\\n"
+               "    if: ${{ vars.ENABLE_HISTORICAL_BACKFILL == 'true' }}\\n"
+               "    if: github.ref == 'refs/heads/main'\\n"
+               "    runs-on: ubuntu-latest\\n").replace("\\n", "\n")
+        with self.assertRaisesRegex(ValueError, "duplicate if condition"):
+            audit_workflow_job_conditions(bad, "restore-nfl-nov-2025.yml")
+        good = bad.replace("    if: github.ref == 'refs/heads/main'\\n".replace("\\n", "\n"), "")
+        self.assertEqual(audit_workflow_job_conditions(good, "fixed.yml"), 1)
 
     def test_unapproved_feature_cannot_be_implemented(self):
         x = copy.deepcopy(self.registry)
