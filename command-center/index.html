@@ -74,22 +74,35 @@ function render(){const sections=$("leagueSections"),combined=$("combined");sect
 if(!combined.childNodes.length)combined.append(node("p","empty","No games match your filters."));$("total").textContent=total;$("reports").textContent=available;$("waiting").textContent=waiting;$("active").textContent=active;$("viewTitle").textContent=state.view==="sections"?"Leagues":"Combined games";sections.classList.toggle("hide",state.view!=="sections");combined.classList.toggle("hide",state.view!=="combined");updateClocks();renderFreshnessWarnings()}
 function updateClocks(){for(const n of document.querySelectorAll("[data-final-start]")){const mins=Math.max(0,Math.floor((Date.now()-Number(n.dataset.finalStart))/60000));n.textContent=(n.dataset.available==="yes"?"Final · ":"Awaiting report · ")+(mins>=60?Math.floor(mins/60)+"h "+mins%60+"m":mins+"m")+" since Final first detected in this browser"}}
 async function fetchLeague(cfg){try{const url="https://nikkiveracruz.github.io/"+cfg.repo+"/"+(cfg.path||"")+"gamebooks.json?ts="+Date.now();let response=await fetch(url,{cache:"no-store"});if(!response.ok){response=await fetch("https://raw.githubusercontent.com/NikkiVeracruz/"+cfg.repo+"/main/"+(cfg.path||"")+"gamebooks.json?ts="+Date.now(),{cache:"no-store"})}if(!response.ok)throw Error("HTTP "+response.status);const d=await response.json();state.data[cfg.id]={...d,error:false};
-if(cfg.id==="NFL"){
-  try{
-    const base="https://nikkiveracruz.github.io/nfl-gamebook-dashboard/";
+{
+  try {
+    const roots = {
+      NFL:["nfl-gamebook-dashboard/","monitor-state.json","nfl-calendar.json"],
+      NBA:["nba-gamebook-dashboard/","nba-poll-status.json","nba-calendar.json"],
+      WNBA:["nba-gamebook-dashboard/","wnba/poll-status.json","wnba/calendar.json"],
+      NHL:["nhl-gamebook-dashboard/","poll-status.json","league-calendar.json"],
+      MLB:["mlb-gamebook-dashboard/","poll-status.json","league-calendar.json"]
+    };
+    const [root,statusPath,calendarPath]=roots[cfg.id];
+    const base="https://nikkiveracruz.github.io/"+root;
     const [statusResponse,calendarResponse]=await Promise.all([
-      fetch(base+"monitor-state.json?ts="+Date.now(),{cache:"no-store"}),
-      fetch(base+"nfl-calendar.json?ts="+Date.now(),{cache:"no-store"})
+      fetch(base+statusPath+"?ts="+Date.now(),{cache:"no-store"}),
+      fetch(base+calendarPath+"?ts="+Date.now(),{cache:"no-store"})
     ]);
-    if(!statusResponse.ok||!calendarResponse.ok)throw Error("NFL status not available");
+    if(!statusResponse.ok||!calendarResponse.ok)throw Error("Monitoring status unavailable");
     const [monitorStatus,calendar]=await Promise.all([statusResponse.json(),calendarResponse.json()]);
     const now=new Date(),today=dateET(now);
     const yesterday=dateET(new Date(now.getTime()-86400000));
     const hour=Number(new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",hourCycle:"h23"}).format(now));
     const days=Array.isArray(calendar.game_days)?calendar.game_days:[];
-    state.data[cfg.id].nflPollExpected=days.includes(today)||(hour<3&&days.includes(yesterday))||monitorStatus.pending_overdue_pdf===true;
-    state.data[cfg.id].last_checked_at=monitorStatus.last_checked_at||null;
-  }catch{state.data[cfg.id].nflPollExpected=true}
+    const pending=cfg.id==="NFL"?(monitorStatus.pending_overdue_pdf===true?1:0):Number(monitorStatus.pending_recent||0);
+    const allPending=cfg.id==="NFL"?pending:Number(monitorStatus.pending_all||0);
+    state.data[cfg.id].pollInfo={
+      active:days.includes(today)||(hour<3&&days.includes(yesterday))||pending>0,
+      pending_recent:pending,pending_all:allPending,
+      last_checked_at:monitorStatus.last_checked_at||null
+    };
+  }catch{state.data[cfg.id].pollInfo=null}
 }
 const dates=[...new Set((d.games||[]).map(g=>g.date).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)))];const chunks=await Promise.all(dates.map(async day=>{try{const r=await fetch("https://site.api.espn.com/apis/site/v2/sports/"+cfg.sport+"/scoreboard?dates="+day.replace(/-/g,"")+"&limit=100");return r.ok?(await r.json()).events||[]:[]}catch{return []}}));state.scores[cfg.id]=chunks.flat()}catch(e){state.data[cfg.id]={error:true,games:[]};state.scores[cfg.id]=[]}}
 async function refresh(){ $("refresh").disabled=true;$("lastRefresh").textContent="Checking all five league feeds…";await Promise.all(config.map(fetchLeague));$("lastRefresh").textContent="Last checked "+new Date().toLocaleTimeString()+" · Each league updates independently";$("refresh").disabled=false;refreshCurrentTeams();render()}
