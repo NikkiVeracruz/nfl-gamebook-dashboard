@@ -1,4 +1,5 @@
 name: Refresh NFL game-date polling calendar
+# Calendar refresh runs daily; the NFL PDF monitor only polls generated game dates.
 on:
   workflow_dispatch:
   push:
