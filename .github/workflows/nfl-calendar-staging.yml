@@ -30,6 +30,7 @@ jobs:
       - name: Run NFL calendar and archive safety tests
         run: |
           python -m unittest discover -s tests -p 'test_nfl_calendar.py' -v
+          python -m unittest discover -s tests -p 'test_nfl_older_pdf_recovery.py' -v
           python -m unittest discover -s tests -p 'test_archive_safety.py' -v
       - name: Rebuild active dates against ESPN without touching production
         run: python nfl_calendar.py refresh
