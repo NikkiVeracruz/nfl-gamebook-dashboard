@@ -37,16 +37,39 @@ def independent_sunday_games(session, day):
     return count
 
 
-def validate_discovery(session, start, end, discovered, get_expected=independent_sunday_games):
-    """Never mark historical NFL game weeks complete if the source misses games."""
+def validate_discovery(session, start, end, discovered, get_expected=independent_sunday_games, previous=None):
+    """Require ESPN's Sunday count across unique newly discovered OR saved NFL games.
+
+    A scheduled game that's already archived must not block a historical
+    catch-up just because NFL.com temporarily fails to rediscover it.
+    However a game missing from both sources still blocks cursor advancement.
+    """
+    from re import fullmatch
+    prior = previous or {}
     sunday = start + timedelta(days=(6-start.weekday()) % 7)
     while sunday < end:
         expected = get_expected(session, sunday)
-        observed = sum(g.get("date") == sunday.isoformat() for g in discovered.values())
+        retained = {}
+        for game in list(discovered.values()) + list(prior.values()):
+            slug = str(game.get("slug", ""))
+            if game.get("date") != sunday.isoformat():
+                continue
+            # Never credit a game from a different season, or a malformed
+            # record, toward the count for this Sunday.
+            if not fullmatch(r".+-at-.+-20\d{2}-(?:reg|pre|post)-\d+", slug):
+                continue
+            if int(slug.rsplit("-", 3)[1]) != sunday.year:
+                # January-February postseason belongs to prior NFL season.
+                if not (sunday.month <= 2 and int(slug.rsplit("-", 3)[1]) == sunday.year - 1):
+                    continue
+            retained[slug] = game
+        observed = len(retained)
         if observed < expected:
             raise ArchiveIntegrityError(
-                f"NFL backfill incomplete for {sunday}: found {observed} NFL.com games "
-                f"but ESPN has {expected}; archive and progress cursor NOT advanced"
+                f"NFL backfill incomplete for {sunday}: {len(discovered)} newly discovered "
+                f"records in this window, {observed} distinct Sunday games including "
+                f"already archived records, ESPN has {expected}; "
+                "archive and progress cursor NOT advanced"
             )
         sunday += timedelta(days=7)
 
@@ -64,7 +87,7 @@ def main():
     discovered={}
     for season in {start.year,start.year-1}:
         discovered.update(discover(session,season,start.isoformat(),end.isoformat()))
-    validate_discovery(session,start,end,discovered)
+    validate_discovery(session,start,end,discovered,previous=records)
     for slug,g in discovered.items():
         old=records.get(slug,{})
         item={**old,**g}
