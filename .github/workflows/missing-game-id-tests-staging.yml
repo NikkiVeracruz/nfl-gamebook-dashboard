@@ -1,0 +1,19 @@
+name: Missing-game ID regression tests (staging)
+on:
+  push:
+    branches:
+      - staging-reliability
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Simulate missing, swapped, duplicate and valid IDs
+        run: python -m unittest discover -s tests -p 'test_missing_game_ids.py' -v
