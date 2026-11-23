@@ -19,3 +19,6 @@ jobs:
           python-version: "3.12"
       - name: Verify published league feed health
         run: python tests/production_health.py
+      - name: Flag overdue final NFL games without gamebooks
+        if: always()
+        run: python tests/nfl_final_gamebooks.py
