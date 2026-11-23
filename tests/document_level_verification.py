@@ -207,19 +207,29 @@ def inspect_mlb(item):
     gid = item["id"]
     if not gid.isdigit():
         return "invalid_game_id", "Non-numeric MLB game ID"
-    base = f"https://statsapi.mlb.com/api/v1/game/{gid}/"
+    # Validate the actual game's identity AND both official stats sections.
+    # The underlying Gameday webpage URL by itself is not evidence that the
+    # score or play-by-play exists for this game.
     try:
-        url = base + ("boxscore" if item["kind"] == "BOX" else "playByPlay")
+        url = f"https://statsapi.mlb.com/api/v1.1/game/{gid}/feed/live"
         payload = fetch_json(url)
+        game_data = payload.get("gameData") or {}
+        official_id = str((game_data.get("game") or {}).get("pk")
+                          or payload.get("gamePk") or "")
+        if official_id != gid:
+            return "mismatched_game_id", f"Official API gamePk {official_id!r}, expected {gid}"
+        live = payload.get("liveData") or {}
         if item["kind"] == "BOX":
-            teams = payload.get("teams")
+            teams = (live.get("boxscore") or {}).get("teams")
             ok = isinstance(teams, dict) and all(x in teams for x in ("home", "away"))
         else:
-            plays = payload.get("allPlays")
+            plays = (live.get("plays") or {}).get("allPlays")
             ok = isinstance(plays, list) and bool(plays)
         if not ok:
-            return "invalid_report_content", "Official endpoint lacks required statistics structure"
-        return "verified_official_stats", "Official game-ID-scoped API returned expected data structure"
+            return "invalid_report_content", "Official feed lacks required statistics structure"
+        return "verified_official_stats", (
+            f"Official game ID {gid} and {'box-score' if item['kind'] == 'BOX' else 'play-by-play'} data verified"
+        )
     except requests.HTTPError as exc:
         n = getattr(exc.response, "status_code", "unknown")
         return "source_unavailable", f"Official stats API HTTP {n}"
