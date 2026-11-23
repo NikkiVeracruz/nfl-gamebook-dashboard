@@ -9,7 +9,6 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-import requests
 
 ET = ZoneInfo("America/New_York")
 API = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
@@ -138,7 +137,9 @@ def should_poll(now, calendar, archive, manual=False):
 def refresh(today=None, session=None):
     today = today or datetime.now(ET).date()
     archive, feed = read_json(ARCHIVE), read_json(FEED)
-    session = session or requests.Session()
+    if session is None:
+        import requests
+        session = requests.Session()
     days = fetch_game_days(session, today)
     days = include_saved_dates(days, today, archive, feed)
     pending = missing_pdf_games(archive, today)
