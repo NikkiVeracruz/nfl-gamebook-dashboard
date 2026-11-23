@@ -123,6 +123,10 @@ def render(data):
     section(lines, "Deferred ideas",
             [e for e in entries if e["decision"] == "deferred"],
             "Deliberately postponed without claiming that the user rejected them.")
+    section(lines, "Approved research and open follow-ups",
+            [e for e in entries if e["state"] == "open"
+             and e["area"] != "known_risk" and e["decision"] in ("accepted", "required")],
+            "Approved investigations and incomplete follow-ups; not deployed features.")
     section(lines, "Known risks and gaps",
             [e for e in entries if e["area"] == "known_risk"],
             "Report unresolved risks even when all routine workflows are green.")

@@ -62,6 +62,11 @@ class ProjectRegisterTests(unittest.TestCase):
         result = render(self.data)
         self.assertIn("## Approved work awaiting implementation", result)
         self.assertIn("NCAA-POC-001", result)
+        self.assertIn("## Approved research and open follow-ups", result)
+        self.assertIn("### NCAA-RESEARCH-002", result)
+        for row in self.data["features"]:
+            if row["state"] == "open" and row["decision"] in ("accepted", "required"):
+                self.assertIn("### " + row["id"] + " — ", result)
         for term in ("Forward-only", "NCAA", "player-level statistics",
                      "archive", "not_decided", "backup/pre-forward-only-2026-11-23"):
             self.assertIn(term.lower(), result.lower())
