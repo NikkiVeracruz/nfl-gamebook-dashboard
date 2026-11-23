@@ -140,8 +140,11 @@ def pdf_date_match(text, iso):
     d = date.fromisoformat(iso)
     names = ("January", "February", "March", "April", "May", "June", "July",
              "August", "September", "October", "November", "December")
+    yy = d.year % 100
     patterns = (rf"\b{d.month:02d}/{d.day:02d}/{d.year}\b",
                 rf"\b{d.month}/{d.day}/{d.year}\b",
+                rf"\b0?{d.month}[/\-]0?{d.day}[/\-]{yy:02d}\b",
+                rf"\b{d.month:02d}-{d.day:02d}-{d.year}\b",
                 rf"\b{names[d.month - 1]}\s+0?{d.day},?\s+{d.year}\b",
                 rf"\b{names[d.month - 1][:3]}\w*\.?\s+0?{d.day},?\s+{d.year}\b",
                 rf"\b{d.year}-{d.month:02d}-{d.day:02d}\b")
@@ -156,7 +159,11 @@ def inspect_pdf(item, raw):
         pages = len(reader.pages)
         if pages < 1:
             return "invalid_format", "PDF has no readable pages"
-        text = "\n".join((page.extract_text() or "") for page in list(reader.pages)[:3])
+        # NFL report cover/title dates can appear after the opening summary
+        # pages; check more pages without requiring full-text extraction of a
+        # potentially very long NBA/WNBA gamebook.
+        max_pages = 8 if item["league"] == "NFL" else 3
+        text = "\n".join((page.extract_text() or "") for page in list(reader.pages)[:max_pages])
     except Exception as exc:
         return "unreadable_document", str(exc)[:150]
     terms = slugs_from_label(item)
