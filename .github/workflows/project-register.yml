@@ -1,0 +1,57 @@
+name: Generate canonical Mega Board project register
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - project/feature_registry.json
+      - project/render_register.py
+      - project/test_register.py
+      - .github/workflows/project-register.yml
+permissions:
+  contents: write
+concurrency:
+  group: mega-board-project-register
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Read newest decisions before rendering
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+      - name: Verify schema and conflicting decisions
+        run: python -m unittest discover -s project -p 'test_register.py' -v
+      - name: Generate readable project register from canonical source
+        run: |
+          python project/render_register.py --write
+          python project/render_register.py --check
+          git diff --check
+      - name: Publish documentation only if changed
+        run: |
+          if [[ -z "$(git status --porcelain PROJECT_REGISTER.md)" ]]; then
+            echo "Master project register is current"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add PROJECT_REGISTER.md
+          git commit -m "Refresh human-readable Mega Board project register"
+          for attempt in 1 2 3 4; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase -X theirs origin/main
+            python project/render_register.py --write
+            git add PROJECT_REGISTER.md
+            if ! git diff --cached --quiet; then
+              git commit -m "Refresh project register after upstream changes"
+            fi
+            sleep 2
+          done
+          exit 1
