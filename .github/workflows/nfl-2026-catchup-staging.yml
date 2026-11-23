@@ -17,10 +17,12 @@ jobs:
           cache: pip
       - name: Install existing monitor dependencies
         run: pip install -r requirements.txt
-      - name: Check 2026 audit and rehearsal syntax
-        run: python -m py_compile tests/nfl_2026_coverage.py tests/rehearse_nfl_2026_catchup.py tests/test_nfl_2026_coverage.py
+      - name: Check 2026 audit, rehearsal and publication guard syntax
+        run: python -m py_compile tests/nfl_2026_coverage.py tests/rehearse_nfl_2026_catchup.py tests/test_nfl_2026_coverage.py tests/validate_nfl_2026_restoration.py tests/test_nfl_2026_restoration.py
       - name: Test independent scoreboard matching and PDF validation
         run: python -m unittest discover -s tests -p 'test_nfl_2026_coverage.py' -v
+      - name: Reject damaged history, changed cursor and unauthorized 2026 publishing
+        run: python -m unittest discover -s tests -p 'test_nfl_2026_restoration.py' -v
       - name: Fetch latest production archive, without switching branches
         run: git fetch --no-tags --depth=1 origin main
       - name: Reconstruct missing 2026 season games in a disposable runner
