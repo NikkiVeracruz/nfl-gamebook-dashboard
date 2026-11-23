@@ -40,8 +40,12 @@ jobs:
         env:
           ARCHIVE_LEAGUE: nfl
         run: timeout 510s python backfill.py
+      - name: Restore original production progress cursor in scratch checkout
+        run: git show FETCH_HEAD:archive-progress.json > archive-progress.json
       - name: Check against latest untouched production archive
         run: python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
+      - name: Enforce exactly sixty reviewed November games and distinct official PDFs
+        run: python tests/validate_nfl_nov_2025_recovery.py FETCH_HEAD
       - name: Summarize proposed historical recovery before any publication
         run: |
           python - <<'PY'
