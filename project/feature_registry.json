@@ -724,11 +724,28 @@
       "id": "IDEA-002",
       "title": "More forgiving team/date/abbreviation search",
       "area": "suggestion",
-      "decision": "not_decided",
-      "state": "proposed",
-      "summary": "Normalize alternate team abbreviations, aliases and varied date formats across league search.",
-      "evidence": [],
-      "notes": "Basic team/matchup and year filtering is already implemented."
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Search across all five leagues by full team name, franchise nickname, city/market (including shared markets), common city abbreviations, official team abbreviations, minor spelling variations, and two-team matchup; applies to both current tracking and the forward-only archive.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/search.js"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/test_mega_search.cjs"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/mega-search-safety.yml"
+        }
+      ],
+      "notes": "User explicitly approved smarter search on 2026-11-23 and added city and common city-abbreviation coverage. Implemented together with missing MLB/WNBA dropdown fix. Nine search unit tests and page integration test passed: https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/actions/runs/45266196881 ."
     },
     {
       "id": "IDEA-003",
@@ -941,6 +958,29 @@
         }
       ],
       "notes": "Decision confirmed 2026-11-23. Monitoring and the scheduled weekly review help detect out-of-chat edits, but cannot ensure instantaneous awareness or authorize changes in the user's name."
+    },
+    {
+      "id": "PRJ-026",
+      "title": "Show complete team lists in active and archive selectors even without games",
+      "area": "user_experience",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "All five leagues' current 2026 franchise lists are available in both the active-tracking team filter and the archive team filter, independent of live fixture results or stored archive records. This corrects missing MLB/WNBA options during their offseason; MLB lists 30 teams and WNBA lists 15, including the 2026 expansion franchises Portland Fire and Toronto Tempo.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/search.js"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/test_mega_search.cjs"
+        }
+      ],
+      "notes": "Approved and implemented alongside IDEA-002 on 2026-11-23. Selecting an offseason team may legitimately show no current games or archive records; the option stays available. Latest CI: https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/actions/runs/45266196881 ."
     }
   ]
 }
