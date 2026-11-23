@@ -111,7 +111,7 @@ class NFLCalendarTests(unittest.TestCase):
         class FakeResponse:
             def raise_for_status(self): pass
             def json(self):
-                return {"events": [{"date": "2026-11-26T01:20:00Z"}]}
+                return {"events": [{"date": "2026-11-26T04:20:00Z"}]}
         class FakeSession:
             def get(self, *a, **k): return FakeResponse()
         days = fetch_game_days(FakeSession(), date(2026, 11, 25), horizon=0)
