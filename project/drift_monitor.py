@@ -105,6 +105,33 @@ def audit_backfill(workflow, variable):
         raise ValueError("Historical recovery workflow entrypoint disappeared")
 
 
+def audit_workflow_job_conditions(source, label):
+    """Reject duplicate job-level if keys, which GitHub rejects at parsing time."""
+    current_job = None
+    checks = {}
+    in_jobs = False
+    for number, line in enumerate(source.splitlines(), start=1):
+        if line == "jobs:":
+            in_jobs = True
+            continue
+        if not in_jobs:
+            continue
+        if line and not line.startswith(" "):
+            in_jobs = False
+            current_job = None
+            continue
+        if line.startswith("  ") and not line.startswith("   ") and line.endswith(":"):
+            current_job = line.strip()[:-1]
+            checks[current_job] = 0
+        elif current_job and line.startswith("    if:"):
+            checks[current_job] += 1
+            if checks[current_job] > 1:
+                raise ValueError(
+                    f"{label}: duplicate if condition for job {current_job}, line {number}"
+                )
+    return len(checks)
+
+
 def audit_registry(data):
     rows = validate(data)
     decisions = {x["id"]: x for x in rows}
@@ -176,6 +203,7 @@ def inspect(data, read=remote_text):
             raise ValueError("Historical full-season audit activated without approval")
         for repo, path in LEGACY_WORKFLOWS:
             source = read(repo, path)
+            audit_workflow_job_conditions(source, f"{repo}/{path}")
             if "ENABLE_HISTORICAL_BACKFILL" not in source:
                 raise ValueError(f"Ungated legacy restoration workflow: {repo}/{path}")
         if "schedule:" not in read("nfl-gamebook-dashboard", ".github/workflows/missing-game-audit.yml"):
