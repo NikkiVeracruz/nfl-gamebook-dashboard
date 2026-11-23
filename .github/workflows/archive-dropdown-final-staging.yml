@@ -1,0 +1,34 @@
+name: Mega Board archive dropdown final interaction regression (staging)
+on:
+  push:
+    branches: [staging-mega-archive-dropdown-2026-11-23]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+      - name: Validate dropdown and all five-league board JavaScript
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html=Path("command-center/index.html").read_text()
+          start=html.index("<script>")+len("<script>")
+          end=html.index("</script>",start)
+          Path("/tmp/archive-ui.js").write_text(html[start:end])
+          assert '<details id="history-disclosure"' in html
+          assert '<summary id="history-summary"' in html
+          assert 'if(!details.open)return;' in html
+          assert 'found.slice(0,200)' in html
+          assert 'refreshHistoryFilters(autoExpand=false)' in html
+          assert 'if(autoExpand&&league!=="all"&&teamSelect.value!=="all")' in html
+          assert 'history-league").addEventListener("change",()=>refreshHistoryFilters(true)' in html
+          assert '"NBA","WNBA","NHL","MLB"' in html
+          print("PASS: closed by default, auto-open on specific league/team, manually closable")
+          PY
+          node --check /tmp/archive-ui.js
+      - name: Confirm archives unchanged
+        run: git diff --exit-code -- archive.json gamebooks.json archive-progress.json
