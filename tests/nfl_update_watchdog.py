@@ -55,6 +55,7 @@ def decide(feed, now=None, last_checked_at=None):
 def main():
     try:
         from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
         from nfl_calendar import should_poll
         current = datetime.now(timezone.utc)
         calendar = json.loads(Path("nfl-calendar.json").read_text())
