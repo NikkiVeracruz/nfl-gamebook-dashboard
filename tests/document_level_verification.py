@@ -26,6 +26,10 @@ REPOS = {"NFL": ("nfl-gamebook-dashboard", ""),
          "WNBA": ("nba-gamebook-dashboard", "wnba/"),
          "NHL": ("nhl-gamebook-dashboard", ""),
          "MLB": ("mlb-gamebook-dashboard", "")}
+# Do not retain or re-inspect prior historical archives after forward-only migration.
+FORWARD_START = {"NFL": "2026-11-19", "NBA": "2026-11-22",
+                 "WNBA": "2026-11-22", "NHL": "2026-11-22",
+                 "MLB": "2026-11-22"}
 REPORT = Path("document-verification/2026.json")
 HEADERS = {"User-Agent": "GamebookArchiveDocumentVerifier/1.0",
            "Accept": "application/pdf,text/html,application/json,*/*"}
@@ -66,7 +70,7 @@ def gather(league):
             if not key or key == "None" or key in source_seen:
                 raise ValueError(f"{league}/{filename}: missing or repeated game ID {key}")
             source_seen.add(key)
-            if not g["date"].startswith("2026-"):
+            if g["date"] < FORWARD_START[league]:
                 continue
             old = combined.get(key)
             if old is None:
@@ -283,9 +287,12 @@ def fresh(record, item, now):
 def make_report(links, missing, previous, checked, now):
     existing = previous.get("results", {}) if isinstance(previous, dict) else {}
     # Preserve old verification evidence but count only currently linked documents.
-    merged = dict(existing)
-    merged.update(checked)
     current = {it["key"]: it for it in links}
+    # Drop stale legacy evidence, including old document URLs: only retained
+    # current/new document identities are allowed in the active report.
+    merged = {key: value for key, value in existing.items()
+              if key in current and value.get("url") == current[key]["url"]}
+    merged.update({key: value for key, value in checked.items() if key in current})
     statuses = Counter()
     for key, item in current.items():
         prior = merged.get(key)
