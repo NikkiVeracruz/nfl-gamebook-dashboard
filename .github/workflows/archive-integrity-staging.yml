@@ -18,9 +18,11 @@ jobs:
       - name: Install backfill test dependencies
         run: pip install -r requirements.txt
       - name: Check Python syntax
-        run: python -m py_compile archive.py backfill.py tests/archive_integrity_gate.py tests/rehearse_latest_archives.py tests/test_nfl_backfill_completeness.py
+        run: python -m py_compile archive.py backfill.py tests/archive_integrity_gate.py tests/rehearse_latest_archives.py tests/test_nfl_backfill_completeness.py tests/validate_nfl_nov_2025_recovery.py tests/test_nfl_nov_2025_restoration.py
       - name: Reject silently incomplete NFL historical backfills
         run: python -m unittest discover -s tests -p 'test_nfl_backfill_completeness.py' -v
+      - name: Test exact-batch NFL restoration gate against bad URLs and lost history
+        run: python -m unittest discover -s tests -p 'test_nfl_nov_2025_restoration.py' -v
       - name: Simulate corrupt archives, duplicates, disk failure and actual repository merge
         run: python -m unittest discover -s tests -p 'test_archive_safety.py' -v
       - name: Verify archive publication gate rejects deletions and invalid documents
