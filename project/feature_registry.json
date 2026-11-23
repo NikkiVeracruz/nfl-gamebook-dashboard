@@ -955,9 +955,13 @@
         {
           "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
           "path": "project/STATUS.md"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/project-governance-monitor.yml"
         }
       ],
-      "notes": "Decision confirmed 2026-11-23. Monitoring and the scheduled weekly review help detect out-of-chat edits, but cannot ensure instantaneous awareness or authorize changes in the user's name."
+      "notes": "User confirmed required documentation on 2026-11-23. On 2026-11-23 the governance monitor's push trigger was changed to run after the generated PROJECT_REGISTER.md is committed, instead of directly on the JSON change; this prevents false failures while the two files are temporarily out of sync. Check run: https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/actions/runs/45266503282. Scheduled review detects external edits but cannot guarantee instantaneous awareness."
     },
     {
       "id": "PRJ-026",
