@@ -1,6 +1,6 @@
 # Mega Board — Project Governance Monitor
 
-**Latest observation:** 2026-11-23T20:55:28.946281+00:00
+**Latest observation:** 2026-11-23T21:08:15.771967+00:00
 
 **Outcome:** PASS
 
@@ -8,7 +8,7 @@ This monitor never changes game data, archive contents, feature approvals, or us
 
 | Check | Result | Detail |
 |---|---|---|
-| Canonical user decisions | pass | 47 tracked decisions/requirements |
+| Canonical user decisions | pass | 48 tracked decisions/requirements |
 | Readable register matches JSON | pass | Generated Markdown matches |
 | Exactly five supported leagues | pass | NFL NBA WNBA NHL MLB |
 | NFL forward-only archive, current feed and backup | pass | 12 complete retained games; live feed valid; backfill gated; backup present |
@@ -18,7 +18,7 @@ This monitor never changes game data, archive contents, feature approvals, or us
 | MLB forward-only archive, current feed and backup | pass | 0 complete retained games; live feed valid; backfill gated; backup present |
 | Central Mega Board basic functionality | pass | Five league filters, archive/current separation and help are present; NCAA absent |
 | Approvals and auditing workflow modes | pass | Historical restoration disabled, current-game completeness and document checks present |
-| Implementation evidence files still present | pass | 52 cited files checked |
+| Implementation evidence files still present | pass | 55 cited files checked |
 
 **Findings requiring attention:** 0.
 
