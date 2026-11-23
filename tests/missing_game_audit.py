@@ -34,7 +34,7 @@ def independent_games(league, day):
         # The dashboard stores MLB StatsAPI gamePk identifiers, not ESPN IDs.
         # Match the gameTypes filter used by the production MLB monitor.
         from urllib.parse import urlencode
-        query = urlencode({"sportId": 1, "date": day, "gameTypes": "S,R,F,D,L,W"})
+        query = urlencode({"sportId": 1, "date": day, "gameTypes": "S,R,F,D,L,W,A,E"})
         data = fetch_json("https://statsapi.mlb.com/api/v1/schedule?" + query)
         dates = data.get("dates")
         if not isinstance(dates, list):
