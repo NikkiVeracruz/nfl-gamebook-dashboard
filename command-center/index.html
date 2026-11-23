@@ -41,10 +41,10 @@ function staleFeedWarnings(data,nowMs=Date.now()){
   if(!feed)continue;
   if(!cfg.months.includes(currentMonthET())||feed.offseason===true)continue;
   if(feed.error){warnings.push(cfg.id+": feed unavailable; current game data could not be loaded.");continue}
-  if(cfg.id==="NFL" && feed.nflPollExpected===false)continue;
-  const stamp=Date.parse((cfg.id==="NFL" && feed.last_checked_at)||feed.updated_at||"");
+  if(feed.pollInfo?.active===false)continue;
+  const stamp=Date.parse(feed.pollInfo?.last_checked_at||feed.updated_at||"");
   if(!Number.isFinite(stamp)){warnings.push(cfg.id+": no valid last-update timestamp; data freshness cannot be verified.");continue}
-  const age=Math.floor((nowMs-stamp)/60000),limit=cfg.id==="NFL"?90:180;
+  const age=Math.floor((nowMs-stamp)/60000),limit=90;
   if(age>limit)warnings.push(cfg.id+": data is "+age+" minutes old (expected within "+limit+" minutes). Results and gamebook availability may be delayed.");
   else if(age< -10)warnings.push(cfg.id+": update timestamp is in the future; freshness cannot be verified.");
  }
