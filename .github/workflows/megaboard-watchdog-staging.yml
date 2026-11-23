@@ -1,0 +1,34 @@
+name: Mega Board freshness and NFL watchdog tests (staging)
+on:
+  push:
+    branches:
+      - staging-reliability
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Simulate fresh and stale NFL updates, outages, and offseason
+        run: python -m unittest discover -s tests -p 'test_nfl_watchdog.py' -v
+      - name: Verify Mega Board stale warnings
+        run: node tests/test_megaboard_freshness.cjs
+  observation-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Observe whether backup update would be needed (NEVER dispatch)
+        run: python tests/nfl_update_watchdog.py
