@@ -46,6 +46,32 @@ class CoverageTests(unittest.TestCase):
             {"id":2026020381,"gameState":"OFF"}]}))
         self.assertEqual({x["key"] for x in rows},{"2026010044","2026020381"})
 
+    def test_nhl_weekly_schedule_classifies_games_and_avoids_request_flood(self):
+        from unittest.mock import patch
+        from datetime import timedelta
+        class WeeklyResponse:
+            status_code=200
+            def raise_for_status(self):pass
+            def __init__(self,day):self.day=day
+            def json(self):
+                return {"gameWeek":[{"date":(self.day+timedelta(days=i)).isoformat(),
+                      "games":[
+                        {"id":2026020001,"gameState":"OFF"} if i==0 else
+                        {"id":2025090001,"gameState":"FINAL"} if i==1 else {}
+                      ] if i<2 else []} for i in range(7)]}
+        class WeeklySession:
+            def __init__(self):self.calls=0
+            def get(self,url,timeout=None):
+                self.calls+=1
+                return WeeklyResponse(date.fromisoformat(url.rsplit("/",1)[-1]))
+        s=WeeklySession()
+        with patch("time.sleep"):
+            rows=m.nhl_weekly_events(date(2026,11,1),date(2026,11,7),s)
+        self.assertGreater(s.calls,0)
+        self.assertLessEqual(s.calls,2)
+        self.assertIn("2026020001",{r["key"] for r in rows})
+        self.assertNotIn("2025090001",{r["key"] for r in rows})
+
     def test_nhl_preseason_not_mistaken_for_regular_missing_report(self):
         e={"key":"2026010044","date":"2026-09-24","completed":True}
         row=m.audit_one("NHL",{"games":[{"id":e["key"],"date":e["date"]}]},[e],date(2026,11,23))
