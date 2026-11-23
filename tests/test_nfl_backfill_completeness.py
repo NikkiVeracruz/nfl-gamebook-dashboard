@@ -139,5 +139,30 @@ class NflBackfillCompletenessTests(unittest.TestCase):
         self.assertFalse(any(url.endswith("/by-week/week-14") for url in queried))
 
 
+    def test_2026_game_link_never_overwrites_a_2025_history_record(self):
+        # NFL schedule markup may associate a 2025 date with a neighboring
+        # 2026 game link. Both scanning paths must reject the wrong season.
+        observed = []
+
+        def fake_get(_session, url):
+            observed.append(url)
+            if url.endswith("/REG11") or url.endswith("/by-week/week-12"):
+                return (
+                    '<a href="/games/bengals-at-commanders-2026-reg-11">'
+                    'Sunday, November 23, 2025</a>'
+                    '<a href="/games/patriots-at-jets-2025-reg-12">'
+                    'Sunday, November 23, 2025</a>'
+                )
+            return ""
+
+        with patch.object(monitor, "get", side_effect=fake_get):
+            found = monitor.discover(None, 2025, "2025-11-02", "2025-11-30")
+        self.assertIn("patriots-at-jets-2025-reg-12", found)
+        self.assertNotIn("bengals-at-commanders-2026-reg-11", found)
+        self.assertTrue(any(url.endswith("/REG11") for url in observed))
+        self.assertTrue(any(url.endswith("/by-week/week-12") for url in observed))
+
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
