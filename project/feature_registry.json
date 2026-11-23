@@ -12,7 +12,7 @@
       "NHL",
       "MLB"
     ],
-    "governance_policy": "Explicit user decisions take precedence over older suggestions. Automated checks may report implementation drift, but may not approve/reject ideas or restore removed features.",
+    "governance_policy": "Explicit user decisions take precedence over older suggestions. For every Mega Board decision made with the assistant and every implementation/configuration change the assistant makes, update the canonical GitHub feature registry within the same task, recording intent, decision, actual status, evidence, and any relevant risks; have the readable register regenerated and verify success before reporting completion. Suggestions remain unapproved until the user accepts them. Independent external changes are discovered through GitHub monitoring and scheduled review, not assumed to be known immediately. Automated checks may report implementation drift but may not approve/reject ideas or restore removed features.",
     "effective_policy_date": "2026-11-23",
     "review_date": "2026-11-23",
     "status_semantics": {
@@ -76,6 +76,23 @@
         "NHL": "three_day_eastern_3am",
         "MLB": "three_day_eastern_3am"
       }
+    },
+    "change_recording_policy": {
+      "required_for": "Every new decision, approval, rejection, deferral, requirement change, code/config/workflow change and completed project fix performed with the assistant",
+      "record_fields": [
+        "stable_feature_id",
+        "user_decision_vs_assistant_suggestion",
+        "decision_and_implementation_state",
+        "change_summary",
+        "implementation_evidence",
+        "open_risks_and_reversal_notes"
+      ],
+      "timing": "During the same project task, before claiming completion",
+      "source_of_truth": "project/feature_registry.json",
+      "readable_register": "PROJECT_REGISTER.md",
+      "generation_workflow": ".github/workflows/project-register.yml",
+      "monitoring_limit": "Outside edits or changes while no chat is active may require the scheduled checks/reviews to discover and reconcile; do not claim automatic instantaneous awareness.",
+      "authority": "Only the user may approve, decline or re-prioritize suggested features."
     }
   },
   "features": [
@@ -897,6 +914,33 @@
         }
       ],
       "notes": "New approvals and rejections require explicit user instruction; the monitor reports drift but does not make product decisions."
+    },
+    {
+      "id": "GOV-002",
+      "title": "Update project register with every decision and project change",
+      "area": "governance",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "The user explicitly requires the canonical GitHub project registry to be updated as part of every Mega Board decision or project modification performed with the assistant, including approvals, rejections, deferrals, source changes, evidence, and unresolved risks. The readable master register is regenerated from the structured registry, and the update is verified before a change is reported complete.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "project/feature_registry.json"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "project/render_register.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/project-register.yml"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "project/STATUS.md"
+        }
+      ],
+      "notes": "Decision confirmed 2026-11-23. Monitoring and the scheduled weekly review help detect out-of-chat edits, but cannot ensure instantaneous awareness or authorize changes in the user's name."
     }
   ]
 }
