@@ -70,6 +70,8 @@ class CoverageTests(unittest.TestCase):
         g={"id":"123456","date":e["date"],"box_url":"https://www.mlb.com/gameday/123456/box-score",
            "plays_url":"https://www.mlb.com/gameday/123456/play-by-play"}
         self.assertEqual(m.audit_one("MLB",{"games":[g]},[e],date(2026,11,23))["review_or_unverified_count"],1)
+        self.assertEqual(m.audit_one("MLB",{"games":[g]},[e],date(2026,11,23),
+                                     {"123456":"verified_api"})["review_or_unverified_count"],0)
         g["link_verification"]="verified_api"
         self.assertEqual(m.audit_one("MLB",{"games":[g]},[e],date(2026,11,23))["review_or_unverified_count"],0)
 
