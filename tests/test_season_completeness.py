@@ -58,7 +58,7 @@ class CoverageTests(unittest.TestCase):
                       "games":[
                         {"id":2026020001,"gameState":"OFF"} if i==0 else
                         {"id":2025090001,"gameState":"FINAL"} if i==1 else {}
-                      ] if i<2 else []} for i in range(7)]}
+                      ] if i<2 and self.day==date(2026,11,1) else []} for i in range(7)]}
         class WeeklySession:
             def __init__(self):self.calls=0
             def get(self,url,timeout=None):
