@@ -1,0 +1,32 @@
+name: Three-day Mega Board display safety rehearsal (staging)
+on:
+  push:
+    branches: [staging-megaboard-three-day-filter-2026-11-23]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v5
+      - name: Verify Mega Board JavaScript and rolling-window coverage
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html=Path("command-center/index.html").read_text()
+          first=html.index("<script>")+len("<script>")
+          last=html.index("</script>",first)
+          script=html[first:last]
+          assert "threeDayDateSetET" in script
+          assert "currentDisplayedGames" in script
+          assert "currentDisplayedGames(cfg.id,d)" in script
+          assert "currentDisplayedGames(cfg.id,state.data[cfg.id])" in script
+          assert 'currentDisplayedGames(l,d).filter(' in script
+          Path("/tmp/megaboard-three-day.js").write_text(script)
+          print("All rolling-window UI hooks are present")
+          PY
+          node --check /tmp/megaboard-three-day.js
+      - name: Ensure gamebook archives are not modified
+        run: git diff --exit-code -- archive.json gamebooks.json archive-progress.json
