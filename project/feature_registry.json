@@ -1,0 +1,861 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "Five-League Official Gamebook Mega Board",
+    "mission": "One fast, accurate place for customer service agents to find game/team/player reference data and official league reports.",
+    "canonical_repository": "NikkiVeracruz/nfl-gamebook-dashboard",
+    "canonical_page": "command-center/index.html",
+    "supported_leagues": [
+      "NFL",
+      "NBA",
+      "WNBA",
+      "NHL",
+      "MLB"
+    ],
+    "governance_policy": "Explicit user decisions take precedence over older suggestions. Automated checks may report implementation drift, but may not approve/reject ideas or restore removed features.",
+    "effective_policy_date": "2026-11-23",
+    "review_date": "2026-11-23",
+    "status_semantics": {
+      "decision": [
+        "required",
+        "accepted",
+        "declined",
+        "not_decided",
+        "deferred",
+        "acknowledged"
+      ],
+      "state": [
+        "implemented",
+        "removed",
+        "paused",
+        "proposed",
+        "deferred",
+        "not_started",
+        "open"
+      ]
+    },
+    "backup_branch": "backup/pre-forward-only-2026-11-23",
+    "documentation": "PROJECT_REGISTER.md"
+  },
+  "features": [
+    {
+      "id": "PRJ-001",
+      "title": "Single reliable agent-facing reference board",
+      "area": "mission",
+      "decision": "required",
+      "state": "implemented",
+      "summary": "Centralize accurate, detailed official game, player and team reference material for quick customer-service agent lookup; distinguish linked source reports from the summarized cards.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        }
+      ],
+      "notes": "A dedicated searchable player-stat database is not yet implemented (IDEA-001)."
+    },
+    {
+      "id": "PRJ-002",
+      "title": "Five supported leagues",
+      "area": "scope",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "NFL, NBA, WNBA, NHL and MLB feeds are combined on the Mega Board; WNBA lives in the basketball repository.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-003",
+      "title": "Independent league feeds and dashboards",
+      "area": "architecture",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Keep the four league repos and their source feeds; the Mega Board integrates them. Existing standalone board pages may remain without equal UI enhancement effort.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "wnba_monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": "monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "monitor.py"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-004",
+      "title": "Current-game vs archive search separation",
+      "area": "user_experience",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Current games and historical/retained archive have separate search and filters.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-005",
+      "title": "League sections and combined view",
+      "area": "user_experience",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Expandable/collapsed league sections with a combined all-leagues view.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-006",
+      "title": "Search by team, matchup, league, and game status",
+      "area": "user_experience",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Current-game search and team/league/status filters; archival league, team, year, status and matchup filtering.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        }
+      ],
+      "notes": "Normalization for alternate team spellings and abbreviations remains separately proposed (IDEA-002)."
+    },
+    {
+      "id": "PRJ-007",
+      "title": "Rolling display periods",
+      "area": "display",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "NFL uses a weekly window; NBA, WNBA, NHL and MLB display yesterday/today/tomorrow, rotating at 3 AM America/New_York.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "three_day_window.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": "three_day_window.py"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "three_day_window.py"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-008",
+      "title": "Archive disclosure with 200-result cap",
+      "area": "user_experience",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Archive collapsed by default, shows up to the 200 most recent matching games and expands upon league+team selection.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        }
+      ],
+      "notes": "Pagination beyond 200 was suggested but not approved."
+    },
+    {
+      "id": "PRJ-009",
+      "title": "Official report links by league",
+      "area": "source_integrity",
+      "decision": "required",
+      "state": "implemented",
+      "summary": "NFL/NBA/WNBA official gamebook PDFs; NHL both GS and ES HTML reports; MLB official game-specific box score and play-by-play (not PDFs).",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "wnba_monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": "monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "mlb_policy.py"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-010",
+      "title": "Truthful game and report status",
+      "area": "source_integrity",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Show scheduled, live, finished awaiting report and report-available states without treating a finished game or guessed URL as a published document.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "monitor.py"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-011",
+      "title": "Automatic active-game monitoring",
+      "area": "operations",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Calendar-controlled adaptive/approximately five-minute game-time monitoring and reporting heartbeat; idle/offseason is not an error.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/nfl-calendar.yml"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/update.yml"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "adaptive_monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": "adaptive_monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "adaptive_monitor.py"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-012",
+      "title": "Page refresh and clock updates",
+      "area": "user_experience",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Mega Board refreshes displayed data periodically; manual refresh is available; clocks are separately updated.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-013",
+      "title": "Right-side instructions and feedback",
+      "area": "user_experience",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Published Help/How to Use area covering discovery, refresh, statuses, report latency, official sources and suggestions/feedback.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        }
+      ],
+      "notes": "The current sidebar still uses some older 'historical archive' wording; it should match forward-only retention. Tracked as RISK-003."
+    },
+    {
+      "id": "PRJ-014",
+      "title": "Protect archive on window rollover",
+      "area": "source_integrity",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Archive eligible outgoing games before removing them from the rolling view; never overwrite a previously stored verified report just because a later poll is incomplete.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "three_day_window.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": "three_day_window.py"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "three_day_window.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "archive.py"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-015",
+      "title": "Archive integrity checks and safe publishing",
+      "area": "source_integrity",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Fail on corrupt archive payloads/duplicate IDs; use atomic writes and regression gates. Forward-only retention is a scoped exception to original no-deletion behavior.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/archive_integrity_gate.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "archive.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": "archive.py"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "archive.py"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-016",
+      "title": "Independent current schedule missing-game audit",
+      "area": "quality",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Read-only current schedule comparisons including exact NFL matchups; discrepancies fail the audit instead of showing false green.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/missing_game_audit.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/missing-game-audit.yml"
+        }
+      ],
+      "notes": "Current scheduled game coverage continues; full historical coverage is intentionally paused."
+    },
+    {
+      "id": "PRJ-017",
+      "title": "Forward-only current and future collection",
+      "area": "retention",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Active archives contain complete reports only for games in the current reporting windows and newly completed games going forward; current scheduled/live games still display.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "FORWARD_ONLY_MODE.md"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "forward_only.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "forward_only.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": "forward_only.py"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "forward_only.py"
+        }
+      ],
+      "notes": "Switched 2026-11-23; supersedes previous comprehensive historical archive plan."
+    },
+    {
+      "id": "PRJ-018",
+      "title": "Archive complete-data-only rule",
+      "area": "retention",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "NFL/NBA/WNBA archived PDFs; NHL both GS+ES reports; MLB both game-specific report links backed by verified official API data. Incomplete games are not retained as complete archives.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "forward_only.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "forward_only.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": "forward_only.py"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "forward_only.py"
+        }
+      ],
+      "notes": "Important limitation: a report delayed beyond the current window may be missed (RISK-001)."
+    },
+    {
+      "id": "PRJ-019",
+      "title": "Historical backfill suspended but recoverable",
+      "area": "retention",
+      "decision": "accepted",
+      "state": "paused",
+      "summary": "Historical backfill workflows no longer run on a schedule. Manual jobs and code remain, guarded by an explicit ENABLE_HISTORICAL_BACKFILL opt-in.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/backfill.yml"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": ".github/workflows/backfill.yml"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": ".github/workflows/wnba-backfill.yml"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": ".github/workflows/backfill.yml"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": ".github/workflows/backfill.yml"
+        }
+      ],
+      "notes": "Requires deliberate policy changes before any future historical restoration."
+    },
+    {
+      "id": "PRJ-020",
+      "title": "Pre-cleanup branch backups",
+      "area": "recovery",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Retain backup/pre-forward-only-2026-11-23 in all four source repositories; original historical data remains accessible through Git history.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "FORWARD_ONLY_MODE.md"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-021",
+      "title": "Forward-only five-league safety check",
+      "area": "quality",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Read-only daily audit checks all five active archives for complete reports and verifies that historical backfill is guarded.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/forward_only_cross_league_audit.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/forward-only-safety.yml"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-022",
+      "title": "Document-level official source verification",
+      "area": "quality",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Incremental PDF/report/API validation, now scoped to current/new forward-only records, without rewriting the source archives.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/document_level_verification.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/document-level-verification.yml"
+        }
+      ],
+      "notes": "Document verification means PDF/game identity or official report type/MLB API data; not a guarantee that every statistic was independently audited."
+    },
+    {
+      "id": "PRJ-023",
+      "title": "Independent full 2026 schedule coverage checker",
+      "area": "quality",
+      "decision": "accepted",
+      "state": "paused",
+      "summary": "Full-season read-only schedule audit was built and passed before forward-only cleanup; its historical workflow is now gated and unscheduled.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/archive_2026_schedule_audit.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/archive-2026-completeness.yml"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-024",
+      "title": "Simple diagnostics and honest health labels",
+      "area": "operations",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Differentiate a legitimately idle league, monitor check, missing-game discrepancy and pending report; do not claim unavailable sources are verified.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/production_health.py"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "PRJ-025",
+      "title": "Preserve independent recovery and monitoring machinery",
+      "area": "architecture",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Keep report recovery scripts, calendars, monitors, archive storage and tests so forward-only normal operation continues and historical recovery remains possible later.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": "recover_reports.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "recover_reports.py"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "recover_reports.py"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "DEC-001",
+      "title": "Remove all NCAA boards and automation",
+      "area": "declined_or_removed",
+      "decision": "declined",
+      "state": "removed",
+      "summary": "User explicitly requested complete removal of NCAA dashboards and associated pipelines, while preserving the five supported leagues.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        }
+      ],
+      "notes": "Do not reintroduce NCAA without a new explicit user decision."
+    },
+    {
+      "id": "DEC-002",
+      "title": "Do not show a data-staleness monitor",
+      "area": "declined_or_removed",
+      "decision": "declined",
+      "state": "removed",
+      "summary": "Visible data-age/staleness display and its separate monitoring feature were intentionally removed as unnecessary.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/update.yml"
+        }
+      ],
+      "notes": "Keep meaningful live monitoring and missing-game/report checks."
+    },
+    {
+      "id": "DEC-003",
+      "title": "Do not run historical game backfills",
+      "area": "declined_or_removed",
+      "decision": "declined",
+      "state": "paused",
+      "summary": "No continuing historical restoration or full past-season rebuilding. Keep code/backups for possible later reactivation.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "FORWARD_ONLY_MODE.md"
+        }
+      ],
+      "notes": "Supersedes the earlier 2025 and 2026 comprehensive coverage goals."
+    },
+    {
+      "id": "DEC-004",
+      "title": "Do not retain historical unverified links",
+      "area": "declined_or_removed",
+      "decision": "declined",
+      "state": "removed",
+      "summary": "Old or unverified historical game links and verification evidence were removed from active archives; do not reintroduce into active data.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "FORWARD_ONLY_MODE.md"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/document_level_verification.py"
+        }
+      ],
+      "notes": "The backup branches retain previous history; this is not erasure of Git history."
+    },
+    {
+      "id": "DEC-005",
+      "title": "No more 2025 season restoration",
+      "area": "declined_or_removed",
+      "decision": "declined",
+      "state": "paused",
+      "summary": "The user explicitly stopped extra 2025 restoration even before the broader forward-only decision.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": ".github/workflows/restore-nfl-nov-2025.yml"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "IDEA-001",
+      "title": "Dedicated player-level statistics search",
+      "area": "suggestion",
+      "decision": "not_decided",
+      "state": "proposed",
+      "summary": "Search player names and game-by-game statistics directly rather than relying only on PDF/report reading.",
+      "evidence": [],
+      "notes": "High-value strategic opportunity, not implemented; availability/rights/API accuracy must be evaluated before committing."
+    },
+    {
+      "id": "IDEA-002",
+      "title": "More forgiving team/date/abbreviation search",
+      "area": "suggestion",
+      "decision": "not_decided",
+      "state": "proposed",
+      "summary": "Normalize alternate team abbreviations, aliases and varied date formats across league search.",
+      "evidence": [],
+      "notes": "Basic team/matchup and year filtering is already implemented."
+    },
+    {
+      "id": "IDEA-003",
+      "title": "One-click comprehensive game reference",
+      "area": "suggestion",
+      "decision": "not_decided",
+      "state": "proposed",
+      "summary": "Open one consolidated game view linking official reports, game context, and team/player data.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "IDEA-004",
+      "title": "Permanent deep links to games",
+      "area": "suggestion",
+      "decision": "not_decided",
+      "state": "proposed",
+      "summary": "Share direct, stable links to a particular archived or current game.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "IDEA-005",
+      "title": "Favorites and recently viewed games",
+      "area": "suggestion",
+      "decision": "not_decided",
+      "state": "proposed",
+      "summary": "Provide quick access to frequently used teams or previously opened games.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "IDEA-006",
+      "title": "Navigation by document type",
+      "area": "suggestion",
+      "decision": "not_decided",
+      "state": "proposed",
+      "summary": "Filter or jump directly to PDF, NHL GS/ES, MLB box score or play-by-play by report type.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "IDEA-007",
+      "title": "Pagination or result navigation past 200",
+      "area": "suggestion",
+      "decision": "not_decided",
+      "state": "proposed",
+      "summary": "Permit exploring more than the latest 200 matching archived games when historical archiving is reactivated.",
+      "evidence": [],
+      "notes": "Reduced priority in forward-only mode; current 200 cap is accepted."
+    },
+    {
+      "id": "IDEA-008",
+      "title": "Clearer report-vs-score wording",
+      "area": "suggestion",
+      "decision": "not_decided",
+      "state": "proposed",
+      "summary": "Further distinguish a live score or end-of-game indication from a complete official report.",
+      "evidence": [],
+      "notes": "Existing status cards already distinguish report availability; future improvement is optional."
+    },
+    {
+      "id": "IDEA-009",
+      "title": "Temporary pending-reports retry queue",
+      "area": "suggestion",
+      "decision": "not_decided",
+      "state": "proposed",
+      "summary": "Allow report URLs delayed beyond the current window to be recovered later using a bounded private queue, without archiving an incomplete or unverified game.",
+      "evidence": [],
+      "notes": "Mitigates RISK-001; not approved or implemented."
+    },
+    {
+      "id": "IDEA-010",
+      "title": "More independent, standardized end-to-end tests",
+      "area": "suggestion",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Broadened cross-league archive, workflow, coverage, and document regression checks; continue refining as actual failures appear.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/test_forward_only.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nba-gamebook-dashboard",
+          "path": "tests/test_forward_only.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nhl-gamebook-dashboard",
+          "path": "tests/test_forward_only.py"
+        },
+        {
+          "repo": "NikkiVeracruz/mlb-gamebook-dashboard",
+          "path": "tests/test_forward_only.py"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "IDEA-011",
+      "title": "Large-scale refactor / additional watchdogs",
+      "area": "suggestion",
+      "decision": "deferred",
+      "state": "deferred",
+      "summary": "Additional watchers and a broad architectural rewrite were explicitly deferred in review rather than made a new project priority.",
+      "evidence": [],
+      "notes": "Deferred is not a user rejection; reconsider only with a demonstrated need."
+    },
+    {
+      "id": "REQ-001",
+      "title": "Remove name from public Mega Board URL",
+      "area": "request",
+      "decision": "not_decided",
+      "state": "not_started",
+      "summary": "User asked about changing the GitHub Pages URL to remove their name; no deployment/domain change was confirmed.",
+      "evidence": [],
+      "notes": "Treat as an open request for discussion, not a committed implementation."
+    },
+    {
+      "id": "RISK-001",
+      "title": "Late reports can fall out of current window",
+      "area": "known_risk",
+      "decision": "acknowledged",
+      "state": "open",
+      "summary": "Strict complete-only forward retention may miss a final report if it appears after the game leaves the rolling period.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "FORWARD_ONLY_MODE.md"
+        }
+      ],
+      "notes": "Do not silently backfill historical games. IDEA-009 is an unapproved possible mitigation."
+    },
+    {
+      "id": "RISK-002",
+      "title": "Green workflows do not prove every player statistic",
+      "area": "known_risk",
+      "decision": "acknowledged",
+      "state": "open",
+      "summary": "Official-document and schedule checks verify coverage, source format, and identities, not independent correctness of every statistic.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "document-verification/README.md"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "RISK-003",
+      "title": "Help text may still describe historical archive behavior",
+      "area": "known_risk",
+      "decision": "acknowledged",
+      "state": "open",
+      "summary": "Mega Board help sidebar includes pre-cleanup historical-search wording. Should be updated to accurately describe forward-only retention without changing approved features.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/index.html"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "FORWARD_ONLY_MODE.md"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "GOV-001",
+      "title": "Canonical project register and change history",
+      "area": "governance",
+      "decision": "accepted",
+      "state": "implemented",
+      "summary": "Maintain this register with user decisions, suggestions, actual implementation evidence, and an automated read-only drift monitor.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "project/feature_registry.json"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "PROJECT_REGISTER.md"
+        }
+      ],
+      "notes": "New approvals and rejections require explicit user instruction; the monitor reports drift but does not make product decisions."
+    }
+  ]
+}
