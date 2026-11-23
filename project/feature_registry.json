@@ -1066,6 +1066,25 @@
         }
       ],
       "notes": "Approved 2026-11-23 and implemented as an isolated read-only feasibility tool in https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/pull/1 (squash merge f438dd8ed6f6d638a82bff456c2dc7bb01201f7d). Latest applicable pre-merge safety workflow completed successfully: https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/actions/runs/45285894447 ; ten offline unit tests passed plus live source trials for four one-day samples. Source-ID match observations: 2026-11-12 81 of 81 games; 2026-11-14 237 of 244; 2026-11-21 0 of 225; 2026-11-22 0 of 101. This is an apparent ID-crosswalk publication lag, NOT proof the latest games lack an NCAA box score. Generated NCAA Stats URLs are explicitly unverified and require human browser identity checks, as the site was inaccessible to this automated environment. Link coverage and delay must be tested over time before any dashboard approval; no production NCAA dashboard, historical import, scheduled feed, Pages deployment, NCAA gamebook scraping or player-statistics collection exists. The existing DEC-001 NCAA removal remains in force for the old NCAA boards, and all five original league repositories/pages, archive rules, and monitoring remain unchanged. The earlier local-only seven-test ZIP was superseded by the now-merged ten-test GitHub source; state=implemented describes the research proof ONLY, not a deployed board."
+    },
+    {
+      "id": "NCAA-RESEARCH-002",
+      "title": "Isolated NCAA contest-ID reliability investigation",
+      "area": "research",
+      "decision": "accepted",
+      "state": "not_started",
+      "summary": "Approved November 23, 2026: proceed in order with measuring per-sport contest-ID availability and delays, evaluating faster permitted ID sources, and independently validating game discovery and destination identity before building a standalone NCAA board.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/ncaa-stats-link-dashboard",
+          "path": "ncaa_poc.py"
+        },
+        {
+          "repo": "NikkiVeracruz/ncaa-stats-link-dashboard",
+          "path": "README.md"
+        }
+      ],
+      "notes": "NCAA research PR #2 opened: https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/pull/2 . Proposed changes on research branch include bounded multi-day snapshots with release fingerprints, rejected-event diagnostics and regression tests; not yet merged or validated. Repeated observations, alternative-source research, independent schedule completeness and manual destination checks remain outstanding. Production board implementation is gated on reliability evidence; no historical backfill, NCAA gamebook scraping, player-statistics database or change to existing five-league feeds, UI, archive or monitoring."
     }
   ]
 }
