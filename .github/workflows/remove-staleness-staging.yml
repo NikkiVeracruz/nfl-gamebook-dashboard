@@ -1,0 +1,52 @@
+name: Remove data-staleness monitor safely (staging)
+on:
+  push:
+    branches: [staging-remove-data-staleness-2026-11-23]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Validate Mega Board JavaScript and no staleness warning
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html=Path("command-center/index.html").read_text()
+          first=html.index("<script>")+len("<script>")
+          end=html.index("</script>",first)
+          Path("/tmp/megaboard.js").write_text(html[first:end])
+          for token in ("freshnessWarning","freshness-banner","staleFeedWarnings",
+                        "renderFreshnessWarnings","Data freshness warning"):
+              assert token not in html, token
+          for token in ("history-disclosure","currentDisplayedGames","leagueMonitoring",
+                        "renderFreshnessWarnings"):
+              if token=="renderFreshnessWarnings":continue
+              assert token in html, token
+          print("Visible staleness warning and timer removed; main dashboard still intact")
+          PY
+          node --check /tmp/megaboard.js
+      - name: Confirm hourly staleness job is gone and missing-game audits remain
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+          assert not Path(".github/workflows/dashboard-health.yml").exists()
+          with Path(".github/workflows/missing-game-audit.yml").open() as f:
+              audit=yaml.safe_load(f)
+          steps=audit["jobs"]["audit"]["steps"]
+          commands="\n".join(str(s.get("run","")) for s in steps)
+          assert "tests/missing_game_audit.py" in commands
+          assert "tests/nfl_final_gamebooks.py" in commands
+          print("Missing game and missing official NFL PDF audits retained")
+          PY
+          python -m py_compile tests/missing_game_audit.py tests/nfl_final_gamebooks.py
+      - name: Archive data must not change
+        run: git diff --exit-code -- archive.json gamebooks.json archive-progress.json monitor-state.json
