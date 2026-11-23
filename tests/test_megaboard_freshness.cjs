@@ -43,4 +43,14 @@ assert.deepEqual(findWarnings({MLB:feed(300)}),[],"Offseason league is not flagg
 month=6;
 assert.deepEqual(findWarnings({MLB:feed(300,{offseason:true})}),[],"Explicit offseason is not flagged");
 assert.equal(findWarnings({MLB:feed(181)}).length,1,"MLB active season is monitored");
+const watchdogWorkflow = fs.readFileSync(".github/workflows/nfl-backup-watchdog.yml", "utf8");
+assert(watchdogWorkflow.includes('cron: "14,29,44,59 * * * *"'), "Backup must have offset schedule");
+assert(watchdogWorkflow.includes("actions: write"), "Watchdog needs permission to request workflow dispatch");
+assert(watchdogWorkflow.includes("contents: read"), "Watchdog must have read-only content permissions");
+assert(watchdogWorkflow.includes("default: true"), "Manual watchdog test must default to dry-run");
+assert(watchdogWorkflow.includes("cancel-in-progress: false"), "Watchdog must not cancel itself");
+assert(watchdogWorkflow.includes("recently dispatched update"), "Guard should avoid duplicate updates");
+assert(watchdogWorkflow.includes('gh workflow run update.yml --ref main'), "Watchdog must reuse existing update workflow");
+assert(watchdogWorkflow.includes('inputs.dry_run == false'), "Manual dispatch must require explicit opt-in");
+assert(watchdogWorkflow.includes("Unable to verify existing update runs"), "Guard should fail closed when GitHub run listing fails");
 console.log("PASS Mega Board freshness: 10 scenarios");
