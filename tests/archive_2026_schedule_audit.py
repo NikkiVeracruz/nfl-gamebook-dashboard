@@ -83,6 +83,7 @@ def archive_games(league):
         payload = fetch_json(source_url(repo, prefix, name))
         if not isinstance(payload, dict) or not isinstance(payload.get("games"), list):
             raise AuditError(f"{league} {name}: invalid games list")
+        within_file = set()
         for item in payload["games"]:
             if not isinstance(item, dict) or not isinstance(item.get("date"), str):
                 raise AuditError(f"{league} {name}: invalid game/date")
@@ -90,6 +91,9 @@ def archive_games(league):
             if not raw_id:
                 raise AuditError(f"{league} {name}: game without identity")
             key = str(raw_id)
+            if key in within_file:
+                raise AuditError(f"{league} {name}: duplicated game ID {key}")
+            within_file.add(key)
             if key in combined:
                 prev = combined[key]
                 if prev["date"] != item["date"]:
@@ -289,6 +293,13 @@ def run(now=None, leagues=None, workers=8):
             if not checked:
                 raise AuditError(f"No {league} schedule queries were executed")
             report = compare(league, stored, scheduled, through)
+            if (report["stored_2026_games"] >= 30 and
+                    report["independent_games"] < report["stored_2026_games"] // 2):
+                raise AuditError(
+                    f"{league}: independent schedule implausibly incomplete: "
+                    f"{report['independent_games']} IDs vs "
+                    f"{report['stored_2026_games']} archived/current games"
+                )
             print(json.dumps({
                 "league": league, "through": through.isoformat(),
                 "days_or_weeks_queried": checked,
