@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T00:32:47.173044+00:00",
+  "updated_at": "2026-11-23T01:35:56.382038+00:00",
   "games": [
     {
       "slug": "packers-at-rams-2026-reg-12",
@@ -42,11 +42,25 @@
       "pdf_url": "https://static.www.nfl.com/image/upload/v1795382614/gamecenter/ab998b7f-4feb-11f1-abca-2c54536568a9.pdf"
     },
     {
+      "slug": "raiders-at-broncos-2026-reg-11",
+      "date": "2026-11-22",
+      "label": "Watch Replay, Raiders 24, Broncos 38, Sunday, November 22nd",
+      "game_url": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1795395098/gamecenter/ab99a17b-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
       "slug": "jets-at-chargers-2026-reg-11",
       "date": "2026-11-22",
       "label": "Watch Replay, Jets 27, Chargers 24, Sunday, November 22nd",
       "game_url": "https://www.nfl.com/games/jets-at-chargers-2026-reg-11",
       "pdf_url": "https://static.www.nfl.com/image/upload/v1795391497/gamecenter/ab999e6f-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "slug": "jaguars-at-giants-2026-reg-11",
+      "date": "2026-11-22",
+      "label": "Watch Replay, Jaguars 18, Giants 23, Sunday, November 22nd",
+      "game_url": "https://www.nfl.com/games/jaguars-at-giants-2026-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1795395578/gamecenter/ab999b80-4feb-11f1-abca-2c54536568a9.pdf"
     },
     {
       "slug": "dolphins-at-bills-2026-reg-11",
@@ -74,18 +88,6 @@
       "date": "2026-11-22",
       "label": "Vikings at 49ers, Sunday, November 22nd, 8:20 PM, NBC",
       "game_url": "https://www.nfl.com/games/vikings-at-49ers-2026-reg-11"
-    },
-    {
-      "slug": "raiders-at-broncos-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Raiders 24, Broncos 31, Q4, CBS",
-      "game_url": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11"
-    },
-    {
-      "slug": "jaguars-at-giants-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Jaguars 15, Giants 23, Q4, CBS",
-      "game_url": "https://www.nfl.com/games/jaguars-at-giants-2026-reg-11"
     },
     {
       "slug": "colts-at-texans-2026-reg-11",
