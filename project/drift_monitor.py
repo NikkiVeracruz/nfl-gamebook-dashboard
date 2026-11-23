@@ -135,13 +135,17 @@ def audit_workflow_job_conditions(source, label):
 def audit_registry(data):
     rows = validate(data)
     decisions = {x["id"]: x for x in rows}
-    must_decline = ("DEC-001", "DEC-002", "DEC-003", "DEC-004", "DEC-005")
+    must_decline = (
+        "DEC-001", "DEC-002", "DEC-003", "DEC-004", "DEC-005",
+        "IDEA-001", "IDEA-003", "IDEA-004", "IDEA-005",
+        "IDEA-006", "IDEA-007", "IDEA-009", "IDEA-011",
+    )
     for key in must_decline:
         if decisions.get(key, {}).get("decision") != "declined":
             raise ValueError(f"Explicit user veto lost: {key}")
     for f in rows:
-        if f["decision"] == "not_decided" and f["state"] == "implemented":
-            raise ValueError(f"Unapproved proposal marked implemented: {f['id']}")
+        if f["decision"] in ("not_decided", "declined", "deferred") and f["state"] == "implemented":
+            raise ValueError(f"Unapproved or declined proposal marked implemented: {f['id']}")
     return rows
 
 
