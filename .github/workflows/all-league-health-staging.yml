@@ -1,0 +1,24 @@
+name: Multi-league health audit correction rehearsal (staging)
+on:
+  push:
+    branches: [staging-all-league-idle-health-2026-11-23]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Verify health monitoring code
+        run: |
+          python -m py_compile tests/production_health.py tests/test_all_league_health.py
+          python -m unittest discover -s tests -p 'test_all_league_health.py' -v
+      - name: Verify all five production feeds against their live activity metadata
+        run: python tests/production_health.py
+      - name: Assert read-only tests changed no game archives
+        run: git diff --exit-code -- archive.json gamebooks.json archive-progress.json monitor-state.json
