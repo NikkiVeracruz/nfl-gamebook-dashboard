@@ -2,7 +2,8 @@
 """Read-only independent schedule completeness audit for all five dashboards.
 
 Fetches published current feeds and independent official/ESPN schedule APIs.
-Never modifies published data. Findings are potential discrepancies that require review.\nAny discrepancy or unavailable source fails the audit instead of showing a green check.
+Never modifies published data. Findings are potential discrepancies that require review.
+Any discrepancy or unavailable source fails the audit instead of showing a green check.
 """
 import json
 import sys
@@ -117,7 +118,8 @@ def main():
     if warnings:
         for warning in warnings:
             print("AUDIT WARNING: " + warning)
-        print(f"Audit finished with {len(warnings)} findings. Manual review required; no data changed.")\n        sys.exit(1)
+        print(f"Audit finished with {len(warnings)} findings. Manual review required; no data changed.")
+        sys.exit(1)
     else:
         print("Audit finished without detected discrepancies. NFL remains count-only; offseason leagues were not checked.")
 
