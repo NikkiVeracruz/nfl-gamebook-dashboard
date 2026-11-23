@@ -11,7 +11,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: update-gamebooks
+  group: nfl-calendar-coordinator
   cancel-in-progress: false
 jobs:
   refresh:
