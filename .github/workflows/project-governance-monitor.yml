@@ -6,7 +6,9 @@ on:
     paths:
       - project/drift_monitor.py
       - project/test_drift_monitor.py
-      - project/feature_registry.json
+      # Run after the canonical register generator has published matching Markdown.
+      # Triggering directly on JSON races the generator and causes false drift alarms.
+      - PROJECT_REGISTER.md
       - .github/workflows/project-governance-monitor.yml
   schedule:
     - cron: "19 11 * * *"
