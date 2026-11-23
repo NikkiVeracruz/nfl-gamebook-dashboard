@@ -16,14 +16,15 @@ One fast, accurate place for customer service agents to find game/team/player re
 
 ## Status overview
 
-**49 tracked items:** 30 implemented · 4 paused · 3 removed · 0 proposed · 0 deferred · 9 not started · 3 open
+**50 tracked items:** 30 implemented · 4 paused · 3 removed · 0 proposed · 0 deferred · 10 not started · 3 open
 
 | State | Meaning |
 |---|---|
 | Implemented | Evidenced in code or configuration, not an uptime guarantee. |
 | Paused | Preserved but intentionally inactive/restricted. |
 | Removed | Deliberately removed; do not reinstate without approval. |
-| Proposed / not started | An idea or request, not approval to implement. |
+| Proposed | An idea not yet approved to implement. |
+| Not started | Work not deployed; decision may be accepted, declined, or undecided. |
 | Deferred | Delayed, not necessarily rejected. |
 | Open | Known risk or incomplete follow-up. |
 
@@ -439,6 +440,19 @@ Historical backfill workflows no longer run on a schedule. Manual jobs and code 
 Full-season read-only schedule audit was built and passed before forward-only cleanup; its historical workflow is now gated and unscheduled.
 
 *Implementation evidence:* [tests/archive_2026_schedule_audit.py](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/tests/archive_2026_schedule_audit.py), [.github/workflows/archive-2026-completeness.yml](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/.github/workflows/archive-2026-completeness.yml)
+
+
+## Approved work awaiting implementation
+
+Explicitly authorized but not implemented or deployed; status and evidence remain pending.
+
+### NCAA-POC-001 — Separate NCAA Stats contest-link proof of concept
+
+**Decision:** accepted · **Status:** not started · **Area:** research
+
+User approved starting an isolated, link-only NCAA proof of concept for football FBS/FCS and Division I men's/women's basketball. Match scheduled games to stats.ncaa.org contest IDs via public crosswalks; do not scrape gamebooks or player stats, backfill history, or alter the existing five-league boards. New standalone repository required before any GitHub-based test or release.
+
+*Notes:* New approval on 2026-11-23 supersedes DEC-001 only for a new, entirely separate experimental NCAA system; the old NCAA code/data removals remain in force and current NFL/NBA/WNBA/NHL/MLB governance and UI scope remain unchanged. Read-only prototype code, manual Actions workflow, setup README, and seven passing offline tests were prepared in an authoring-session downloadable ZIP, but NOT deployed or committed to GitHub. GitHub connection supports writing existing repositories, not creating a new one. Live ESPN/GitHub crosswalk matching, crosswalk latency, coverage percentages and destination NCAA Stats pages still require real GitHub Actions probes and manual browser confirmation. No NCAA production dashboard has been approved or implemented. SportsDataverse 2026 football and 2026–27 MBB/WBB mapping release assets were observed published as of 2026-11-23; published IDs alone are not proof pages resolve.
 
 
 ## Suggested features / undecided requests
