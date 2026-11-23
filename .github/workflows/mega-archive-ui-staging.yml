@@ -1,0 +1,32 @@
+name: Collapsible historical archive UI safety rehearsal (staging)
+on:
+  push:
+    branches: [staging-mega-archive-dropdown-2026-11-23]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+      - name: Verify archive dropdown and Mega Board JavaScript
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path("command-center/index.html").read_text()
+          first=s.index("<script>")+len("<script>")
+          last=s.index("</script>",first)
+          Path("/tmp/mega-archive-dropdown.js").write_text(s[first:last])
+          assert '<details id="history-disclosure"' in s
+          assert '<summary id="history-summary"' in s
+          assert 'if(league!=="all"&&team!=="all")details.open=true;' in s
+          assert 'if(!details.open)return;' in s
+          assert 'found.slice(0,200)' in s
+          assert '"NBA","WNBA","NHL","MLB"' in s
+          print("Archive closed by default, auto-opens on league and team, caps at 200")
+          PY
+          node --check /tmp/mega-archive-dropdown.js
+      - name: Confirm Mega Board change touches no archives
+        run: git diff --exit-code -- archive.json gamebooks.json archive-progress.json
