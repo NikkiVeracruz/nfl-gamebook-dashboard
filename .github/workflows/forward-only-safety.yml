@@ -1,0 +1,26 @@
+name: Forward-only archive safety check (five leagues)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - tests/forward_only_cross_league_audit.py
+      - .github/workflows/forward-only-safety.yml
+  schedule:
+    - cron: "21 12 * * *"
+permissions:
+  contents: read
+concurrency:
+  group: five-league-forward-only-safety
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Confirm current/new archives are complete and historical backfill is suspended
+        run: python -u tests/forward_only_cross_league_audit.py
