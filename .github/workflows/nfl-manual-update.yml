@@ -1,0 +1,40 @@
+name: Run NFL Gamebook Update (manual)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: update-gamebooks
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Check official NFL gamebook PDFs
+        run: python monitor.py
+      - name: Update historical archive
+        run: python archive.py
+      - name: Preserve every archived game and saved report
+        run: python tests/archive_integrity_gate.py archive.json
+      - name: Publish changes, if any
+        run: |
+          if [[ -n "$(git status --porcelain gamebooks.json archive.json monitor-state.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add gamebooks.json archive.json monitor-state.json
+            git commit -m "Manually check and publish NFL gamebook updates"
+            for attempt in 1 2 3 4; do
+              if git push; then exit 0; fi
+              git pull --rebase -X theirs origin main
+              python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
+            done
+            exit 1
+          fi
+          echo "No new NFL gamebooks"
