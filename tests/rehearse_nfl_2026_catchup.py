@@ -69,7 +69,7 @@ def rehearse():
         raise ArchiveIntegrityError("New record outside 2026 season recovery window")
     if any(not str(g.get("slug", "")).endswith(
             tuple(f"-2026-{kind}-{week}" for kind in ("pre", "reg", "post")
-                  for week in range(1, 23))) for g in added):
+                  for week in range(0, 23))) for g in added):
         raise ArchiveIntegrityError("New record has invalid 2026 NFL season identifier")
     if not added:
         raise ArchiveIntegrityError("Catch-up found no new 2026 games")
