@@ -126,8 +126,62 @@ def mlb_events(start,end,session=None):
     return result
 
 
-def expected_schedule(league,start,end,session=None,workers=12):
+def nhl_weekly_events(start,end,session=None):
+    """Official seven-day schedules, modest request rate and strict coverage."""
+    import time
+    session=session or requests
+    found={}
+    days_covered=set()
+    cursor=start
+    while cursor<=end:
+        url=f"https://api-web.nhle.com/v1/schedule/{cursor.isoformat()}"
+        response=None
+        for attempt in range(5):
+            response=session.get(url,timeout=35)
+            if response.status_code in (429,500,502,503,504):
+                time.sleep(min(12,2**attempt))
+                continue
+            response.raise_for_status()
+            break
+        else:
+            raise RuntimeError(f"NHL schedule unavailable after retries: {cursor}")
+        blocks=response.json().get("gameWeek")
+        if not isinstance(blocks,list) or not blocks:
+            raise ValueError(f"NHL weekly schedule missing gameWeek for {cursor}")
+        for block in blocks:
+            day=block.get("date")
+            if not isinstance(day,str):
+                raise ValueError("NHL weekly schedule block lacks date")
+            if start.isoformat()<=day<=end.isoformat():
+                days_covered.add(day)
+                games=block.get("games")
+                if not isinstance(games,list):
+                    raise ValueError(f"NHL weekly schedule missing games on {day}")
+                for g in games:
+                    token=str(g.get("id",""))
+                    if len(token)!=10 or not token.isdigit():
+                        raise ValueError(f"NHL game has invalid ID on {day}")
+                    if token[4:6] not in NHL_TYPES:continue
+                    expected={
+                        "key":token,"date":day,
+                        "completed":str(g.get("gameState","")).upper() in ("OFF","FINAL")
+                    }
+                    if token in found and found[token]["date"]!=day:
+                        raise ValueError(f"NHL game {token} appears on incompatible dates")
+                    found[token]=expected
+        # A five-day step overlaps the seven-day NHL response and avoids holes.
+        cursor+=timedelta(days=5)
+        time.sleep(0.4)
+    wanted={(start+timedelta(days=i)).isoformat()
+            for i in range((end-start).days+1)}
+    if wanted-days_covered:
+        raise ValueError(f"NHL weekly schedule failed to cover {len(wanted-days_covered)} dates, e.g. {sorted(wanted-days_covered)[:4]}")
+    return list(found.values())
+
+
+def expected_schedule(league,start,end,session=None,workers=6):
     if league=="MLB":return mlb_events(start,end,session)
+    if league=="NHL":return nhl_weekly_events(start,end,session)
     dates=[]
     day=start
     while day<=end:
@@ -239,6 +293,12 @@ def run(scope="recent",session=None,today=None,archive_loader=None,schedule_load
         row["checked_from"]=start.isoformat()
         row["checked_through"]=end.isoformat()
         result["leagues"][league]=row
+        if row["missing_games"]:
+            print(f"{league} MISSING ID EXAMPLES: "+
+                  json.dumps(row["missing_games"][:15],ensure_ascii=False))
+        if row["report_findings"]:
+            print(f"{league} REPORT EXAMPLES: "+
+                  json.dumps(row["report_findings"][:8],ensure_ascii=False))
         print(f"{league}: {row['independently_expected_games']} expected, "
               f"{row['missing_game_count']} missing games, "
               f"{row['missing_report_count']} overdue missing official reports, "
