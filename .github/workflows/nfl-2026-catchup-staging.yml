@@ -1,0 +1,38 @@
+name: NFL 2026 season completeness rehearsal (staging)
+on:
+  push:
+    branches: [staging-nfl-2026-catchup-2026-11-22]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install existing monitor dependencies
+        run: pip install -r requirements.txt
+      - name: Check 2026 audit and rehearsal syntax
+        run: python -m py_compile tests/nfl_2026_coverage.py tests/rehearse_nfl_2026_catchup.py tests/test_nfl_2026_coverage.py
+      - name: Test independent scoreboard matching and PDF validation
+        run: python -m unittest discover -s tests -p 'test_nfl_2026_coverage.py' -v
+      - name: Fetch latest production archive, without switching branches
+        run: git fetch --no-tags --depth=1 origin main
+      - name: Reconstruct missing 2026 season games in a disposable runner
+        env:
+          ARCHIVE_LEAGUE: nfl
+        run: python tests/rehearse_nfl_2026_catchup.py
+      - name: Reject any disappearance of saved games or documents
+        run: python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
+      - name: Verify every 2026 NFL game already played against ESPN
+        run: python tests/nfl_2026_coverage.py
+      - name: Ensure current board and other production files were not changed
+        run: |
+          git diff --exit-code -- gamebooks.json monitor-state.json
+          test "$(git branch --show-current)" = "staging-nfl-2026-catchup-2026-11-22"
+          echo "PASS: read-only workflow; no git commit or git push; all changes are scratch only"
