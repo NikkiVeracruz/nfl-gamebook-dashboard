@@ -57,6 +57,10 @@ def discover(session,season,start,end):
             if urlparse(link).hostname not in ("www.nfl.com","nfl.com"):continue
             slug=urlparse(link).path.rstrip("/").split("/")[-1]
             if not slug:continue
+            # Some schedule pages expose links from other seasons beside a
+            # nearby date. Never relabel a 2026 game as a 2025 game.
+            slug_season=re.search(r"-(20\d{2})-(?:pre|reg|post)-\d+$",slug,re.I)
+            if slug_season and int(slug_season.group(1))!=season:continue
             texts=[a.get_text(" ",strip=True)]
             node=a
             for _ in range(5):
@@ -89,6 +93,10 @@ def discover(session,season,start,end):
             if urlparse(link).hostname not in ("www.nfl.com","nfl.com"):continue
             slug=urlparse(link).path.rstrip("/").split("/")[-1]
             if not slug:continue
+            # Some schedule pages expose links from other seasons beside a
+            # nearby date. Never relabel a 2026 game as a 2025 game.
+            slug_season=re.search(r"-(20\d{2})-(?:pre|reg|post)-\d+$",slug,re.I)
+            if slug_season and int(slug_season.group(1))!=season:continue
             texts=[a.get_text(" ",strip=True)]
             node=a
             for _ in range(6):
