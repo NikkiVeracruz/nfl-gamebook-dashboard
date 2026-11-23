@@ -1,0 +1,55 @@
+name: Refresh NFL game-date polling calendar
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/nfl-calendar.yml
+  schedule:
+    - cron: "43 2 * * *"
+      timezone: "America/New_York"
+permissions:
+  contents: write
+concurrency:
+  group: nfl-calendar-coordinator
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install only calendar lookup dependency
+        run: pip install requests
+      - name: Test cutoff, unusual weekdays and missing-PDF continuation
+        run: python -m unittest discover -s tests -p 'test_nfl_calendar.py' -v
+      - name: Refresh official NFL calendar and compile dated five-minute checks
+        run: python nfl_calendar.py refresh
+      - name: Publish only changed calendar and scheduled dates
+        run: |
+          if [[ -z "$(git status --porcelain nfl-calendar.json .github/workflows/update.yml)" ]]; then
+            echo "Calendar unchanged; no commit required"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl-calendar.json .github/workflows/update.yml
+          git diff --cached --check
+          git commit -m "Refresh NFL game-day polling windows"
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "NFL calendar refreshed; non-game dates are not scheduled"
+              exit 0
+            fi
+            git pull --rebase -X theirs origin main
+            python nfl_calendar.py refresh
+            git add nfl-calendar.json .github/workflows/update.yml
+            if ! git diff --cached --quiet; then
+              git commit -m "Reconcile NFL calendar after concurrent update"
+            fi
+          done
+          echo "Calendar publication failed; retaining previous schedule" >&2
+          exit 1

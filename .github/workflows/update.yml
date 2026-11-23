@@ -1,8 +1,10 @@
 name: Update NFL Gamebook Dashboard
 on:
   workflow_dispatch:
+  # BEGIN NFL CALENDAR-MANAGED SCHEDULE
   schedule:
     - cron: "*/5 * * * *"
+  # END NFL CALENDAR-MANAGED SCHEDULE
 permissions:
   contents: write
 concurrency:
@@ -18,8 +20,22 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install -r requirements.txt
+      - name: Skip NFL checks when no game or overdue gamebook needs attention
+        id: poll
+        env:
+          NFL_FORCE_SCAN: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          if python nfl_calendar.py should-poll; then
+            echo "active=true" >> "$GITHUB_OUTPUT"
+          else
+            code=$?
+            if [ "$code" -ne 3 ]; then exit "$code"; fi
+            echo "active=false" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.poll.outputs.active == 'true'
+        run: pip install -r requirements.txt
       - name: Check NFL gamebooks
+        if: steps.poll.outputs.active == 'true'
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
@@ -28,10 +44,13 @@ jobs:
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
         run: python monitor.py
       - name: Update historical archive
+        if: steps.poll.outputs.active == 'true'
         run: python archive.py
       - name: Block any loss of previously archived games or report links
+        if: steps.poll.outputs.active == 'true'
         run: python tests/archive_integrity_gate.py archive.json
       - name: Publish updated data
+        if: steps.poll.outputs.active == 'true'
         run: |
           if [[ -n "$(git status --porcelain gamebooks.json archive.json monitor-state.json)" ]]; then
             git config user.name "github-actions[bot]"
