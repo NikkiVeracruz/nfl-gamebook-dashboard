@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T03:42:43.103502+00:00",
+  "updated_at": "2026-11-23T04:06:28.385527+00:00",
   "games": [
     {
       "slug": "packers-at-rams-2026-reg-12",
@@ -95,6 +95,426 @@
       "label": "Watch Replay, Colts 3, Texans 26, Thursday, November 19th",
       "game_url": "https://www.nfl.com/games/colts-at-texans-2026-reg-11",
       "pdf_url": "https://static.www.nfl.com/image/upload/v1795147937/gamecenter/ab997d97-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "slug": "bears-at-eagles-2025-reg-13",
+      "date": "2025-11-28",
+      "label": "Watch Replay, Bears 24, Eagles 15, Friday, November 28th",
+      "game_url": "https://www.nfl.com/games/bears-at-eagles-2025-reg-13",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1764414047/gamecenter/f85755f8-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "packers-at-lions-2025-reg-13",
+      "date": "2025-11-27",
+      "label": "Watch Replay, Packers 31, Lions 24, Thursday, November 27th",
+      "game_url": "https://www.nfl.com/games/packers-at-lions-2025-reg-13",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1764331247/gamecenter/f83858b1-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "chiefs-at-cowboys-2025-reg-13",
+      "date": "2025-11-27",
+      "label": "Watch Replay, Chiefs 28, Cowboys 31, Thursday, November 27th",
+      "game_url": "https://www.nfl.com/games/chiefs-at-cowboys-2025-reg-13",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1764331246/gamecenter/f8385cdb-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "bengals-at-ravens-2025-reg-13",
+      "date": "2025-11-27",
+      "label": "Watch Replay, Bengals 32, Ravens 14, Thursday, November 27th",
+      "game_url": "https://www.nfl.com/games/bengals-at-ravens-2025-reg-13",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1764331246/gamecenter/f8574c93-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "panthers-at-49ers-2025-reg-12",
+      "date": "2025-11-24",
+      "label": "Watch Replay, Panthers 9, 49ers 20, Monday, November 24th",
+      "game_url": "https://www.nfl.com/games/panthers-at-49ers-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1764068445/gamecenter/f8385477-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "vikings-at-packers-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Vikings 6, Packers 23, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/vikings-at-packers-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1764000044/gamecenter/f81520f4-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "steelers-at-bears-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Steelers 28, Bears 31, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/steelers-at-bears-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985647/gamecenter/f8151497-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "seahawks-at-titans-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Seahawks 30, Titans 24, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/seahawks-at-titans-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985646/gamecenter/f8383961-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "patriots-at-bengals-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Patriots 26, Bengals 20, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/patriots-at-bengals-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985648/gamecenter/f81518bd-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "jets-at-ravens-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Jets 10, Ravens 23, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/jets-at-ravens-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985645/gamecenter/f815107b-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "jaguars-at-cardinals-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Jaguars 27, Cardinals 24, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/jaguars-at-cardinals-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985650/gamecenter/f8383eae-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "giants-at-lions-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Giants 27, Lions 34, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/giants-at-lions-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985649/gamecenter/f8151ce3-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "falcons-at-saints-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Falcons 24, Saints 10, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/falcons-at-saints-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985652/gamecenter/f8384be2-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "eagles-at-cowboys-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Eagles 21, Cowboys 24, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/eagles-at-cowboys-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985654/gamecenter/f838479e-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "colts-at-chiefs-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Colts 20, Chiefs 23, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/colts-at-chiefs-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985647/gamecenter/f8382f0b-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "buccaneers-at-rams-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Buccaneers 7, Rams 34, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/buccaneers-at-rams-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985644/gamecenter/f8385033-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "browns-at-raiders-2025-reg-12",
+      "date": "2025-11-23",
+      "label": "Watch Replay, Browns 24, Raiders 10, Sunday, November 23rd",
+      "game_url": "https://www.nfl.com/games/browns-at-raiders-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763985649/gamecenter/f8384330-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "bills-at-texans-2025-reg-12",
+      "date": "2025-11-20",
+      "label": "Watch Replay, Bills 19, Texans 23, Thursday, November 20th",
+      "game_url": "https://www.nfl.com/games/bills-at-texans-2025-reg-12",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763722843/gamecenter/f8150c1e-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "cowboys-at-raiders-2025-reg-11",
+      "date": "2025-11-17",
+      "label": "Watch Replay, Cowboys 33, Raiders 16, Monday, November 17th",
+      "game_url": "https://www.nfl.com/games/cowboys-at-raiders-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763465801/gamecenter/f81507b9-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "texans-at-titans-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Texans 16, Titans 13, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/texans-at-titans-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379402/gamecenter/f7f5db3e-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "seahawks-at-rams-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Seahawks 19, Rams 21, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/seahawks-at-rams-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379405/gamecenter/f7f5e479-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "ravens-at-browns-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Ravens 23, Browns 16, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/ravens-at-browns-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379406/gamecenter/f814f5f8-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "panthers-at-falcons-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Panthers 30, Falcons 27, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/panthers-at-falcons-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379406/gamecenter/f7f5be49-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "packers-at-giants-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Packers 27, Giants 20, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/packers-at-giants-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763397400/gamecenter/f7f5d07f-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "lions-at-eagles-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Lions 9, Eagles 16, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/lions-at-eagles-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379408/gamecenter/f815036b-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "commanders-at-dolphins-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Commanders 13, Dolphins 16, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/commanders-at-dolphins-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379400/gamecenter/f7f5b47c-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "chiefs-at-broncos-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Chiefs 19, Broncos 22, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/chiefs-at-broncos-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379400/gamecenter/f814fee7-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "chargers-at-jaguars-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Chargers 6, Jaguars 35, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/chargers-at-jaguars-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379400/gamecenter/f7f5c7a5-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "buccaneers-at-bills-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Buccaneers 32, Bills 44, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/buccaneers-at-bills-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379404/gamecenter/f7f5c331-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "bengals-at-steelers-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Bengals 12, Steelers 34, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/bengals-at-steelers-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379403/gamecenter/f7f5d4d0-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "bears-at-vikings-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, Bears 19, Vikings 17, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/bears-at-vikings-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763379401/gamecenter/f7f5cc14-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "49ers-at-cardinals-2025-reg-11",
+      "date": "2025-11-16",
+      "label": "Watch Replay, 49ers 41, Cardinals 22, Sunday, November 16th",
+      "game_url": "https://www.nfl.com/games/49ers-at-cardinals-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763401000/gamecenter/f7f5e015-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "jets-at-patriots-2025-reg-11",
+      "date": "2025-11-13",
+      "label": "Watch Replay, Jets 14, Patriots 27, Thursday, November 13th",
+      "game_url": "https://www.nfl.com/games/jets-at-patriots-2025-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1763120198/gamecenter/f7d53cca-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "eagles-at-packers-2025-reg-10",
+      "date": "2025-11-10",
+      "label": "Watch Replay, Eagles 10, Packers 7, Monday, November 10th",
+      "game_url": "https://www.nfl.com/games/eagles-at-packers-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762861429/gamecenter/f7d53812-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "steelers-at-chargers-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Steelers 10, Chargers 25, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/steelers-at-chargers-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762790748/gamecenter/f7d5339e-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "saints-at-panthers-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Saints 17, Panthers 7, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/saints-at-panthers-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772747/gamecenter/f7b52798-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "ravens-at-vikings-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Ravens 27, Vikings 19, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/ravens-at-vikings-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772751/gamecenter/f7d4cef2-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "rams-at-49ers-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Rams 42, 49ers 26, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/rams-at-49ers-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772754/gamecenter/f7d52425-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "patriots-at-buccaneers-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Patriots 28, Buccaneers 23, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/patriots-at-buccaneers-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772749/gamecenter/f7d503af-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "lions-at-commanders-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Lions 44, Commanders 22, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/lions-at-commanders-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772750/gamecenter/f7d52e9c-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "jaguars-at-texans-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Jaguars 29, Texans 36, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/jaguars-at-texans-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772749/gamecenter/f7b52fdf-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "giants-at-bears-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Giants 20, Bears 24, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/giants-at-bears-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772751/gamecenter/f7b52bb1-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "falcons-at-colts-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Falcons 25, Colts 31, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/falcons-at-colts-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772747/gamecenter/f7b52372-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "cardinals-at-seahawks-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Cardinals 22, Seahawks 44, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/cardinals-at-seahawks-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772753/gamecenter/f7d51536-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "browns-at-jets-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Browns 20, Jets 27, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/browns-at-jets-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772747/gamecenter/f7d4ef98-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "bills-at-dolphins-2025-reg-10",
+      "date": "2025-11-09",
+      "label": "Watch Replay, Bills 13, Dolphins 30, Sunday, November 9th",
+      "game_url": "https://www.nfl.com/games/bills-at-dolphins-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762772748/gamecenter/f7d4b0eb-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "raiders-at-broncos-2025-reg-10",
+      "date": "2025-11-06",
+      "label": "Watch Replay, Raiders 7, Broncos 10, Thursday, November 6th",
+      "game_url": "https://www.nfl.com/games/raiders-at-broncos-2025-reg-10",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762513482/gamecenter/f7b51f32-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "cardinals-at-cowboys-2025-reg-9",
+      "date": "2025-11-03",
+      "label": "Watch Replay, Cardinals 27, Cowboys 17, Monday, November 3rd",
+      "game_url": "https://www.nfl.com/games/cardinals-at-cowboys-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762297632/gamecenter/f7b51ac4-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "vikings-at-lions-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Vikings 27, Lions 24, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/vikings-at-lions-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168032/gamecenter/f7939f5e-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "seahawks-at-commanders-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Seahawks 38, Commanders 14, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/seahawks-at-commanders-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168037/gamecenter/f7b515d8-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "saints-at-rams-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Saints 10, Rams 34, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/saints-at-rams-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168035/gamecenter/f7b503f5-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "panthers-at-packers-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Panthers 16, Packers 13, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/panthers-at-packers-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168031/gamecenter/f793a3af-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "jaguars-at-raiders-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Jaguars 30, Raiders 29, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/jaguars-at-raiders-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168037/gamecenter/f7b50cf8-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "falcons-at-patriots-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Falcons 23, Patriots 24, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/falcons-at-patriots-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168031/gamecenter/f793ac47-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "colts-at-steelers-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Colts 20, Steelers 27, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/colts-at-steelers-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168034/gamecenter/f793b53b-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "chiefs-at-bills-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Chiefs 21, Bills 28, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/chiefs-at-bills-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168034/gamecenter/f7b5118c-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "chargers-at-titans-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Chargers 27, Titans 20, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/chargers-at-titans-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168031/gamecenter/f793b96d-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "broncos-at-texans-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Broncos 18, Texans 15, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/broncos-at-texans-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168036/gamecenter/f793a80b-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "bears-at-bengals-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, Bears 47, Bengals 42, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/bears-at-bengals-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168034/gamecenter/f7939a8f-311e-11f0-b670-ae1250fadad1.pdf"
+    },
+    {
+      "slug": "49ers-at-giants-2025-reg-9",
+      "date": "2025-11-02",
+      "label": "Watch Replay, 49ers 34, Giants 24, Sunday, November 2nd",
+      "game_url": "https://www.nfl.com/games/49ers-at-giants-2025-reg-9",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1762168032/gamecenter/f793b103-311e-11f0-b670-ae1250fadad1.pdf"
     }
   ]
 }
