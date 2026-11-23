@@ -109,6 +109,45 @@ def discover(session,season,start,end):
             label=a.get("aria-label") or a.get_text(" ",strip=True)
             if not label or len(label)>100:label=slug.replace("-"," ").title()
             games[slug]={"slug":slug,"date":date,"label":label[:140],"game_url":link}
+    # NFL preseason games use separate public by-week pages; the legacy
+    # PRE1/PRE2/PRE3 URL guesses can silently omit games. Include the
+    # Hall of Fame (pre-0) as well as all three preseason weeks.
+    preseason_start=datetime(season,8,1).date()
+    preseason_end=datetime(season,9,9).date()
+    if start_date<preseason_end and end_date>preseason_start:
+        sources=[("hall-of-fame-game",0)]+[
+            (f"preseason-week-{i}",i) for i in range(1,4)
+        ]
+        for page_name,week in sources:
+            url=f"{BASE}/schedules/{season}/by-week/{page_name}"
+            try:html=get(session,url)
+            except requests.RequestException as e:
+                LOG.warning("Preseason schedule fetch failed %s: %s",url,e)
+                continue
+            soup=BeautifulSoup(html,"html.parser")
+            for a in soup.select('a[href*="/games/"]'):
+                link=urljoin(BASE,a.get("href","").split("?")[0])
+                if urlparse(link).hostname not in ("www.nfl.com","nfl.com"):
+                    continue
+                slug=urlparse(link).path.rstrip("/").split("/")[-1]
+                # Limit to the correct season AND page week; otherwise
+                # neighboring navigation games can acquire the wrong date.
+                if not slug.endswith(f"-{season}-pre-{week}"):
+                    continue
+                texts=[a.get_text(" ",strip=True)]
+                node=a
+                for _ in range(6):
+                    node=node.parent
+                    if node is None:break
+                    txt=node.get_text(" ",strip=True)
+                    if txt and len(txt)<1200:texts.append(txt)
+                day=next((d for t in texts if (d:=parse_date(t,season))),None)
+                if not day or not (start<=day<end):
+                    continue
+                label=a.get("aria-label") or a.get_text(" ",strip=True)
+                if not label or len(label)>100:
+                    label=slug.replace("-"," ").title()
+                games[slug]={"slug":slug,"date":day,"label":label[:140],"game_url":link}
     return games
 
 def gamebook_link(html,page):
