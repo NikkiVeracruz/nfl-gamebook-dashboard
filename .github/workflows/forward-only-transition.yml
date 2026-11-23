@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - .github/workflows/forward-only-transition.yml
+      - forward_only.py
+      - tests/test_forward_only.py
 permissions:
   contents: write
 concurrency:
