@@ -48,9 +48,17 @@ class ProjectRegisterTests(unittest.TestCase):
             self.assertIn("Do not implement or proactively suggest", by_id[ident]["notes"])
         self.assertIn("exclude player-statistics", by_id["PRJ-001"]["notes"])
         self.assertEqual(by_id["PRJ-017"]["state"], "implemented")
+        # Separate NCAA link-only research was newly authorized; no NCAA
+        # production board is installed and the previous removal still stands.
+        self.assertEqual(by_id["NCAA-POC-001"]["decision"], "accepted")
+        self.assertEqual(by_id["NCAA-POC-001"]["state"], "not_started")
+        self.assertEqual(by_id["NCAA-POC-001"]["evidence"], [])
+        self.assertEqual(by_id["DEC-001"]["state"], "removed")
 
     def test_renderer_includes_key_user_decisions_and_evidence(self):
         result = render(self.data)
+        self.assertIn("## Approved work awaiting implementation", result)
+        self.assertIn("NCAA-POC-001", result)
         for term in ("Forward-only", "NCAA", "player-level statistics",
                      "archive", "not_decided", "backup/pre-forward-only-2026-11-23"):
             self.assertIn(term.lower(), result.lower())

@@ -1035,6 +1035,16 @@
         }
       ],
       "notes": "Explicit user approval November 23, 2026. CI workflows are read-only pull_request checks. Branch protection/rulesets cannot be assumed enabled; this is a mandatory documented working practice, not yet repository-enforced merge blocking. Staging checks complement, not replace, post-merge monitoring."
+    },
+    {
+      "id": "NCAA-POC-001",
+      "title": "Separate NCAA Stats contest-link proof of concept",
+      "area": "research",
+      "decision": "accepted",
+      "state": "not_started",
+      "summary": "User approved starting an isolated, link-only NCAA proof of concept for football FBS/FCS and Division I men's/women's basketball. Match scheduled games to stats.ncaa.org contest IDs via public crosswalks; do not scrape gamebooks or player stats, backfill history, or alter the existing five-league boards. New standalone repository required before any GitHub-based test or release.",
+      "evidence": [],
+      "notes": "New approval on 2026-11-23 supersedes DEC-001 only for a new, entirely separate experimental NCAA system; the old NCAA code/data removals remain in force and current NFL/NBA/WNBA/NHL/MLB governance and UI scope remain unchanged. Read-only prototype code, manual Actions workflow, setup README, and seven passing offline tests were prepared in an authoring-session downloadable ZIP, but NOT deployed or committed to GitHub. GitHub connection supports writing existing repositories, not creating a new one. Live ESPN/GitHub crosswalk matching, crosswalk latency, coverage percentages and destination NCAA Stats pages still require real GitHub Actions probes and manual browser confirmation. No NCAA production dashboard has been approved or implemented. SportsDataverse 2026 football and 2026–27 MBB/WBB mapping release assets were observed published as of 2026-11-23; published IDs alone are not proof pages resolve."
     }
   ]
 }
