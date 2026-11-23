@@ -78,3 +78,14 @@ jobs:
               echo "$workflow already in desired state: $state"
             fi
           done
+      - name: Bootstrap one NFL check after a calendar-controller release
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if python nfl_calendar.py should-poll; then
+            gh workflow run update.yml --ref main
+            echo "Requested an immediate scheduled-game PDF check"
+          else
+            echo "No NFL game or missing PDF; no bootstrap check"
+          fi
