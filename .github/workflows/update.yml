@@ -1,12 +1,13 @@
 name: Update NFL Gamebook Dashboard
 on:
   workflow_dispatch:
-  # BEGIN NFL CALENDAR-MANAGED SCHEDULE
+  # Five-minute checks run only while the calendar coordinator enables this workflow.
   schedule:
     - cron: "*/5 * * * *"
-  # END NFL CALENDAR-MANAGED SCHEDULE
+      timezone: "America/New_York"
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: update-gamebooks
   cancel-in-progress: false
@@ -32,6 +33,11 @@ jobs:
             if [ "$code" -ne 3 ]; then exit "$code"; fi
             echo "active=false" >> "$GITHUB_OUTPUT"
           fi
+      - name: Suspend scheduled NFL workflow when calendar is idle
+        if: steps.poll.outputs.active == 'false' && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/update.yml/disable"
       - if: steps.poll.outputs.active == 'true'
         run: pip install -r requirements.txt
       - name: Check NFL gamebooks
@@ -67,4 +73,17 @@ jobs:
             done
             echo "Could not publish after retries" >&2
             exit 1
+          fi
+      - name: Suspend NFL polling once overdue PDFs are recovered
+        if: steps.poll.outputs.active == 'true' && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if python nfl_calendar.py should-poll; then
+            echo "Game day or overdue PDF remains; keeping NFL checks active"
+          else
+            code=$?
+            if [ "$code" -ne 3 ]; then exit "$code"; fi
+            gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/update.yml/disable"
+            echo "No NFL checks needed; scheduled workflow disabled"
           fi
