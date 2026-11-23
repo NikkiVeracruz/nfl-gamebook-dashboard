@@ -186,6 +186,36 @@ def send_email(game):
     except Exception:
         LOG.exception("Notification failed");return False
 
+def recover_older_missing_pdfs(session, start):
+    """Continue checking unsatisfied gamebooks even after Thursday's window rolls."""
+    from archive import load_payload, atomic_write_json
+    from nfl_calendar import missing_pdf_games
+
+    path = Path("archive.json")
+    archived = load_payload(path, "NFL historical archive")
+    today = datetime.now(ET).date()
+    found = 0
+    for game in missing_pdf_games(archived, today):
+        # Current-week games are checked by the normal live loop.
+        if game["date"] >= start.isoformat():
+            continue
+        try:
+            url = game["game_url"]
+            html = get(session, url + "?tab=recap")
+            pdf = gamebook_link(html, url)
+            if pdf and verify_pdf(session, pdf):
+                game["pdf_url"] = pdf
+                found += 1
+                LOG.info("Recovered overdue NFL gamebook: %s", game["slug"])
+        except requests.RequestException as exc:
+            LOG.warning("Historical NFL gamebook fetch failed %s: %s",
+                        game["slug"], exc)
+    if found:
+        archived["updated_at"] = datetime.now(timezone.utc).isoformat()
+        atomic_write_json(path, archived)
+    return found
+
+
 def main():
     logging.basicConfig(level=logging.INFO,format="%(levelname)s %(message)s")
     # Seasonal guard: keep the website live but avoid report scraping in the offseason.
@@ -229,10 +259,22 @@ def main():
                 if slug not in state["notified"] and send_email(game):
                     state["notified"][slug]=datetime.now(timezone.utc).isoformat()
         except requests.RequestException as e:LOG.warning("Game page fetch failed %s: %s",slug,e)
+    # The current Thursday-to-Thursday feed must stay current-week only.
+    # Missing gamebooks from earlier weeks are recovered directly into the archive.
+    recover_older_missing_pdfs(session, start)
     # Prevent state from growing indefinitely.
     state["notified"]={slug:ts for slug,ts in state["notified"].items() if slug in games}
     STATE.write_text(json.dumps(state,indent=2,sort_keys=True)+"\n")
-    OUT.write_text(json.dumps({"window_label":f"{start:%b %d, %Y} – {(end-timedelta(days=1)):%b %d, %Y} (ET)","updated_at":datetime.now(timezone.utc).isoformat(),"games":sorted(games.values(),key=lambda g:(g["date"],g["label"]))},indent=2)+"\n")
+    payload={"window_label":f"{start:%b %d, %Y} – {(end-timedelta(days=1)):%b %d, %Y} (ET)","games":sorted(games.values(),key=lambda g:(g["date"],g["label"]))}
+    try:
+        prior_feed=json.loads(OUT.read_text())
+    except (OSError,ValueError):
+        prior_feed={}
+    if any(prior_feed.get(key)!=value for key,value in payload.items()):
+        payload["updated_at"]=datetime.now(timezone.utc).isoformat()
+        OUT.write_text(json.dumps(payload,indent=2)+"\n")
+    else:
+        LOG.info("NFL live feed unchanged; skipping timestamp-only write")
     if not games:LOG.warning("No games discovered. Check NFL schedule markup before relying on this monitor.")
 
 if __name__=="__main__":main()
