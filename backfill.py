@@ -3,11 +3,56 @@
 import json,requests
 from datetime import date,datetime,timedelta,timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from monitor import discover,get,gamebook_link,is_official,verify_pdf,HEADERS
+from archive import ArchiveIntegrityError, load_payload, atomic_write_json
 ARCHIVE=Path("archive.json")
 PROGRESS=Path("archive-progress.json")
+ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
+ET = ZoneInfo("America/New_York")
+
+
+def independent_sunday_games(session, day):
+    """Count NFL events on a date using ESPN, separate from NFL.com scraping."""
+    response = session.get(
+        ESPN_SCOREBOARD, params={"dates": day.strftime("%Y%m%d"), "limit": 100},
+        timeout=25,
+    )
+    response.raise_for_status()
+    events = response.json().get("events")
+    if not isinstance(events, list):
+        raise ArchiveIntegrityError(f"Independent NFL schedule invalid for {day}")
+    count = 0
+    for event in events:
+        if not isinstance(event, dict) or not isinstance(event.get("date"), str):
+            raise ArchiveIntegrityError(f"Independent NFL game date missing for {day}")
+        try:
+            kickoff = datetime.fromisoformat(event["date"].replace("Z", "+00:00"))
+            if kickoff.tzinfo is None:
+                raise ValueError("Kickoff has no timezone")
+        except ValueError as exc:
+            raise ArchiveIntegrityError(f"Invalid independent NFL kickoff for {day}") from exc
+        if kickoff.astimezone(ET).date() == day:
+            count += 1
+    return count
+
+
+def validate_discovery(session, start, end, discovered, get_expected=independent_sunday_games):
+    """Never mark historical NFL game weeks complete if the source misses games."""
+    sunday = start + timedelta(days=(6-start.weekday()) % 7)
+    while sunday < end:
+        expected = get_expected(session, sunday)
+        observed = sum(g.get("date") == sunday.isoformat() for g in discovered.values())
+        if observed < expected:
+            raise ArchiveIntegrityError(
+                f"NFL backfill incomplete for {sunday}: found {observed} NFL.com games "
+                f"but ESPN has {expected}; archive and progress cursor NOT advanced"
+            )
+        sunday += timedelta(days=7)
+
+
 def main():
-    existing=json.loads(ARCHIVE.read_text()) if ARCHIVE.exists() else {"games":[]}
+    existing=load_payload(ARCHIVE, "NFL historical archive")
     records={g.get("slug",g.get("date","")+"|"+g.get("label","")):g for g in existing.get("games",[])}
     p=json.loads(PROGRESS.read_text()) if PROGRESS.exists() else {}
     start=date.fromisoformat(p.get("next_date","2025-08-01"))
@@ -16,20 +61,23 @@ def main():
         print("NFL archive backfill caught up")
         return
     session=requests.Session();session.headers.update(HEADERS)
+    discovered={}
     for season in {start.year,start.year-1}:
-        for slug,g in discover(session,season,start.isoformat(),end.isoformat()).items():
-            old=records.get(slug,{})
-            item={**old,**g}
-            if not item.get("pdf_url") and g["date"]<=date.today().isoformat():
-                try:
-                    html=get(session,g["game_url"]+"?tab=recap")
-                    url=gamebook_link(html,g["game_url"])
-                    if url and is_official(url) and verify_pdf(session,url):item["pdf_url"]=url
-                except requests.RequestException as e:print("Gamebook lookup failed:",slug,e)
-            records[slug]=item
+        discovered.update(discover(session,season,start.isoformat(),end.isoformat()))
+    validate_discovery(session,start,end,discovered)
+    for slug,g in discovered.items():
+        old=records.get(slug,{})
+        item={**old,**g}
+        if not item.get("pdf_url") and g["date"]<=date.today().isoformat():
+            try:
+                html=get(session,g["game_url"]+"?tab=recap")
+                url=gamebook_link(html,g["game_url"])
+                if url and is_official(url) and verify_pdf(session,url):item["pdf_url"]=url
+            except requests.RequestException as e:print("Gamebook lookup failed:",slug,e)
+        records[slug]=item
     existing["games"]=sorted(records.values(),key=lambda g:(g.get("date",""),g.get("label","")),reverse=True)
     existing["updated_at"]=datetime.now(timezone.utc).isoformat()
-    ARCHIVE.write_text(json.dumps(existing,indent=2)+"\n")
-    PROGRESS.write_text(json.dumps({"next_date":end.isoformat(),"complete":end>date.today(),"updated_at":existing["updated_at"]},indent=2)+"\n")
+    atomic_write_json(ARCHIVE, existing)
+    atomic_write_json(PROGRESS, {"next_date":end.isoformat(),"complete":end>date.today(),"updated_at":existing["updated_at"]})
     print("NFL archive now contains",len(records),"games; next",end)
 if __name__=="__main__":main()
