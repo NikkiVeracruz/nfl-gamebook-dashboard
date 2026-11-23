@@ -111,7 +111,7 @@
           "path": "command-center/index.html"
         }
       ],
-      "notes": "A dedicated searchable player-stat database is not yet implemented (IDEA-001)."
+      "notes": "The user explicitly said on 2026-11-23 that dedicated player-statistics features are not needed; exclude player-statistics search, tables, databases and analytics from future Mega Board recommendations. Existing league-provided gamebooks, reports and approved board behavior remain unchanged. IDEA-001 declined."
     },
     {
       "id": "PRJ-002",
@@ -716,11 +716,11 @@
       "id": "IDEA-001",
       "title": "Dedicated player-level statistics search",
       "area": "suggestion",
-      "decision": "not_decided",
-      "state": "proposed",
+      "decision": "declined",
+      "state": "not_started",
       "summary": "Search player names and game-by-game statistics directly rather than relying only on PDF/report reading.",
       "evidence": [],
-      "notes": "High-value strategic opportunity, not implemented; availability/rights/API accuracy must be evaluated before committing."
+      "notes": "High-value strategic opportunity, not implemented; availability/rights/API accuracy must be evaluated before committing. User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review. Dedicated player-statistics search, indexing, dashboards, tables and analysis are not a project need and must be excluded from future feature ideation; existing official report contents are unaffected."
     },
     {
       "id": "IDEA-002",
@@ -753,51 +753,51 @@
       "id": "IDEA-003",
       "title": "One-click comprehensive game reference",
       "area": "suggestion",
-      "decision": "not_decided",
-      "state": "proposed",
+      "decision": "declined",
+      "state": "not_started",
       "summary": "Open one consolidated game view linking official reports, game context, and team/player data.",
       "evidence": [],
-      "notes": ""
+      "notes": "User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review. Its illustrative design included player stats; no game-reference detail view or associated player-statistics functionality should be proposed without explicit user request."
     },
     {
       "id": "IDEA-004",
       "title": "Permanent deep links to games",
       "area": "suggestion",
-      "decision": "not_decided",
-      "state": "proposed",
+      "decision": "declined",
+      "state": "not_started",
       "summary": "Share direct, stable links to a particular archived or current game.",
       "evidence": [],
-      "notes": ""
+      "notes": "User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review."
     },
     {
       "id": "IDEA-005",
       "title": "Favorites and recently viewed games",
       "area": "suggestion",
-      "decision": "not_decided",
-      "state": "proposed",
+      "decision": "declined",
+      "state": "not_started",
       "summary": "Provide quick access to frequently used teams or previously opened games.",
       "evidence": [],
-      "notes": ""
+      "notes": "User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review."
     },
     {
       "id": "IDEA-006",
       "title": "Navigation by document type",
       "area": "suggestion",
-      "decision": "not_decided",
-      "state": "proposed",
+      "decision": "declined",
+      "state": "not_started",
       "summary": "Filter or jump directly to PDF, NHL GS/ES, MLB box score or play-by-play by report type.",
       "evidence": [],
-      "notes": ""
+      "notes": "User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review."
     },
     {
       "id": "IDEA-007",
       "title": "Pagination or result navigation past 200",
       "area": "suggestion",
-      "decision": "not_decided",
-      "state": "proposed",
+      "decision": "declined",
+      "state": "not_started",
       "summary": "Permit exploring more than the latest 200 matching archived games when historical archiving is reactivated.",
       "evidence": [],
-      "notes": "Reduced priority in forward-only mode; current 200 cap is accepted."
+      "notes": "Reduced priority in forward-only mode; current 200 cap is accepted. User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review."
     },
     {
       "id": "IDEA-008",
@@ -830,11 +830,11 @@
       "id": "IDEA-009",
       "title": "Temporary pending-reports retry queue",
       "area": "suggestion",
-      "decision": "not_decided",
-      "state": "proposed",
+      "decision": "declined",
+      "state": "not_started",
       "summary": "Allow report URLs delayed beyond the current window to be recovered later using a bounded private queue, without archiving an incomplete or unverified game.",
       "evidence": [],
-      "notes": "Mitigates RISK-001; not approved or implemented."
+      "notes": "Mitigates RISK-001; not approved or implemented. User explicitly declined this suggested change on 2026-11-23. It was proposed but never approved. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review."
     },
     {
       "id": "IDEA-010",
@@ -867,11 +867,11 @@
       "id": "IDEA-011",
       "title": "Large-scale refactor / additional watchdogs",
       "area": "suggestion",
-      "decision": "deferred",
-      "state": "deferred",
+      "decision": "declined",
+      "state": "not_started",
       "summary": "Additional watchers and a broad architectural rewrite were explicitly deferred in review rather than made a new project priority.",
       "evidence": [],
-      "notes": "Deferred is not a user rejection; reconsider only with a demonstrated need."
+      "notes": "Deferred is not a user rejection; reconsider only with a demonstrated need. User explicitly declined this suggested change on 2026-11-23. It was previously deferred and is now declined. Do not implement or proactively suggest it again; reconsider only if the user explicitly requests a review."
     },
     {
       "id": "REQ-001",
