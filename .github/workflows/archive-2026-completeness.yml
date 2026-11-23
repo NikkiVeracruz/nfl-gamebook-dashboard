@@ -1,9 +1,7 @@
 name: Independent 2026 archive completeness (read-only)
 on:
   workflow_dispatch:
-  schedule:
-    # Weekly historical sweep; the existing hourly check handles the current display.
-    - cron: "43 09 * * 1"
+  # Historical season-wide comparison paused in forward-only mode.
   push:
     branches: [main]
     paths:
@@ -20,6 +18,7 @@ concurrency:
 
 jobs:
   archive-coverage:
+    if: ${{ vars.ENABLE_HISTORICAL_BACKFILL == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
