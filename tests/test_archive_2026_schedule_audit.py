@@ -34,13 +34,24 @@ class HistoricalArchiveAuditTests(unittest.TestCase):
     def test_international_hockey_does_not_create_false_nhl_extra(self):
         games = [{"id": "2025090001", "date": "2026-02-01",
                   "competition": "international_hockey"}]
-        report = compare("NHL", games, {}, date(2026, 11, 22))
+        report = compare("NHL", games, {"2026-02-01": {"2025090001"}},
+                         date(2026, 11, 22))
+        self.assertEqual(report["missing"], [])
         self.assertEqual(report["extra_for_review"], [])
 
     def test_unmatched_regular_games_are_reported_not_deleted(self):
         report = compare("NHL", [{"id": "2026020001", "date": "2026-10-11"}],
                          {}, date(2026, 11, 22))
         self.assertEqual(report["extra_for_review"], ["2026020001"])
+
+    def test_mlb_makeup_date_is_not_a_missing_game(self):
+        games = [{"id": "823543", "date": "2026-09-22"}]
+        result = compare("MLB", games, {"2026-05-23": {"823543"}},
+                         date(2026, 11, 22))
+        self.assertEqual(result["missing"], [])
+        self.assertEqual(result["date_mismatches"], [])
+        self.assertEqual(result["rescheduled_dates_for_review"],
+                         [("2026-05-23", "823543", "2026-09-22")])
 
     @patch("archive_2026_schedule_audit.fetch_json")
     def test_espn_missing_events_list_is_inconclusive_not_pass(self, fetch):
