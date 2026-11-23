@@ -318,6 +318,33 @@ def make_report(links, missing, previous, checked, now):
     }
 
 
+def select_due(links, old_results, now, limit):
+    """Ensure unresolved documents get retries without starving unscanned ones."""
+    pending = [it for it in links if not fresh(old_results.get(it["key"]), it, now)]
+    retry_quota = max(1, limit // (5 * len(REPOS)))
+    buckets = {}
+    for league in REPOS:
+        items = sorted((it for it in pending if it["league"] == league),
+                       key=lambda x: (x["date"], x["key"]))
+        retries, unseen, stale_good = [], [], []
+        for item in items:
+            record = old_results.get(item["key"])
+            if not record or record.get("url") != item["url"]:
+                unseen.append(item)
+            elif record.get("status") not in GOOD:
+                retries.append(item)
+            else:
+                stale_good.append(item)
+        buckets[league] = (retries[:retry_quota] + unseen +
+                           retries[retry_quota:] + stale_good)
+    chosen = []
+    while len(chosen) < limit and any(buckets.values()):
+        for league in REPOS:
+            if buckets[league] and len(chosen) < limit:
+                chosen.append(buckets[league].pop(0))
+    return chosen, len(pending)
+
+
 def run(limit=150, workers=6, today=None, output=REPORT):
     now = now_utc()
     today = today or now.date()
@@ -331,19 +358,8 @@ def run(limit=150, workers=6, today=None, output=REPORT):
         print(f"SOURCE {league}: {len(games)} 2026 games; {len(x)} linked documents, "
               f"{len(y)} eligible reports not linked", flush=True)
     old_results = old.get("results", {})
-    pending = [it for it in links if not fresh(old_results.get(it["key"]), it, now)]
-    # Prioritize never checked docs rather than retrying the same unavailable host.
-    pending.sort(key=lambda x: (x["key"] in old_results, x["date"], x["key"]))
-    # Fair selection across leagues; prevent large MLB/NHL archives from
-    # monopolizing the verification budget.
-    buckets = {league: [it for it in pending if it["league"] == league]
-               for league in REPOS}
-    chosen = []
-    while len(chosen) < limit and any(buckets.values()):
-        for league in REPOS:
-            if buckets[league] and len(chosen) < limit:
-                chosen.append(buckets[league].pop(0))
-    print(f"VERIFYING {len(chosen)} of {len(pending)} eligible due documents", flush=True)
+    chosen, due_count = select_due(links, old_results, now, limit)
+    print(f"VERIFYING {len(chosen)} of {due_count} eligible due documents", flush=True)
     checked = {}
     with ThreadPoolExecutor(max_workers=workers) as pool:
         future_map = {pool.submit(inspect, item): item for item in chosen}
