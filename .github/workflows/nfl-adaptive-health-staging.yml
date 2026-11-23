@@ -1,0 +1,48 @@
+name: NFL adaptive-health rehearsal (staging)
+on:
+  push:
+    branches: [staging-nfl-adaptive-health-2026-11-22]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt pyyaml
+      - name: Validate backend code and YAML
+        run: |
+          python -m py_compile monitor.py tests/nfl_update_watchdog.py tests/production_health.py
+          python - <<'PY'
+          import yaml
+          for name in (".github/workflows/nfl-calendar.yml", ".github/workflows/update.yml",
+                       ".github/workflows/nfl-backup-watchdog.yml",
+                       ".github/workflows/dashboard-health.yml"):
+              with open(name) as fp:
+                  assert "jobs" in yaml.safe_load(fp)
+          PY
+      - name: Validate Mega Board browser JavaScript syntax
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path("command-center/index.html").read_text()
+          scripts = re.findall(r"<script[^>]*>([\s\S]*?)</script>", html)
+          script = max(scripts, key=len)
+          assert "staleFeedWarnings" in script
+          Path("/tmp/megaboard-script.js").write_text(script)
+          PY
+          node --check /tmp/megaboard-script.js
+      - name: Test adaptive monitor and preserved safety protections
+        run: |
+          python -m unittest discover -s tests -p 'test_nfl_calendar.py' -v
+          python -m unittest discover -s tests -p 'test_nfl_adaptive_health.py' -v
+          python -m unittest discover -s tests -p 'test_nfl_older_pdf_recovery.py' -v
+          python -m unittest discover -s tests -p 'test_archive_safety.py' -v
+      - name: Verify all publication data files remain untouched
+        run: git diff --exit-code -- archive.json gamebooks.json monitor-state.json archive-progress.json
