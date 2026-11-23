@@ -1,64 +1,64 @@
 {
   "scope": "2026",
-  "updated_at": "2026-11-23T07:59:39.307648+00:00",
+  "updated_at": "2026-11-23T08:01:11.566179+00:00",
   "meaning": "A successful workflow does not mean every document has passed.",
   "summary": {
     "linked": 9938,
-    "inspected": 960,
+    "inspected": 1260,
     "no_link": 14,
     "statuses": {
-      "not_yet_checked": 8978,
+      "not_yet_checked": 8678,
       "readable_identity_unconfirmed": 1,
-      "verified_match": 575,
-      "verified_official_stats": 192,
-      "verified_report": 192
+      "verified_match": 729,
+      "verified_official_stats": 265,
+      "verified_report": 265
     }
   },
   "leagues": {
     "NFL": {
       "linked": 200,
-      "inspected": 192,
-      "uninspected": 8,
+      "inspected": 200,
+      "uninspected": 0,
       "no_link": 0,
       "statuses": {
         "readable_identity_unconfirmed": 1,
-        "verified_match": 191
+        "verified_match": 199
       }
     },
     "NBA": {
       "linked": 1129,
-      "inspected": 192,
-      "uninspected": 937,
+      "inspected": 265,
+      "uninspected": 864,
       "no_link": 2,
       "statuses": {
-        "verified_match": 192
+        "verified_match": 265
       }
     },
     "WNBA": {
       "linked": 369,
-      "inspected": 192,
-      "uninspected": 177,
+      "inspected": 265,
+      "uninspected": 104,
       "no_link": 4,
       "statuses": {
-        "verified_match": 192
+        "verified_match": 265
       }
     },
     "NHL": {
       "linked": 2364,
-      "inspected": 192,
-      "uninspected": 2172,
+      "inspected": 265,
+      "uninspected": 2099,
       "no_link": 8,
       "statuses": {
-        "verified_report": 192
+        "verified_report": 265
       }
     },
     "MLB": {
       "linked": 5876,
-      "inspected": 192,
-      "uninspected": 5684,
+      "inspected": 265,
+      "uninspected": 5611,
       "no_link": 0,
       "statuses": {
-        "verified_official_stats": 192
+        "verified_official_stats": 265
       }
     }
   },
@@ -191,6 +191,106 @@
     }
   ],
   "results": {
+    "MLB:831474:BOX": {
+      "url": "https://www.mlb.com/gameday/831474/box-score",
+      "league": "MLB",
+      "id": "831474",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831474 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:53.231037+00:00"
+    },
+    "MLB:831474:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831474/play-by-play",
+      "league": "MLB",
+      "id": "831474",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831474 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:53.258995+00:00"
+    },
+    "MLB:831475:BOX": {
+      "url": "https://www.mlb.com/gameday/831475/box-score",
+      "league": "MLB",
+      "id": "831475",
+      "kind": "BOX",
+      "date": "2026-03-01",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831475 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:20.021713+00:00"
+    },
+    "MLB:831475:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831475/play-by-play",
+      "league": "MLB",
+      "id": "831475",
+      "kind": "PLAYS",
+      "date": "2026-03-01",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831475 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:20.069930+00:00"
+    },
+    "MLB:831477:BOX": {
+      "url": "https://www.mlb.com/gameday/831477/box-score",
+      "league": "MLB",
+      "id": "831477",
+      "kind": "BOX",
+      "date": "2026-03-01",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831477 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:21.781578+00:00"
+    },
+    "MLB:831477:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831477/play-by-play",
+      "league": "MLB",
+      "id": "831477",
+      "kind": "PLAYS",
+      "date": "2026-03-01",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831477 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:21.584889+00:00"
+    },
+    "MLB:831481:BOX": {
+      "url": "https://www.mlb.com/gameday/831481/box-score",
+      "league": "MLB",
+      "id": "831481",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831481 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:54.583391+00:00"
+    },
+    "MLB:831481:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831481/play-by-play",
+      "league": "MLB",
+      "id": "831481",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831481 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:54.881779+00:00"
+    },
+    "MLB:831482:BOX": {
+      "url": "https://www.mlb.com/gameday/831482/box-score",
+      "league": "MLB",
+      "id": "831482",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831482 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:23.195781+00:00"
+    },
+    "MLB:831482:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831482/play-by-play",
+      "league": "MLB",
+      "id": "831482",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831482 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:24.929703+00:00"
+    },
     "MLB:831483:BOX": {
       "url": "https://www.mlb.com/gameday/831483/box-score",
       "league": "MLB",
@@ -250,6 +350,26 @@
       "status": "verified_official_stats",
       "detail": "Official game ID 831485 and play-by-play data verified",
       "checked_at": "2026-11-23T07:58:34.218687+00:00"
+    },
+    "MLB:831486:BOX": {
+      "url": "https://www.mlb.com/gameday/831486/box-score",
+      "league": "MLB",
+      "id": "831486",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831486 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:24.987942+00:00"
+    },
+    "MLB:831486:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831486/play-by-play",
+      "league": "MLB",
+      "id": "831486",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831486 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:25.017737+00:00"
     },
     "MLB:831487:BOX": {
       "url": "https://www.mlb.com/gameday/831487/box-score",
@@ -410,6 +530,76 @@
       "status": "verified_official_stats",
       "detail": "Official game ID 831497 and play-by-play data verified",
       "checked_at": "2026-11-23T07:55:23.132818+00:00"
+    },
+    "MLB:831528:BOX": {
+      "url": "https://www.mlb.com/gameday/831528/box-score",
+      "league": "MLB",
+      "id": "831528",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831528 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:26.867517+00:00"
+    },
+    "MLB:831528:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831528/play-by-play",
+      "league": "MLB",
+      "id": "831528",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831528 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:26.892416+00:00"
+    },
+    "MLB:831530:BOX": {
+      "url": "https://www.mlb.com/gameday/831530/box-score",
+      "league": "MLB",
+      "id": "831530",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831530 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:55.096856+00:00"
+    },
+    "MLB:831530:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831530/play-by-play",
+      "league": "MLB",
+      "id": "831530",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831530 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:55.137197+00:00"
+    },
+    "MLB:831531:BOX": {
+      "url": "https://www.mlb.com/gameday/831531/box-score",
+      "league": "MLB",
+      "id": "831531",
+      "kind": "BOX",
+      "date": "2026-03-01",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831531 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:21.866776+00:00"
+    },
+    "MLB:831533:BOX": {
+      "url": "https://www.mlb.com/gameday/831533/box-score",
+      "league": "MLB",
+      "id": "831533",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831533 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:57.555731+00:00"
+    },
+    "MLB:831533:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831533/play-by-play",
+      "league": "MLB",
+      "id": "831533",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831533 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:58.961929+00:00"
     },
     "MLB:831534:BOX": {
       "url": "https://www.mlb.com/gameday/831534/box-score",
@@ -671,6 +861,66 @@
       "detail": "Official game ID 831584 and play-by-play data verified",
       "checked_at": "2026-11-23T07:59:56.262306+00:00"
     },
+    "MLB:831586:BOX": {
+      "url": "https://www.mlb.com/gameday/831586/box-score",
+      "league": "MLB",
+      "id": "831586",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831586 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:29.094614+00:00"
+    },
+    "MLB:831586:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831586/play-by-play",
+      "league": "MLB",
+      "id": "831586",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831586 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:29.480424+00:00"
+    },
+    "MLB:831587:BOX": {
+      "url": "https://www.mlb.com/gameday/831587/box-score",
+      "league": "MLB",
+      "id": "831587",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831587 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:31.157259+00:00"
+    },
+    "MLB:831587:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831587/play-by-play",
+      "league": "MLB",
+      "id": "831587",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831587 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:31.593605+00:00"
+    },
+    "MLB:831588:BOX": {
+      "url": "https://www.mlb.com/gameday/831588/box-score",
+      "league": "MLB",
+      "id": "831588",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831588 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:32.964644+00:00"
+    },
+    "MLB:831588:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831588/play-by-play",
+      "league": "MLB",
+      "id": "831588",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831588 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:32.997649+00:00"
+    },
     "MLB:831589:BOX": {
       "url": "https://www.mlb.com/gameday/831589/box-score",
       "league": "MLB",
@@ -851,6 +1101,66 @@
       "detail": "Official game ID 831598 and play-by-play data verified",
       "checked_at": "2026-11-23T07:55:29.147192+00:00"
     },
+    "MLB:831635:BOX": {
+      "url": "https://www.mlb.com/gameday/831635/box-score",
+      "league": "MLB",
+      "id": "831635",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831635 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:00.041234+00:00"
+    },
+    "MLB:831635:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831635/play-by-play",
+      "league": "MLB",
+      "id": "831635",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831635 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:00.532008+00:00"
+    },
+    "MLB:831636:BOX": {
+      "url": "https://www.mlb.com/gameday/831636/box-score",
+      "league": "MLB",
+      "id": "831636",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831636 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:00.562637+00:00"
+    },
+    "MLB:831636:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831636/play-by-play",
+      "league": "MLB",
+      "id": "831636",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831636 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:00.592696+00:00"
+    },
+    "MLB:831637:BOX": {
+      "url": "https://www.mlb.com/gameday/831637/box-score",
+      "league": "MLB",
+      "id": "831637",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831637 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:03.024107+00:00"
+    },
+    "MLB:831637:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831637/play-by-play",
+      "league": "MLB",
+      "id": "831637",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831637 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:04.286320+00:00"
+    },
     "MLB:831643:BOX": {
       "url": "https://www.mlb.com/gameday/831643/box-score",
       "league": "MLB",
@@ -911,6 +1221,26 @@
       "detail": "Official game ID 831645 and play-by-play data verified",
       "checked_at": "2026-11-23T08:00:00.839990+00:00"
     },
+    "MLB:831646:BOX": {
+      "url": "https://www.mlb.com/gameday/831646/box-score",
+      "league": "MLB",
+      "id": "831646",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831646 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:34.635761+00:00"
+    },
+    "MLB:831646:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831646/play-by-play",
+      "league": "MLB",
+      "id": "831646",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831646 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:34.854019+00:00"
+    },
     "MLB:831647:BOX": {
       "url": "https://www.mlb.com/gameday/831647/box-score",
       "league": "MLB",
@@ -930,6 +1260,26 @@
       "status": "verified_official_stats",
       "detail": "Official game ID 831647 and play-by-play data verified",
       "checked_at": "2026-11-23T08:00:03.139479+00:00"
+    },
+    "MLB:831648:BOX": {
+      "url": "https://www.mlb.com/gameday/831648/box-score",
+      "league": "MLB",
+      "id": "831648",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831648 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:36.265035+00:00"
+    },
+    "MLB:831648:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831648/play-by-play",
+      "league": "MLB",
+      "id": "831648",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831648 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:34.902255+00:00"
     },
     "MLB:831649:BOX": {
       "url": "https://www.mlb.com/gameday/831649/box-score",
@@ -1151,6 +1501,26 @@
       "detail": "Official game ID 831724 and play-by-play data verified",
       "checked_at": "2026-11-23T07:58:44.954975+00:00"
     },
+    "MLB:831729:BOX": {
+      "url": "https://www.mlb.com/gameday/831729/box-score",
+      "league": "MLB",
+      "id": "831729",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831729 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:38.521889+00:00"
+    },
+    "MLB:831729:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831729/play-by-play",
+      "league": "MLB",
+      "id": "831729",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831729 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:38.517776+00:00"
+    },
     "MLB:831730:BOX": {
       "url": "https://www.mlb.com/gameday/831730/box-score",
       "league": "MLB",
@@ -1210,6 +1580,26 @@
       "status": "verified_official_stats",
       "detail": "Official game ID 831736 and play-by-play data verified",
       "checked_at": "2026-11-23T08:00:47.619493+00:00"
+    },
+    "MLB:831738:BOX": {
+      "url": "https://www.mlb.com/gameday/831738/box-score",
+      "league": "MLB",
+      "id": "831738",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831738 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:05.403623+00:00"
+    },
+    "MLB:831738:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831738/play-by-play",
+      "league": "MLB",
+      "id": "831738",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831738 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:05.633790+00:00"
     },
     "MLB:831741:BOX": {
       "url": "https://www.mlb.com/gameday/831741/box-score",
@@ -1311,6 +1701,26 @@
       "detail": "Official game ID 831753 and play-by-play data verified",
       "checked_at": "2026-11-23T08:00:14.429713+00:00"
     },
+    "MLB:831763:BOX": {
+      "url": "https://www.mlb.com/gameday/831763/box-score",
+      "league": "MLB",
+      "id": "831763",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831763 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:05.903587+00:00"
+    },
+    "MLB:831763:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831763/play-by-play",
+      "league": "MLB",
+      "id": "831763",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831763 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:05.939705+00:00"
+    },
     "MLB:831764:BOX": {
       "url": "https://www.mlb.com/gameday/831764/box-score",
       "league": "MLB",
@@ -1370,6 +1780,26 @@
       "status": "verified_official_stats",
       "detail": "Official game ID 831775 and play-by-play data verified",
       "checked_at": "2026-11-23T07:55:35.653069+00:00"
+    },
+    "MLB:831776:BOX": {
+      "url": "https://www.mlb.com/gameday/831776/box-score",
+      "league": "MLB",
+      "id": "831776",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831776 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:38.548400+00:00"
+    },
+    "MLB:831776:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831776/play-by-play",
+      "league": "MLB",
+      "id": "831776",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831776 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:38.590416+00:00"
     },
     "MLB:831781:BOX": {
       "url": "https://www.mlb.com/gameday/831781/box-score",
@@ -1471,6 +1901,26 @@
       "detail": "Official game ID 831797 and play-by-play data verified",
       "checked_at": "2026-11-23T07:59:15.644179+00:00"
     },
+    "MLB:831798:BOX": {
+      "url": "https://www.mlb.com/gameday/831798/box-score",
+      "league": "MLB",
+      "id": "831798",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831798 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:08.284599+00:00"
+    },
+    "MLB:831798:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831798/play-by-play",
+      "league": "MLB",
+      "id": "831798",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831798 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:10.152225+00:00"
+    },
     "MLB:831803:BOX": {
       "url": "https://www.mlb.com/gameday/831803/box-score",
       "league": "MLB",
@@ -1490,6 +1940,26 @@
       "status": "verified_official_stats",
       "detail": "Official game ID 831803 and play-by-play data verified",
       "checked_at": "2026-11-23T07:55:55.349528+00:00"
+    },
+    "MLB:831805:BOX": {
+      "url": "https://www.mlb.com/gameday/831805/box-score",
+      "league": "MLB",
+      "id": "831805",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831805 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:42.119857+00:00"
+    },
+    "MLB:831805:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831805/play-by-play",
+      "league": "MLB",
+      "id": "831805",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831805 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:42.288784+00:00"
     },
     "MLB:831815:BOX": {
       "url": "https://www.mlb.com/gameday/831815/box-score",
@@ -1530,6 +2000,26 @@
       "status": "verified_official_stats",
       "detail": "Official game ID 831819 and play-by-play data verified",
       "checked_at": "2026-11-23T08:00:19.917799+00:00"
+    },
+    "MLB:831823:BOX": {
+      "url": "https://www.mlb.com/gameday/831823/box-score",
+      "league": "MLB",
+      "id": "831823",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831823 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:44.004476+00:00"
+    },
+    "MLB:831823:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831823/play-by-play",
+      "league": "MLB",
+      "id": "831823",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831823 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:44.086328+00:00"
     },
     "MLB:831825:BOX": {
       "url": "https://www.mlb.com/gameday/831825/box-score",
@@ -1631,6 +2121,26 @@
       "detail": "Official game ID 831843 and play-by-play data verified",
       "checked_at": "2026-11-23T08:00:56.363076+00:00"
     },
+    "MLB:831845:BOX": {
+      "url": "https://www.mlb.com/gameday/831845/box-score",
+      "league": "MLB",
+      "id": "831845",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831845 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:10.994336+00:00"
+    },
+    "MLB:831845:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831845/play-by-play",
+      "league": "MLB",
+      "id": "831845",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831845 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:11.147114+00:00"
+    },
     "MLB:831847:BOX": {
       "url": "https://www.mlb.com/gameday/831847/box-score",
       "league": "MLB",
@@ -1731,6 +2241,26 @@
       "detail": "Official game ID 831872 and play-by-play data verified",
       "checked_at": "2026-11-23T07:55:36.938698+00:00"
     },
+    "MLB:831875:BOX": {
+      "url": "https://www.mlb.com/gameday/831875/box-score",
+      "league": "MLB",
+      "id": "831875",
+      "kind": "BOX",
+      "date": "2026-02-26",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831875 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:15.351275+00:00"
+    },
+    "MLB:831875:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831875/play-by-play",
+      "league": "MLB",
+      "id": "831875",
+      "kind": "PLAYS",
+      "date": "2026-02-26",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831875 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:16.020824+00:00"
+    },
     "MLB:831876:BOX": {
       "url": "https://www.mlb.com/gameday/831876/box-score",
       "league": "MLB",
@@ -1771,6 +2301,26 @@
       "detail": "Official game ID 831878 and play-by-play data verified",
       "checked_at": "2026-11-23T07:55:38.162716+00:00"
     },
+    "MLB:831884:BOX": {
+      "url": "https://www.mlb.com/gameday/831884/box-score",
+      "league": "MLB",
+      "id": "831884",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831884 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:44.116826+00:00"
+    },
+    "MLB:831884:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831884/play-by-play",
+      "league": "MLB",
+      "id": "831884",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831884 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:45.978412+00:00"
+    },
     "MLB:831886:BOX": {
       "url": "https://www.mlb.com/gameday/831886/box-score",
       "league": "MLB",
@@ -1790,6 +2340,26 @@
       "status": "verified_official_stats",
       "detail": "Official game ID 831886 and play-by-play data verified",
       "checked_at": "2026-11-23T07:58:27.660529+00:00"
+    },
+    "MLB:831893:BOX": {
+      "url": "https://www.mlb.com/gameday/831893/box-score",
+      "league": "MLB",
+      "id": "831893",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831893 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:12.496428+00:00"
+    },
+    "MLB:831893:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831893/play-by-play",
+      "league": "MLB",
+      "id": "831893",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831893 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:12.975268+00:00"
     },
     "MLB:831900:BOX": {
       "url": "https://www.mlb.com/gameday/831900/box-score",
@@ -1851,6 +2421,46 @@
       "detail": "Official game ID 831906 and play-by-play data verified",
       "checked_at": "2026-11-23T07:59:21.569912+00:00"
     },
+    "MLB:831909:BOX": {
+      "url": "https://www.mlb.com/gameday/831909/box-score",
+      "league": "MLB",
+      "id": "831909",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831909 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:48.668528+00:00"
+    },
+    "MLB:831909:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831909/play-by-play",
+      "league": "MLB",
+      "id": "831909",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831909 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:46.028390+00:00"
+    },
+    "MLB:831911:BOX": {
+      "url": "https://www.mlb.com/gameday/831911/box-score",
+      "league": "MLB",
+      "id": "831911",
+      "kind": "BOX",
+      "date": "2026-02-26",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831911 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:18.024823+00:00"
+    },
+    "MLB:831911:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831911/play-by-play",
+      "league": "MLB",
+      "id": "831911",
+      "kind": "PLAYS",
+      "date": "2026-02-26",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831911 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:18.739112+00:00"
+    },
     "MLB:831912:BOX": {
       "url": "https://www.mlb.com/gameday/831912/box-score",
       "league": "MLB",
@@ -1871,6 +2481,26 @@
       "detail": "Official game ID 831912 and play-by-play data verified",
       "checked_at": "2026-11-23T07:58:50.180829+00:00"
     },
+    "MLB:831917:BOX": {
+      "url": "https://www.mlb.com/gameday/831917/box-score",
+      "league": "MLB",
+      "id": "831917",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831917 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:14.323830+00:00"
+    },
+    "MLB:831917:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831917/play-by-play",
+      "league": "MLB",
+      "id": "831917",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831917 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:14.952719+00:00"
+    },
     "MLB:831922:BOX": {
       "url": "https://www.mlb.com/gameday/831922/box-score",
       "league": "MLB",
@@ -1890,6 +2520,46 @@
       "status": "verified_official_stats",
       "detail": "Official game ID 831922 and play-by-play data verified",
       "checked_at": "2026-11-23T07:58:29.267320+00:00"
+    },
+    "MLB:831925:BOX": {
+      "url": "https://www.mlb.com/gameday/831925/box-score",
+      "league": "MLB",
+      "id": "831925",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831925 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:16.339322+00:00"
+    },
+    "MLB:831925:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831925/play-by-play",
+      "league": "MLB",
+      "id": "831925",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831925 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:16.510026+00:00"
+    },
+    "MLB:831926:BOX": {
+      "url": "https://www.mlb.com/gameday/831926/box-score",
+      "league": "MLB",
+      "id": "831926",
+      "kind": "BOX",
+      "date": "2026-02-26",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831926 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:20.561088+00:00"
+    },
+    "MLB:831926:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831926/play-by-play",
+      "league": "MLB",
+      "id": "831926",
+      "kind": "PLAYS",
+      "date": "2026-02-26",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831926 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:20.590321+00:00"
     },
     "MLB:831927:BOX": {
       "url": "https://www.mlb.com/gameday/831927/box-score",
@@ -1931,6 +2601,26 @@
       "detail": "Official game ID 831939 and play-by-play data verified",
       "checked_at": "2026-11-23T07:58:54.440359+00:00"
     },
+    "MLB:831946:BOX": {
+      "url": "https://www.mlb.com/gameday/831946/box-score",
+      "league": "MLB",
+      "id": "831946",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831946 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:49.732107+00:00"
+    },
+    "MLB:831946:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831946/play-by-play",
+      "league": "MLB",
+      "id": "831946",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831946 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:49.691818+00:00"
+    },
     "MLB:831948:BOX": {
       "url": "https://www.mlb.com/gameday/831948/box-score",
       "league": "MLB",
@@ -1971,6 +2661,26 @@
       "detail": "Official game ID 831951 and play-by-play data verified",
       "checked_at": "2026-11-23T07:59:43.669875+00:00"
     },
+    "MLB:831952:BOX": {
+      "url": "https://www.mlb.com/gameday/831952/box-score",
+      "league": "MLB",
+      "id": "831952",
+      "kind": "BOX",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831952 and box-score data verified",
+      "checked_at": "2026-11-23T08:01:51.310424+00:00"
+    },
+    "MLB:831952:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831952/play-by-play",
+      "league": "MLB",
+      "id": "831952",
+      "kind": "PLAYS",
+      "date": "2026-02-27",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831952 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:01:51.533712+00:00"
+    },
     "MLB:831955:BOX": {
       "url": "https://www.mlb.com/gameday/831955/box-score",
       "league": "MLB",
@@ -1990,6 +2700,26 @@
       "status": "verified_official_stats",
       "detail": "Official game ID 831955 and play-by-play data verified",
       "checked_at": "2026-11-23T07:58:56.788324+00:00"
+    },
+    "MLB:831957:BOX": {
+      "url": "https://www.mlb.com/gameday/831957/box-score",
+      "league": "MLB",
+      "id": "831957",
+      "kind": "BOX",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831957 and box-score data verified",
+      "checked_at": "2026-11-23T08:02:18.828566+00:00"
+    },
+    "MLB:831957:PLAYS": {
+      "url": "https://www.mlb.com/gameday/831957/play-by-play",
+      "league": "MLB",
+      "id": "831957",
+      "kind": "PLAYS",
+      "date": "2026-02-28",
+      "status": "verified_official_stats",
+      "detail": "Official game ID 831957 and play-by-play data verified",
+      "checked_at": "2026-11-23T08:02:18.375369+00:00"
     },
     "MLB:831959:BOX": {
       "url": "https://www.mlb.com/gameday/831959/box-score",
@@ -4021,6 +4751,736 @@
       "detail": "17 pages; team names and date matched text",
       "checked_at": "2026-11-23T08:00:57.642537+00:00"
     },
+    "NBA:401810517:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260126/20260126_MEMHOU_book.pdf",
+      "league": "NBA",
+      "id": "401810517",
+      "kind": "PDF",
+      "date": "2026-01-26",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:14.789767+00:00"
+    },
+    "NBA:401810518:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260126/20260126_GSWMIN_book.pdf",
+      "league": "NBA",
+      "id": "401810518",
+      "kind": "PDF",
+      "date": "2026-01-26",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:15.122262+00:00"
+    },
+    "NBA:401810519:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260127/20260127_PORWAS_book.pdf",
+      "league": "NBA",
+      "id": "401810519",
+      "kind": "PDF",
+      "date": "2026-01-27",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:16.875525+00:00"
+    },
+    "NBA:401810520:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260127/20260127_SACNYK_book.pdf",
+      "league": "NBA",
+      "id": "401810520",
+      "kind": "PDF",
+      "date": "2026-01-27",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:17.539780+00:00"
+    },
+    "NBA:401810521:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260127/20260127_MILPHI_book.pdf",
+      "league": "NBA",
+      "id": "401810521",
+      "kind": "PDF",
+      "date": "2026-01-27",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:19.167706+00:00"
+    },
+    "NBA:401810522:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260127/20260127_NOPOKC_book.pdf",
+      "league": "NBA",
+      "id": "401810522",
+      "kind": "PDF",
+      "date": "2026-01-27",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:20.465599+00:00"
+    },
+    "NBA:401810523:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260127/20260127_DETDEN_book.pdf",
+      "league": "NBA",
+      "id": "401810523",
+      "kind": "PDF",
+      "date": "2026-01-27",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:22.439907+00:00"
+    },
+    "NBA:401810524:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260127/20260127_BKNPHX_book.pdf",
+      "league": "NBA",
+      "id": "401810524",
+      "kind": "PDF",
+      "date": "2026-01-27",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:23.079862+00:00"
+    },
+    "NBA:401810525:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260127/20260127_LACUTA_book.pdf",
+      "league": "NBA",
+      "id": "401810525",
+      "kind": "PDF",
+      "date": "2026-01-27",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:24.096253+00:00"
+    },
+    "NBA:401810526:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260128/20260128_LALCLE_book.pdf",
+      "league": "NBA",
+      "id": "401810526",
+      "kind": "PDF",
+      "date": "2026-01-28",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:24.862801+00:00"
+    },
+    "NBA:401810527:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260128/20260128_CHIIND_book.pdf",
+      "league": "NBA",
+      "id": "401810527",
+      "kind": "PDF",
+      "date": "2026-01-28",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:26.729543+00:00"
+    },
+    "NBA:401810528:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260128/20260128_ATLBOS_book.pdf",
+      "league": "NBA",
+      "id": "401810528",
+      "kind": "PDF",
+      "date": "2026-01-28",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:26.839238+00:00"
+    },
+    "NBA:401810529:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260128/20260128_ORLMIA_book.pdf",
+      "league": "NBA",
+      "id": "401810529",
+      "kind": "PDF",
+      "date": "2026-01-28",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:28.436606+00:00"
+    },
+    "NBA:401810530:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260128/20260128_NYKTOR_book.pdf",
+      "league": "NBA",
+      "id": "401810530",
+      "kind": "PDF",
+      "date": "2026-01-28",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:28.670097+00:00"
+    },
+    "NBA:401810531:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260128/20260128_CHAMEM_book.pdf",
+      "league": "NBA",
+      "id": "401810531",
+      "kind": "PDF",
+      "date": "2026-01-28",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:29.435004+00:00"
+    },
+    "NBA:401810532:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260128/20260128_MINDAL_book.pdf",
+      "league": "NBA",
+      "id": "401810532",
+      "kind": "PDF",
+      "date": "2026-01-28",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:30.787333+00:00"
+    },
+    "NBA:401810533:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260128/20260128_GSWUTA_book.pdf",
+      "league": "NBA",
+      "id": "401810533",
+      "kind": "PDF",
+      "date": "2026-01-28",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:31.168973+00:00"
+    },
+    "NBA:401810534:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260128/20260128_SASHOU_book.pdf",
+      "league": "NBA",
+      "id": "401810534",
+      "kind": "PDF",
+      "date": "2026-01-28",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:32.158203+00:00"
+    },
+    "NBA:401810535:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260129/20260129_SACPHI_book.pdf",
+      "league": "NBA",
+      "id": "401810535",
+      "kind": "PDF",
+      "date": "2026-01-29",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:33.213600+00:00"
+    },
+    "NBA:401810536:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260129/20260129_MILWAS_book.pdf",
+      "league": "NBA",
+      "id": "401810536",
+      "kind": "PDF",
+      "date": "2026-01-29",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:33.806741+00:00"
+    },
+    "NBA:401810537:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260129/20260129_HOUATL_book.pdf",
+      "league": "NBA",
+      "id": "401810537",
+      "kind": "PDF",
+      "date": "2026-01-29",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:34.830110+00:00"
+    },
+    "NBA:401810538:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260129/20260129_CHADAL_book.pdf",
+      "league": "NBA",
+      "id": "401810538",
+      "kind": "PDF",
+      "date": "2026-01-29",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:36.913176+00:00"
+    },
+    "NBA:401810539:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260129/20260129_BKNDEN_book.pdf",
+      "league": "NBA",
+      "id": "401810539",
+      "kind": "PDF",
+      "date": "2026-01-29",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:36.554718+00:00"
+    },
+    "NBA:401810540:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260129/20260129_DETPHX_book.pdf",
+      "league": "NBA",
+      "id": "401810540",
+      "kind": "PDF",
+      "date": "2026-01-29",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:37.875063+00:00"
+    },
+    "NBA:401810541:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260129/20260129_OKCMIN_book.pdf",
+      "league": "NBA",
+      "id": "401810541",
+      "kind": "PDF",
+      "date": "2026-01-29",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:38.436677+00:00"
+    },
+    "NBA:401810542:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260130/20260130_TORORL_book.pdf",
+      "league": "NBA",
+      "id": "401810542",
+      "kind": "PDF",
+      "date": "2026-01-30",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:39.640190+00:00"
+    },
+    "NBA:401810543:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260130/20260130_LALWAS_book.pdf",
+      "league": "NBA",
+      "id": "401810543",
+      "kind": "PDF",
+      "date": "2026-01-30",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:41.361388+00:00"
+    },
+    "NBA:401810544:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260130/20260130_SACBOS_book.pdf",
+      "league": "NBA",
+      "id": "401810544",
+      "kind": "PDF",
+      "date": "2026-01-30",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:42.081077+00:00"
+    },
+    "NBA:401810545:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260130/20260130_PORNYK_book.pdf",
+      "league": "NBA",
+      "id": "401810545",
+      "kind": "PDF",
+      "date": "2026-01-30",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:43.641813+00:00"
+    },
+    "NBA:401810546:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260130/20260130_MEMNOP_book.pdf",
+      "league": "NBA",
+      "id": "401810546",
+      "kind": "PDF",
+      "date": "2026-01-30",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:43.943902+00:00"
+    },
+    "NBA:401810547:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260131/20260131_CHIMIA_book.pdf",
+      "league": "NBA",
+      "id": "401810547",
+      "kind": "PDF",
+      "date": "2026-01-31",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:48.582746+00:00"
+    },
+    "NBA:401810548:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260130/20260130_CLEPHX_book.pdf",
+      "league": "NBA",
+      "id": "401810548",
+      "kind": "PDF",
+      "date": "2026-01-30",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:45.890929+00:00"
+    },
+    "NBA:401810549:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260130/20260130_BKNUTA_book.pdf",
+      "league": "NBA",
+      "id": "401810549",
+      "kind": "PDF",
+      "date": "2026-01-30",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:45.951891+00:00"
+    },
+    "NBA:401810550:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260130/20260130_LACDEN_book.pdf",
+      "league": "NBA",
+      "id": "401810550",
+      "kind": "PDF",
+      "date": "2026-01-30",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:47.538112+00:00"
+    },
+    "NBA:401810551:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260130/20260130_DETGSW_book.pdf",
+      "league": "NBA",
+      "id": "401810551",
+      "kind": "PDF",
+      "date": "2026-01-30",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:47.835098+00:00"
+    },
+    "NBA:401810552:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260131/20260131_SASCHA_book.pdf",
+      "league": "NBA",
+      "id": "401810552",
+      "kind": "PDF",
+      "date": "2026-01-31",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:49.482476+00:00"
+    },
+    "NBA:401810553:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260131/20260131_ATLIND_book.pdf",
+      "league": "NBA",
+      "id": "401810553",
+      "kind": "PDF",
+      "date": "2026-01-31",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:50.654642+00:00"
+    },
+    "NBA:401810554:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260131/20260131_NOPPHI_book.pdf",
+      "league": "NBA",
+      "id": "401810554",
+      "kind": "PDF",
+      "date": "2026-01-31",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:51.323830+00:00"
+    },
+    "NBA:401810555:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260131/20260131_MINMEM_book.pdf",
+      "league": "NBA",
+      "id": "401810555",
+      "kind": "PDF",
+      "date": "2026-01-31",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:52.507398+00:00"
+    },
+    "NBA:401810556:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260131/20260131_DALHOU_book.pdf",
+      "league": "NBA",
+      "id": "401810556",
+      "kind": "PDF",
+      "date": "2026-01-31",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:53.132333+00:00"
+    },
+    "NBA:401810557:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260201/20260201_MILBOS_book.pdf",
+      "league": "NBA",
+      "id": "401810557",
+      "kind": "PDF",
+      "date": "2026-02-01",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:53.952629+00:00"
+    },
+    "NBA:401810558:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260201/20260201_ORLSAS_book.pdf",
+      "league": "NBA",
+      "id": "401810558",
+      "kind": "PDF",
+      "date": "2026-02-01",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:55.058215+00:00"
+    },
+    "NBA:401810559:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260201/20260201_BKNDET_book.pdf",
+      "league": "NBA",
+      "id": "401810559",
+      "kind": "PDF",
+      "date": "2026-02-01",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:56.689444+00:00"
+    },
+    "NBA:401810560:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260201/20260201_CHIMIA_book.pdf",
+      "league": "NBA",
+      "id": "401810560",
+      "kind": "PDF",
+      "date": "2026-02-01",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:57.287005+00:00"
+    },
+    "NBA:401810561:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260201/20260201_UTATOR_book.pdf",
+      "league": "NBA",
+      "id": "401810561",
+      "kind": "PDF",
+      "date": "2026-02-01",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:57.504513+00:00"
+    },
+    "NBA:401810562:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260201/20260201_SACWAS_book.pdf",
+      "league": "NBA",
+      "id": "401810562",
+      "kind": "PDF",
+      "date": "2026-02-01",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:58.530252+00:00"
+    },
+    "NBA:401810563:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260201/20260201_LALNYK_book.pdf",
+      "league": "NBA",
+      "id": "401810563",
+      "kind": "PDF",
+      "date": "2026-02-01",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:59.637322+00:00"
+    },
+    "NBA:401810564:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260201/20260201_LACPHX_book.pdf",
+      "league": "NBA",
+      "id": "401810564",
+      "kind": "PDF",
+      "date": "2026-02-01",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:00.485829+00:00"
+    },
+    "NBA:401810565:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260201/20260201_CLEPOR_book.pdf",
+      "league": "NBA",
+      "id": "401810565",
+      "kind": "PDF",
+      "date": "2026-02-01",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:02.117194+00:00"
+    },
+    "NBA:401810566:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260201/20260201_OKCDEN_book.pdf",
+      "league": "NBA",
+      "id": "401810566",
+      "kind": "PDF",
+      "date": "2026-02-01",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:01.943780+00:00"
+    },
+    "NBA:401810567:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260202/20260202_NOPCHA_book.pdf",
+      "league": "NBA",
+      "id": "401810567",
+      "kind": "PDF",
+      "date": "2026-02-02",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:02.889590+00:00"
+    },
+    "NBA:401810568:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260202/20260202_HOUIND_book.pdf",
+      "league": "NBA",
+      "id": "401810568",
+      "kind": "PDF",
+      "date": "2026-02-02",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:04.178880+00:00"
+    },
+    "NBA:401810569:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260202/20260202_MINMEM_book.pdf",
+      "league": "NBA",
+      "id": "401810569",
+      "kind": "PDF",
+      "date": "2026-02-02",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:05.293836+00:00"
+    },
+    "NBA:401810570:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260202/20260202_PHILAC_book.pdf",
+      "league": "NBA",
+      "id": "401810570",
+      "kind": "PDF",
+      "date": "2026-02-02",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:05.723683+00:00"
+    },
+    "NBA:401810571:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260203/20260203_DENDET_book.pdf",
+      "league": "NBA",
+      "id": "401810571",
+      "kind": "PDF",
+      "date": "2026-02-03",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:07.863727+00:00"
+    },
+    "NBA:401810572:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260203/20260203_UTAIND_book.pdf",
+      "league": "NBA",
+      "id": "401810572",
+      "kind": "PDF",
+      "date": "2026-02-03",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:07.856752+00:00"
+    },
+    "NBA:401810573:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260203/20260203_NYKWAS_book.pdf",
+      "league": "NBA",
+      "id": "401810573",
+      "kind": "PDF",
+      "date": "2026-02-03",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:08.760555+00:00"
+    },
+    "NBA:401810574:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260203/20260203_LALBKN_book.pdf",
+      "league": "NBA",
+      "id": "401810574",
+      "kind": "PDF",
+      "date": "2026-02-03",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:09.362211+00:00"
+    },
+    "NBA:401810575:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260203/20260203_ATLMIA_book.pdf",
+      "league": "NBA",
+      "id": "401810575",
+      "kind": "PDF",
+      "date": "2026-02-03",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:10.296886+00:00"
+    },
+    "NBA:401810576:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260203/20260203_BOSDAL_book.pdf",
+      "league": "NBA",
+      "id": "401810576",
+      "kind": "PDF",
+      "date": "2026-02-03",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:10.836849+00:00"
+    },
+    "NBA:401810577:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260203/20260203_CHIMIL_book.pdf",
+      "league": "NBA",
+      "id": "401810577",
+      "kind": "PDF",
+      "date": "2026-02-03",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:12.283543+00:00"
+    },
+    "NBA:401810578:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260203/20260203_ORLOKC_book.pdf",
+      "league": "NBA",
+      "id": "401810578",
+      "kind": "PDF",
+      "date": "2026-02-03",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:13.056755+00:00"
+    },
+    "NBA:401810579:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260203/20260203_PHIGSW_book.pdf",
+      "league": "NBA",
+      "id": "401810579",
+      "kind": "PDF",
+      "date": "2026-02-03",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:14.394926+00:00"
+    },
+    "NBA:401810580:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260203/20260203_PHXPOR_book.pdf",
+      "league": "NBA",
+      "id": "401810580",
+      "kind": "PDF",
+      "date": "2026-02-03",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:14.600262+00:00"
+    },
+    "NBA:401810581:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260204/20260204_DENNYK_book.pdf",
+      "league": "NBA",
+      "id": "401810581",
+      "kind": "PDF",
+      "date": "2026-02-04",
+      "status": "verified_match",
+      "detail": "24 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:15.816444+00:00"
+    },
+    "NBA:401810582:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260204/20260204_MINTOR_book.pdf",
+      "league": "NBA",
+      "id": "401810582",
+      "kind": "PDF",
+      "date": "2026-02-04",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:16.382423+00:00"
+    },
+    "NBA:401810583:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260204/20260204_BOSHOU_book.pdf",
+      "league": "NBA",
+      "id": "401810583",
+      "kind": "PDF",
+      "date": "2026-02-04",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:17.631646+00:00"
+    },
+    "NBA:401810584:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260204/20260204_NOPMIL_book.pdf",
+      "league": "NBA",
+      "id": "401810584",
+      "kind": "PDF",
+      "date": "2026-02-04",
+      "status": "verified_match",
+      "detail": "21 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:17.976623+00:00"
+    },
+    "NBA:401810585:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260204/20260204_OKCSAS_book.pdf",
+      "league": "NBA",
+      "id": "401810585",
+      "kind": "PDF",
+      "date": "2026-02-04",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:19.064981+00:00"
+    },
+    "NBA:401810586:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260204/20260204_MEMSAC_book.pdf",
+      "league": "NBA",
+      "id": "401810586",
+      "kind": "PDF",
+      "date": "2026-02-04",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:19.865641+00:00"
+    },
+    "NBA:401810587:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260204/20260204_CLELAC_book.pdf",
+      "league": "NBA",
+      "id": "401810587",
+      "kind": "PDF",
+      "date": "2026-02-04",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:21.181193+00:00"
+    },
+    "NBA:401810588:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260205/20260205_WASDET_book.pdf",
+      "league": "NBA",
+      "id": "401810588",
+      "kind": "PDF",
+      "date": "2026-02-05",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:21.717656+00:00"
+    },
+    "NBA:401850920:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260129/20260129_MIACHI_book.pdf",
+      "league": "NBA",
+      "id": "401850920",
+      "kind": "PDF",
+      "date": "2026-01-29",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:40.038118+00:00"
+    },
     "NBA:401857824:PDF": {
       "url": "https://statsdmz.nba.com/pdfs/20260125/20260125_GSWMIN_book.pdf",
       "league": "NBA",
@@ -4571,6 +6031,16 @@
       "detail": "17 pages; team names and date matched text",
       "checked_at": "2026-11-23T08:00:15.849720+00:00"
     },
+    "NFL:chargers-at-ravens-2026-reg-10:PDF": {
+      "url": "https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf",
+      "league": "NFL",
+      "id": "chargers-at-ravens-2026-reg-10",
+      "kind": "PDF",
+      "date": "2026-11-16",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:21.329969+00:00"
+    },
     "NFL:chargers-at-seahawks-2026-reg-4:PDF": {
       "url": "https://static.www.nfl.com/image/upload/v1791201124/gamecenter/aa6b4255-4feb-11f1-abca-2c54536568a9.pdf",
       "league": "NFL",
@@ -4700,6 +6170,16 @@
       "status": "verified_match",
       "detail": "19 pages; team names and date matched text",
       "checked_at": "2026-11-23T07:59:10.563265+00:00"
+    },
+    "NFL:colts-at-texans-2026-reg-11:PDF": {
+      "url": "https://static.www.nfl.com/image/upload/v1795147937/gamecenter/ab997d97-4feb-11f1-abca-2c54536568a9.pdf",
+      "league": "NFL",
+      "id": "colts-at-texans-2026-reg-11",
+      "kind": "PDF",
+      "date": "2026-11-19",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:22.770743+00:00"
     },
     "NFL:colts-at-vikings-2026-reg-7:PDF": {
       "url": "https://static.www.nfl.com/image/upload/v1793014728/gamecenter/aad5a2ac-4feb-11f1-abca-2c54536568a9.pdf",
@@ -5451,6 +6931,16 @@
       "detail": "17 pages; team names and date matched text",
       "checked_at": "2026-11-23T07:58:41.380083+00:00"
     },
+    "NFL:patriots-at-lions-2026-reg-10:PDF": {
+      "url": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf",
+      "league": "NFL",
+      "id": "patriots-at-lions-2026-reg-10",
+      "kind": "PDF",
+      "date": "2026-11-15",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:13.722730+00:00"
+    },
     "NFL:patriots-at-seahawks-2026-reg-1:PDF": {
       "url": "https://static.www.nfl.com/image/upload/v1789038923/gamecenter/a8fb0d78-4feb-11f1-abca-2c54536568a9.pdf",
       "league": "NFL",
@@ -5530,6 +7020,16 @@
       "status": "verified_match",
       "detail": "19 pages; team names and date matched text",
       "checked_at": "2026-11-23T07:58:43.075356+00:00"
+    },
+    "NFL:rams-at-cardinals-2026-reg-10:PDF": {
+      "url": "https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf",
+      "league": "NFL",
+      "id": "rams-at-cardinals-2026-reg-10",
+      "kind": "PDF",
+      "date": "2026-11-15",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:13.855664+00:00"
     },
     "NFL:rams-at-chargers-2026-pre-3:PDF": {
       "url": "https://static.www.nfl.com/image/upload/v1787915209/gamecenter/c74e2ea2-5f68-11f1-b1d0-bb70a4640075.pdf",
@@ -5731,6 +7231,16 @@
       "detail": "20 pages; team names and date matched text",
       "checked_at": "2026-11-23T07:58:44.976038+00:00"
     },
+    "NFL:seahawks-at-raiders-2026-reg-10:PDF": {
+      "url": "https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf",
+      "league": "NFL",
+      "id": "seahawks-at-raiders-2026-reg-10",
+      "kind": "PDF",
+      "date": "2026-11-15",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:16.485773+00:00"
+    },
     "NFL:seahawks-at-titans-2026-pre-2:PDF": {
       "url": "https://static.www.nfl.com/image/upload/v1787571857/gamecenter/c74e206e-5f68-11f1-b1d0-bb70a4640075.pdf",
       "league": "NFL",
@@ -5740,6 +7250,16 @@
       "status": "verified_match",
       "detail": "21 pages; team names and date matched text",
       "checked_at": "2026-11-23T07:55:34.270204+00:00"
+    },
+    "NFL:steelers-at-bengals-2026-reg-10:PDF": {
+      "url": "https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf",
+      "league": "NFL",
+      "id": "steelers-at-bengals-2026-reg-10",
+      "kind": "PDF",
+      "date": "2026-11-15",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:17.772812+00:00"
     },
     "NFL:steelers-at-bills-2026-pre-3:PDF": {
       "url": "https://static.www.nfl.com/image/upload/v1787915208/gamecenter/c74e245a-5f68-11f1-b1d0-bb70a4640075.pdf",
@@ -5790,6 +7310,16 @@
       "status": "verified_match",
       "detail": "15 pages; team names and date matched text",
       "checked_at": "2026-11-23T08:00:08.976164+00:00"
+    },
+    "NFL:texans-at-browns-2026-reg-10:PDF": {
+      "url": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf",
+      "league": "NFL",
+      "id": "texans-at-browns-2026-reg-10",
+      "kind": "PDF",
+      "date": "2026-11-15",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:18.404051+00:00"
     },
     "NFL:texans-at-chargers-2026-reg-9:PDF": {
       "url": "https://static.www.nfl.com/image/upload/v1794257318/gamecenter/ab580cb7-4feb-11f1-abca-2c54536568a9.pdf",
@@ -5940,6 +7470,16 @@
       "status": "verified_match",
       "detail": "18 pages; team names and date matched text",
       "checked_at": "2026-11-23T08:00:27.489676+00:00"
+    },
+    "NFL:vikings-at-packers-2026-reg-10:PDF": {
+      "url": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf",
+      "league": "NFL",
+      "id": "vikings-at-packers-2026-reg-10",
+      "kind": "PDF",
+      "date": "2026-11-15",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:20.532072+00:00"
     },
     "NFL:vikings-at-saints-2026-reg-5:PDF": {
       "url": "https://static.www.nfl.com/image/upload/v1791805919/gamecenter/aa6b65b1-4feb-11f1-abca-2c54536568a9.pdf",
@@ -7871,6 +9411,736 @@
       "detail": "Official GS HTML contains expected report heading",
       "checked_at": "2026-11-23T08:00:56.658094+00:00"
     },
+    "NHL:2025020728:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020728.HTM",
+      "league": "NHL",
+      "id": "2025020728",
+      "kind": "ES",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:13.303314+00:00"
+    },
+    "NHL:2025020728:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020728.HTM",
+      "league": "NHL",
+      "id": "2025020728",
+      "kind": "GS",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:14.427960+00:00"
+    },
+    "NHL:2025020729:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020729.HTM",
+      "league": "NHL",
+      "id": "2025020729",
+      "kind": "ES",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:15.579124+00:00"
+    },
+    "NHL:2025020729:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020729.HTM",
+      "league": "NHL",
+      "id": "2025020729",
+      "kind": "GS",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:16.907802+00:00"
+    },
+    "NHL:2025020730:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020730.HTM",
+      "league": "NHL",
+      "id": "2025020730",
+      "kind": "ES",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:18.494202+00:00"
+    },
+    "NHL:2025020730:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020730.HTM",
+      "league": "NHL",
+      "id": "2025020730",
+      "kind": "GS",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:19.725413+00:00"
+    },
+    "NHL:2025020731:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020731.HTM",
+      "league": "NHL",
+      "id": "2025020731",
+      "kind": "ES",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:20.951802+00:00"
+    },
+    "NHL:2025020731:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020731.HTM",
+      "league": "NHL",
+      "id": "2025020731",
+      "kind": "GS",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:22.048466+00:00"
+    },
+    "NHL:2025020732:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020732.HTM",
+      "league": "NHL",
+      "id": "2025020732",
+      "kind": "ES",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:23.454311+00:00"
+    },
+    "NHL:2025020732:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020732.HTM",
+      "league": "NHL",
+      "id": "2025020732",
+      "kind": "GS",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:24.919755+00:00"
+    },
+    "NHL:2025020733:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020733.HTM",
+      "league": "NHL",
+      "id": "2025020733",
+      "kind": "ES",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:25.224489+00:00"
+    },
+    "NHL:2025020733:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020733.HTM",
+      "league": "NHL",
+      "id": "2025020733",
+      "kind": "GS",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:25.780071+00:00"
+    },
+    "NHL:2025020734:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020734.HTM",
+      "league": "NHL",
+      "id": "2025020734",
+      "kind": "ES",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:26.899238+00:00"
+    },
+    "NHL:2025020734:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020734.HTM",
+      "league": "NHL",
+      "id": "2025020734",
+      "kind": "GS",
+      "date": "2026-01-13",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:27.213859+00:00"
+    },
+    "NHL:2025020735:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020735.HTM",
+      "league": "NHL",
+      "id": "2025020735",
+      "kind": "ES",
+      "date": "2026-01-14",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:28.875638+00:00"
+    },
+    "NHL:2025020735:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020735.HTM",
+      "league": "NHL",
+      "id": "2025020735",
+      "kind": "GS",
+      "date": "2026-01-14",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:29.766287+00:00"
+    },
+    "NHL:2025020736:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020736.HTM",
+      "league": "NHL",
+      "id": "2025020736",
+      "kind": "ES",
+      "date": "2026-01-14",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:30.844442+00:00"
+    },
+    "NHL:2025020736:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020736.HTM",
+      "league": "NHL",
+      "id": "2025020736",
+      "kind": "GS",
+      "date": "2026-01-14",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:31.485844+00:00"
+    },
+    "NHL:2025020737:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020737.HTM",
+      "league": "NHL",
+      "id": "2025020737",
+      "kind": "ES",
+      "date": "2026-01-14",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:32.555518+00:00"
+    },
+    "NHL:2025020737:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020737.HTM",
+      "league": "NHL",
+      "id": "2025020737",
+      "kind": "GS",
+      "date": "2026-01-14",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:33.253661+00:00"
+    },
+    "NHL:2025020738:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020738.HTM",
+      "league": "NHL",
+      "id": "2025020738",
+      "kind": "ES",
+      "date": "2026-01-14",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:34.611927+00:00"
+    },
+    "NHL:2025020738:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020738.HTM",
+      "league": "NHL",
+      "id": "2025020738",
+      "kind": "GS",
+      "date": "2026-01-14",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:35.052320+00:00"
+    },
+    "NHL:2025020739:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020739.HTM",
+      "league": "NHL",
+      "id": "2025020739",
+      "kind": "ES",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:35.782737+00:00"
+    },
+    "NHL:2025020739:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020739.HTM",
+      "league": "NHL",
+      "id": "2025020739",
+      "kind": "GS",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:36.852640+00:00"
+    },
+    "NHL:2025020740:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020740.HTM",
+      "league": "NHL",
+      "id": "2025020740",
+      "kind": "ES",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:38.471680+00:00"
+    },
+    "NHL:2025020740:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020740.HTM",
+      "league": "NHL",
+      "id": "2025020740",
+      "kind": "GS",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:38.891190+00:00"
+    },
+    "NHL:2025020741:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020741.HTM",
+      "league": "NHL",
+      "id": "2025020741",
+      "kind": "ES",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:39.009691+00:00"
+    },
+    "NHL:2025020741:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020741.HTM",
+      "league": "NHL",
+      "id": "2025020741",
+      "kind": "GS",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:40.500670+00:00"
+    },
+    "NHL:2025020742:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020742.HTM",
+      "league": "NHL",
+      "id": "2025020742",
+      "kind": "ES",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:41.890726+00:00"
+    },
+    "NHL:2025020742:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020742.HTM",
+      "league": "NHL",
+      "id": "2025020742",
+      "kind": "GS",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:42.411857+00:00"
+    },
+    "NHL:2025020743:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020743.HTM",
+      "league": "NHL",
+      "id": "2025020743",
+      "kind": "ES",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:44.062276+00:00"
+    },
+    "NHL:2025020743:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020743.HTM",
+      "league": "NHL",
+      "id": "2025020743",
+      "kind": "GS",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:44.407058+00:00"
+    },
+    "NHL:2025020744:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020744.HTM",
+      "league": "NHL",
+      "id": "2025020744",
+      "kind": "ES",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:45.421629+00:00"
+    },
+    "NHL:2025020744:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020744.HTM",
+      "league": "NHL",
+      "id": "2025020744",
+      "kind": "GS",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:46.265254+00:00"
+    },
+    "NHL:2025020745:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020745.HTM",
+      "league": "NHL",
+      "id": "2025020745",
+      "kind": "ES",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:47.851928+00:00"
+    },
+    "NHL:2025020745:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020745.HTM",
+      "league": "NHL",
+      "id": "2025020745",
+      "kind": "GS",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:48.172789+00:00"
+    },
+    "NHL:2025020746:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020746.HTM",
+      "league": "NHL",
+      "id": "2025020746",
+      "kind": "ES",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:49.195460+00:00"
+    },
+    "NHL:2025020746:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020746.HTM",
+      "league": "NHL",
+      "id": "2025020746",
+      "kind": "GS",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:50.114874+00:00"
+    },
+    "NHL:2025020747:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020747.HTM",
+      "league": "NHL",
+      "id": "2025020747",
+      "kind": "ES",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:51.026115+00:00"
+    },
+    "NHL:2025020747:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020747.HTM",
+      "league": "NHL",
+      "id": "2025020747",
+      "kind": "GS",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:51.588490+00:00"
+    },
+    "NHL:2025020748:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020748.HTM",
+      "league": "NHL",
+      "id": "2025020748",
+      "kind": "ES",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:52.950674+00:00"
+    },
+    "NHL:2025020748:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020748.HTM",
+      "league": "NHL",
+      "id": "2025020748",
+      "kind": "GS",
+      "date": "2026-01-15",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:53.423291+00:00"
+    },
+    "NHL:2025020749:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020749.HTM",
+      "league": "NHL",
+      "id": "2025020749",
+      "kind": "ES",
+      "date": "2026-01-16",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:54.461282+00:00"
+    },
+    "NHL:2025020749:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020749.HTM",
+      "league": "NHL",
+      "id": "2025020749",
+      "kind": "GS",
+      "date": "2026-01-16",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:55.150085+00:00"
+    },
+    "NHL:2025020750:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020750.HTM",
+      "league": "NHL",
+      "id": "2025020750",
+      "kind": "ES",
+      "date": "2026-01-16",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:55.602383+00:00"
+    },
+    "NHL:2025020750:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020750.HTM",
+      "league": "NHL",
+      "id": "2025020750",
+      "kind": "GS",
+      "date": "2026-01-16",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:57.031999+00:00"
+    },
+    "NHL:2025020751:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020751.HTM",
+      "league": "NHL",
+      "id": "2025020751",
+      "kind": "ES",
+      "date": "2026-01-16",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:57.928878+00:00"
+    },
+    "NHL:2025020751:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020751.HTM",
+      "league": "NHL",
+      "id": "2025020751",
+      "kind": "GS",
+      "date": "2026-01-16",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:01:59.019280+00:00"
+    },
+    "NHL:2025020752:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020752.HTM",
+      "league": "NHL",
+      "id": "2025020752",
+      "kind": "ES",
+      "date": "2026-01-16",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:00.128509+00:00"
+    },
+    "NHL:2025020752:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020752.HTM",
+      "league": "NHL",
+      "id": "2025020752",
+      "kind": "GS",
+      "date": "2026-01-16",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:00.740461+00:00"
+    },
+    "NHL:2025020753:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020753.HTM",
+      "league": "NHL",
+      "id": "2025020753",
+      "kind": "ES",
+      "date": "2026-01-16",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:01.352718+00:00"
+    },
+    "NHL:2025020753:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020753.HTM",
+      "league": "NHL",
+      "id": "2025020753",
+      "kind": "GS",
+      "date": "2026-01-16",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:02.497958+00:00"
+    },
+    "NHL:2025020754:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020754.HTM",
+      "league": "NHL",
+      "id": "2025020754",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:03.483378+00:00"
+    },
+    "NHL:2025020754:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020754.HTM",
+      "league": "NHL",
+      "id": "2025020754",
+      "kind": "GS",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:04.227903+00:00"
+    },
+    "NHL:2025020755:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020755.HTM",
+      "league": "NHL",
+      "id": "2025020755",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:05.841670+00:00"
+    },
+    "NHL:2025020755:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020755.HTM",
+      "league": "NHL",
+      "id": "2025020755",
+      "kind": "GS",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:05.942603+00:00"
+    },
+    "NHL:2025020756:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020756.HTM",
+      "league": "NHL",
+      "id": "2025020756",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:06.327725+00:00"
+    },
+    "NHL:2025020756:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020756.HTM",
+      "league": "NHL",
+      "id": "2025020756",
+      "kind": "GS",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:08.106972+00:00"
+    },
+    "NHL:2025020757:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020757.HTM",
+      "league": "NHL",
+      "id": "2025020757",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:09.073480+00:00"
+    },
+    "NHL:2025020757:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020757.HTM",
+      "league": "NHL",
+      "id": "2025020757",
+      "kind": "GS",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:09.608831+00:00"
+    },
+    "NHL:2025020758:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020758.HTM",
+      "league": "NHL",
+      "id": "2025020758",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:10.653242+00:00"
+    },
+    "NHL:2025020758:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020758.HTM",
+      "league": "NHL",
+      "id": "2025020758",
+      "kind": "GS",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:11.435898+00:00"
+    },
+    "NHL:2025020759:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020759.HTM",
+      "league": "NHL",
+      "id": "2025020759",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:12.446475+00:00"
+    },
+    "NHL:2025020759:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020759.HTM",
+      "league": "NHL",
+      "id": "2025020759",
+      "kind": "GS",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:13.334443+00:00"
+    },
+    "NHL:2025020760:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020760.HTM",
+      "league": "NHL",
+      "id": "2025020760",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:14.232111+00:00"
+    },
+    "NHL:2025020760:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020760.HTM",
+      "league": "NHL",
+      "id": "2025020760",
+      "kind": "GS",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:14.953761+00:00"
+    },
+    "NHL:2025020761:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020761.HTM",
+      "league": "NHL",
+      "id": "2025020761",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:16.484958+00:00"
+    },
+    "NHL:2025020761:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020761.HTM",
+      "league": "NHL",
+      "id": "2025020761",
+      "kind": "GS",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:16.730781+00:00"
+    },
+    "NHL:2025020762:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020762.HTM",
+      "league": "NHL",
+      "id": "2025020762",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:18.246012+00:00"
+    },
+    "NHL:2025020762:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020762.HTM",
+      "league": "NHL",
+      "id": "2025020762",
+      "kind": "GS",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:18.594656+00:00"
+    },
+    "NHL:2025020763:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020763.HTM",
+      "league": "NHL",
+      "id": "2025020763",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:19.699535+00:00"
+    },
+    "NHL:2025020763:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/GS020763.HTM",
+      "league": "NHL",
+      "id": "2025020763",
+      "kind": "GS",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:20.408483+00:00"
+    },
+    "NHL:2025020764:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20252026/ES020764.HTM",
+      "league": "NHL",
+      "id": "2025020764",
+      "kind": "ES",
+      "date": "2026-01-17",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-23T08:02:21.608651+00:00"
+    },
     "WNBA:401856890:PDF": {
       "url": "https://statsdmz.nba.com/pdfs/20260508/20260508_CONNYL_book.pdf",
       "league": "WNBA",
@@ -9631,6 +11901,726 @@
       "detail": "16 pages; team names and date matched text",
       "checked_at": "2026-11-23T08:00:57.651775+00:00"
     },
+    "WNBA:401857066:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260714/20260714_PDXCON_book.pdf",
+      "league": "WNBA",
+      "id": "401857066",
+      "kind": "PDF",
+      "date": "2026-07-14",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:15.038276+00:00"
+    },
+    "WNBA:401857067:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260714/20260714_WASTOR_book.pdf",
+      "league": "WNBA",
+      "id": "401857067",
+      "kind": "PDF",
+      "date": "2026-07-14",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:15.459612+00:00"
+    },
+    "WNBA:401857068:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260715/20260715_SEACHI_book.pdf",
+      "league": "WNBA",
+      "id": "401857068",
+      "kind": "PDF",
+      "date": "2026-07-15",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:16.619271+00:00"
+    },
+    "WNBA:401857069:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260715/20260715_LASMIN_book.pdf",
+      "league": "WNBA",
+      "id": "401857069",
+      "kind": "PDF",
+      "date": "2026-07-15",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:18.187925+00:00"
+    },
+    "WNBA:401857070:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260715/20260715_GSVIND_book.pdf",
+      "league": "WNBA",
+      "id": "401857070",
+      "kind": "PDF",
+      "date": "2026-07-15",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:19.285916+00:00"
+    },
+    "WNBA:401857071:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260716/20260716_PDXWAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857071",
+      "kind": "PDF",
+      "date": "2026-07-16",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:20.499737+00:00"
+    },
+    "WNBA:401857073:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260717/20260717_SEAIND_book.pdf",
+      "league": "WNBA",
+      "id": "401857073",
+      "kind": "PDF",
+      "date": "2026-07-17",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:21.615603+00:00"
+    },
+    "WNBA:401857074:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260717/20260717_ATLTOR_book.pdf",
+      "league": "WNBA",
+      "id": "401857074",
+      "kind": "PDF",
+      "date": "2026-07-17",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:23.102317+00:00"
+    },
+    "WNBA:401857075:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260717/20260717_LASCHI_book.pdf",
+      "league": "WNBA",
+      "id": "401857075",
+      "kind": "PDF",
+      "date": "2026-07-17",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:24.713513+00:00"
+    },
+    "WNBA:401857076:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260717/20260717_CONPHX_book.pdf",
+      "league": "WNBA",
+      "id": "401857076",
+      "kind": "PDF",
+      "date": "2026-07-17",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:24.958829+00:00"
+    },
+    "WNBA:401857077:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260718/20260718_NYLIND_book.pdf",
+      "league": "WNBA",
+      "id": "401857077",
+      "kind": "PDF",
+      "date": "2026-07-18",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:26.665659+00:00"
+    },
+    "WNBA:401857078:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260718/20260718_PDXMIN_book.pdf",
+      "league": "WNBA",
+      "id": "401857078",
+      "kind": "PDF",
+      "date": "2026-07-18",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:26.728103+00:00"
+    },
+    "WNBA:401857079:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260718/20260718_WASGSV_book.pdf",
+      "league": "WNBA",
+      "id": "401857079",
+      "kind": "PDF",
+      "date": "2026-07-18",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:28.140193+00:00"
+    },
+    "WNBA:401857080:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260719/20260719_LASDAL_book.pdf",
+      "league": "WNBA",
+      "id": "401857080",
+      "kind": "PDF",
+      "date": "2026-07-19",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:28.502380+00:00"
+    },
+    "WNBA:401857081:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260719/20260719_CHIATL_book.pdf",
+      "league": "WNBA",
+      "id": "401857081",
+      "kind": "PDF",
+      "date": "2026-07-19",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:29.781240+00:00"
+    },
+    "WNBA:401857082:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260719/20260719_CONPHX_book.pdf",
+      "league": "WNBA",
+      "id": "401857082",
+      "kind": "PDF",
+      "date": "2026-07-19",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:30.416659+00:00"
+    },
+    "WNBA:401857083:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260720/20260720_LVATOR_book.pdf",
+      "league": "WNBA",
+      "id": "401857083",
+      "kind": "PDF",
+      "date": "2026-07-20",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:31.306485+00:00"
+    },
+    "WNBA:401857084:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260720/20260720_WASGSV_book.pdf",
+      "league": "WNBA",
+      "id": "401857084",
+      "kind": "PDF",
+      "date": "2026-07-20",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:32.238798+00:00"
+    },
+    "WNBA:401857085:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260720/20260720_MINSEA_book.pdf",
+      "league": "WNBA",
+      "id": "401857085",
+      "kind": "PDF",
+      "date": "2026-07-20",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:32.920487+00:00"
+    },
+    "WNBA:401857086:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260722/20260722_PHXLAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857086",
+      "kind": "PDF",
+      "date": "2026-07-22",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:34.800333+00:00"
+    },
+    "WNBA:401857087:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260722/20260722_MINSEA_book.pdf",
+      "league": "WNBA",
+      "id": "401857087",
+      "kind": "PDF",
+      "date": "2026-07-22",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:35.912828+00:00"
+    },
+    "WNBA:401857088:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260722/20260722_CHINYL_book.pdf",
+      "league": "WNBA",
+      "id": "401857088",
+      "kind": "PDF",
+      "date": "2026-07-22",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:36.468487+00:00"
+    },
+    "WNBA:401857089:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260722/20260722_LVAWAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857089",
+      "kind": "PDF",
+      "date": "2026-07-22",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:38.055100+00:00"
+    },
+    "WNBA:401857090:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260722/20260722_CONIND_book.pdf",
+      "league": "WNBA",
+      "id": "401857090",
+      "kind": "PDF",
+      "date": "2026-07-22",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:38.468497+00:00"
+    },
+    "WNBA:401857091:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260722/20260722_DALPDX_book.pdf",
+      "league": "WNBA",
+      "id": "401857091",
+      "kind": "PDF",
+      "date": "2026-07-22",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:40.415296+00:00"
+    },
+    "WNBA:401857092:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260728/20260728_CONWAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857092",
+      "kind": "PDF",
+      "date": "2026-07-28",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:40.778125+00:00"
+    },
+    "WNBA:401857093:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260728/20260728_TORMIN_book.pdf",
+      "league": "WNBA",
+      "id": "401857093",
+      "kind": "PDF",
+      "date": "2026-07-28",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:41.606547+00:00"
+    },
+    "WNBA:401857094:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260728/20260728_INDSEA_book.pdf",
+      "league": "WNBA",
+      "id": "401857094",
+      "kind": "PDF",
+      "date": "2026-07-28",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:42.220795+00:00"
+    },
+    "WNBA:401857095:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260728/20260728_PDXLVA_book.pdf",
+      "league": "WNBA",
+      "id": "401857095",
+      "kind": "PDF",
+      "date": "2026-07-28",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:43.529241+00:00"
+    },
+    "WNBA:401857096:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260728/20260728_NYLLAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857096",
+      "kind": "PDF",
+      "date": "2026-07-28",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:44.059991+00:00"
+    },
+    "WNBA:401857097:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260729/20260729_ATLDAL_book.pdf",
+      "league": "WNBA",
+      "id": "401857097",
+      "kind": "PDF",
+      "date": "2026-07-29",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:45.937227+00:00"
+    },
+    "WNBA:401857098:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260729/20260729_GSVPHX_book.pdf",
+      "league": "WNBA",
+      "id": "401857098",
+      "kind": "PDF",
+      "date": "2026-07-29",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:45.902985+00:00"
+    },
+    "WNBA:401857099:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260730/20260730_MINTOR_book.pdf",
+      "league": "WNBA",
+      "id": "401857099",
+      "kind": "PDF",
+      "date": "2026-07-30",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:47.544666+00:00"
+    },
+    "WNBA:401857100:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260730/20260730_CONCHI_book.pdf",
+      "league": "WNBA",
+      "id": "401857100",
+      "kind": "PDF",
+      "date": "2026-07-30",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:47.850272+00:00"
+    },
+    "WNBA:401857101:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260730/20260730_NYLLVA_book.pdf",
+      "league": "WNBA",
+      "id": "401857101",
+      "kind": "PDF",
+      "date": "2026-07-30",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:48.923035+00:00"
+    },
+    "WNBA:401857102:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260731/20260731_SEAATL_book.pdf",
+      "league": "WNBA",
+      "id": "401857102",
+      "kind": "PDF",
+      "date": "2026-07-31",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:49.653971+00:00"
+    },
+    "WNBA:401857103:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260731/20260731_DALWAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857103",
+      "kind": "PDF",
+      "date": "2026-07-31",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:50.799000+00:00"
+    },
+    "WNBA:401857104:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260731/20260731_INDPDX_book.pdf",
+      "league": "WNBA",
+      "id": "401857104",
+      "kind": "PDF",
+      "date": "2026-07-31",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:51.481888+00:00"
+    },
+    "WNBA:401857105:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260801/20260801_LVACHI_book.pdf",
+      "league": "WNBA",
+      "id": "401857105",
+      "kind": "PDF",
+      "date": "2026-08-01",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:52.910874+00:00"
+    },
+    "WNBA:401857106:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260801/20260801_NYLPHX_book.pdf",
+      "league": "WNBA",
+      "id": "401857106",
+      "kind": "PDF",
+      "date": "2026-08-01",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:53.203587+00:00"
+    },
+    "WNBA:401857107:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260802/20260802_INDMIN_book.pdf",
+      "league": "WNBA",
+      "id": "401857107",
+      "kind": "PDF",
+      "date": "2026-08-02",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:54.699971+00:00"
+    },
+    "WNBA:401857108:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260802/20260802_LASPDX_book.pdf",
+      "league": "WNBA",
+      "id": "401857108",
+      "kind": "PDF",
+      "date": "2026-08-02",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:55.068018+00:00"
+    },
+    "WNBA:401857109:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260802/20260802_CONDAL_book.pdf",
+      "league": "WNBA",
+      "id": "401857109",
+      "kind": "PDF",
+      "date": "2026-08-02",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:56.447610+00:00"
+    },
+    "WNBA:401857110:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260802/20260802_TORGSV_book.pdf",
+      "league": "WNBA",
+      "id": "401857110",
+      "kind": "PDF",
+      "date": "2026-08-02",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:56.938848+00:00"
+    },
+    "WNBA:401857111:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260803/20260803_LVAATL_book.pdf",
+      "league": "WNBA",
+      "id": "401857111",
+      "kind": "PDF",
+      "date": "2026-08-03",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:58.694005+00:00"
+    },
+    "WNBA:401857112:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260803/20260803_SEANYL_book.pdf",
+      "league": "WNBA",
+      "id": "401857112",
+      "kind": "PDF",
+      "date": "2026-08-03",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:58.786325+00:00"
+    },
+    "WNBA:401857113:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260803/20260803_PHXCHI_book.pdf",
+      "league": "WNBA",
+      "id": "401857113",
+      "kind": "PDF",
+      "date": "2026-08-03",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:00.189773+00:00"
+    },
+    "WNBA:401857114:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260804/20260804_TORGSV_book.pdf",
+      "league": "WNBA",
+      "id": "401857114",
+      "kind": "PDF",
+      "date": "2026-08-04",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:00.510244+00:00"
+    },
+    "WNBA:401857115:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260805/20260805_PHXATL_book.pdf",
+      "league": "WNBA",
+      "id": "401857115",
+      "kind": "PDF",
+      "date": "2026-08-05",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:02.183727+00:00"
+    },
+    "WNBA:401857116:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260805/20260805_SEANYL_book.pdf",
+      "league": "WNBA",
+      "id": "401857116",
+      "kind": "PDF",
+      "date": "2026-08-05",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:02.475003+00:00"
+    },
+    "WNBA:401857117:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260805/20260805_DALWAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857117",
+      "kind": "PDF",
+      "date": "2026-08-05",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:03.978249+00:00"
+    },
+    "WNBA:401857118:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260805/20260805_LASCHI_book.pdf",
+      "league": "WNBA",
+      "id": "401857118",
+      "kind": "PDF",
+      "date": "2026-08-05",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:03.895870+00:00"
+    },
+    "WNBA:401857119:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260806/20260806_LVAIND_book.pdf",
+      "league": "WNBA",
+      "id": "401857119",
+      "kind": "PDF",
+      "date": "2026-08-06",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:05.517127+00:00"
+    },
+    "WNBA:401857120:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260806/20260806_LASMIN_book.pdf",
+      "league": "WNBA",
+      "id": "401857120",
+      "kind": "PDF",
+      "date": "2026-08-06",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:05.874115+00:00"
+    },
+    "WNBA:401857121:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260806/20260806_TORPDX_book.pdf",
+      "league": "WNBA",
+      "id": "401857121",
+      "kind": "PDF",
+      "date": "2026-08-06",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:07.406890+00:00"
+    },
+    "WNBA:401857122:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260807/20260807_PHXCON_book.pdf",
+      "league": "WNBA",
+      "id": "401857122",
+      "kind": "PDF",
+      "date": "2026-08-07",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:06.982276+00:00"
+    },
+    "WNBA:401857123:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260807/20260807_ATLWAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857123",
+      "kind": "PDF",
+      "date": "2026-08-07",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:08.810048+00:00"
+    },
+    "WNBA:401857124:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260807/20260807_GSVDAL_book.pdf",
+      "league": "WNBA",
+      "id": "401857124",
+      "kind": "PDF",
+      "date": "2026-08-07",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:09.601682+00:00"
+    },
+    "WNBA:401857125:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260808/20260808_LVAMIN_book.pdf",
+      "league": "WNBA",
+      "id": "401857125",
+      "kind": "PDF",
+      "date": "2026-08-08",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:10.497478+00:00"
+    },
+    "WNBA:401857126:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260808/20260808_INDCHI_book.pdf",
+      "league": "WNBA",
+      "id": "401857126",
+      "kind": "PDF",
+      "date": "2026-08-08",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:11.422522+00:00"
+    },
+    "WNBA:401857127:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260808/20260808_SEAPDX_book.pdf",
+      "league": "WNBA",
+      "id": "401857127",
+      "kind": "PDF",
+      "date": "2026-08-08",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:12.058190+00:00"
+    },
+    "WNBA:401857128:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260809/20260809_LVANYL_book.pdf",
+      "league": "WNBA",
+      "id": "401857128",
+      "kind": "PDF",
+      "date": "2026-08-09",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:13.048854+00:00"
+    },
+    "WNBA:401857129:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260809/20260809_PHXWAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857129",
+      "kind": "PDF",
+      "date": "2026-08-09",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:13.839465+00:00"
+    },
+    "WNBA:401857130:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260809/20260809_DALMIN_book.pdf",
+      "league": "WNBA",
+      "id": "401857130",
+      "kind": "PDF",
+      "date": "2026-08-09",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:14.904644+00:00"
+    },
+    "WNBA:401857131:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260809/20260809_GSVLAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857131",
+      "kind": "PDF",
+      "date": "2026-08-09",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:16.331279+00:00"
+    },
+    "WNBA:401857132:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260810/20260810_TORATL_book.pdf",
+      "league": "WNBA",
+      "id": "401857132",
+      "kind": "PDF",
+      "date": "2026-08-10",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:16.482842+00:00"
+    },
+    "WNBA:401857133:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260810/20260810_CHISEA_book.pdf",
+      "league": "WNBA",
+      "id": "401857133",
+      "kind": "PDF",
+      "date": "2026-08-10",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:18.000367+00:00"
+    },
+    "WNBA:401857134:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260811/20260811_NYLIND_book.pdf",
+      "league": "WNBA",
+      "id": "401857134",
+      "kind": "PDF",
+      "date": "2026-08-11",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:18.288450+00:00"
+    },
+    "WNBA:401857135:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260811/20260811_WASLVA_book.pdf",
+      "league": "WNBA",
+      "id": "401857135",
+      "kind": "PDF",
+      "date": "2026-08-11",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:19.641834+00:00"
+    },
+    "WNBA:401857136:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260811/20260811_PHXLAS_book.pdf",
+      "league": "WNBA",
+      "id": "401857136",
+      "kind": "PDF",
+      "date": "2026-08-11",
+      "status": "verified_match",
+      "detail": "18 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:20.030675+00:00"
+    },
+    "WNBA:401857137:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260812/20260812_TORDAL_book.pdf",
+      "league": "WNBA",
+      "id": "401857137",
+      "kind": "PDF",
+      "date": "2026-08-12",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:21.136794+00:00"
+    },
+    "WNBA:401857138:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260812/20260812_CHIGSV_book.pdf",
+      "league": "WNBA",
+      "id": "401857138",
+      "kind": "PDF",
+      "date": "2026-08-12",
+      "status": "verified_match",
+      "detail": "16 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:02:21.843070+00:00"
+    },
     "WNBA:401857321:PDF": {
       "url": "https://statsdmz.nba.com/pdfs/20260630/20260630_LVANYL_book.pdf",
       "league": "WNBA",
@@ -9790,6 +12780,16 @@
       "status": "verified_match",
       "detail": "16 pages; team names and date matched text",
       "checked_at": "2026-11-23T07:52:39.266803+00:00"
+    },
+    "WNBA:401892393:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20260720/20260720_NYLDAL_book.pdf",
+      "league": "WNBA",
+      "id": "401892393",
+      "kind": "PDF",
+      "date": "2026-07-20",
+      "status": "verified_match",
+      "detail": "21 pages; team names and date matched text",
+      "checked_at": "2026-11-23T08:01:34.492937+00:00"
     }
   }
 }
