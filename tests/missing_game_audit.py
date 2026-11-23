@@ -2,7 +2,7 @@
 """Read-only independent schedule completeness audit for all five dashboards.
 
 Fetches published current feeds and independent official/ESPN schedule APIs.
-Never modifies published data. Findings are warnings, not proof of missing games.
+Never modifies published data. Findings are potential discrepancies that require review.\nAny discrepancy or unavailable source fails the audit instead of showing a green check.
 """
 import json
 import sys
@@ -34,7 +34,7 @@ def independent_games(league, day):
         # The dashboard stores MLB StatsAPI gamePk identifiers, not ESPN IDs.
         # Match the gameTypes filter used by the production MLB monitor.
         from urllib.parse import urlencode
-        query = urlencode({"sportId": 1, "date": day, "gameTypes": "S,R,F,D,L,W"})
+        query = urlencode({"sportId": 1, "date": day, "gameTypes": "S,R,F,D,L,W,A,E"})
         data = fetch_json("https://statsapi.mlb.com/api/v1/schedule?" + query)
         dates = data.get("dates")
         if not isinstance(dates, list):
@@ -117,7 +117,7 @@ def main():
     if warnings:
         for warning in warnings:
             print("AUDIT WARNING: " + warning)
-        print(f"Audit finished with {len(warnings)} warnings. Manual review required; no data changed.")
+        print(f"Audit finished with {len(warnings)} findings. Manual review required; no data changed.")\n        sys.exit(1)
     else:
         print("Audit finished without detected discrepancies. NFL remains count-only; offseason leagues were not checked.")
 
