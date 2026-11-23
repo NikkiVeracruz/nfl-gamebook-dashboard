@@ -10,6 +10,7 @@ from nfl_2026_coverage import (
     archive_identity, get_expected, verify_coverage,
 )
 from archive import ArchiveIntegrityError
+import monitor
 
 
 NOW = datetime(2026, 11, 23, 4, 0, tzinfo=timezone.utc)
@@ -106,6 +107,41 @@ class Nfl2026CoverageTests(unittest.TestCase):
             FakeSession(response), date(2026, 11, 23), NOW
         )
         self.assertEqual(found, set())
+
+
+    def test_discover_preseason_week_two_and_hall_of_fame(self):
+        from unittest.mock import patch
+
+        def schedule(_session, url):
+            if url.endswith("/by-week/preseason-week-2"):
+                return ('<a href="/games/seahawks-at-titans-2026-pre-2">'
+                        'Seahawks 16, Titans 19, Sunday, August 23</a>'
+                        '<a href="/games/packers-at-lions-2026-reg-12">'
+                        'Sunday, August 23</a>')
+            if url.endswith("/by-week/hall-of-fame-game"):
+                return ('<a href="/games/panthers-at-cardinals-2026-pre-0">'
+                        'Panthers 33, Cardinals 30, Thursday, August 6</a>')
+            return ""
+
+        with patch.object(monitor, "get", side_effect=schedule):
+            found = monitor.discover(None, 2026, "2026-08-01", "2026-08-29")
+        self.assertEqual(found["seahawks-at-titans-2026-pre-2"]["date"],
+                         "2026-08-23")
+        self.assertEqual(found["panthers-at-cardinals-2026-pre-0"]["date"],
+                         "2026-08-06")
+        self.assertNotIn("packers-at-lions-2026-reg-12", found)
+
+    def test_preseason_schedule_pages_skipped_in_november(self):
+        from unittest.mock import patch
+        observed = []
+
+        def schedule(_session, url):
+            observed.append(url)
+            return ""
+
+        with patch.object(monitor, "get", side_effect=schedule):
+            monitor.discover(None, 2026, "2026-11-01", "2026-11-29")
+        self.assertFalse(any("/by-week/preseason-week-" in x for x in observed))
 
 
 if __name__ == "__main__":
