@@ -251,8 +251,6 @@ def compare(league, observed, expected, through):
         game_day = game["date"]
         if not (START[league].isoformat() <= game_day <= through.isoformat()):
             continue
-        if league == "NHL" and game.get("competition") == NHL_INTERNATIONAL:
-            continue  # Preserve international games; do not count them as NHL fixtures.
         key = nfl_archive_key(game) if league == "NFL" else str(game["id"])
         if key in actual:
             duplicates.append(str(key))
@@ -260,6 +258,7 @@ def compare(league, observed, expected, through):
 
     missing = []
     mismatched_dates = []
+    rescheduled_for_review = []
     expected_keys = set()
     for day, ids in sorted(expected.items()):
         for key in ids:
@@ -267,7 +266,14 @@ def compare(league, observed, expected, through):
             if key not in actual:
                 missing.append((day, str(key)))
             elif actual[key] != day:
-                mismatched_dates.append((day, str(key), actual[key]))
+                different_date = (day, str(key), actual[key])
+                if league == "MLB":
+                    # Postponed/suspended games legitimately retain official gamePk
+                    # while moving to their actual play date. Flag for review,
+                    # not as an absent game or destructive archive correction.
+                    rescheduled_for_review.append(different_date)
+                else:
+                    mismatched_dates.append(different_date)
 
     # Unmatched archive records might be valid special events or source omissions:
     # report them for review rather than erasing records or declaring them fabricated.
@@ -277,6 +283,7 @@ def compare(league, observed, expected, through):
         "stored_2026_games": len(actual),
         "missing": sorted(missing),
         "date_mismatches": sorted(mismatched_dates),
+        "rescheduled_dates_for_review": sorted(rescheduled_for_review),
         "duplicate_ids": sorted(duplicates),
         "extra_for_review": sorted(unmatched),
     }
@@ -309,6 +316,7 @@ def run(now=None, leagues=None, workers=8):
                    for key, value in report.items()},
                 "missing_samples": report["missing"][:15],
                 "date_mismatch_samples": report["date_mismatches"][:15],
+                "rescheduled_samples": report["rescheduled_dates_for_review"][:15],
                 "duplicate_samples": report["duplicate_ids"][:15],
             }, sort_keys=True), flush=True)
             if report["missing"] or report["duplicate_ids"] or report["date_mismatches"]:
