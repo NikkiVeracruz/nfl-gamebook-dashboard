@@ -29,6 +29,21 @@ class GameIDAuditTests(unittest.TestCase):
         with patch.object(audit, "independent_games", return_value={"1"}):
             self.assertTrue(any("lack an ID" in f for f in audit.audit("WNBA", data)))
 
+    def test_mlb_uses_official_statsapi_ids(self):
+        official = {"dates": [{"games": [{"gamePk": 780001}, {"gamePk": 780002}]}]}
+        with patch.object(audit, "fetch_json", return_value=official) as fetch:
+            ids = audit.independent_games("MLB", "2026-06-17")
+        self.assertEqual(ids, {"780001", "780002"})
+        url = fetch.call_args.args[0]
+        self.assertIn("statsapi.mlb.com/api/v1/schedule", url)
+        self.assertIn("date=2026-06-17", url)
+        self.assertIn("gameTypes=S%2CR%2CF%2CD%2CL%2CW", url)
+
+    def test_mlb_missing_dates_response_is_inconclusive(self):
+        with patch.object(audit, "fetch_json", return_value={}):
+            with self.assertRaises(ValueError):
+                audit.independent_games("MLB", "2026-06-17")
+
     def test_nfl_is_count_only(self):
         self.assertEqual(self.check("NFL", ["nfl-slug"], ["espn-id"]), [])
 
