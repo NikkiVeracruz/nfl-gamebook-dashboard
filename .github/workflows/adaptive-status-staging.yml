@@ -1,0 +1,33 @@
+name: Multi-league adaptive monitoring status UI rehearsal (staging)
+on:
+  push:
+    branches: [staging-megaboard-adaptive-status-2026-11-23]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v5
+      - name: Validate Mega Board JavaScript and all expected league status feeds
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          html=Path("command-center/index.html").read_text()
+          blocks=re.findall(r"<script[^>]*>([\s\S]*?)</script>",html)
+          Path("/tmp/adaptive-megaboard.js").write_text(max(blocks,key=len))
+          for path in ("nba-poll-status.json","nba-calendar.json",
+                       "wnba/poll-status.json","wnba/calendar.json",
+                       "league-calendar.json","poll-status.json",
+                       "monitor-state.json","nfl-calendar.json"):
+              assert path in html, path
+          assert "WAITING FOR REPORTS" in html
+          assert "PAUSED" in html
+          print("All five league monitoring states are represented")
+          PY
+          node --check /tmp/adaptive-megaboard.js
+      - name: Confirm no historical or current game data changed
+        run: git diff --exit-code -- archive.json gamebooks.json archive-progress.json monitor-state.json
