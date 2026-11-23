@@ -32,8 +32,11 @@ jobs:
           python-version: "3.12"
       - name: Synchronize latest main before reading accumulated verification evidence
         run: |
-          git fetch origin main
-          git merge --ff-only origin/main
+          # This job starts with no local changes; reset its shallow checkout
+          # to the newest canonical main so queued runs cannot overwrite or
+          # repeat older verification evidence.
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
       - name: Install PDF reader and HTTP client
         run: python -m pip install "requests>=2.32,<3" "pypdf>=5,<7"
       - name: Test complete-document parsing, identity and archive safety rules
