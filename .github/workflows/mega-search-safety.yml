@@ -1,0 +1,41 @@
+name: Mega Board five-league search safety checks
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - command-center/search.js
+      - command-center/index.html
+      - tests/test_mega_search.cjs
+      - .github/workflows/mega-search-safety.yml
+permissions:
+  contents: read
+concurrency:
+  group: mega-board-search-safety
+  cancel-in-progress: false
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate and test city, abbreviation and dropdown search logic
+        run: |
+          node --check command-center/search.js
+          node --test tests/test_mega_search.cjs
+      - name: Verify Mega Board is wired to tested search helper
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html = Path("command-center/index.html").read_text()
+          assert 'src="./search.js"' in html, "Search helper must load before dashboard"
+          assert "MegaSearch.getTeams" in html, "Team dropdown must use canonical directory"
+          assert "MegaSearch.matchesQuery" in html, "Both current and archive must use tested search"
+          assert "MegaSearch.matchesSelectedTeam" in html, "Dropdown selection must use team identities"
+          assert "ARCHIVE_TEAMS=" not in html, "Legacy partial archive directory must be retired"
+          assert "NCAA" not in html
+          print("PASS: Mega Board current + archive search integrated; NCAA still excluded")
+          PY
