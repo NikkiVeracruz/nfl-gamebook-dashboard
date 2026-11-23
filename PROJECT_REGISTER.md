@@ -16,7 +16,7 @@ One fast, accurate place for customer service agents to find game/team/player re
 
 ## Status overview
 
-**48 tracked items:** 28 implemented · 4 paused · 3 removed · 8 proposed · 1 deferred · 1 not started · 3 open
+**49 tracked items:** 29 implemented · 4 paused · 3 removed · 8 proposed · 1 deferred · 1 not started · 3 open
 
 | State | Meaning |
 |---|---|
@@ -279,6 +279,16 @@ All five leagues' current 2026 franchise lists are available in both the active-
 *Notes:* Approved and implemented alongside IDEA-002 on 2026-11-23. Selecting an offseason team may legitimately show no current games or archive records; the option stays available. Latest CI: https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/actions/runs/45266196881 .
 
 *Implementation evidence:* [command-center/search.js](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/search.js), [command-center/index.html](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/index.html), [tests/test_mega_search.cjs](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/tests/test_mega_search.cjs)
+
+### GOV-003 — Branch-first development, pre-merge tests and production verification
+
+**Decision:** accepted · **Status:** implemented · **Area:** governance
+
+For every future Mega Board code/configuration change, develop on a task-specific branch, run tests before opening the pull request where possible, obtain a green read-only pre-merge safety check in every affected repository, review the PR, merge to main only after validation, then verify production deployment and existing monitoring. Do not weaken report discovery, tests, or GitHub error notifications.
+
+*Notes:* Explicit user approval November 23, 2026. CI workflows are read-only pull_request checks. Branch protection/rulesets cannot be assumed enabled; this is a mandatory documented working practice, not yet repository-enforced merge blocking. Staging checks complement, not replace, post-merge monitoring.
+
+*Implementation evidence:* [DEVELOPMENT_WORKFLOW.md](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/DEVELOPMENT_WORKFLOW.md), [.github/workflows/pre-merge-safety.yml](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/.github/workflows/pre-merge-safety.yml), [.github/workflows/pre-merge-safety.yml](https://github.com/NikkiVeracruz/nba-gamebook-dashboard/blob/main/.github/workflows/pre-merge-safety.yml), [.github/workflows/pre-merge-safety.yml](https://github.com/NikkiVeracruz/nhl-gamebook-dashboard/blob/main/.github/workflows/pre-merge-safety.yml), [.github/workflows/pre-merge-safety.yml](https://github.com/NikkiVeracruz/mlb-gamebook-dashboard/blob/main/.github/workflows/pre-merge-safety.yml)
 
 
 ## Explicitly declined, removed, or superseded
