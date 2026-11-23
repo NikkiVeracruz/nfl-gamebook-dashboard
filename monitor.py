@@ -276,6 +276,11 @@ def main():
     # The current Thursday-to-Thursday feed must stay current-week only.
     # Missing gamebooks from earlier weeks are recovered directly into the archive.
     recover_older_missing_pdfs(session, start)
+    # Export a lightweight activity flag for the public freshness display.
+    from nfl_calendar import missing_pdf_games
+    state["pending_overdue_pdf"] = bool(missing_pdf_games(
+        json.loads(Path("archive.json").read_text()), datetime.now(ET).date()
+    ))
     # Prevent state from growing indefinitely.
     state["notified"]={slug:ts for slug,ts in state["notified"].items() if slug in games}
     record_heartbeat(state)
