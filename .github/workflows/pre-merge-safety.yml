@@ -32,7 +32,8 @@ jobs:
       - name: Search and page integration regression tests
         run: |
           node --check command-center/search.js
-          node --test tests/test_mega_search.cjs
+          node --check command-center/report-status.js
+          node --test tests/test_mega_search.cjs tests/test_report_status.cjs
           python - <<'PY'
           from pathlib import Path
           html=Path("command-center/index.html").read_text()
