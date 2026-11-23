@@ -1,0 +1,62 @@
+name: NFL backup update watchdog
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Observe only (do not dispatch an update)"
+        required: true
+        default: true
+        type: boolean
+  schedule:
+    # Five minutes after each primary 15-minute update slot.
+    - cron: "14,29,44,59 * * * *"
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: nfl-backup-watchdog
+  cancel-in-progress: false
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Check most recently published NFL feed
+        id: freshness
+        run: python tests/nfl_update_watchdog.py
+      - name: Guard against concurrent or repeated NFL updates
+        id: guard
+        if: steps.freshness.outputs.trigger == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          runs="$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/update.yml/runs?per_page=30")"
+          printf '%s' "$runs" | jq -e '.workflow_runs | type == "array"' >/dev/null || { echo "Unable to verify existing update runs; refusing duplicate dispatch." >&2; exit 1; }
+          cutoff="$(date -u -d '45 minutes ago' +%Y-%m-%dT%H:%M:%SZ)"
+          if printf '%s' "$runs" | jq -e --arg cutoff "$cutoff" '
+            [.workflow_runs[]
+             | select(
+                 (.status == "queued" or .status == "in_progress" or .status == "waiting" or .status == "pending" or .status == "requested")
+                 or (.event == "workflow_dispatch" and .created_at >= $cutoff)
+               )] | length > 0
+          ' >/dev/null; then
+            echo "Existing active or recently dispatched update; skipping backup."
+            echo "allow=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "No active/recent update found; backup may run."
+            echo "allow=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Request one backup NFL update
+        if: steps.freshness.outputs.trigger == 'true' && steps.guard.outputs.allow == 'true' && (github.event_name == 'schedule' || inputs.dry_run == false)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run update.yml --ref main
+          echo "Requested existing NFL update workflow; normal concurrency protections remain in effect."
+      - name: Report dry-run outcome
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run == true
+        run: echo "Manual watchdog run is observation-only; no NFL update dispatched."
