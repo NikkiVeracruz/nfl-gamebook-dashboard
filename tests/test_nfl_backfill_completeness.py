@@ -91,10 +91,12 @@ class NflBackfillCompletenessTests(unittest.TestCase):
             prior_archive = archive.read_bytes()
             prior_progress = progress.read_bytes()
             espn = FakeSession({"events": [event("2025-11-02")]})
-            with patch.object(backfill, "ARCHIVE", archive), \\
-                 patch.object(backfill, "PROGRESS", progress), \\
-                 patch.object(backfill.requests, "Session", return_value=espn), \\
-                 patch.object(backfill, "discover", return_value={}):
+            with (
+                patch.object(backfill, "ARCHIVE", archive),
+                patch.object(backfill, "PROGRESS", progress),
+                patch.object(backfill.requests, "Session", return_value=espn),
+                patch.object(backfill, "discover", return_value={}),
+            ):
                 with self.assertRaisesRegex(ArchiveIntegrityError, "incomplete"):
                     backfill.main()
             self.assertEqual(archive.read_bytes(), prior_archive)
