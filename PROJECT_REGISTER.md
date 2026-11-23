@@ -16,7 +16,7 @@ One fast, accurate place for customer service agents to find game/team/player re
 
 ## Status overview
 
-**49 tracked items:** 29 implemented · 4 paused · 3 removed · 8 proposed · 1 deferred · 1 not started · 3 open
+**49 tracked items:** 30 implemented · 4 paused · 3 removed · 7 proposed · 1 deferred · 1 not started · 3 open
 
 | State | Meaning |
 |---|---|
@@ -242,6 +242,16 @@ Search across all five leagues by full team name, franchise nickname, city/marke
 
 *Implementation evidence:* [command-center/search.js](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/search.js), [command-center/index.html](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/index.html), [tests/test_mega_search.cjs](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/tests/test_mega_search.cjs), [.github/workflows/mega-search-safety.yml](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/.github/workflows/mega-search-safety.yml)
 
+### IDEA-008 — Clearer official report availability indicators
+
+**Decision:** accepted · **Status:** implemented · **Area:** suggestion
+
+Keep existing game cards and Scheduled/Live/Final status separate from document availability. Show Awaiting reports (or Awaiting official gamebook), Partially available with required-document checklist and counts, Verification pending for unconfirmed links, and All required reports verified only when league-source checks justify it. Show complete/partial/awaiting totals, report-status filters, and preserve the time-since-final display, monitoring schedule, current feeds and complete-only forward archive rules.
+
+*Notes:* User explicitly approved implementation of the previous-chat proposal on 2026-11-23. Implemented in the Mega Board presentation only: separate game and report status; per-document NHL GS/ES and MLB box/play-by-play rows; verified/partial/pending/awaiting states; summary counters and filters; existing final-first-detected-in-browser clock retained. Non-MLB links are emitted only after validation by the individual verified-source monitors and must match official URL format; MLB requires link_verification=verified_api. These labels reflect source checks, not live revalidation of remote availability. No new polling, report fetching, historical backfill or archive policy changes.
+
+*Implementation evidence:* [command-center/report-status.js](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/report-status.js), [command-center/index.html](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/command-center/index.html), [tests/test_report_status.cjs](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/tests/test_report_status.cjs), [.github/workflows/pre-merge-safety.yml](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/.github/workflows/pre-merge-safety.yml)
+
 ### IDEA-010 — More independent, standardized end-to-end tests
 
 **Decision:** accepted · **Status:** implemented · **Area:** suggestion
@@ -410,14 +420,6 @@ Filter or jump directly to PDF, NHL GS/ES, MLB box score or play-by-play by repo
 Permit exploring more than the latest 200 matching archived games when historical archiving is reactivated.
 
 *Notes:* Reduced priority in forward-only mode; current 200 cap is accepted.
-
-### IDEA-008 — Clearer report-vs-score wording
-
-**Decision:** not decided · **Status:** proposed · **Area:** suggestion
-
-Further distinguish a live score or end-of-game indication from a complete official report.
-
-*Notes:* Existing status cards already distinguish report availability; future improvement is optional.
 
 ### IDEA-009 — Temporary pending-reports retry queue
 
