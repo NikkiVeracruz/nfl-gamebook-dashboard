@@ -56,7 +56,7 @@ def validate_discovery(session, start, end, discovered, get_expected=independent
                 continue
             # Never credit a game from a different season, or a malformed
             # record, toward the count for this Sunday.
-            if not fullmatch(r".+-at-.+-20\\d{2}-(?:reg|pre|post)-\\d+", slug):
+            if not fullmatch(r".+-at-.+-20\d{2}-(?:reg|pre|post)-\d+", slug):
                 continue
             if int(slug.rsplit("-", 3)[1]) != sunday.year:
                 # January-February postseason belongs to prior NFL season.
