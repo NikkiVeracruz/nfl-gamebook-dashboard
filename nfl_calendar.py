@@ -45,7 +45,7 @@ def missing_pdf_games(archive, today):
 
 def fetch_game_days(session, today, horizon=HORIZON):
     days = set()
-    for offset in range(horizon + 1):
+    for offset in range(-1, horizon + 1):
         day = today + timedelta(days=offset)
         resp = session.get(
             API, params={"dates": day.strftime("%Y%m%d"), "limit": 100},
@@ -76,7 +76,7 @@ def include_saved_dates(days, today, archive, feed):
             value = game.get("date", "")
             if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
                 day = date.fromisoformat(value)
-                if today <= day <= cutoff:
+                if today - timedelta(days=1) <= day <= cutoff:
                     days.add(day)
     return days
 
