@@ -35,11 +35,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           runs="$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/update.yml/runs?per_page=30")"
+          printf '%s' "$runs" | jq -e '.workflow_runs | type == "array"' >/dev/null || { echo "Unable to verify existing update runs; refusing duplicate dispatch." >&2; exit 1; }
           cutoff="$(date -u -d '45 minutes ago' +%Y-%m-%dT%H:%M:%SZ)"
           if printf '%s' "$runs" | jq -e --arg cutoff "$cutoff" '
             [.workflow_runs[]
              | select(
-                 (.status == "queued" or .status == "in_progress" or .status == "waiting" or .status == "pending")
+                 (.status == "queued" or .status == "in_progress" or .status == "waiting" or .status == "pending" or .status == "requested")
                  or (.event == "workflow_dispatch" and .created_at >= $cutoff)
                )] | length > 0
           ' >/dev/null; then
