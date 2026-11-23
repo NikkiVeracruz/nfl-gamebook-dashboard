@@ -51,8 +51,11 @@ class ProjectRegisterTests(unittest.TestCase):
         # Separate NCAA link-only research was newly authorized; no NCAA
         # production board is installed and the previous removal still stands.
         self.assertEqual(by_id["NCAA-POC-001"]["decision"], "accepted")
-        self.assertEqual(by_id["NCAA-POC-001"]["state"], "not_started")
-        self.assertEqual(by_id["NCAA-POC-001"]["evidence"], [])
+        self.assertEqual(by_id["NCAA-POC-001"]["state"], "implemented")
+        paths = {(row["repo"], row["path"]) for row in by_id["NCAA-POC-001"]["evidence"]}
+        self.assertIn(("NikkiVeracruz/ncaa-stats-link-dashboard", "ncaa_poc.py"), paths)
+        self.assertIn(("NikkiVeracruz/ncaa-stats-link-dashboard", "tests/test_poc.py"), paths)
+        self.assertIn("NOT an operational NCAA dashboard", by_id["NCAA-POC-001"]["summary"])
         self.assertEqual(by_id["DEC-001"]["state"], "removed")
 
     def test_renderer_includes_key_user_decisions_and_evidence(self):
