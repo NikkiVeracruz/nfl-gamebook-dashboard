@@ -43,6 +43,7 @@ def parse_date(text,season):
 def discover(session,season,start,end):
     games={}
     start_date=datetime.fromisoformat(start).date()
+    end_date=datetime.fromisoformat(end).date()
     phases=[f"PRE{i}" for i in range(1,4)]+[f"REG{i}" for i in range(1,19)]+[f"POST{i}" for i in range(1,5)]
     # Scan the full season to avoid relying on an assumed NFL week number.
     for phase in phases:
@@ -73,7 +74,10 @@ def discover(session,season,start,end):
     kickoff=datetime(season,9,4).date()
     kickoff+=timedelta(days=(3-kickoff.weekday())%7)
     current_week=max(1,min(18,((start_date-kickoff).days//7)+1))
-    for week in range(max(1,current_week-1),min(18,current_week+2)+1):
+    last_week=max(1,min(18,(((end_date-timedelta(days=1))-kickoff).days//7)+1))
+    # A historical backfill spans up to 28 days, not the single-week live window.
+    # Include both ends of the requested interval, plus adjacent schedule weeks.
+    for week in range(max(1,current_week-1),min(18,last_week+1)+1):
         url=f"{BASE}/schedules/{season}/by-week/week-{week}"
         try:html=get(session,url)
         except requests.RequestException as e:
