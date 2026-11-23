@@ -16,7 +16,7 @@ One fast, accurate place for customer service agents to find game/team/player re
 
 ## Status overview
 
-**46 tracked items:** 25 implemented · 4 paused · 3 removed · 9 proposed · 1 deferred · 1 not started · 3 open
+**47 tracked items:** 26 implemented · 4 paused · 3 removed · 9 proposed · 1 deferred · 1 not started · 3 open
 
 | State | Meaning |
 |---|---|
@@ -249,6 +249,16 @@ Maintain this register with user decisions, suggestions, actual implementation e
 *Notes:* New approvals and rejections require explicit user instruction; the monitor reports drift but does not make product decisions.
 
 *Implementation evidence:* [project/feature_registry.json](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/project/feature_registry.json), [PROJECT_REGISTER.md](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/PROJECT_REGISTER.md)
+
+### GOV-002 — Update project register with every decision and project change
+
+**Decision:** accepted · **Status:** implemented · **Area:** governance
+
+The user explicitly requires the canonical GitHub project registry to be updated as part of every Mega Board decision or project modification performed with the assistant, including approvals, rejections, deferrals, source changes, evidence, and unresolved risks. The readable master register is regenerated from the structured registry, and the update is verified before a change is reported complete.
+
+*Notes:* Decision confirmed 2026-11-23. Monitoring and the scheduled weekly review help detect out-of-chat edits, but cannot ensure instantaneous awareness or authorize changes in the user's name.
+
+*Implementation evidence:* [project/feature_registry.json](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/project/feature_registry.json), [project/render_register.py](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/project/render_register.py), [.github/workflows/project-register.yml](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/.github/workflows/project-register.yml), [project/STATUS.md](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/project/STATUS.md)
 
 
 ## Explicitly declined, removed, or superseded
