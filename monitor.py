@@ -230,8 +230,27 @@ def recover_older_missing_pdfs(session, start):
     return found
 
 
+def protect_current_feed_before_update(feed_path=OUT, archive_path=Path("archive.json")):
+    """Archive EVERY existing current-feed record before rotating or clearing it.
+
+    An unreadable feed/archive or failed archive write raises instead of allowing
+    the new window to erase the only existing copy of a game or verified PDF.
+    """
+    from archive import load_payload, build_archive, atomic_write_json
+
+    previous_feed = load_payload(feed_path, "NFL current feed before rollover")
+    archive = load_payload(archive_path, "NFL historical archive")
+    merged = build_archive(previous_feed, archive)
+    if merged["games"] != archive["games"]:
+        atomic_write_json(archive_path, merged)
+        LOG.info("Protected %d existing NFL game records in historical archive before rollover",
+                 len(previous_feed["games"]))
+    return len(previous_feed["games"])
+
+
 def main():
     logging.basicConfig(level=logging.INFO,format="%(levelname)s %(message)s")
+    protect_current_feed_before_update()
     # Seasonal guard: keep the website live but avoid report scraping in the offseason.
     # Broad calendar boundaries allow preseason and late postseason games; the
     # schedule source itself determines which games actually appear.
