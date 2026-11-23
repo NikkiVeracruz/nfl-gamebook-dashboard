@@ -1,6 +1,12 @@
 name: Independent missing-game audit (read-only)
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - tests/missing_game_audit.py
+      - tests/test_missing_game_audit.py
+      - .github/workflows/missing-game-audit.yml
   schedule:
     - cron: "17 * * * *"
 permissions:
@@ -17,7 +23,9 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Compare published game IDs and counts with league schedules
+      - name: Test exact matchups, missing game IDs and fail-closed behavior
+        run: python -m unittest discover -s tests -p 'test_missing_game_audit.py' -v
+      - name: Compare published current games to independent league schedules
         run: python tests/missing_game_audit.py
       - name: Flag completed NFL games still missing their official gamebook
         if: always()
