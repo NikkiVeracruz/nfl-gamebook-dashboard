@@ -92,12 +92,16 @@ class DocumentVerificationTests(unittest.TestCase):
     @patch("document_level_verification.fetch_json")
     def test_mlb_inspects_actual_stats_structure(self, fetch):
         item = {"league": "MLB", "id": "823543", "kind": "BOX"}
-        fetch.return_value = {"teams": {"home": {}, "away": {}}}
+        fetch.return_value = {"gameData": {"game": {"pk": 823543}},
+                              "liveData": {"boxscore": {"teams": {"home": {}, "away": {}}},
+                                           "plays": {"allPlays": [{"about": {}}]}}}
         status, _ = inspect_mlb(item)
         self.assertEqual(status, "verified_official_stats")
-        fetch.return_value = {"message": "unavailable"}
+        status, _ = inspect_mlb({**item, "kind": "PLAYS"})
+        self.assertEqual(status, "verified_official_stats")
+        fetch.return_value = {"gameData": {"game": {"pk": 823544}}}
         status, _ = inspect_mlb(item)
-        self.assertEqual(status, "invalid_report_content")
+        self.assertEqual(status, "mismatched_game_id")
 
 
 if __name__ == "__main__":
