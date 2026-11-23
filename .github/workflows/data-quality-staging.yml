@@ -1,0 +1,39 @@
+name: Independent 2026 five-league archive coverage staging
+on:
+  push:
+    branches: [staging-data-coverage-2026-11-23]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt pyyaml
+      - name: Validate 2026 schedule-to-archive audit and workflows
+        run: |
+          python -m py_compile tests/season_completeness.py tests/test_season_completeness.py
+          python -m unittest discover -s tests -p 'test_season_completeness.py' -v
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+          for path in Path(".github/workflows").glob("*.yml"):
+              with path.open() as f: assert yaml.safe_load(f)
+          from pathlib import Path
+          source=Path("command-center/index.html").read_text()
+          start=source.index("<script>")+len("<script>")
+          end=source.index("</script>",start)
+          Path("/tmp/coverage-megaboard.js").write_text(source[start:end])
+          PY
+          node --check /tmp/coverage-megaboard.js
+      - name: Read-only recent real-schedule coverage comparison (may find true historical gaps)
+        continue-on-error: true
+        run: |
+          python tests/season_completeness.py --scope recent --output coverage/season-check.json
+      - name: No historical archive or current game files modified
+        run: git diff --exit-code -- archive.json gamebooks.json archive-progress.json
