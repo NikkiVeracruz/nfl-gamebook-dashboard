@@ -99,13 +99,13 @@ class DocumentVerificationTests(unittest.TestCase):
         self.assertFalse(fresh({**fresh_record, "url": "https://different.example"}, item, now))
         self.assertFalse(fresh({**fresh_record, "status": "source_unavailable"}, item, now))
 
-    def test_report_preserves_old_evidence_and_counts_pending(self):
+    def test_report_purges_out_of_scope_legacy_evidence_and_counts_pending(self):
         item = sample()
         older = {"results": {"NFL:old:PDF": {"status": "verified_match", "url": "x"}}}
         report = make_report([item], [], older, {}, datetime(2026, 11, 23, tzinfo=timezone.utc))
         self.assertEqual(report["summary"]["linked"], 1)
         self.assertEqual(report["summary"]["statuses"]["not_yet_checked"], 1)
-        self.assertIn("NFL:old:PDF", report["results"])
+        self.assertNotIn("NFL:old:PDF", report["results"])
 
     @patch("document_level_verification.fetch_json")
     def test_mlb_inspects_actual_stats_structure(self, fetch):
