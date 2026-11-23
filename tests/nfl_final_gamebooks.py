@@ -34,7 +34,7 @@ def fetch_json(url):
 
 
 def scoreboard(day):
-    url = SCOREBOARD + "?" + urlencode({"dates": day, "limit": 100})
+    url = SCOREBOARD + "?" + urlencode({"dates": day.replace("-", ""), "limit": 100})
     events = fetch_json(url).get("events")
     if not isinstance(events, list):
         raise ValueError("ESPN scoreboard lacks an events list")
