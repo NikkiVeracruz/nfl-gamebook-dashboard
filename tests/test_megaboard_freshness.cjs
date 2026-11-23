@@ -11,6 +11,11 @@ assert(start > 0 && end > start, "Pure stale-feed function must be in the Mega B
 assert(html.includes('id="freshnessWarning"'), "Warning must have a visible display target");
 assert(html.includes("setInterval(renderFreshnessWarnings,60000)"), "Warnings must update every minute");
 assert(html.includes("renderFreshnessWarnings()}"), "Warnings must update after feed refresh");
+// Parse the full inline script so additions cannot accidentally break the dashboard.
+const scriptOpen = html.lastIndexOf("<script>");
+const scriptClose = html.indexOf("</script>", scriptOpen);
+assert(scriptOpen >= 0 && scriptClose > scriptOpen, "Mega Board inline script missing");
+new vm.Script(html.slice(scriptOpen + "<script>".length, scriptClose), {filename:"command-center/index.html"});
 const config = [
     {id:"NFL", months:[8,9,10,11,12,1,2]},
     {id:"NBA", months:[10,11,12,1,2,3,4,5,6]},
