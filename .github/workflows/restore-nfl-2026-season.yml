@@ -1,0 +1,57 @@
+name: Restore 2026 NFL season history (manual, one-time)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: update-gamebooks
+  cancel-in-progress: false
+jobs:
+  restore:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install monitor dependencies
+        run: pip install -r requirements.txt
+      - name: Check recovery scripts and offline safety tests
+        run: |
+          python -m py_compile tests/nfl_2026_coverage.py tests/rehearse_nfl_2026_catchup.py tests/validate_nfl_2026_restoration.py
+          python -m unittest discover -s tests -p 'test_nfl_2026_coverage.py' -v
+          python -m unittest discover -s tests -p 'test_nfl_2026_restoration.py' -v
+      - name: Fetch latest production baseline
+        run: git fetch --no-tags --depth=1 origin main
+      - name: Reconstruct 2026 games without touching the original progress cursor
+        run: python tests/rehearse_nfl_2026_catchup.py
+      - name: Reject removal of any previously archived games or report links
+        run: python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
+      - name: Reject any changes to existing archived games and progress cursor
+        run: python tests/validate_nfl_2026_restoration.py FETCH_HEAD
+      - name: Independently confirm full 2026 game and gamebook coverage
+        run: python tests/nfl_2026_coverage.py
+      - name: Publish only the verified archive file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --exit-code -- gamebooks.json monitor-state.json archive-progress.json
+          git add archive.json
+          git diff --cached --quiet && { echo "No new historical records to publish"; exit 1; }
+          git commit -m "Restore previously missing 2026 NFL season gamebooks"
+          for attempt in 1 2 3 4; do
+            if git push; then
+              echo "PASS: published only archive.json and retained original cursor"
+              exit 0
+            fi
+            git pull --rebase -X theirs origin main
+            python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
+            python tests/validate_nfl_2026_restoration.py FETCH_HEAD
+            git diff --exit-code -- gamebooks.json monitor-state.json archive-progress.json
+            sleep 2
+          done
+          echo "Publication refused after four safe retries" >&2
+          exit 1
