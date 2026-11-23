@@ -1,0 +1,81 @@
+name: Restore NFL November 2025 verified gamebooks (manual, one-time)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: update-gamebooks
+  cancel-in-progress: false
+jobs:
+  restore:
+    # On the staging branch, this job is safely skipped. Promote ONLY after
+    # regression tests and the read-only recovery preview have passed.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Verify recovery has not already been published
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          old = json.loads(Path("archive.json").read_text())
+          already = sum("2025-11-02" <= g.get("date", "") < "2025-11-30"
+                        for g in old["games"])
+          if already:
+              raise SystemExit(
+                  f"ABORT: archive already contains {already} games in "
+                  "the selected November 2025 recovery window"
+              )
+          print("Ready: selected 2025 recovery window is not yet published.")
+          PY
+      - name: Set temporary November 2025 cursor in the disposable runner
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("archive-progress.json")
+          current = json.loads(p.read_text())
+          current["next_date"] = "2025-11-02"
+          current["complete"] = False
+          p.write_text(json.dumps(current, indent=2) + "\n")
+          PY
+      - name: Discover and verify November 2025 gamebooks
+        env:
+          ARCHIVE_LEAGUE: nfl
+        run: timeout 510s python backfill.py
+      - name: Restore the untouched historical progress cursor
+        run: git show HEAD:archive-progress.json > archive-progress.json
+      - name: Reject any loss of historical records or report links
+        run: python tests/archive_integrity_gate.py archive.json
+      - name: Require exact reviewed 60-game recovery and unchanged cursor
+        run: python tests/validate_nfl_nov_2025_recovery.py HEAD
+      - name: Publish only the verified archive, not any cursor changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive.json
+          git diff --cached --quiet && { echo "No archive changes to publish"; exit 1; }
+          if [[ -n "$(git status --porcelain archive-progress.json gamebooks.json monitor-state.json)" ]]; then
+            echo "ABORT: unexpected production feed or cursor change" >&2
+            exit 1
+          fi
+          git commit -m "Restore 60 verified November 2025 NFL gamebooks"
+          for attempt in 1 2 3 4; do
+            if git push; then
+              echo "Published only archive.json; historical cursor unchanged."
+              exit 0
+            fi
+            git pull --rebase -X theirs origin main
+            python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
+            python tests/validate_nfl_nov_2025_recovery.py FETCH_HEAD
+            sleep 2
+          done
+          echo "Failed to publish; archive not overwritten." >&2
+          exit 1
