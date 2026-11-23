@@ -21,7 +21,6 @@ ESPN = {
     "NFL": "football/nfl",
     "NBA": "basketball/nba",
     "WNBA": "basketball/wnba",
-    "MLB": "baseball/mlb",
 }
 MAX_DAYS = 7
 
@@ -31,6 +30,18 @@ def fetch_json(url):
         return json.load(response)
 
 def independent_games(league, day):
+    if league == "MLB":
+        # The dashboard stores MLB StatsAPI gamePk identifiers, not ESPN IDs.
+        # Match the gameTypes filter used by the production MLB monitor.
+        from urllib.parse import urlencode
+        query = urlencode({"sportId": 1, "date": day, "gameTypes": "S,R,F,D,L,W"})
+        data = fetch_json("https://statsapi.mlb.com/api/v1/schedule?" + query)
+        dates = data.get("dates")
+        if not isinstance(dates, list):
+            raise ValueError("MLB schedule missing dates list")
+        return {str(game["gamePk"]) for block in dates if isinstance(block, dict)
+                for game in block.get("games", [])
+                if isinstance(game, dict) and isinstance(game.get("gamePk"), int)}
     if league == "NHL":
         data = fetch_json("https://api-web.nhle.com/v1/score/" + day)
         games = data.get("games")
