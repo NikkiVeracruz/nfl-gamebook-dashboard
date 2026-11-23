@@ -141,7 +141,7 @@ def expected_schedule(league,start,end,session=None,workers=12):
     return result
 
 
-def classify_missing_report(league,game,event,today):
+def classify_missing_report(league,game,event,today,verified_mlb_links=None):
     if not event["completed"]:return None
     game_day=date.fromisoformat(event["date"])
     age=(today-game_day).days
@@ -150,7 +150,9 @@ def classify_missing_report(league,game,event,today):
     if league=="NHL" and game.get("gs_url") and game.get("es_url"):return None
     if league=="MLB" and ((game.get("box_url") or game.get("boxscore_url"))
                             and (game.get("plays_url") or game.get("play_url"))):
-        return "link_needs_independent_verification" if game.get("link_verification")!="verified_api" else None
+        verified = (game.get("link_verification")=="verified_api" or
+                    (verified_mlb_links or {}).get(str(game.get("id")))=="verified_api")
+        return None if verified else "link_needs_independent_verification"
     if league=="WNBA" and "JAPAN" in str(game.get("label","")).upper():
         return "exhibition_needs_review"
     if league=="NHL" and str(game.get("id",""))[4:6] in ("01","04"):
@@ -160,7 +162,7 @@ def classify_missing_report(league,game,event,today):
     return "missing_required_report"
 
 
-def audit_one(league,archive,events,today):
+def audit_one(league,archive,events,today,verified_mlb_links=None):
     games=archive.get("games")
     if not isinstance(games,list):raise ValueError(f"{league} archive missing games list")
     seen={}
@@ -181,7 +183,7 @@ def audit_one(league,archive,events,today):
     gaps=[]
     for key,event in expected.items():
         if key not in seen:continue
-        issue=classify_missing_report(league,seen[key],event,today)
+        issue=classify_missing_report(league,seen[key],event,today,verified_mlb_links)
         if issue:gaps.append({"id":str(key),"date":event["date"],
                              "label":seen[key].get("label",""),"classification":issue})
     actual=[g for g in games if str(g.get("date",""))[:4]=="2026"]
@@ -207,6 +209,21 @@ def load_archive(league,session=None):
     return r.json()
 
 
+def read_mlb_link_review(session=None):
+    session=session or requests
+    try:
+        r=session.get(
+            "https://raw.githubusercontent.com/NikkiVeracruz/mlb-gamebook-dashboard/main/link-review.json",
+            timeout=20)
+        r.raise_for_status()
+        data=r.json()
+        if data.get("validator_version")!=2:
+            return {}
+        return data.get("games",{}) if isinstance(data.get("games"),dict) else {}
+    except (requests.RequestException, ValueError, TypeError):
+        return {}
+
+
 def run(scope="recent",session=None,today=None,archive_loader=None,schedule_loader=None):
     today=today or datetime.now(ET).date()
     session=session or requests
@@ -217,7 +234,8 @@ def run(scope="recent",session=None,today=None,archive_loader=None,schedule_load
         archive=archive_loader(league) if archive_loader else load_archive(league,session)
         expected=(schedule_loader(league,start,end) if schedule_loader else
                   expected_schedule(league,start,end,session))
-        row=audit_one(league,archive,expected,today)
+        row=audit_one(league,archive,expected,today,
+                      read_mlb_link_review(session) if league=="MLB" else None)
         row["checked_from"]=start.isoformat()
         row["checked_through"]=end.isoformat()
         result["leagues"][league]=row
