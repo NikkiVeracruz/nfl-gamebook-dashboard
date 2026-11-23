@@ -29,8 +29,15 @@ def inspect_batch(old, proposed):
     verify_change(old, proposed, "November 2025 restoration")
     for key, item in previous.items():
         if candidate[key] != item:
+            newer = candidate[key]
+            changes = {
+                field: {"before": item.get(field), "after": newer.get(field)}
+                for field in sorted(set(item) | set(newer))
+                if item.get(field) != newer.get(field)
+            }
             raise ArchiveIntegrityError(
-                f"Refusing to change previously archived game {key}"
+                f"Refusing to change previously archived game {key}; "
+                f"changed fields: {changes}"
             )
     additions = [g for key, g in candidate.items() if key not in previous]
     if len(additions) != EXPECTED_NEW:
