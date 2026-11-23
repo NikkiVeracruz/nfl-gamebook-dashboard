@@ -16,7 +16,7 @@ One fast, accurate place for customer service agents to find game/team/player re
 
 ## Status overview
 
-**50 tracked items:** 30 implemented · 4 paused · 3 removed · 0 proposed · 0 deferred · 10 not started · 3 open
+**50 tracked items:** 31 implemented · 4 paused · 3 removed · 0 proposed · 0 deferred · 9 not started · 3 open
 
 | State | Meaning |
 |---|---|
@@ -301,6 +301,16 @@ For every future Mega Board code/configuration change, develop on a task-specifi
 
 *Implementation evidence:* [DEVELOPMENT_WORKFLOW.md](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/DEVELOPMENT_WORKFLOW.md), [.github/workflows/pre-merge-safety.yml](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/.github/workflows/pre-merge-safety.yml), [.github/workflows/pre-merge-safety.yml](https://github.com/NikkiVeracruz/nba-gamebook-dashboard/blob/main/.github/workflows/pre-merge-safety.yml), [.github/workflows/pre-merge-safety.yml](https://github.com/NikkiVeracruz/nhl-gamebook-dashboard/blob/main/.github/workflows/pre-merge-safety.yml), [.github/workflows/pre-merge-safety.yml](https://github.com/NikkiVeracruz/mlb-gamebook-dashboard/blob/main/.github/workflows/pre-merge-safety.yml)
 
+### NCAA-POC-001 — Separate NCAA Stats contest-link proof of concept
+
+**Decision:** accepted · **Status:** implemented · **Area:** research
+
+A strictly isolated, read-only NCAA contest-ID link matching proof of concept has been implemented in a separate repository for FBS/FCS football and Division I men's/women's basketball. It discovers ESPN games and joins to published SportsDataverse NCAA contest IDs without scraping NCAA Stats/gamebooks, collecting player stats, backfilling, scheduling runs, publishing a board, or altering the five-league Mega Board. Source latency and destination-page verification remain unresolved; this is NOT an operational NCAA dashboard.
+
+*Notes:* Approved 2026-11-23 and implemented as an isolated read-only feasibility tool in https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/pull/1 (squash merge f438dd8ed6f6d638a82bff456c2dc7bb01201f7d). Latest applicable pre-merge safety workflow completed successfully: https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/actions/runs/45285894447 ; ten offline unit tests passed plus live source trials for four one-day samples. Source-ID match observations: 2026-11-12 81 of 81 games; 2026-11-14 237 of 244; 2026-11-21 0 of 225; 2026-11-22 0 of 101. This is an apparent ID-crosswalk publication lag, NOT proof the latest games lack an NCAA box score. Generated NCAA Stats URLs are explicitly unverified and require human browser identity checks, as the site was inaccessible to this automated environment. Link coverage and delay must be tested over time before any dashboard approval; no production NCAA dashboard, historical import, scheduled feed, Pages deployment, NCAA gamebook scraping or player-statistics collection exists. The existing DEC-001 NCAA removal remains in force for the old NCAA boards, and all five original league repositories/pages, archive rules, and monitoring remain unchanged. The earlier local-only seven-test ZIP was superseded by the now-merged ten-test GitHub source; state=implemented describes the research proof ONLY, not a deployed board.
+
+*Implementation evidence:* [ncaa_poc.py](https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/blob/main/ncaa_poc.py), [tests/test_poc.py](https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/blob/main/tests/test_poc.py), [.github/workflows/pre-merge-safety.yml](https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/blob/main/.github/workflows/pre-merge-safety.yml), [.github/workflows/probe.yml](https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/blob/main/.github/workflows/probe.yml), [README.md](https://github.com/NikkiVeracruz/ncaa-stats-link-dashboard/blob/main/README.md)
+
 
 ## Explicitly declined, removed, or superseded
 
@@ -446,13 +456,7 @@ Full-season read-only schedule audit was built and passed before forward-only cl
 
 Explicitly authorized but not implemented or deployed; status and evidence remain pending.
 
-### NCAA-POC-001 — Separate NCAA Stats contest-link proof of concept
-
-**Decision:** accepted · **Status:** not started · **Area:** research
-
-User approved starting an isolated, link-only NCAA proof of concept for football FBS/FCS and Division I men's/women's basketball. Match scheduled games to stats.ncaa.org contest IDs via public crosswalks; do not scrape gamebooks or player stats, backfill history, or alter the existing five-league boards. New standalone repository required before any GitHub-based test or release.
-
-*Notes:* New approval on 2026-11-23 supersedes DEC-001 only for a new, entirely separate experimental NCAA system; the old NCAA code/data removals remain in force and current NFL/NBA/WNBA/NHL/MLB governance and UI scope remain unchanged. Read-only prototype code, manual Actions workflow, setup README, and seven passing offline tests were prepared in an authoring-session downloadable ZIP, but NOT deployed or committed to GitHub. GitHub connection supports writing existing repositories, not creating a new one. Live ESPN/GitHub crosswalk matching, crosswalk latency, coverage percentages and destination NCAA Stats pages still require real GitHub Actions probes and manual browser confirmation. No NCAA production dashboard has been approved or implemented. SportsDataverse 2026 football and 2026–27 MBB/WBB mapping release assets were observed published as of 2026-11-23; published IDs alone are not proof pages resolve.
+No entries.
 
 
 ## Suggested features / undecided requests
