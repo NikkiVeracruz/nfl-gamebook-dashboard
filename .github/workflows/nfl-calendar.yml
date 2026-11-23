@@ -1,5 +1,6 @@
 name: Refresh NFL game-date polling calendar
 # Only the live workflow's enabled/disabled state changes; no workflow-file writes.
+# Schedule activation is authorized by the Actions API; no workflow PAT is needed.
 on:
   workflow_dispatch:
   push:
