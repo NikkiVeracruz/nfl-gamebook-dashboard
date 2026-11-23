@@ -1,0 +1,62 @@
+name: Verify complete 2026 game coverage across all five leagues
+# This audits missing game IDs and reports, NOT the removed feed-age monitor.
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "Audit recent 10 days or full 2026 season"
+        required: false
+        type: choice
+        options: [recent, full]
+        default: recent
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/season-completeness.yml
+  schedule:
+    - cron: "12 5 * * *"
+      timezone: "America/New_York"
+permissions:
+  contents: read
+concurrency:
+  group: independent-five-league-coverage
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Verify genuine missing game and report classification
+        run: python -m unittest discover -s tests -p 'test_season_completeness.py' -v
+      - name: Choose full-season audit weekly, recent on other days
+        id: mode
+        env:
+          REQUESTED: ${{ inputs.scope }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [[ "$EVENT_NAME" == "push" ]]; then
+            scope=full
+          elif [[ "$EVENT_NAME" == "workflow_dispatch" && -n "$REQUESTED" ]]; then
+            scope="$REQUESTED"
+          elif [[ "$(TZ=America/New_York date +%u)" == 7 ]]; then
+            scope=full
+          else
+            scope=recent
+          fi
+          echo "scope=$scope" >> "$GITHUB_OUTPUT"
+          echo "Independent audit scope: $scope"
+      - name: Compare expected games and verified reports with historical archives
+        run: python tests/season_completeness.py --scope "${{ steps.mode.outputs.scope }}" --output coverage/season-check.json
+      - name: Publish an inspectable completeness report even when an audit fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: five-league-coverage-${{ github.run_id }}
+          path: coverage/season-check.json
+          if-no-files-found: warn
+          retention-days: 30
