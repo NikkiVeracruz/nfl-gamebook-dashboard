@@ -17,7 +17,7 @@ This is a **read-only inspection of published 2026 game documents**, separate fr
 - Only games dated **2026**, at least **three calendar days old**, with eligible final/completed status are checked. NFL relies on the date after three days; future/in-progress games are not considered missing documents.
 - The hourly current-game monitor and weekly independent full-season game-record audit remain separate.
 - A successful GitHub Actions run means the audit executed. It is **not evidence that all reports passed**.
-- The first workflow push runs a sample of **60** across all five leagues. Scheduled and manual runs inspect up to **450 due links per day**, allocated fairly between leagues.
+- The initial bootstrap run inspected **60** documents. Subsequent code-change runs inspect up to **300** due links, while scheduled and manual runs inspect up to **800 due links per day**, allocated fairly between leagues.
 - Previously successful links are rechecked every **30 days**, and unsuccessful/inconclusive checks can retry the following day. Never invent a document link.
 - Results are recorded separately in JSON. No archive data or original gamebook URLs are modified.
 - NHL international hockey is excluded from NHL club GS/ES report requirements, but the games remain archived.
