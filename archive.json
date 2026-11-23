@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T04:38:01.943165+00:00",
+  "updated_at": "2026-11-23T04:45:39.456292+00:00",
   "games": [
     {
       "slug": "packers-at-rams-2026-reg-12",
@@ -16,8 +16,9 @@
     {
       "slug": "vikings-at-49ers-2026-reg-11",
       "date": "2026-11-22",
-      "label": "Vikings at 49ers, Sunday, November 22nd, 8:20 PM, NBC",
-      "game_url": "https://www.nfl.com/games/vikings-at-49ers-2026-reg-11"
+      "label": "Watch Replay, Vikings 10, 49ers 35, Sunday, November 22nd",
+      "game_url": "https://www.nfl.com/games/vikings-at-49ers-2026-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1795408242/gamecenter/abbf2213-4feb-11f1-abca-2c54536568a9.pdf"
     },
     {
       "slug": "titans-at-cowboys-2026-reg-11",
