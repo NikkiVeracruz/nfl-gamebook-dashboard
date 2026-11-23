@@ -9,7 +9,7 @@ from unittest.mock import patch
 from pypdf import PdfWriter
 from document_level_verification import (
     archive_documents, bounded_get, fresh, inspect_nhl, inspect_pdf,
-    make_report, valid_url, inspect_mlb, pdf_date_match,
+    make_report, valid_url, inspect_mlb, pdf_date_match, select_due,
 )
 
 
@@ -76,6 +76,19 @@ class DocumentVerificationTests(unittest.TestCase):
         self.assertEqual(status, "invalid_report_content")
         status, _ = inspect_nhl(item, b"<html>Game Summary</html>")
         self.assertEqual(status, "verified_report")
+
+    def test_due_selection_retries_unconfirmed_without_starving_unseen(self):
+        now = datetime(2026, 11, 23, tzinfo=timezone.utc)
+        items = [sample(key=f"NBA:{n}:PDF", id=str(n)) for n in range(10)]
+        retry = items[0]
+        previous = {retry["key"]: {
+            "url": retry["url"], "status": "readable_identity_unconfirmed",
+            "checked_at": (now - timedelta(days=2)).isoformat()}}
+        chosen, count = select_due(items, previous, now, limit=5)
+        self.assertEqual(count, 10)
+        self.assertEqual(chosen[0]["key"], retry["key"])
+        self.assertEqual(len(chosen), 5)
+        self.assertTrue(any(it["key"] != retry["key"] for it in chosen))
 
     def test_stale_or_changed_url_rechecked(self):
         item = sample()
