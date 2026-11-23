@@ -16,7 +16,7 @@ One fast, accurate place for customer service agents to find game/team/player re
 
 ## Status overview
 
-**50 tracked items:** 31 implemented · 4 paused · 3 removed · 0 proposed · 0 deferred · 9 not started · 3 open
+**51 tracked items:** 31 implemented · 4 paused · 3 removed · 0 proposed · 0 deferred · 9 not started · 4 open
 
 | State | Meaning |
 |---|---|
