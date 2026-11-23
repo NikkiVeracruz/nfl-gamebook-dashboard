@@ -9,7 +9,7 @@ from unittest.mock import patch
 from pypdf import PdfWriter
 from document_level_verification import (
     archive_documents, bounded_get, fresh, inspect_nhl, inspect_pdf,
-    make_report, valid_url, inspect_mlb,
+    make_report, valid_url, inspect_mlb, pdf_date_match,
 )
 
 
@@ -64,6 +64,11 @@ class DocumentVerificationTests(unittest.TestCase):
         writer.write(body)
         status, detail = inspect_pdf(sample(), body.getvalue())
         self.assertEqual(status, "readable_identity_unconfirmed")
+
+    def test_nfl_short_date_formats_are_recognized(self):
+        self.assertTrue(pdf_date_match("Thursday 9/10/26", "2026-09-10"))
+        self.assertTrue(pdf_date_match("Thursday September 10, 2026", "2026-09-10"))
+        self.assertFalse(pdf_date_match("Thursday 9/11/26", "2026-09-10"))
 
     def test_nhl_wrong_report_type_rejected(self):
         item = {"kind": "GS", "id": "2026020384"}
