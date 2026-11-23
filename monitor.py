@@ -27,6 +27,20 @@ def load_state():
     try:return json.loads(STATE.read_text())
     except (FileNotFoundError,ValueError):return {"notified":{}}
 
+def record_heartbeat(state, now=None):
+    """Record a successful NFL poll at most once per 40 minutes, not every run."""
+    current = now or datetime.now(timezone.utc)
+    previous = state.get("last_checked_at")
+    try:
+        parsed = datetime.fromisoformat(str(previous).replace("Z", "+00:00"))
+        if parsed.tzinfo and timedelta(0) <= current - parsed < timedelta(minutes=40):
+            return False
+    except ValueError:
+        pass
+    state["last_checked_at"] = current.isoformat()
+    return True
+
+
 def get(session,url):
     r=session.get(url,timeout=25)
     r.raise_for_status()
@@ -264,6 +278,7 @@ def main():
     recover_older_missing_pdfs(session, start)
     # Prevent state from growing indefinitely.
     state["notified"]={slug:ts for slug,ts in state["notified"].items() if slug in games}
+    record_heartbeat(state)
     STATE.write_text(json.dumps(state,indent=2,sort_keys=True)+"\n")
     payload={"window_label":f"{start:%b %d, %Y} – {(end-timedelta(days=1)):%b %d, %Y} (ET)","games":sorted(games.values(),key=lambda g:(g["date"],g["label"]))}
     try:
