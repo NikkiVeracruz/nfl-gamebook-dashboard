@@ -11,6 +11,7 @@ from nfl_2026_coverage import (
 )
 from archive import ArchiveIntegrityError
 import monitor
+import backfill
 
 
 NOW = datetime(2026, 11, 23, 4, 0, tzinfo=timezone.utc)
@@ -142,6 +143,64 @@ class Nfl2026CoverageTests(unittest.TestCase):
         with patch.object(monitor, "get", side_effect=schedule):
             monitor.discover(None, 2026, "2026-11-01", "2026-11-29")
         self.assertFalse(any("/by-week/preseason-week-" in x for x in observed))
+
+
+    def test_already_archived_sunday_game_counts_when_nfl_com_temporarily_misses_it(self):
+        from datetime import date
+        sunday = date(2026, 11, 22)
+        discovered = {
+            f"new-{i}": {
+                "slug": f"team{i}-at-home{i}-2026-reg-11",
+                "date": sunday.isoformat(),
+            }
+            for i in range(10)
+        }
+        previous = {
+            **discovered,
+            "saved-eleventh": {
+                "slug": "vikings-at-49ers-2026-reg-11",
+                "date": sunday.isoformat(),
+            },
+        }
+        backfill.validate_discovery(
+            None, sunday, date(2026, 11, 23), discovered,
+            get_expected=lambda _session, _day: 11,
+            previous=previous,
+        )
+
+    def test_genuinely_missing_sunday_game_still_blocks_cursor(self):
+        from datetime import date
+        sunday = date(2026, 11, 22)
+        discovered = {
+            f"new-{i}": {
+                "slug": f"team{i}-at-home{i}-2026-reg-11",
+                "date": sunday.isoformat(),
+            }
+            for i in range(10)
+        }
+        with self.assertRaisesRegex(ArchiveIntegrityError, "incomplete"):
+            backfill.validate_discovery(
+                None, sunday, date(2026, 11, 23), discovered,
+                get_expected=lambda _session, _day: 11,
+                previous=discovered,
+            )
+
+    def test_wrong_season_or_duplicate_slug_cannot_fake_completeness(self):
+        from datetime import date
+        sunday = date(2026, 11, 22)
+        discovered = {
+            "one": {"slug": "vikings-at-49ers-2026-reg-11", "date": sunday.isoformat()}
+        }
+        previous = {
+            "same": discovered["one"],
+            "wrong-year": {"slug": "vikings-at-49ers-2025-reg-11", "date": sunday.isoformat()},
+        }
+        with self.assertRaisesRegex(ArchiveIntegrityError, "incomplete"):
+            backfill.validate_discovery(
+                None, sunday, date(2026, 11, 23), discovered,
+                get_expected=lambda _session, _day: 2,
+                previous=previous,
+            )
 
 
 if __name__ == "__main__":
