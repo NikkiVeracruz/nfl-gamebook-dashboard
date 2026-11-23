@@ -1,0 +1,33 @@
+name: Independent 2026 archive completeness (read-only)
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly historical sweep; the existing hourly check handles the current display.
+    - cron: "43 09 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - tests/archive_2026_schedule_audit.py
+      - tests/test_archive_2026_schedule_audit.py
+      - .github/workflows/archive-2026-completeness.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: independent-2026-historical-coverage
+  cancel-in-progress: false
+
+jobs:
+  archive-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Unit test independent fixture matching and fail-closed behavior
+        run: python -m unittest discover -s tests -p 'test_archive_2026_schedule_audit.py' -v
+      - name: Verify all 2026 game IDs against ESPN and official NHL/MLB schedules
+        run: python -u tests/archive_2026_schedule_audit.py --league ALL --workers 8
