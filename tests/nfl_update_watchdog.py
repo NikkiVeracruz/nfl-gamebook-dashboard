@@ -8,8 +8,13 @@ dispatched, and only then requests the existing update.yml on main.
 import json
 import os
 import sys
+import time
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
+
+RETRY_DELAYS = (5, 15)
+RETRY_HTTP_CODES = frozenset({500, 502, 503, 504})
 
 MAX_AGE_MINUTES = 90  # Based on the throttled successful-poll heartbeat
 FEED_URL = "https://raw.githubusercontent.com/NikkiVeracruz/nfl-gamebook-dashboard/main/gamebooks.json"
@@ -19,11 +24,22 @@ def read_feed(url=FEED_URL):
     req = urllib.request.Request(
         url, headers={"User-Agent": "NFLWatchdog/1.0", "Cache-Control": "no-cache"}
     )
-    with urllib.request.urlopen(req, timeout=25) as response:
-        content = response.read(2_000_001)
-    if len(content) > 2_000_000:
-        raise ValueError("NFL feed exceeds 2 MB")
-    return json.loads(content)
+    # Retry only transient server responses; never treat failed reads as healthy.
+    for attempt in range(len(RETRY_DELAYS) + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=25) as response:
+                content = response.read(2_000_001)
+        except urllib.error.HTTPError as exc:
+            if exc.code not in RETRY_HTTP_CODES or attempt == len(RETRY_DELAYS):
+                raise
+            delay = RETRY_DELAYS[attempt]
+            print(f"Watchdog feed HTTP {exc.code}; retrying in {delay}s", file=sys.stderr)
+            exc.close()
+            time.sleep(delay)
+            continue
+        if len(content) > 2_000_000:
+            raise ValueError("NFL feed exceeds 2 MB")
+        return json.loads(content)
 
 
 def decide(feed, now=None, last_checked_at=None):
