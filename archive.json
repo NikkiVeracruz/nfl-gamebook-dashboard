@@ -1,6 +1,13 @@
 {
-  "updated_at": "2026-11-24T03:22:49.049911+00:00",
+  "updated_at": "2026-11-24T04:30:18.420496+00:00",
   "games": [
+    {
+      "slug": "bengals-at-commanders-2026-reg-11",
+      "date": "2026-11-23",
+      "label": "Watch Replay, Bengals 20, Commanders 22, Monday, November 23rd",
+      "game_url": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1795494250/gamecenter/abbf25b8-4feb-11f1-abca-2c54536568a9.pdf"
+    },
     {
       "slug": "vikings-at-49ers-2026-reg-11",
       "date": "2026-11-22",

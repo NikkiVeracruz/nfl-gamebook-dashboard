@@ -1,6 +1,5 @@
 {
   "window_label": "Nov 19, 2026 \u2013 Nov 25, 2026 (ET)",
-  "updated_at": "2026-11-23T04:45:39.360643+00:00",
   "games": [
     {
       "slug": "colts-at-texans-2026-reg-11",
@@ -89,8 +88,9 @@
     {
       "slug": "bengals-at-commanders-2026-reg-11",
       "date": "2026-11-23",
-      "label": "Bengals at Commanders, Monday, November 23rd, 8:15 PM, ESPN",
-      "game_url": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11"
+      "label": "Watch Replay, Bengals 20, Commanders 22, Monday, November 23rd",
+      "game_url": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1795494250/gamecenter/abbf25b8-4feb-11f1-abca-2c54536568a9.pdf"
     },
     {
       "slug": "packers-at-rams-2026-reg-12",
@@ -98,5 +98,6 @@
       "label": "Packers at Rams, Wednesday, November 25th, 8:00 PM, NETFLIX",
       "game_url": "https://www.nfl.com/games/packers-at-rams-2026-reg-12"
     }
-  ]
+  ],
+  "updated_at": "2026-11-24T04:30:18.348711+00:00"
 }
