@@ -1,6 +1,18 @@
 {
-  "updated_at": "2026-11-26T21:39:02.119426+00:00",
+  "updated_at": "2026-11-26T22:34:22.385051+00:00",
   "games": [
+    {
+      "slug": "bears-at-lions-2026-reg-12",
+      "date": "2026-11-26",
+      "label": "Watch Replay, Bears 39, Lions 35, Thursday, November 26",
+      "game_url": "https://www.nfl.com/games/bears-at-lions-2026-reg-12",
+      "status": "Final",
+      "away_score": 39,
+      "home_score": 35,
+      "away_name": "Chicago Bears",
+      "home_name": "Detroit Lions",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1795729166/gamecenter/abbf2c16-4feb-11f1-abca-2c54536568a9.pdf"
+    },
     {
       "slug": "packers-at-rams-2026-reg-12",
       "date": "2026-11-25",
