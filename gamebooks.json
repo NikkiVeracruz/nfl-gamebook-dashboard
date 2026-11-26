@@ -1,103 +1,96 @@
 {
-  "window_label": "Nov 19, 2026 \u2013 Nov 25, 2026 (ET)",
+  "window_label": "Nov 26, 2026 \u2013 Dec 02, 2026 (ET)",
   "games": [
     {
-      "slug": "colts-at-texans-2026-reg-11",
-      "date": "2026-11-19",
-      "label": "Watch Replay, Colts 3, Texans 26, Thursday, November 19th",
-      "game_url": "https://www.nfl.com/games/colts-at-texans-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795147937/gamecenter/ab997d97-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "bears-at-lions-2026-reg-12",
+      "date": "2026-11-26",
+      "label": "Bears at Lions, Thursday, November 26th, 1:00 PM, CBS",
+      "game_url": "https://www.nfl.com/games/bears-at-lions-2026-reg-12"
     },
     {
-      "slug": "buccaneers-at-lions-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Buccaneers 21, Lions 31, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/buccaneers-at-lions-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795382014/gamecenter/ab999586-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "chiefs-at-bills-2026-reg-12",
+      "date": "2026-11-26",
+      "label": "Chiefs at Bills, Thursday, November 26th, 8:20 PM, NBC",
+      "game_url": "https://www.nfl.com/games/chiefs-at-bills-2026-reg-12"
     },
     {
-      "slug": "cardinals-at-chiefs-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Cardinals 7, Chiefs 34, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/cardinals-at-chiefs-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795380693/gamecenter/ab999891-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "eagles-at-cowboys-2026-reg-12",
+      "date": "2026-11-26",
+      "label": "Eagles at Cowboys, Thursday, November 26th, 4:30 PM, FOX",
+      "game_url": "https://www.nfl.com/games/eagles-at-cowboys-2026-reg-12"
     },
     {
-      "slug": "dolphins-at-bills-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Dolphins 9, Bills 26, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/dolphins-at-bills-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795381954/gamecenter/ab998769-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "broncos-at-steelers-2026-reg-12",
+      "date": "2026-11-27",
+      "label": "Broncos at Steelers, Friday, November 27th, 3:00 PM, PRIME",
+      "game_url": "https://www.nfl.com/games/broncos-at-steelers-2026-reg-12"
     },
     {
-      "slug": "jaguars-at-giants-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Jaguars 18, Giants 23, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/jaguars-at-giants-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795395578/gamecenter/ab999b80-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "commanders-at-cardinals-2026-reg-12",
+      "date": "2026-11-29",
+      "label": "Commanders at Cardinals, Sunday, November 29th, 4:25 PM, FOX",
+      "game_url": "https://www.nfl.com/games/commanders-at-cardinals-2026-reg-12"
     },
     {
-      "slug": "jets-at-chargers-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Jets 27, Chargers 24, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/jets-at-chargers-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795391497/gamecenter/ab999e6f-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "falcons-at-vikings-2026-reg-12",
+      "date": "2026-11-29",
+      "label": "Falcons at Vikings, Sunday, November 29th, 1:00 PM, FOX",
+      "game_url": "https://www.nfl.com/games/falcons-at-vikings-2026-reg-12"
     },
     {
-      "slug": "raiders-at-broncos-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Raiders 24, Broncos 38, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795395098/gamecenter/ab99a17b-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "giants-at-colts-2026-reg-12",
+      "date": "2026-11-29",
+      "label": "Giants at Colts, Sunday, November 29th, 1:00 PM, FOX",
+      "game_url": "https://www.nfl.com/games/giants-at-colts-2026-reg-12"
     },
     {
-      "slug": "ravens-at-panthers-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Ravens 33, Panthers 35, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/ravens-at-panthers-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795382614/gamecenter/ab998b7f-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "jets-at-dolphins-2026-reg-12",
+      "date": "2026-11-29",
+      "label": "Jets at Dolphins, Sunday, November 29th, 1:00 PM, CBS",
+      "game_url": "https://www.nfl.com/games/jets-at-dolphins-2026-reg-12"
     },
     {
-      "slug": "saints-at-bears-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Saints 13, Bears 21, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/saints-at-bears-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795381835/gamecenter/ab998f5e-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "patriots-at-chargers-2026-reg-12",
+      "date": "2026-11-29",
+      "label": "Patriots at Chargers, Sunday, November 29th, 4:05 PM, CBS",
+      "game_url": "https://www.nfl.com/games/patriots-at-chargers-2026-reg-12"
     },
     {
-      "slug": "steelers-at-eagles-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Steelers 16, Eagles 19, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/steelers-at-eagles-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795382134/gamecenter/abbf1908-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "raiders-at-browns-2026-reg-12",
+      "date": "2026-11-29",
+      "label": "Raiders at Browns, Sunday, November 29th, 8:20 PM, NBC",
+      "game_url": "https://www.nfl.com/games/raiders-at-browns-2026-reg-12"
     },
     {
-      "slug": "titans-at-cowboys-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Titans 30, Cowboys 51, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/titans-at-cowboys-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795381834/gamecenter/ab99929a-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "ravens-at-texans-2026-reg-12",
+      "date": "2026-11-29",
+      "label": "Ravens at Texans, Sunday, November 29th, 1:00 PM, CBS",
+      "game_url": "https://www.nfl.com/games/ravens-at-texans-2026-reg-12"
     },
     {
-      "slug": "vikings-at-49ers-2026-reg-11",
-      "date": "2026-11-22",
-      "label": "Watch Replay, Vikings 10, 49ers 35, Sunday, November 22nd",
-      "game_url": "https://www.nfl.com/games/vikings-at-49ers-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795408242/gamecenter/abbf2213-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "saints-at-bengals-2026-reg-12",
+      "date": "2026-11-29",
+      "label": "Saints at Bengals, Sunday, November 29th, 1:00 PM, CBS",
+      "game_url": "https://www.nfl.com/games/saints-at-bengals-2026-reg-12"
     },
     {
-      "slug": "bengals-at-commanders-2026-reg-11",
-      "date": "2026-11-23",
-      "label": "Watch Replay, Bengals 20, Commanders 22, Monday, November 23rd",
-      "game_url": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11",
-      "pdf_url": "https://static.www.nfl.com/image/upload/v1795494250/gamecenter/abbf25b8-4feb-11f1-abca-2c54536568a9.pdf"
+      "slug": "seahawks-at-49ers-2026-reg-12",
+      "date": "2026-11-29",
+      "label": "Seahawks at 49ers, Sunday, November 29th, 4:25 PM, FOX",
+      "game_url": "https://www.nfl.com/games/seahawks-at-49ers-2026-reg-12"
     },
     {
-      "slug": "packers-at-rams-2026-reg-12",
-      "date": "2026-11-25",
-      "label": "Packers at Rams, Wednesday, November 25th, 8:00 PM, NETFLIX",
-      "game_url": "https://www.nfl.com/games/packers-at-rams-2026-reg-12"
+      "slug": "titans-at-jaguars-2026-reg-12",
+      "date": "2026-11-29",
+      "label": "Titans at Jaguars, Sunday, November 29th, 1:00 PM, FOX",
+      "game_url": "https://www.nfl.com/games/titans-at-jaguars-2026-reg-12"
+    },
+    {
+      "slug": "panthers-at-buccaneers-2026-reg-12",
+      "date": "2026-11-30",
+      "label": "Panthers at Buccaneers, Monday, November 30th, 8:15 PM, ESPN",
+      "game_url": "https://www.nfl.com/games/panthers-at-buccaneers-2026-reg-12"
     }
   ],
-  "updated_at": "2026-11-24T04:30:18.348711+00:00"
+  "updated_at": "2026-11-26T05:11:06.445148+00:00"
 }
