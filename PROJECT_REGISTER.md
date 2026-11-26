@@ -16,7 +16,7 @@ One fast, accurate place for customer service agents to find game/team/player re
 
 ## Status overview
 
-**55 tracked items:** 33 implemented · 7 paused · 3 removed · 0 proposed · 0 deferred · 9 not started · 3 open
+**56 tracked items:** 33 implemented · 7 paused · 3 removed · 0 proposed · 0 deferred · 9 not started · 4 open
 
 | State | Meaning |
 |---|---|
@@ -538,7 +538,15 @@ No entries.
 
 Approved investigations and incomplete follow-ups; not deployed features.
 
-No entries.
+### PRJ-028 — NFL exact-date discovery, official club gamebooks and post-rollover recovery
+
+**Decision:** accepted · **Status:** open · **Area:** operations
+
+User approved all four incident recommendations: unusual-day discovery, official PDF fallback, existing watchdog report awareness, and pending-game rollover protection.
+
+*Notes:* Nov25/26 Rams incident: last known game in a1ca3c084c70b6a201f1d72f79a07abc06c810a7; schedule warning run45752215327, watchdog healthy run45756996772; forward-only purge prevents incomplete archive-based retries. Rollover already occurred. Official Packers game center https://www.packers.com/game-day/2026/reg-week12/packers-at-rams/ links https://static.clubs.nfl.com/image/upload/packers/k39qtefpy28qk4wyi6lt; independently inspected first page, November 25 2026 Packers 13 Rams 26. Proposed exact independent scoreboard reconciliation only for observed official NFL URLs, narrow verified Packers club fallback with full PDF identity, operational pending queue seeded solely with already tracked Rams game, calendar and existing watchdog integration, document/UI verification compatibility. No new watchdog, schedule reduction, historical backfill, NCAA or other league changes. Branch tests, read-only live proof, merge and production verification outstanding. Initial pre-merge run45760154417 passed targeted offline tests and verified the newly available central NFL gamebook https://static.www.nfl.com/image/upload/v1795667766/gamecenter/abbf28ed-4feb-11f1-abca-2c54536568a9.pdf for exact Rams game. Added separate live club fallback proof and regression coverage for ambiguous independent events, preserved final observations and document/UI link markers; final validation pending.
+
+*Implementation evidence:* [nfl_pending.py](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/nfl_pending.py), [monitor.py](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/monitor.py), [tests/test_nfl_pending.py](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/tests/test_nfl_pending.py), [tests/live_rams_gamebook.py](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/tests/live_rams_gamebook.py), [tests/nfl_update_watchdog.py](https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/blob/main/tests/nfl_update_watchdog.py), +1 additional in JSON
 
 
 ## Known risks and gaps
