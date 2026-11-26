@@ -1,6 +1,18 @@
 {
-  "updated_at": "2026-11-26T05:10:39.434177+00:00",
+  "updated_at": "2026-11-26T05:15:33.932295+00:00",
   "games": [
+    {
+      "slug": "packers-at-rams-2026-reg-12",
+      "date": "2026-11-25",
+      "label": "Watch Replay, Packers 13, Rams 26, Wednesday, November 25",
+      "game_url": "https://www.nfl.com/games/packers-at-rams-2026-reg-12",
+      "status": "Final",
+      "away_score": 13,
+      "home_score": 26,
+      "away_name": "Green Bay Packers",
+      "home_name": "Los Angeles Rams",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1795667766/gamecenter/abbf28ed-4feb-11f1-abca-2c54536568a9.pdf"
+    },
     {
       "slug": "bengals-at-commanders-2026-reg-11",
       "date": "2026-11-23",
