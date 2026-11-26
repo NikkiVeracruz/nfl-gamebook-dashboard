@@ -123,6 +123,7 @@ def update_workflow_text(text, full, early):
 
 
 def should_poll(now, calendar, archive, manual=False, pending=None):
+    from nfl_pending import due_games
     if manual:
         return True
     today = now.astimezone(ET).date()
@@ -131,7 +132,7 @@ def should_poll(now, calendar, archive, manual=False, pending=None):
         today in days
         or (now.astimezone(ET).hour < 3 and today - timedelta(days=1) in days)
         or bool(missing_pdf_games(archive, today))
-        or bool(pending and __import__('nfl_pending').due_games(pending,today))
+        or bool(pending and due_games(pending,today))
     )
 
 

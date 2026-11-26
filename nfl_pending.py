@@ -6,7 +6,8 @@ from urllib.parse import urlparse, urljoin
 from zoneinfo import ZoneInfo
 
 ET = ZoneInfo("America/New_York")
-CUTOFF = "2026-11-19"
+from forward_only import ARCHIVES
+CUTOFF = ARCHIVES["archive.json"]["cutoff"]
 SLUG = re.compile(r"^([a-z0-9-]+)-at-([a-z0-9-]+)-(20\d{2})-(pre|reg|post)-(\d+)$")
 API = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
 # Exact already-tracked live record from a1ca3c084c70b6a201f1d72f79a07abc06c810a7.
@@ -51,14 +52,21 @@ def norm(s):
 def event_match(slug,event):
     m=SLUG.fullmatch(slug)
     if not m:return False
-    sides={c.get("homeAway"):c.get("team",{}) for c in event.get("competitions",[{}])[0].get("competitors",[])}
+    competitions=event.get("competitions") or []
+    if len(competitions)!=1:return False
+    competitors=competitions[0].get("competitors") or []
+    if len(competitors)!=2:return False
+    sides={c.get("homeAway"):c.get("team") or {} for c in competitors}
+    if set(sides)!={"home","away"}:return False
     for side, word in (("away",m[1]),("home",m[2])):
         team=sides.get(side,{})
         if norm(word) not in {norm(team.get(k,"")) for k in ("name","shortDisplayName","displayName","abbreviation")}:
             return False
-    season=event.get("season",{})
+    season=event.get("season") or {}
     if season.get("year") and str(season["year"])!=m[3]:return False
     if season.get("type") and str(season["type"])!={"pre":"1","reg":"2","post":"3"}[m[4]]:return False
+    week=(event.get("week") or {}).get("number")
+    if m[4]=="reg" and week and str(week)!=m[5]:return False
     # NFL postseason week numbers may differ between sources; same-pair
     # ambiguities are rejected by the caller instead of guessing.
     return True
@@ -95,7 +103,7 @@ def reconcile(games,observed,prior,boards,start,end):
     candidates={**observed,**{g["slug"]:g["game_url"] for g in prior.values() if known(g)}}
     for day,events in boards.items():
         for e in events:
-            matches=[k for k in candidates if event_match(k,e)]
+            matches=[k for k in candidates if event_match(k,e) and sum(event_match(k,other) for other in events)==1]
             existing=[k for k in matches if (k in prior and prior[k].get("date")==day) or (k in out and out[k].get("date")==day)]
             if len(existing)==1:matches=existing
             if len(matches)!=1:continue

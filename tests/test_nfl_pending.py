@@ -46,3 +46,16 @@ class PendingTests(unittest.TestCase):
     def test_pending_queue_invalid_fails_closed(self):
         with self.assertRaises(ValueError):
             pending_games({"pending_games":{"bad":{"slug":"bad"}}},{"games":[]},{"games":[]})
+
+    def test_duplicate_events_do_not_create_unobserved_identity(self):
+        out=reconcile({}, {self.game["slug"]:self.game["game_url"]},{},{"2026-11-25":[self.event,self.event]},"2026-11-19","2026-11-26")
+        self.assertEqual(out,{})
+    def test_final_identity_uses_independent_regular_week_when_present(self):
+        self.event["week"]={"number":11}
+        self.assertFalse(event_match(self.game["slug"],self.event))
+    def test_queue_preserves_final_observation_and_removes_verified_report(self):
+        final=refresh_game(self.game,self.event)
+        q=pending_games({"pending_games":{final["slug"]:final}},{"games":[self.game]},{"games":[]})
+        self.assertEqual(q[final["slug"]]["status"],"Final")
+        self.assertEqual(q[final["slug"]]["home_score"],26)
+        self.assertEqual(pending_games({"pending_games":q},{"games":[dict(final,pdf_url="https://static.www.nfl.com/verified.pdf")]},{"games":[]}),{})

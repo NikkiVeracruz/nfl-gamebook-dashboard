@@ -79,14 +79,15 @@ def main():
         current = datetime.now(timezone.utc)
         calendar = json.loads(Path("nfl-calendar.json").read_text())
         archive = json.loads(Path("archive.json").read_text())
-        if not should_poll(current, calendar, archive, pending=load_queue()):
+        pending=load_queue()
+        if not should_poll(current, calendar, archive, pending=pending):
             trigger, reason = False, "NFL idle: no scheduled game or overdue PDF"
         else:
             state = json.loads(Path("monitor-state.json").read_text())
             trigger, reason = decide(
                 read_feed(), now=current,
                 last_checked_at=state.get("last_checked_at"),
-                unresolved_final_games=state.get("unresolved_final_games",[]),
+                unresolved_final_games=sorted(k for k,g in pending.items() if g.get("status")=="Final"),
             )
     except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
         print(f"WATCHDOG ERROR: {exc}", file=sys.stderr)

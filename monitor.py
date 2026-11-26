@@ -25,7 +25,7 @@ def window():
 
 def load_state():
     try:return json.loads(STATE.read_text())
-    except (FileNotFoundError,ValueError):return {"notified":{}}
+    except FileNotFoundError:return {"notified":{}}
 
 def record_heartbeat(state, now=None):
     """Record a successful NFL poll at most once per 40 minutes, not every run."""
@@ -329,8 +329,12 @@ def main():
     games=reconcile(games,observed,{**pending,**previous},boards,start.isoformat(),end.isoformat())
     for slug,game in games.items():
         old=previous.get(slug,{})
+        if pending.get(slug,{}).get("status")=="Final" and game.get("status") is None and pending[slug]["date"]==game["date"]:
+            game.update({k:v for k,v in pending[slug].items() if k in ("status","label","away_score","home_score","away_name","home_name")})
         if old.get("pdf_url") and (is_official(old["pdf_url"]) or (club_url(old["pdf_url"]) and old.get("pdf_verification")=="official_club_identity")):
-            # Never discard an already verified link on a temporary read failure.
+            # Retain the existing central report check without erasing a prior verified link on transient failure.
+            if is_official(old["pdf_url"]) and not verify_pdf(session,old["pdf_url"]):
+                LOG.warning("Previously verified NFL PDF could not be rechecked: %s",slug)
             game.update({k:v for k,v in old.items() if k in ("pdf_url","pdf_verification","pdf_source")})
         else:
             fetch_gamebook(session,game)
