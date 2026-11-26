@@ -1,12 +1,17 @@
 {
-  "last_checked_at": "2026-11-26T20:45:43.346683+00:00",
+  "last_checked_at": "2026-11-26T21:39:27.692270+00:00",
   "notified": {},
   "pending_games": {
     "bears-at-lions-2026-reg-12": {
+      "away_name": "Chicago Bears",
+      "away_score": 39,
       "date": "2026-11-26",
       "game_url": "https://www.nfl.com/games/bears-at-lions-2026-reg-12",
-      "label": "Bears 24, Lions 29, Q4, CBS",
-      "slug": "bears-at-lions-2026-reg-12"
+      "home_name": "Detroit Lions",
+      "home_score": 35,
+      "label": "Watch Replay, Bears 39, Lions 35, Thursday, November 26",
+      "slug": "bears-at-lions-2026-reg-12",
+      "status": "Final"
     },
     "broncos-at-steelers-2026-reg-12": {
       "date": "2026-11-27",
@@ -93,6 +98,8 @@
       "slug": "titans-at-jaguars-2026-reg-12"
     }
   },
-  "pending_overdue_pdf": false,
-  "unresolved_final_games": []
+  "pending_overdue_pdf": true,
+  "unresolved_final_games": [
+    "bears-at-lions-2026-reg-12"
+  ]
 }
