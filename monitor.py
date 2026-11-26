@@ -54,7 +54,7 @@ def parse_date(text,season):
     try:return datetime(year,month,int(m.group(2))).date().isoformat()
     except ValueError:return None
 
-def discover(session,season,start,end):
+def discover(session,season,start,end,observed=None):
     games={}
     start_date=datetime.fromisoformat(start).date()
     end_date=datetime.fromisoformat(end).date()
@@ -75,6 +75,7 @@ def discover(session,season,start,end):
             # nearby date. Never relabel a 2026 game as a 2025 game.
             slug_season=re.search(r"-(20\d{2})-(?:pre|reg|post)-\d+$",slug,re.I)
             if slug_season and int(slug_season.group(1))!=season:continue
+            if observed is not None and slug_season:observed[slug]="https://www.nfl.com/games/"+slug
             texts=[a.get_text(" ",strip=True)]
             node=a
             for _ in range(5):
@@ -111,6 +112,7 @@ def discover(session,season,start,end):
             # nearby date. Never relabel a 2026 game as a 2025 game.
             slug_season=re.search(r"-(20\d{2})-(?:pre|reg|post)-\d+$",slug,re.I)
             if slug_season and int(slug_season.group(1))!=season:continue
+            if observed is not None and slug_season:observed[slug]="https://www.nfl.com/games/"+slug
             texts=[a.get_text(" ",strip=True)]
             node=a
             for _ in range(6):
@@ -184,6 +186,33 @@ def verify_pdf(session,url):
         r.raise_for_status()
         return next(r.iter_content(16),b"").startswith(b"%PDF-")
     except (requests.RequestException,StopIteration):return False
+
+def fetch_gamebook(session,game):
+    """Prefer central official link; use only labeled, identity-checked club fallback."""
+    from nfl_pending import packers_page, club_candidate, verify_club_pdf
+    url=game["game_url"]
+    tabs=["?tab=recap"]
+    if game.get("status")=="Final":tabs+=["","?tab=stats"]
+    for tab in tabs:
+        try:
+            pdf=gamebook_link(get(session,url+tab),url)
+            if pdf and verify_pdf(session,pdf):
+                game["pdf_url"]=pdf
+                return True
+        except requests.RequestException as exc:
+            LOG.warning("Game page fetch failed %s: %s",game["slug"],exc)
+    page=packers_page(game)
+    if page and game.get("status")=="Final":
+        try:
+            candidate=club_candidate(get(session,page),page)
+            if candidate and verify_club_pdf(session,candidate,game):
+                game.update(pdf_url=candidate,pdf_verification="official_club_identity",pdf_source=page)
+                LOG.info("Verified official club gamebook %s %s",game["slug"],candidate)
+                return True
+        except requests.RequestException as exc:
+            LOG.warning("Club game page fetch failed %s: %s",game["slug"],exc)
+    if game.get("status")=="Final":LOG.warning("Final NFL game awaiting verified PDF: %s",game["slug"])
+    return False
 
 def send_email(game):
     host=os.getenv("SMTP_HOST");user=os.getenv("SMTP_USER")
@@ -260,11 +289,30 @@ def main():
         LOG.info("Offseason: skipping gamebook checks")
         return
 
+    from nfl_pending import pending_games, read_board, event_match, refresh_game, reconcile, club_url, known as known_game
+    from archive import load_payload, build_archive, atomic_write_json
     session=requests.Session();session.headers.update(HEADERS)
     start,end=window();state=load_state()
+    prior_feed=load_payload(OUT,"NFL prior current feed")
+    archive_path=Path("archive.json")
+    history=load_payload(archive_path,"NFL archive")
+    pending=pending_games(state,prior_feed,history)
+    observed={}
+    boards={}
+    # Date-specific independent scoreboards, including the exact known games
+    # that rolled out of the current display window.
+    dates={(start+timedelta(days=i)).isoformat() for i in range((end-start).days)}
+    dates.update(g["date"] for g in pending.values() if g["date"]<start.isoformat())
+    for day in sorted(dates):
+        try:boards[day]=read_board(session,day)
+        except (requests.RequestException,ValueError,KeyError,TypeError) as exc:
+            LOG.warning("Independent NFL date scoreboard unavailable %s: %s",day,exc)
+    for slug,g in list(pending.items()):
+        matches=[e for e in boards.get(g["date"],[]) if event_match(slug,e)]
+        if len(matches)==1:pending[slug]=refresh_game(g,matches[0])
     # Week resets every Thursday (Eastern Time), retaining no old dashboard entries.
     season=start.year if start.month>=3 else start.year-1
-    games=discover(session,season,start.isoformat(),end.isoformat())
+    games=discover(session,season,start.isoformat(),end.isoformat(),observed=observed)
     LOG.info("Found %d scheduled games for %s to %s",len(games),start,end)
     previous={}
     try:
@@ -278,28 +326,37 @@ def main():
     for slug,old in previous.items():
         if start.isoformat()<=old.get("date","")<end.isoformat() and slug not in games:
             games[slug]=old.copy()
+    games=reconcile(games,observed,{**pending,**previous},boards,start.isoformat(),end.isoformat())
     for slug,game in games.items():
         old=previous.get(slug,{})
-        if old.get("pdf_url") and is_official(old["pdf_url"]) and verify_pdf(session,old["pdf_url"]):
-            game["pdf_url"]=old["pdf_url"];continue
-        try:
-            html=get(session,game["game_url"]+"?tab=recap")
-            text=BeautifulSoup(html,"html.parser").get_text(" ",strip=True)
-            # A verified official PDF is sufficient; NFL pages may say Watch Replay instead of Final.
-            pdf=gamebook_link(html,game["game_url"])
-            if pdf and verify_pdf(session,pdf):
-                game["pdf_url"]=pdf
-                if slug not in state["notified"] and send_email(game):
-                    state["notified"][slug]=datetime.now(timezone.utc).isoformat()
-        except requests.RequestException as e:LOG.warning("Game page fetch failed %s: %s",slug,e)
+        if old.get("pdf_url") and (is_official(old["pdf_url"]) or (club_url(old["pdf_url"]) and old.get("pdf_verification")=="official_club_identity")):
+            # Never discard an already verified link on a temporary read failure.
+            game.update({k:v for k,v in old.items() if k in ("pdf_url","pdf_verification","pdf_source")})
+        else:
+            fetch_gamebook(session,game)
+            if game.get("pdf_url") and slug not in state["notified"] and send_email(game):
+                state["notified"][slug]=datetime.now(timezone.utc).isoformat()
+        if game.get("pdf_url"):pending.pop(slug,None)
+        elif known_game(game):pending[slug]={**pending.get(slug,{}),**game}
+    # Retry only previously tracked unresolved games from earlier windows.
+    # The public archive receives a record only after the report verifies.
+    recovered=[]
+    for slug,game in sorted(pending.items()):
+        if game["date"]>=start.isoformat() or game.get("status") in ("Canceled","Cancelled","Postponed"):continue
+        if fetch_gamebook(session,game):
+            recovered.append(game)
+            LOG.info("Recovered pending NFL gamebook: %s",slug)
+    if recovered:
+        merged=build_archive({"games":recovered},history)
+        atomic_write_json(archive_path,merged)
+        for game in recovered:pending.pop(game["slug"],None)
+    state["pending_games"]=pending
+    state["pending_overdue_pdf"]=any(g.get("status")=="Final" or g["date"]<datetime.now(ET).date().isoformat()
+        for g in pending.values() if g.get("status") not in ("Canceled","Cancelled","Postponed"))
+    state["unresolved_final_games"]=sorted(g["slug"] for g in pending.values() if g.get("status")=="Final")
     # The current Thursday-to-Thursday feed must stay current-week only.
     # Missing gamebooks from earlier weeks are recovered directly into the archive.
     recover_older_missing_pdfs(session, start)
-    # Export a lightweight activity flag for the public freshness display.
-    from nfl_calendar import missing_pdf_games
-    state["pending_overdue_pdf"] = bool(missing_pdf_games(
-        json.loads(Path("archive.json").read_text()), datetime.now(ET).date()
-    ))
     # Prevent state from growing indefinitely.
     state["notified"]={slug:ts for slug,ts in state["notified"].items() if slug in games}
     record_heartbeat(state)

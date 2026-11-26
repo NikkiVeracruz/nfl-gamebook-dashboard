@@ -188,6 +188,8 @@ def valid_url(item):
     if p.scheme != "https" or p.username or p.password or p.port:
         return False
     if item["kind"] == "PDF":
+        if item["league"]=="NFL" and p.hostname=="static.clubs.nfl.com":
+            return bool(re.fullmatch(r"/image/upload/packers/[A-Za-z0-9_-]+(?:\.pdf)?",p.path) and not p.query and not p.fragment)
         return p.hostname in PDF_HOSTS[item["league"]] and p.path.lower().endswith(".pdf")
     if item["league"] == "NHL":
         gid = item["id"]

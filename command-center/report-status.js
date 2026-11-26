@@ -32,6 +32,7 @@
     const host = parsed.hostname.toLowerCase();
     const path = parsed.pathname;
     if (league === "NFL") {
+      if (host === "static.clubs.nfl.com") return game.pdf_verification === "official_club_identity" && /^\/image\/upload\/packers\/[A-Za-z0-9_-]+(?:\.pdf)?$/.test(path) && !parsed.search && !parsed.hash;
       return host === "static.www.nfl.com"
         && /^\/image\/upload\/.+\/gamecenter\/.+\.pdf$/i.test(path);
     }

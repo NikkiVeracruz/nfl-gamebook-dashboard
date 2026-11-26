@@ -26,6 +26,6 @@ Those branches preserve the original records for safe restoration. GitHub histor
 
 To restore historical backfill, first explicitly change or disable the forward-only filtering in each repository's `forward_only.py`; reconcile desired historical records from the backup branch; run the existing integrity and recovery rehearsals; then enable the repository variable `ENABLE_HISTORICAL_BACKFILL=true` and deliberately restore schedules as needed. Merely enabling the variable is not sufficient to restore history while forward-only filtering remains enabled.
 
-## Known limitation
+## NFL pending-game recovery
 
-A completed game whose report is delayed beyond the live display window is **not retained as an incomplete archive game**. Existing recovery jobs are preserved, but some use the archive as their retry list. If reliable post-window catch-up is needed in the future, introduce a separate, bounded non-public pending-game retry queue; do not reintroduce unverified links into the published archive.
+A completed game whose report is delayed beyond the live display window is **not retained as an incomplete archive game**. NFL now maintains known unresolved games in monitor-state.json independently of the archive, keeping eligible games under review after rollover. Only verified gamebooks enter the archive; no historical backfill or other league changes. The queue is operational metadata, not a displayed archive.
