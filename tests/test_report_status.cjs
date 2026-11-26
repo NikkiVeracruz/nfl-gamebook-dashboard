@@ -83,3 +83,10 @@ test("Mega Board integrates the status model, counts, filters and existing clock
   ]) assert.ok(html.includes(text),"Missing report status integration: "+text);
   assert.ok(!html.includes("NCAA"),"Removed NCAA must not reappear");
 });
+
+test("NFL: official extensionless Packers gamebook requires identity proof",()=>{
+  const g={pdf_url:"https://static.clubs.nfl.com/image/upload/packers/abc",pdf_verification:"official_club_identity"};
+  assert.equal(reports.assess(g,"NFL").category,"verified");
+  assert.equal(reports.assess({...g,pdf_verification:undefined},"NFL").category,"pending");
+  assert.equal(reports.assess({...g,pdf_url:"https://static.clubs.nfl.com/image/upload/unknown/abc"},"NFL").category,"pending");
+});

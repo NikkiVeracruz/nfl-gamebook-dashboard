@@ -84,6 +84,10 @@ def parse_kickoff(event):
 
 def has_official_pdf(game):
     url = game.get("pdf_url")
+    if isinstance(url,str) and game.get("pdf_verification")=="official_club_identity":
+        from urllib.parse import urlparse
+        p=urlparse(url)
+        if p.scheme=="https" and p.netloc=="static.clubs.nfl.com" and re.fullmatch(r"/image/upload/packers/[A-Za-z0-9_-]+(?:\.pdf)?",p.path):return True
     return isinstance(url, str) and url.startswith((
         "https://static.www.nfl.com/", "https://www.nfl.com/", "https://nfl.com/"
     )) and ".pdf" in url.lower()
@@ -150,7 +154,13 @@ def audit(feed, get_scoreboard=scoreboard, now=None):
 def main():
     try:
         feed = fetch_json(NFL_FEED)
-        alerts, notes = audit(feed)
+        # The current display no longer contains unresolved games after rollover.
+        from pathlib import Path
+        sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+        from nfl_pending import load_queue
+        known={g["slug"]:g for g in load_queue().values()}
+        known.update({g["slug"]:g for g in feed["games"] if g.get("slug")})
+        alerts, notes = audit({**feed,"games":list(known.values())})
     except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
         print(f"FINAL GAMEBOOK AUDIT ERROR: {exc}", file=sys.stderr)
         return 1

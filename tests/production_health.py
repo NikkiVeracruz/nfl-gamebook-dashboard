@@ -94,7 +94,8 @@ def check_feed(league, url):
         from nfl_calendar import read_json, should_poll
         calendar = read_json(Path("nfl-calendar.json"))
         archive = read_json(Path("archive.json"))
-        active = should_poll(datetime.now(timezone.utc), calendar, archive)
+        from nfl_pending import load_queue
+        active = should_poll(datetime.now(timezone.utc), calendar, archive, pending=load_queue())
         if active:
             state = read_json(Path("monitor-state.json"))
             stamp = state.get("last_checked_at") or data.get("updated_at")

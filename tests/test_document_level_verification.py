@@ -53,6 +53,12 @@ class DocumentVerificationTests(unittest.TestCase):
         self.assertTrue(valid_url(nhl))
         self.assertFalse(valid_url({**nhl, "url": nhl["url"].replace("GS", "ES")}))
 
+    def test_extensionless_official_packers_gamebook_url(self):
+        item=sample(league="NFL",id="packers-at-rams-2026-reg-12",url="https://static.clubs.nfl.com/image/upload/packers/abc")
+        self.assertTrue(valid_url(item))
+        self.assertFalse(valid_url(dict(item,url="https://static.clubs.nfl.com/image/upload/unknown/abc")))
+        self.assertFalse(valid_url(dict(item,url=item["url"]+"?untrusted=1")))
+
     def test_invalid_pdf_is_not_reported_verified(self):
         status, detail = inspect_pdf(sample(), b"<html>access denied</html>")
         self.assertEqual(status, "invalid_format")

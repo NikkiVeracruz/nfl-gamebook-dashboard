@@ -42,7 +42,7 @@ def read_feed(url=FEED_URL):
         return json.loads(content)
 
 
-def decide(feed, now=None, last_checked_at=None):
+def decide(feed, now=None, last_checked_at=None, unresolved_final_games=None):
     """Return (dispatch_needed, reason); never dispatch on invalid inputs."""
     if not isinstance(feed, dict) or not isinstance(feed.get("games"), list):
         raise ValueError("Invalid NFL feed; refusing automatic dispatch")
@@ -63,6 +63,8 @@ def decide(feed, now=None, last_checked_at=None):
     age = (current - updated).total_seconds() / 60
     if age < -10:
         raise ValueError("NFL feed timestamp is in the future; investigate first")
+    if unresolved_final_games:
+        return True, 'Final NFL games still missing verified PDFs: ' + ', '.join(unresolved_final_games)
     if age > MAX_AGE_MINUTES:
         return True, f"NFL publication is {age:.0f} minutes old; threshold {MAX_AGE_MINUTES}"
     return False, f"NFL publication is {age:.0f} minutes old; healthy"
@@ -73,16 +75,19 @@ def main():
         from pathlib import Path
         sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
         from nfl_calendar import should_poll
+        from nfl_pending import load_queue
         current = datetime.now(timezone.utc)
         calendar = json.loads(Path("nfl-calendar.json").read_text())
         archive = json.loads(Path("archive.json").read_text())
-        if not should_poll(current, calendar, archive):
+        pending=load_queue()
+        if not should_poll(current, calendar, archive, pending=pending):
             trigger, reason = False, "NFL idle: no scheduled game or overdue PDF"
         else:
             state = json.loads(Path("monitor-state.json").read_text())
             trigger, reason = decide(
                 read_feed(), now=current,
                 last_checked_at=state.get("last_checked_at"),
+                unresolved_final_games=sorted(k for k,g in pending.items() if g.get("status")=="Final"),
             )
     except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
         print(f"WATCHDOG ERROR: {exc}", file=sys.stderr)

@@ -1273,6 +1273,41 @@
         }
       ],
       "notes": "Incident run45336913795 failed Nov23 22:57 MT with raw GitHub feed HTTP503 Backend.max_conn reached before any dispatch; regular update run45340804928 subsequently passed including archive-loss guard and publication. Watchdog run45345950698 retrieved healthy feed (41 minutes), run45357468731 reported idle; governance Nov24 12:13Z passed, 13 NFL archived games. Approved bounded retry implementation on task branch: retry HTTP 500/502/503/504 only, wait 5 then 15 seconds, preserve 25-second per-request timeout and 2MB cap, rethrow persistent errors and reject invalid feeds immediately; existing main failure handling and notifications remain. Seven new offline regression cases and pre-merge integration added. Validation, merge and production execution pending. Final pre-merge safety run https://github.com/NikkiVeracruz/nfl-gamebook-dashboard/actions/runs/45414858015 passed all seven offline retry tests and all existing checks; reviewed diff limited to watchdog fetch, tests, CI and registry. PR41 merged 5b66620952a127a16c03b77d6fe31c595408e290. Code implemented on main; first post-merge watchdog run not yet observed, real-world transient recovery not yet demonstrated. No scheduling or notification changes. Register regeneration and Pages runs started after merge."
+    },
+    {
+      "id": "PRJ-028",
+      "title": "NFL exact-date discovery, official club gamebooks and post-rollover recovery",
+      "area": "operations",
+      "decision": "accepted",
+      "state": "open",
+      "summary": "User approved all four incident recommendations: unusual-day discovery, official PDF fallback, existing watchdog report awareness, and pending-game rollover protection.",
+      "evidence": [
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "nfl_pending.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "monitor.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/test_nfl_pending.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/live_rams_gamebook.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "tests/nfl_update_watchdog.py"
+        },
+        {
+          "repo": "NikkiVeracruz/nfl-gamebook-dashboard",
+          "path": "command-center/report-status.js"
+        }
+      ],
+      "notes": "Nov25/26 Rams incident: last known game in a1ca3c084c70b6a201f1d72f79a07abc06c810a7; schedule warning run45752215327, watchdog healthy run45756996772; forward-only purge prevents incomplete archive-based retries. Rollover already occurred. Official Packers game center https://www.packers.com/game-day/2026/reg-week12/packers-at-rams/ links https://static.clubs.nfl.com/image/upload/packers/k39qtefpy28qk4wyi6lt; independently inspected first page, November 25 2026 Packers 13 Rams 26. Proposed exact independent scoreboard reconciliation only for observed official NFL URLs, narrow verified Packers club fallback with full PDF identity, operational pending queue seeded solely with already tracked Rams game, calendar and existing watchdog integration, document/UI verification compatibility. No new watchdog, schedule reduction, historical backfill, NCAA or other league changes. Branch tests, read-only live proof, merge and production verification outstanding. Initial pre-merge run45760154417 passed targeted offline tests and verified the newly available central NFL gamebook https://static.www.nfl.com/image/upload/v1795667766/gamecenter/abbf28ed-4feb-11f1-abca-2c54536568a9.pdf for exact Rams game. Added separate live club fallback proof and regression coverage for ambiguous independent events, preserved final observations and document/UI link markers; final validation pending."
     }
   ]
 }

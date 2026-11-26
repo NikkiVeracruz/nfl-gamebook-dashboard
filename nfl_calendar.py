@@ -122,7 +122,8 @@ def update_workflow_text(text, full, early):
     return text[:b] + generated + text[e:]
 
 
-def should_poll(now, calendar, archive, manual=False):
+def should_poll(now, calendar, archive, manual=False, pending=None):
+    from nfl_pending import due_games
     if manual:
         return True
     today = now.astimezone(ET).date()
@@ -131,6 +132,7 @@ def should_poll(now, calendar, archive, manual=False):
         today in days
         or (now.astimezone(ET).hour < 3 and today - timedelta(days=1) in days)
         or bool(missing_pdf_games(archive, today))
+        or bool(pending and due_games(pending,today))
     )
 
 
@@ -142,7 +144,8 @@ def refresh(today=None, session=None):
         session = requests.Session()
     days = fetch_game_days(session, today)
     days = include_saved_dates(days, today, archive, feed)
-    pending = missing_pdf_games(archive, today)
+    from nfl_pending import load_queue, due_games
+    pending = missing_pdf_games(archive, today) + due_games(load_queue(), today)
     full, early = schedule_windows(today, days, pending)
     calendar = {"game_days": sorted(d.isoformat() for d in days)}
     changed = not CALENDAR.exists() or read_json(CALENDAR) != calendar
@@ -167,9 +170,10 @@ def main():
         if not CALENDAR.exists():
             # Missing calendar should never silently suppress checks.
             raise SystemExit("Missing NFL calendar; refusing to silently skip monitoring")
+        from nfl_pending import load_queue
         ok = should_poll(
             datetime.now(timezone.utc), read_json(CALENDAR),
-            read_json(ARCHIVE), manual=manual
+            read_json(ARCHIVE), manual=manual, pending=load_queue()
         )
         print("NFL monitor " + ("ACTIVE" if ok else "IDLE: no scheduled or overdue PDFs"))
         raise SystemExit(0 if ok else 3)

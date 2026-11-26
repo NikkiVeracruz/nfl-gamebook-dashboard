@@ -24,9 +24,20 @@ jobs:
       - name: Install league monitor dependencies
         run: python -m pip install -r requirements.txt
       - name: Ensure production monitor code compiles
-        run: python -m py_compile archive.py forward_only.py monitor.py
+        run: python -m py_compile archive.py forward_only.py monitor.py nfl_pending.py nfl_calendar.py
       - name: Test bounded NFL watchdog retries
         run: python -m unittest discover -s tests -p 'test_nfl_watchdog_retry.py' -v
+      - name: NFL discovery, pending rollover and watchdog regression
+        run: |
+          python -m unittest discover -s tests -p 'test_nfl_pending.py' -v
+          python -m unittest discover -s tests -p 'test_nfl_calendar.py' -v
+          python -m unittest discover -s tests -p 'test_nfl_archive_before_roll.py' -v
+          python -m unittest discover -s tests -p 'test_nfl_older_pdf_recovery.py' -v
+          python -m unittest discover -s tests -p 'test_document_level_verification.py' -v
+          PYTHONPATH=tests:. python -m unittest discover -s tests -p 'test_nfl_adaptive_health.py' -v
+      - name: Read-only live Rams gamebook proof
+        if: github.head_ref == 'fix/nfl-report-discovery-rollover'
+        run: python tests/live_rams_gamebook.py
       - name: Preserve complete-report forward-only retention
         run: python -m unittest discover -s tests -p 'test_forward_only.py' -v
       - name: Preserve archive integrity safeguards
