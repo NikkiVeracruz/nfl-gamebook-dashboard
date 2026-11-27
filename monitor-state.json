@@ -1,5 +1,5 @@
 {
-  "last_checked_at": "2026-11-26T23:38:52.605401+00:00",
+  "last_checked_at": "2026-11-27T02:00:03.138405+00:00",
   "notified": {},
   "pending_games": {
     "broncos-at-steelers-2026-reg-12": {
@@ -11,7 +11,7 @@
     "chiefs-at-bills-2026-reg-12": {
       "date": "2026-11-26",
       "game_url": "https://www.nfl.com/games/chiefs-at-bills-2026-reg-12",
-      "label": "Chiefs at Bills, Thursday, November 26th, 8:20 PM, NBC",
+      "label": "Chiefs 0, Bills 0, Q1, NBC",
       "slug": "chiefs-at-bills-2026-reg-12"
     },
     "commanders-at-cardinals-2026-reg-12": {
@@ -19,12 +19,6 @@
       "game_url": "https://www.nfl.com/games/commanders-at-cardinals-2026-reg-12",
       "label": "Commanders at Cardinals, Sunday, November 29th, 4:25 PM, FOX",
       "slug": "commanders-at-cardinals-2026-reg-12"
-    },
-    "eagles-at-cowboys-2026-reg-12": {
-      "date": "2026-11-26",
-      "game_url": "https://www.nfl.com/games/eagles-at-cowboys-2026-reg-12",
-      "label": "Eagles 10, Cowboys 28, HALFTIME, FOX",
-      "slug": "eagles-at-cowboys-2026-reg-12"
     },
     "falcons-at-vikings-2026-reg-12": {
       "date": "2026-11-29",
