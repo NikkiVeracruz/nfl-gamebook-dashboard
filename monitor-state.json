@@ -1,5 +1,5 @@
 {
-  "last_checked_at": "2026-11-27T04:24:30.254247+00:00",
+  "last_checked_at": "2026-11-27T05:35:11.278632+00:00",
   "notified": {},
   "pending_games": {
     "broncos-at-steelers-2026-reg-12": {
@@ -7,12 +7,6 @@
       "game_url": "https://www.nfl.com/games/broncos-at-steelers-2026-reg-12",
       "label": "Broncos at Steelers, Friday, November 27th, 3:00 PM, PRIME",
       "slug": "broncos-at-steelers-2026-reg-12"
-    },
-    "chiefs-at-bills-2026-reg-12": {
-      "date": "2026-11-26",
-      "game_url": "https://www.nfl.com/games/chiefs-at-bills-2026-reg-12",
-      "label": "Chiefs 10, Bills 10, Q4, NBC",
-      "slug": "chiefs-at-bills-2026-reg-12"
     },
     "commanders-at-cardinals-2026-reg-12": {
       "date": "2026-11-29",

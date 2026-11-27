@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T04:24:03.505766+00:00",
+  "updated_at": "2026-11-27T05:35:11.379986+00:00",
   "games": [
     {
       "slug": "eagles-at-cowboys-2026-reg-12",
@@ -12,6 +12,18 @@
       "away_name": "Philadelphia Eagles",
       "home_name": "Dallas Cowboys",
       "pdf_url": "https://static.www.nfl.com/image/upload/v1795743510/gamecenter/abbf2f12-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "slug": "chiefs-at-bills-2026-reg-12",
+      "date": "2026-11-26",
+      "label": "Watch Replay, Chiefs 10, Bills 13, Thursday, November 26",
+      "game_url": "https://www.nfl.com/games/chiefs-at-bills-2026-reg-12",
+      "status": "Final",
+      "away_score": 10,
+      "home_score": 13,
+      "away_name": "Kansas City Chiefs",
+      "home_name": "Buffalo Bills",
+      "pdf_url": "https://static.www.nfl.com/image/upload/v1795753954/gamecenter/abbf321b-4feb-11f1-abca-2c54536568a9.pdf"
     },
     {
       "slug": "bears-at-lions-2026-reg-12",
