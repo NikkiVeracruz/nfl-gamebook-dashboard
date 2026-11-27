@@ -1,14 +1,14 @@
 {
   "scope": "2026",
-  "updated_at": "2026-11-26T11:23:27.217664+00:00",
+  "updated_at": "2026-11-27T11:18:36.833648+00:00",
   "meaning": "A successful workflow does not mean every document has passed.",
   "summary": {
-    "linked": 54,
-    "inspected": 54,
+    "linked": 59,
+    "inspected": 59,
     "no_link": 0,
     "statuses": {
-      "verified_match": 30,
-      "verified_report": 24
+      "verified_match": 33,
+      "verified_report": 26
     }
   },
   "leagues": {
@@ -22,12 +22,12 @@
       }
     },
     "NBA": {
-      "linked": 17,
-      "inspected": 17,
+      "linked": 20,
+      "inspected": 20,
       "uninspected": 0,
       "no_link": 0,
       "statuses": {
-        "verified_match": 17
+        "verified_match": 20
       }
     },
     "WNBA": {
@@ -38,12 +38,12 @@
       "statuses": {}
     },
     "NHL": {
-      "linked": 24,
-      "inspected": 24,
+      "linked": 26,
+      "inspected": 26,
       "uninspected": 0,
       "no_link": 0,
       "statuses": {
-        "verified_report": 24
+        "verified_report": 26
       }
     },
     "MLB": {
@@ -56,6 +56,36 @@
   },
   "no_link_samples": [],
   "results": {
+    "NBA:401909314:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20261124/20261124_DETORL_book.pdf",
+      "league": "NBA",
+      "id": "401909314",
+      "kind": "PDF",
+      "date": "2026-11-24",
+      "status": "verified_match",
+      "detail": "17 pages; team names and date matched text",
+      "checked_at": "2026-11-27T11:18:38.647198+00:00"
+    },
+    "NBA:401909315:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20261124/20261124_BOSWAS_book.pdf",
+      "league": "NBA",
+      "id": "401909315",
+      "kind": "PDF",
+      "date": "2026-11-24",
+      "status": "verified_match",
+      "detail": "20 pages; team names and date matched text",
+      "checked_at": "2026-11-27T11:18:38.682875+00:00"
+    },
+    "NBA:401909316:PDF": {
+      "url": "https://statsdmz.nba.com/pdfs/20261124/20261124_DALDEN_book.pdf",
+      "league": "NBA",
+      "id": "401909316",
+      "kind": "PDF",
+      "date": "2026-11-24",
+      "status": "verified_match",
+      "detail": "19 pages; team names and date matched text",
+      "checked_at": "2026-11-27T11:18:38.554274+00:00"
+    },
     "NBA:401910029:PDF": {
       "url": "https://statsdmz.nba.com/pdfs/20261122/20261122_DETATL_book.pdf",
       "league": "NBA",
@@ -595,6 +625,26 @@
       "status": "verified_report",
       "detail": "Official GS HTML contains expected report heading",
       "checked_at": "2026-11-26T05:15:16.999734+00:00"
+    },
+    "NHL:2026020385:ES": {
+      "url": "https://www.nhl.com/scores/htmlreports/20262027/ES020385.HTM",
+      "league": "NHL",
+      "id": "2026020385",
+      "kind": "ES",
+      "date": "2026-11-24",
+      "status": "verified_report",
+      "detail": "Official ES HTML contains expected report heading",
+      "checked_at": "2026-11-27T11:18:37.852563+00:00"
+    },
+    "NHL:2026020385:GS": {
+      "url": "https://www.nhl.com/scores/htmlreports/20262027/GS020385.HTM",
+      "league": "NHL",
+      "id": "2026020385",
+      "kind": "GS",
+      "date": "2026-11-24",
+      "status": "verified_report",
+      "detail": "Official GS HTML contains expected report heading",
+      "checked_at": "2026-11-27T11:18:37.966356+00:00"
     }
   }
 }
