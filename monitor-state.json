@@ -1,13 +1,7 @@
 {
-  "last_checked_at": "2026-11-27T22:19:12.844556+00:00",
+  "last_checked_at": "2026-11-27T23:19:10.802180+00:00",
   "notified": {},
   "pending_games": {
-    "broncos-at-steelers-2026-reg-12": {
-      "date": "2026-11-27",
-      "game_url": "https://www.nfl.com/games/broncos-at-steelers-2026-reg-12",
-      "label": "Broncos at Steelers, Friday, November 27th, 3:00 PM, PRIME",
-      "slug": "broncos-at-steelers-2026-reg-12"
-    },
     "commanders-at-cardinals-2026-reg-12": {
       "date": "2026-11-29",
       "game_url": "https://www.nfl.com/games/commanders-at-cardinals-2026-reg-12",
