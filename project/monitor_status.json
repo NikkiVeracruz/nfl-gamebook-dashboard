@@ -1,6 +1,6 @@
 {
   "scope": "live implementation drift; no user decisions modified",
-  "checked_at": "2026-11-27T12:11:31.469872+00:00",
+  "checked_at": "2026-11-28T11:59:32.388449+00:00",
   "status": "pass",
   "checks": [
     {
@@ -21,12 +21,12 @@
     {
       "check": "NFL forward-only archive, current feed and backup",
       "status": "pass",
-      "detail": "17 complete retained games; live feed valid; backfill gated; backup present"
+      "detail": "18 complete retained games; live feed valid; backfill gated; backup present"
     },
     {
       "check": "NBA forward-only archive, current feed and backup",
       "status": "pass",
-      "detail": "29 complete retained games; live feed valid; backfill gated; backup present"
+      "detail": "40 complete retained games; live feed valid; backfill gated; backup present"
     },
     {
       "check": "WNBA forward-only archive, current feed and backup",
@@ -36,7 +36,7 @@
     {
       "check": "NHL forward-only archive, current feed and backup",
       "status": "pass",
-      "detail": "27 complete retained games; live feed valid; backfill gated; backup present"
+      "detail": "42 complete retained games; live feed valid; backfill gated; backup present"
     },
     {
       "check": "MLB forward-only archive, current feed and backup",
